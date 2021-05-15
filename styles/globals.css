@@ -58,3 +58,16 @@ a {
 
 
 
+@font-face {
+  font-family: "poppinsSemiBoldItalic";
+  src: url("../public/fonts/Poppins-SemiBoldItalic.ttf");
+} 
+
+@font-face {
+  font-family: "poppinsLightItalic";
+  src: url("../public/fonts/Poppins-LightItalic.ttf");
+} 
+
+
+
+

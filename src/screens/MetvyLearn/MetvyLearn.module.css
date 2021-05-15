@@ -1,0 +1,97 @@
+.fitmentContainer {
+    color: white;
+}
+
+.bannerText {
+    font-family: poppinsRegular;
+    font-size: 14px;
+}
+
+.mentorshipCard {
+    background: linear-gradient(97.94deg, #ffeb80 0%, rgba(206, 124, 0, 0.57) 100%);
+    padding-top: 28px;
+    font-family: poppinsSemiBoldItalic;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.25);
+}
+
+.iconContainer {
+    box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.58);
+}
+
+.statsBox {
+    background: linear-gradient(97.94deg, #ffeb80 0%, #ce7c00 100%);
+    box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+}
+
+.brand-advertisement-container {
+    box-shadow: 0px 12px 92px 0px rgba(0, 0, 0, 0.21);
+    margin-top: 84px;
+}
+
+.programCard {
+    box-shadow: 0px 4px 103px 0px rgba(184, 0, 202, 0.51);
+    border-radius: 16px;
+}
+
+.programHeading {
+    font-family: poppinsBold;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 54px;
+}
+
+.data-weeks-value-box {
+    height: 61px;
+    width: 61px;
+    border: 2px solid;
+    border-image-source: linear-gradient(152.19deg, #ffffff 0%, #45320a 100%);
+    box-shadow: 0px 0px 228px 6px rgba(255, 168, 0, 0.43);
+    background: #ffffff;
+    border-radius: 12px;
+    font-family: poppinsSemiBold;
+    font-size: 25px;
+}
+
+.data-value-label {
+    font-family: poppinsMedium;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.apply-now-button {
+    border: 2px solid;
+    border-image-source: linear-gradient(152.19deg, #ffffff 0%, #45320a 100%);
+    height: 53px;
+    background: #000000;
+    box-shadow: 0px 0px 228px 6px rgba(255, 168, 0, 0.43);
+    border-radius: 12px;
+    margin-top: 31px;
+    margin-bottom: 30px;
+    padding: 12px;
+}
+
+.apply-now-text {
+    font-family: poppinsMedium;
+    font-size: 14px;
+    color: white;
+}
+
+.perks-box {
+    width: 157.02px;
+    height: 57.73px;
+    border-radius: 16px;
+    box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.25);
+
+}
+
+.testimonial-learn-card {
+    height: 160px;
+    background: #ffffff;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.35);
+    border-radius: 12px;
+    padding: 20px;
+}

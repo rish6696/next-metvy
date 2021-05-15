@@ -1,0 +1,53 @@
+.headerContainer {
+    height: 60px;
+     background-color: rgba(255, 255, 255, 1);
+}
+
+.headerIcon {
+    height: 34px;
+    width: 34px;
+    margin-right: 12px;
+}
+
+.brandName {
+    color: white;
+    font-family: poppinsMedium;
+}
+
+.brandContainer {
+    margin-left: 33px;
+}
+
+.menuItemsText {
+    font-family: poppinsRegular;
+    font-size: 14;
+    margin-bottom: 32px;
+    cursor: pointer;
+}
+
+.accordionItem {
+    font-family: poppinsMedium;
+    font-size: 15px;
+    line-height: 22px;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+.MetvyLearnHeading {
+    font-family: poppinsSemiBold;
+    font-size: 14px;
+    line-height: 16px;
+    /* identical to box height, or 16px */
+    text-align: center;
+}
+
+
+.bannerText {
+    font-family: poppinsRegular;
+    font-size: 14px;
+}
+
+
+.fitmentContainer {
+    color: white;
+}

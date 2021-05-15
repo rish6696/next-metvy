@@ -22,8 +22,16 @@
 }
 
 .menuItemsText {
-    color: white;
     font-family: poppinsRegular;
     font-size: 14;
-    margin-right: 20px;
+    margin-bottom: 32px;
+    cursor: pointer;
+}
+
+.accordionItem {
+    font-family: poppinsMedium;
+    font-size: 15px;
+    line-height: 22px;
+    color: #000000;
+    margin-bottom: 15px;
 }

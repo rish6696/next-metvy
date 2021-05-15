@@ -23,3 +23,16 @@ export const firstPartCardData = [
         buttonText: 'Explore Now'
     }
 ];
+
+
+export const courses = [
+    'Business program',
+    'Design program',
+    'AI Bootcamp',
+    'Research Program',
+    'Consultancy program',
+    'Personalized mentorship'
+]
+
+
+export const testimonialLearn= '“A community of professionals, freelancers and mentors to help you excel in your endeavours. ”'

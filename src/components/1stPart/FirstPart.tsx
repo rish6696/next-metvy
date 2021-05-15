@@ -1,6 +1,6 @@
 import React from 'react';
 import TextureBackground from '../TextureBackGround/Texturebackground';
-import Header from '../Header/Header';
+import Header from '../HeaderLanding/HeaderLanding';
 import FLexLayout from '../FlexLayout';
 import { Image } from 'react-bootstrap';
 import Style from './FirstPart.module.css';

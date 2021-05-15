@@ -9,7 +9,7 @@
 // export default _LandingScreen
 
 import Firstpart from './../../components/1stPart/FirstPart';
-import Header from '../../components/Header/Header';
+import Header from '../../components/HeaderLanding/HeaderLanding';
 
 import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
@@ -29,10 +29,12 @@ import { brandName, firstPartText, testimonialHeading } from '../../constants';
 import Style from './LandingScreen.module.css';
 
 import dynamic from 'next/dynamic';
-
+import Link from 'next/link';
 import Carousel from '../Carousel/Carousel';
+import { useRouter } from 'next/router';
 
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import { Carousel as CarouselTestimonial } from 'react-responsive-carousel';
 
 const useStyles = makeStyles({
@@ -44,16 +46,8 @@ const useStyles = makeStyles({
     }
 });
 
-type Anchor = 'top' | 'left' | 'bottom' | 'right';
-
 export default function TemporaryDrawer() {
     const classes = useStyles();
-    const [state, setState] = React.useState({
-        top: false,
-        left: false,
-        bottom: false,
-        right: false
-    });
 
     const [width, setWidth] = useState(-1);
 
@@ -61,52 +55,7 @@ export default function TemporaryDrawer() {
         setWidth(window.innerWidth);
     }, []);
 
-    const toggleDrawer = (anchor: Anchor, open: boolean) => (
-        event: React.KeyboardEvent | React.MouseEvent
-    ) => {
-        if (
-            event.type === 'keydown' &&
-            ((event as React.KeyboardEvent).key === 'Tab' ||
-                (event as React.KeyboardEvent).key === 'Shift')
-        ) {
-            return;
-        }
-
-        setState({ ...state, [anchor]: open });
-    };
-
-    const list = (anchor: Anchor) => (
-        <div
-            className={clsx(classes.list, {
-                [classes.fullList]: anchor === 'top' || anchor === 'bottom'
-            })}
-            role="presentation"
-            onClick={toggleDrawer(anchor, false)}
-            onKeyDown={toggleDrawer(anchor, false)}
-        >
-            <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>
-                            {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                        </ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
-            </List>
-            <Divider />
-            <List>
-                {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>
-                            {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                        </ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
-            </List>
-        </div>
-    );
+    const [showSidePanel, setShowSidePanel] = useState(false);
 
     const slides = [
         {
@@ -123,11 +72,12 @@ export default function TemporaryDrawer() {
         }
     ];
 
+    const router = useRouter();
 
 
     const testimonial = (
-        <FLexLayout rowORColumn='column' justifyContent='center' alignItem='center' >
-             <FLexLayout
+        <FLexLayout rowORColumn="column" justifyContent="center" alignItem="center">
+            <FLexLayout
                 rowORColumn="row"
                 style={{
                     margin: '30px',
@@ -153,10 +103,10 @@ export default function TemporaryDrawer() {
                             width: `${0.17 * width}px`,
                             borderRadius: '50%',
                             marginBottom: '10px',
-                            backgroundColor:'red'
+                            backgroundColor: 'red'
                         }}
-                        src='/icons/ginpic-20180223123437455.jpeg'
-                    /> 
+                        src="/icons/ginpic-20180223123437455.jpeg"
+                    />
 
                     <div style={{ textAlign: 'center' }} className={Style.testimonialUserName}>
                         {'Anusha Anand'}
@@ -172,10 +122,9 @@ export default function TemporaryDrawer() {
                 </div>
             </FLexLayout>
         </FLexLayout>
-    )
+    );
 
-
-    const testimonials = [1,2,3,4].map(x=>(testimonial))
+    const testimonials = [1, 2, 3, 4].map((x) => testimonial);
 
     return (
         <div>
@@ -277,7 +226,7 @@ export default function TemporaryDrawer() {
                         </div>
                     </FLexLayout>
 
-                    <FLexLayout rowORColumn="column" justifyContent="center" alignItem="center">
+                    <FLexLayout onClick={()=>router.push('/MetvyLearn')} rowORColumn="column" justifyContent="center" alignItem="center">
                         <FLexLayout
                             rowORColumn="column"
                             justifyContent="center"
@@ -289,10 +238,15 @@ export default function TemporaryDrawer() {
                                 textAlign: 'center'
                             }}
                         >
-                            <Image
-                                style={{ width: `${0.12 * width}px`, height: `${0.1 * width}px` }}
-                                src="/icons/mentorship.png"
-                            />
+                           
+                                <Image
+                                    style={{
+                                        width: `${0.12 * width}px`,
+                                        height: `${0.1 * width}px`
+                                    }}
+                                    src="/icons/mentorship.png"
+                                />
+                        
                         </FLexLayout>
 
                         <div
@@ -459,10 +413,16 @@ export default function TemporaryDrawer() {
                     <div className={Style.testimonialText}>{testimonialHeading}</div>
                 </FLexLayout>
 
-                <CarouselTestimonial infiniteLoop={true} autoPlay={true} showArrows={false} showIndicators={false} showStatus={false} showThumbs={false} >
+                <CarouselTestimonial
+                    infiniteLoop={true}
+                    autoPlay={true}
+                    showArrows={false}
+                    showIndicators={false}
+                    showStatus={false}
+                    showThumbs={false}
+                >
                     {testimonials}
                 </CarouselTestimonial>
-
             </div>
         </div>
     );
