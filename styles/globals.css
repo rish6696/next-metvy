@@ -68,6 +68,15 @@ a {
   src: url("../public/fonts/Poppins-LightItalic.ttf");
 } 
 
+/* .carousel {
+  z-index: -100;
+} */
+
+.slider{
+  height: 400px;
+  z-index: 10;
+}
+
 
 
 

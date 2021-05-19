@@ -71,8 +71,7 @@ const _Header = () => {
         };
 
     return (
-        <FLexLayout rowORColumn="column" style={{ width: '100%',position:'fixed' }}>
-
+        <FLexLayout rowORColumn="column" style={{ width: '100%', position: 'fixed', zIndex: 100 }}>
             {/* hamburger with icon  */}
             <FLexLayout
                 style={{ width: '100%' }}
@@ -199,10 +198,9 @@ const _Header = () => {
                     />
                 </FLexLayout>
             </FLexLayout>
-           
 
-             {/* banner  */}
-             <FLexLayout style={{ width: '100%' }} rowORColumn="row">
+            {/* banner  */}
+            <FLexLayout style={{ width: '100%' }} rowORColumn="row">
                 <FLexLayout
                     style={{
                         backgroundColor: 'rgba(214, 214, 214, 1)',
@@ -213,7 +211,7 @@ const _Header = () => {
                     justifyContent="center"
                     alignItem="center"
                 >
-                    <div className={`${HeaderStyle.bannerText}`}> {'Book a fitment call ?'} </div>
+                    <div className={`${HeaderStyle.bannerText}`}> {'Book a fitment call'} </div>
                 </FLexLayout>
 
                 <FLexLayout
@@ -229,9 +227,6 @@ const _Header = () => {
                     <Image style={{ marginLeft: '28px' }} src="icons/Arrow 1.png" />
                 </FLexLayout>
             </FLexLayout>
-        
-        
-        
         </FLexLayout>
     );
 };
