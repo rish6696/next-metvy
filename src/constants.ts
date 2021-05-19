@@ -41,7 +41,7 @@ export const coursesLearnScreenAdvertisementMetaData = [
             { name: '/icons/Amazon logo.png', width: '48px', height: '19px' },
             { name: '/icons/Adobe_Corporate_Logo.png', width: '54px', height: '14px' },
             { name: '/icons/unnamed (1).png', width: '27px', height: '14px' },
-            { name: '/icons/BharatPe.png', width: '58px', height: '16px' },
+            { name: '/icons/bharatpe.png', width: '58px', height: '16px' },
             { name: '/icons/Facebook-New-Logo.png', width: '37px', height: '14px' }
         ],
         illustratorImg: '/icons/Business 2.png',
@@ -119,60 +119,60 @@ export const mentorData = [
             'Founder, HostelFund'
         ]
     },
-    // {
-    //     mentorName: 'Dhruv Nath',
-    //     linkedIn: 'https://www.linkedin.com/in/dhruvnathprof',
-    //     imageName: '/icons/dhruv_nath_img.png',
-    //     description: [
-    //         'Director - Lead Angels Network',
-    //         'Ex-Senior Vice President, NIIT Limited',
-    //         'Ex-Senior Scientific Officer, IIT Delhi',
-    //         'Ex-Professor, Management Development Institute'
-    //     ]
-    // },
-    // {
-    //     mentorName: 'Anisha Tandon',
-    //     linkedIn: 'https://www.linkedin.com/in/anisha-tandon-089a4015',
-    //     imageName: '/icons/anisha_img.png',
-    //     description: [
-    //         'Senior Manager, Nestle',
-    //         'Ex-Marketing & Growth, Cure.Fit',
-    //         'Ex-Senior Category Manager, Flipkart',
-    //         'Ex-Senior Manager Marketing, Hindustan Times'
-    //     ]
-    // },
-    // {
-    //     mentorName: 'Dhruv Dhanraj Bahl',
-    //     linkedIn: 'https://www.linkedin.com/in/dhruv-dhanraj-bahl-3857a033/',
-    //     imageName: '/icons/dhruv_img.png',
-    //     description: [
-    //         'Chief Operation Officer, BharatPe',
-    //         'Ex-AVP - Business PayTM',
-    //         'Ex-Senior Category Manager, Flipkart',
-    //         'Ex-Head of B2B,  Airtel'
-    //     ]
-    // },
-    // {
-    //     mentorName: 'Priyank Ahuja',
-    //     linkedIn: 'https://www.linkedin.com/in/priyank-ahuja/',
-    //     imageName: '/icons/priyank_img.png',
-    //     description: [
-    //         'Product Manager, Accenture',
-    //         'Ex-Project Manager at Tata Consultancy Services',
-    //         'Ex-Manager, Product Marketing at Vodafone',
-    //         'Ex-Product Specialist at Nokia'
-    //     ]
-    // },
-    // {
-    //     mentorName: 'Shivay Lamba',
-    //     linkedIn: 'https://www.linkedin.com/in/shivaylamba/',
-    //     imageName: '/icons/shivay_img.png',
-    //     description: [
-    //         'Google Code In Mentor @TensorFlow',
-    //         'Google Summer of Code Mentor @TensorFlow, MediaPipe',
-    //         'Ex EY, TechMahindra'
-    //     ]
-    // }
+    {
+        mentorName: 'Dhruv Nath',
+        linkedIn: 'https://www.linkedin.com/in/dhruvnathprof',
+        imageName: '/icons/dhruv_nath_img.png',
+        description: [
+            'Director - Lead Angels Network',
+            'Ex-Senior Vice President, NIIT Limited',
+            'Ex-Senior Scientific Officer, IIT Delhi',
+            'Ex-Professor, Management Development Institute'
+        ]
+    },
+    {
+        mentorName: 'Anisha Tandon',
+        linkedIn: 'https://www.linkedin.com/in/anisha-tandon-089a4015',
+        imageName: '/icons/anisha_img.png',
+        description: [
+            'Senior Manager, Nestle',
+            'Ex-Marketing & Growth, Cure.Fit',
+            'Ex-Senior Category Manager, Flipkart',
+            'Ex-Senior Manager Marketing, Hindustan Times'
+        ]
+    },
+    {
+        mentorName: 'Dhruv Dhanraj Bahl',
+        linkedIn: 'https://www.linkedin.com/in/dhruv-dhanraj-bahl-3857a033/',
+        imageName: '/icons/dhruv_img.png',
+        description: [
+            'Chief Operation Officer, BharatPe',
+            'Ex-AVP - Business PayTM',
+            'Ex-Senior Category Manager, Flipkart',
+            'Ex-Head of B2B,  Airtel'
+        ]
+    },
+    {
+        mentorName: 'Priyank Ahuja',
+        linkedIn: 'https://www.linkedin.com/in/priyank-ahuja/',
+        imageName: '/icons/priyank_img.png',
+        description: [
+            'Product Manager, Accenture',
+            'Ex-Project Manager at Tata Consultancy Services',
+            'Ex-Manager, Product Marketing at Vodafone',
+            'Ex-Product Specialist at Nokia'
+        ]
+    },
+    {
+        mentorName: 'Shivay Lamba',
+        linkedIn: 'https://www.linkedin.com/in/shivaylamba/',
+        imageName: '/icons/shivay_img.png',
+        description: [
+            'Google Code In Mentor @TensorFlow',
+            'Google Summer of Code Mentor @TensorFlow, MediaPipe',
+            'Ex EY, TechMahindra'
+        ]
+    }
 ];
 
 export const programsCardsMetaData = [
@@ -191,7 +191,7 @@ export const programsCardsMetaData = [
             { name: '/icons/Amazon logo.png', width: '48px', height: '19px' },
             { name: '/icons/Adobe_Corporate_Logo.png', width: '54px', height: '14px' },
             { name: '/icons/unnamed (1).png', width: '27px', height: '14px' },
-            { name: '/icons/BharatPe.png', width: '58px', height: '16px' },
+            { name: '/icons/bharatpe.png', width: '58px', height: '16px' },
             { name: '/icons/Facebook-New-Logo.png', width: '37px', height: '14px' }
         ],
         'box-shadow': '0px 0px 92px 0px rgba(255, 199, 0, 0.72)'
