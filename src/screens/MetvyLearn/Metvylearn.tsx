@@ -8,10 +8,11 @@ import {
     coursesLearnScreenAdvertisementMetaData,
     mentorData,
     programsCardsMetaData,
-    whyUsParagraph
+    whyUsParagraph,
+    courses
 } from '../../constants';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
-import Footer from '../../components/Footer/Footer'
+import Footer from '../../components/Footer/Footer';
 
 import { Carousel as CarouselAdvertisement } from 'react-responsive-carousel';
 
@@ -24,77 +25,302 @@ const _MetvyLearn = () => {
 
     const advertisements = coursesLearnScreenAdvertisementMetaData.map((advertisement) => {
         return (
-            <FLexLayout
-                className={Style.mentorshipCard}
-                rowORColumn="column"
-                justifyContent="between"
-                style={{
-                    width: `${0.87 * width}px`,
-                    marginLeft: `${0.06 * width}px`,
-                    marginRight: `${0.06 * width}px`,
-                    marginTop: '29px',
-                    height: `320px`,
-                    zIndex: -20,
-                    backgroundImage: `url("${advertisement.backgroundImage}")`,
-                    backgroundPosition: 'center',
-                    backgroundSize: 'cover',
-                    color: 'black'
-                }}
-                alignItem="center"
-            >
-                <Image
-                    src={advertisement.illustratorImg}
-                    style={{
-                        width: advertisement.illustratorImgWidth,
-                        height: advertisement.illustratorImgHeight
-                    }}
-                />
-
-                <div
-                    style={{
-                        marginLeft: `${0.19 * width}px`,
-                        marginRight: `${0.19 * width}px`,
-                        marginTop: '9px'
-                    }}
-                >
-                    {advertisement.text}
-                </div>
-
-                <div
-                    style={{
-                        height: '2px',
-                        width: `${0.05 * width}px`,
-                        backgroundColor: 'white',
-                        marginTop: '10px'
-                    }}
-                ></div>
-
-                <div style={{ fontFamily: 'poppinsRegular', fontSize: '12px', marginTop: '8px' }}>
-                    {'Mentors from '}
-                </div>
-
+            <FLexLayout style={{ marginTop: '29px',height:'376px'}} rowORColumn="row" justifyContent="center" alignItem="center">
                 <FLexLayout
-                    rowORColumn="row"
+                    className={Style.mentorshipCard}
+                    rowORColumn="column"
                     justifyContent="between"
-                    alignItem="center"
                     style={{
-                        marginLeft: `${0.06 * width}px`,
-                        marginRight: `${0.06 * width}px`,
-                        padding: '15px',
-                        backgroundColor: 'white',
-                        width: '100%',
-                        marginTop: '19px',
-                        height: '41px'
+                        width: `${362}px`,
+                        height: `282px`,
+                        zIndex: -20,
+                        backgroundImage: `url("${advertisement.backgroundImage}")`,
+                        backgroundPosition: 'center',
+                        backgroundSize: 'cover',
+                        color: 'black'
                     }}
+                    alignItem="center"
                 >
-                    {advertisement.brands.map((brand) => {
-                        return (
-                            <Image
-                                src={brand.name}
-                                style={{ width: brand.width, height: brand.height }}
-                            />
-                        );
-                    })}
+                    <Image
+                        src={advertisement.illustratorImg}
+                        style={{
+                            width: advertisement.illustratorImgWidth,
+                            height: advertisement.illustratorImgHeight,
+                            marginTop:'26px'
+                        }}
+                    />
+
+                    <FLexLayout  rowORColumn='row' justifyContent='center' alignItem='center' >
+
+
+                    <div
+                        style={{
+                            marginTop: '9px',
+                            lineHeight:'22px',
+                            width:'221px'
+                        }}
+                    >
+                        {advertisement.text}
+                    </div>
+
+                    </FLexLayout>
+
+                    <div
+                        style={{
+                            height: '2px',
+                            width: `${22}px`,
+                            backgroundColor: 'black',
+                            marginTop: '10px'
+                        }}
+                    ></div>
+
+                    <div
+                        style={{ fontFamily: 'poppinsRegular', fontSize: '12px', marginTop: '8px',lineHeight:'13px',marginBottom:'10px' }}
+                    >
+                        {'Mentors from '}
+                    </div>
+
+                    <FLexLayout
+                        rowORColumn="row"
+                        justifyContent="between"
+                        alignItem="center"
+                        style={{
+                            backgroundColor: 'white',
+                            width: '100%',
+                            height: '41px',
+                            paddingLeft:'40px',
+                            paddingRight:'40px'
+                        }}
+                    >
+                        {advertisement.brands.map((brand) => {
+                            return (
+                                <Image
+                                    src={brand.name}
+                                    style={{ width: brand.width, height: brand.height }}
+                                />
+                            );
+                        })}
+                    </FLexLayout>
+                </FLexLayout>
+            </FLexLayout>
+        );
+    });
+
+    const programCardComponent = programsCardsMetaData.map((cardData) => {
+        return (
+            <FLexLayout
+                justifyContent="center"
+                alignItem="center"
+                rowORColumn="row"
+                style={{
+                    height: '650px'
+                    // paddingBottom: '40px'
+                }}
+            >
+                {/* program-card */}
+                <FLexLayout
+                    style={{
+                        width: `${0.77 * width}px`,
+                        height: '504px',
+                        backgroundImage: `url("${cardData.backgroundImage}")`,
+                        backgroundPosition: 'center',
+                        backgroundSize: 'cover',
+                        boxShadow: cardData['box-shadow']
+                    }}
+                    className={Style.programCard}
+                    rowORColumn="column"
+                    justifyContent="between"
+                >
+                    {/* program- heading - container  */}
+                    <FLexLayout
+                        style={{ marginTop: '30px' }}
+                        justifyContent="center"
+                        alignItem="center"
+                        rowORColumn="row"
+                    >
+                        {/* program-heading */}
+                        <div style={{ textAlign: 'center' }} className={Style.programHeading}>
+                            {cardData.name}
+                        </div>
+                    </FLexLayout>
+
+                    {/* data-weeks-container */}
+                    <FLexLayout rowORColumn="row" alignItem="center" justifyContent="center">
+                        {/* data-weeks-outer-box */}
+                        <FLexLayout
+                            rowORColumn="row"
+                            justifyContent="between"
+                            style={{ width: '80%' }}
+                        >
+                            {/* data-weeks-value-box-1 */}
+                            <FLexLayout rowORColumn="column" alignItem="center">
+                                {/* data-value */}
+                                <FLexLayout
+                                    className={Style['data-weeks-value-box']}
+                                    justifyContent="center"
+                                    alignItem="center"
+                                    rowORColumn="column"
+                                >
+                                    <div>{cardData.weeks}</div>
+                                </FLexLayout>
+
+                                {/* data-value-label */}
+                                <div className={Style['data-value-label']}>{'weeks'}</div>
+                            </FLexLayout>
+
+                            {/* data-weeks-value-box-2 */}
+                            <FLexLayout rowORColumn="column" alignItem="center">
+                                {/* data-value */}
+                                <FLexLayout
+                                    className={Style['data-weeks-value-box']}
+                                    justifyContent="center"
+                                    alignItem="center"
+                                    rowORColumn="column"
+                                >
+                                    <div>{cardData.peopleUpSkilled}</div>
+                                </FLexLayout>
+
+                                {/* data-value-label */}
+                                <div className={Style['data-value-label']}>
+                                    {'People Up Skilled'}
+                                </div>
+                            </FLexLayout>
+
+                            {/* data-weeks-value-box-3 */}
+                            <FLexLayout rowORColumn="column" alignItem="center">
+                                {/* data-value */}
+                                <FLexLayout
+                                    className={Style['data-weeks-value-box']}
+                                    justifyContent="center"
+                                    alignItem="center"
+                                    rowORColumn="column"
+                                >
+                                    <div>{cardData.sessions}</div>
+                                </FLexLayout>
+
+                                {/* data-value-label */}
+                                <div className={Style['data-value-label']}>{'Sessions'}</div>
+                            </FLexLayout>
+                        </FLexLayout>
+                    </FLexLayout>
+
+                    {/* underline */}
+                    <FLexLayout rowORColumn="row" justifyContent="center" alignItem="center">
+                        <div
+                            style={{
+                                height: '3px',
+                                width: `${0.15 * width}px`,
+                                backgroundColor: 'white'
+                            }}
+                        >
+                            {' '}
+                        </div>
+                    </FLexLayout>
+
+                    {/* card-text */}
+
+                    <FLexLayout
+                        rowORColumn="column"
+                        justifyContent="center"
+                        alignItem="center"
+                        style={{
+                            textAlign: 'center',
+                            fontFamily: 'poppinsSemiBold',
+                            fontSize: '13px'
+                        }}
+                    >
+                        <FLexLayout style={{ width: '80%' }} rowORColumn="row">
+                            <div>{cardData.description}</div>
+                        </FLexLayout>
+                    </FLexLayout>
+
+                    {/* apply-now-button-container */}
+                    <FLexLayout rowORColumn="row" alignItem="center" justifyContent="center">
+                        {/* apply-now-button */}
+                        <FLexLayout
+                            className={Style['apply-now-button']}
+                            justifyContent="between"
+                            rowORColumn="row"
+                            style={{ width: '80%' }}
+                        >
+                            {/* apply-now-text */}
+                            <div className={Style['apply-now-text']}>{'Apply Now'}</div>
+
+                            {/* price-container */}
+                            <FLexLayout rowORColumn="row">
+                                {/* ruppeeee-symbol */}
+                                <div
+                                    style={{
+                                        fontFamily: 'poppinsMedium',
+                                        fontSize: '14px',
+                                        color: 'white',
+                                        marginRight: '5px'
+                                    }}
+                                >
+                                    {' '}
+                                    &#8377;{' '}
+                                </div>
+
+                                {/* price-box */}
+                                <FLexLayout rowORColumn="column">
+                                    <div
+                                        style={{
+                                            fontFamily: 'poppinsMedium',
+                                            fontSize: '14px',
+                                            color: 'white'
+                                        }}
+                                    >
+                                        {cardData.princeAfterDiscount}
+                                    </div>
+                                    <div
+                                        style={{
+                                            fontFamily: 'poppinsLightItalic',
+                                            fontSize: '9px',
+                                            color: 'white'
+                                        }}
+                                    >
+                                        <del>{cardData.priceBeforeDiscount}</del>
+                                    </div>
+                                </FLexLayout>
+
+                                <Image
+                                    style={{
+                                        marginLeft: '14px',
+                                        height: '20px'
+                                    }}
+                                    src="icons/Arrow 1.png"
+                                />
+                            </FLexLayout>
+                        </FLexLayout>
+                    </FLexLayout>
+
+                    {/* brands-strip  */}
+
+                    <FLexLayout
+                        rowORColumn="row"
+                        justifyContent="between"
+                        alignItem="center"
+                        style={{
+                            padding: '15px',
+                            backgroundColor: 'white',
+                            width: '100%',
+                            height: '41px',
+                            borderBottomLeftRadius: '16px',
+                            borderBottomRightRadius: '16px'
+                        }}
+                    >
+                        {cardData.brands.map((brand) => {
+                            return (
+                                <Image
+                                    src={brand.name}
+                                    style={{
+                                        width: brand.width,
+                                        height: brand.height
+                                    }}
+                                />
+                            );
+                        })}
+                    </FLexLayout>
                 </FLexLayout>
             </FLexLayout>
         );
@@ -107,7 +333,8 @@ const _MetvyLearn = () => {
                 style={{
                     paddingTop: '100px',
                     backgroundImage: 'url("/icons/bg_learn.png")',
-                    backgroundRepeat:'no-repeat'
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: '100% 100%'
                 }}
             >
                 {/* iconContainer */}
@@ -157,7 +384,7 @@ const _MetvyLearn = () => {
                 {/* 30-days cohort - heading- container */}
 
                 <FLexLayout rowORColumn="column" justifyContent="center" alignItem="center">
-                    <div className={Style.bannerText} style={{ marginTop: '24px' }}>
+                    <div className={Style.bannerText}>
                         {'30-Day Cohort Based Mentorship Programs'}
                     </div>
                 </FLexLayout>
@@ -246,7 +473,7 @@ const _MetvyLearn = () => {
                         return (
                             <Carousel.Item>
                                 <FLexLayout
-                                    style={{ marginTop: '120px' }}
+                                    style={{ marginTop: '120px',height:'490px' }}
                                     rowORColumn="row"
                                     justifyContent="center"
                                     alignItem="center"
@@ -256,14 +483,17 @@ const _MetvyLearn = () => {
                                         className={Style['mentor-card']}
                                     >
                                         {/* image-container */}
+                                        <FLexLayout className={Style['circular-image-container']}    rowORColumn='row' justifyContent='center' alignItem='center' >
                                         <div
                                             style={{ background: `url("${mentor.imageName}")` }}
                                             className={Style['circular-image']}
                                         ></div>
 
+                                        </FLexLayout>
+
                                         {/* name-container */}
                                         <FLexLayout
-                                            style={{ position: 'relative', top: '-60px' }}
+                                            style={{ position: 'relative', top: '-82px' }}
                                             rowORColumn="row"
                                             justifyContent="center"
                                             alignItem="center"
@@ -285,7 +515,8 @@ const _MetvyLearn = () => {
                                                 fontFamily: 'poppinsRegular',
                                                 fontSize: '12px',
                                                 position: 'relative',
-                                                top: '-50px'
+                                                lineHeight:'16px',
+                                                top: '-70px'
                                             }}
                                             rowORColumn="row"
                                             justifyContent="center"
@@ -311,17 +542,22 @@ const _MetvyLearn = () => {
                                         </FLexLayout>
 
                                         {/* linkedin-icon-container */}
-                                        <FLexLayout
+
+
+                                         <FLexLayout
                                             rowORColumn="row"
                                             justifyContent="center"
                                             alignItem="center"
-                                            style={{ position: 'relative', top: '-20px' }}
+                                            style={{ position: 'relative', top: '-65px' }}
                                         >
                                             <Image
                                                 src="/icons/linkedin 1.png"
                                                 style={{ width: '24px', height: '24px' }}
                                             />
-                                        </FLexLayout>
+                                        </FLexLayout> 
+
+
+                                        
                                     </FLexLayout>
                                 </FLexLayout>
                             </Carousel.Item>
@@ -432,7 +668,7 @@ const _MetvyLearn = () => {
                             style={{ marginTop: '25px' }}
                             alignItem="center"
                         >
-                            <Image height="43px" width="65px" src="/icons/Paytm-Logo 1.png" />
+                            <Image src="/icons/Paytm-Logo 1.png" />
                             <Image height="22px" width="68px" src="/icons/ig-logo 1.png" />
                             <Image
                                 height="13px"
@@ -463,252 +699,17 @@ const _MetvyLearn = () => {
                 </FLexLayout>
 
                 {/* program-card-container */}
-                <Carousel indicators={false} controls={false} interval={3500}>
-                    {programsCardsMetaData.map((cardData) => {
-                        return (
-                            <Carousel.Item>
-                                <FLexLayout
-                                    justifyContent="center"
-                                    alignItem="center"
-                                    rowORColumn="row"
-                                    style={{
-                                        height: '650px'
-                                        // paddingBottom: '40px'
-                                    }}
-                                >
-                                    {/* program-card */}
-                                    <FLexLayout
-                                        style={{
-                                            width: `${0.77 * width}px`,
-                                            height: '504px',
-                                            backgroundImage: `url("${cardData.backgroundImage}")`,
-                                            backgroundPosition: 'center',
-                                            backgroundSize: 'cover',
-                                            boxShadow: cardData['box-shadow']
-                                        }}
-                                        className={Style.programCard}
-                                        rowORColumn="column"
-                                        justifyContent="between"
-                                    >
-                                        {/* program- heading - container  */}
-                                        <FLexLayout
-                                            style={{ marginTop: '30px' }}
-                                            justifyContent="center"
-                                            alignItem="center"
-                                            rowORColumn="row"
-                                        >
-                                            {/* program-heading */}
-                                            <div
-                                                style={{ textAlign: 'center' }}
-                                                className={Style.programHeading}
-                                            >
-                                                {cardData.name}
-                                            </div>
-                                        </FLexLayout>
-
-                                        {/* data-weeks-container */}
-                                        <FLexLayout
-                                            rowORColumn="row"
-                                            alignItem="center"
-                                            justifyContent="center"
-                                        >
-                                            {/* data-weeks-outer-box */}
-                                            <FLexLayout
-                                                rowORColumn="row"
-                                                justifyContent="between"
-                                                style={{ width: '80%' }}
-                                            >
-                                                {/* data-weeks-value-box-1 */}
-                                                <FLexLayout rowORColumn="column" alignItem="center">
-                                                    {/* data-value */}
-                                                    <FLexLayout
-                                                        className={Style['data-weeks-value-box']}
-                                                        justifyContent="center"
-                                                        alignItem="center"
-                                                        rowORColumn="column"
-                                                    >
-                                                        <div>{cardData.weeks}</div>
-                                                    </FLexLayout>
-
-                                                    {/* data-value-label */}
-                                                    <div className={Style['data-value-label']}>
-                                                        {'weeks'}
-                                                    </div>
-                                                </FLexLayout>
-
-                                                {/* data-weeks-value-box-2 */}
-                                                <FLexLayout rowORColumn="column" alignItem="center">
-                                                    {/* data-value */}
-                                                    <FLexLayout
-                                                        className={Style['data-weeks-value-box']}
-                                                        justifyContent="center"
-                                                        alignItem="center"
-                                                        rowORColumn="column"
-                                                    >
-                                                        <div>{cardData.peopleUpSkilled}</div>
-                                                    </FLexLayout>
-
-                                                    {/* data-value-label */}
-                                                    <div className={Style['data-value-label']}>
-                                                        {'People Up Skilled'}
-                                                    </div>
-                                                </FLexLayout>
-
-                                                {/* data-weeks-value-box-3 */}
-                                                <FLexLayout rowORColumn="column" alignItem="center">
-                                                    {/* data-value */}
-                                                    <FLexLayout
-                                                        className={Style['data-weeks-value-box']}
-                                                        justifyContent="center"
-                                                        alignItem="center"
-                                                        rowORColumn="column"
-                                                    >
-                                                        <div>{cardData.sessions}</div>
-                                                    </FLexLayout>
-
-                                                    {/* data-value-label */}
-                                                    <div className={Style['data-value-label']}>
-                                                        {'Sessions'}
-                                                    </div>
-                                                </FLexLayout>
-                                            </FLexLayout>
-                                        </FLexLayout>
-
-                                        {/* underline */}
-                                        <FLexLayout
-                                            rowORColumn="row"
-                                            justifyContent="center"
-                                            alignItem="center"
-                                        >
-                                            <div
-                                                style={{
-                                                    height: '3px',
-                                                    width: `${0.15 * width}px`,
-                                                    backgroundColor: 'white'
-                                                }}
-                                            >
-                                                {' '}
-                                            </div>
-                                        </FLexLayout>
-
-                                        {/* card-text */}
-
-                                        <FLexLayout
-                                            rowORColumn="column"
-                                            justifyContent="center"
-                                            alignItem="center"
-                                            style={{
-                                                textAlign: 'center',
-                                                fontFamily: 'poppinsSemiBold',
-                                                fontSize: '13px'
-                                            }}
-                                        >
-                                            <FLexLayout style={{ width: '80%' }} rowORColumn="row">
-                                                <div>{cardData.description}</div>
-                                            </FLexLayout>
-                                        </FLexLayout>
-
-                                        {/* apply-now-button-container */}
-                                        <FLexLayout
-                                            rowORColumn="row"
-                                            alignItem="center"
-                                            justifyContent="center"
-                                        >
-                                            {/* apply-now-button */}
-                                            <FLexLayout
-                                                className={Style['apply-now-button']}
-                                                justifyContent="between"
-                                                rowORColumn="row"
-                                                style={{ width: '80%' }}
-                                            >
-                                                {/* apply-now-text */}
-                                                <div className={Style['apply-now-text']}>
-                                                    {'Apply Now'}
-                                                </div>
-
-                                                {/* price-container */}
-                                                <FLexLayout rowORColumn="row">
-                                                    {/* ruppeeee-symbol */}
-                                                    <div
-                                                        style={{
-                                                            fontFamily: 'poppinsMedium',
-                                                            fontSize: '14px',
-                                                            color: 'white',
-                                                            marginRight: '5px'
-                                                        }}
-                                                    >
-                                                        {' '}
-                                                        &#8377;{' '}
-                                                    </div>
-
-                                                    {/* price-box */}
-                                                    <FLexLayout rowORColumn="column">
-                                                        <div
-                                                            style={{
-                                                                fontFamily: 'poppinsMedium',
-                                                                fontSize: '14px',
-                                                                color: 'white'
-                                                            }}
-                                                        >
-                                                            {cardData.princeAfterDiscount}
-                                                        </div>
-                                                        <div
-                                                            style={{
-                                                                fontFamily: 'poppinsLightItalic',
-                                                                fontSize: '9px',
-                                                                color: 'white'
-                                                            }}
-                                                        >
-                                                            <del>
-                                                                {cardData.priceBeforeDiscount}
-                                                            </del>
-                                                        </div>
-                                                    </FLexLayout>
-
-                                                    <Image
-                                                        style={{
-                                                            marginLeft: '14px',
-                                                            height: '20px'
-                                                        }}
-                                                        src="icons/Arrow 1.png"
-                                                    />
-                                                </FLexLayout>
-                                            </FLexLayout>
-                                        </FLexLayout>
-
-                                        {/* brands-strip  */}
-
-                                        <FLexLayout
-                                            rowORColumn="row"
-                                            justifyContent="between"
-                                            alignItem="center"
-                                            style={{
-                                                padding: '15px',
-                                                backgroundColor: 'white',
-                                                width: '100%',
-                                                height: '41px',
-                                                borderBottomLeftRadius: '16px',
-                                                borderBottomRightRadius: '16px'
-                                            }}
-                                        >
-                                            {cardData.brands.map((brand) => {
-                                                return (
-                                                    <Image
-                                                        src={brand.name}
-                                                        style={{
-                                                            width: brand.width,
-                                                            height: brand.height
-                                                        }}
-                                                    />
-                                                );
-                                            })}
-                                        </FLexLayout>
-                                    </FLexLayout>
-                                </FLexLayout>
-                            </Carousel.Item>
-                        );
-                    })}
-                </Carousel>
+                <CarouselAdvertisement
+                    infiniteLoop={true}
+                    autoPlay={true}
+                    showArrows={false}
+                    showIndicators={false}
+                    showStatus={false}
+                    showThumbs={false}
+                    axis={'horizontal'}
+                >
+                    {programCardComponent}
+                </CarouselAdvertisement>
 
                 {/* heading-text-perks-&-Benefits */}
                 <FLexLayout
@@ -720,7 +721,7 @@ const _MetvyLearn = () => {
                         fontFamily: 'poppinsSemiBoldItalic',
                         fontSize: '24px',
                         color: 'white',
-                        marginBottom:'54px'
+                        marginBottom: '54px'
                     }}
                 >
                     <FLexLayout rowORColumn="row">
@@ -732,7 +733,6 @@ const _MetvyLearn = () => {
                 <FLexLayout rowORColumn="row" justifyContent="center" alignItem="center">
                     {/* benefits-box */}
                     <FLexLayout rowORColumn="column">
-
                         {/* row-1 */}
                         <FLexLayout rowORColumn="row">
                             {/* perks-box-1 */}
@@ -824,7 +824,12 @@ const _MetvyLearn = () => {
                 </FLexLayout>
 
                 {/* scholars-from-container */}
-                <FLexLayout justifyContent="center" alignItem="center" rowORColumn="row">
+                <FLexLayout
+                    style={{ marginTop: '140px' }}
+                    justifyContent="center"
+                    alignItem="center"
+                    rowORColumn="row"
+                >
                     {/* scholars from-card */}
                     <FLexLayout className={Style['scholars-from-card']} rowORColumn="column">
                         {/* scholars from heading container */}
@@ -1065,7 +1070,7 @@ const _MetvyLearn = () => {
                     alignItem="center"
                     rowORColumn="row"
                 >
-                    <FLexLayout alignItem='center' rowORColumn="row">
+                    <FLexLayout alignItem="center" rowORColumn="row">
                         <div>{'Drop in a Query'}</div>
                         <Image
                             style={{ marginLeft: '13px', width: '27px', height: '15px' }}
@@ -1073,11 +1078,9 @@ const _MetvyLearn = () => {
                         />
                     </FLexLayout>
                 </FLexLayout>
-                  
-                   
-                 {/* footer-box */}
-                 <Footer/>
 
+                {/* footer-box */}
+                <Footer />
             </div>
         </div>
     );
