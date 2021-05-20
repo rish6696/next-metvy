@@ -25,14 +25,19 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import FLexLayout from '../../components/FlexLayout';
 import { Image } from 'react-bootstrap';
-import { brandName, firstPartText, testimonialHeading } from '../../constants';
+import {
+    brandName,
+    firstPartText,
+    rating,
+    testimonialHeading,
+    totalDownloadsLandingScreen
+} from '../../constants';
 import Style from './LandingScreen.module.css';
 
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import Carousel from '../Carousel/Carousel';
 import { useRouter } from 'next/router';
-
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import { Carousel as CarouselTestimonial } from 'react-responsive-carousel';
@@ -57,6 +62,9 @@ export default function TemporaryDrawer() {
 
     const [showSidePanel, setShowSidePanel] = useState(false);
 
+
+    const [carouselText,setCarouselText]=useState('CHATS')
+
     const slides = [
         {
             key: 'uuidv4()',
@@ -73,7 +81,6 @@ export default function TemporaryDrawer() {
     ];
 
     const router = useRouter();
-
 
     const testimonial = (
         <FLexLayout rowORColumn="column" justifyContent="center" alignItem="center">
@@ -130,6 +137,7 @@ export default function TemporaryDrawer() {
         <div>
             <Header />
             <div className={Style.container}>
+                {/* brand-icon-with-name */}
                 <FLexLayout
                     style={{ paddingTop: '120px' }}
                     rowORColumn="row"
@@ -137,7 +145,10 @@ export default function TemporaryDrawer() {
                     justifyContent="center"
                 >
                     <FLexLayout justifyContent="center" alignItem="center" rowORColumn="column">
-                        <Image src="/icons/ic_launcher.png" />
+                        <Image
+                            style={{ width: '105px', height: '105px' }}
+                            src="/icons/ic_launcher.png"
+                        />
                         <div className={Style.brandText}>{brandName}</div>
                     </FLexLayout>
                 </FLexLayout>
@@ -198,7 +209,8 @@ export default function TemporaryDrawer() {
                             style={{
                                 width: `${width / 4}px`,
                                 height: `${width / 4}px`,
-                                textAlign: 'center'
+                                textAlign: 'center',
+                                zIndex: 1
                             }}
                         >
                             <Image
@@ -226,7 +238,12 @@ export default function TemporaryDrawer() {
                         </div>
                     </FLexLayout>
 
-                    <FLexLayout onClick={()=>router.push('/MetvyLearn')} rowORColumn="column" justifyContent="center" alignItem="center">
+                    <FLexLayout
+                        onClick={() => router.push('/MetvyLearn')}
+                        rowORColumn="column"
+                        justifyContent="center"
+                        alignItem="center"
+                    >
                         <FLexLayout
                             rowORColumn="column"
                             justifyContent="center"
@@ -238,15 +255,13 @@ export default function TemporaryDrawer() {
                                 textAlign: 'center'
                             }}
                         >
-                           
-                                <Image
-                                    style={{
-                                        width: `${0.12 * width}px`,
-                                        height: `${0.1 * width}px`
-                                    }}
-                                    src="/icons/mentorship.png"
-                                />
-                        
+                            <Image
+                                style={{
+                                    width: `${0.12 * width}px`,
+                                    height: `${0.1 * width}px`
+                                }}
+                                src="/icons/mentorship.png"
+                            />
                         </FLexLayout>
 
                         <div
@@ -343,7 +358,7 @@ export default function TemporaryDrawer() {
                                 Download
                             </div>
                             <div style={{ fontFamily: 'poppinsLight', fontSize: '9px' }}>
-                                onPlayStore
+                                on App Store
                             </div>
                         </FLexLayout>
 
@@ -354,13 +369,42 @@ export default function TemporaryDrawer() {
                     </FLexLayout>
                 </FLexLayout>
 
+                {/* Downloads-number-container */}
+
+                <FLexLayout
+                    style={{ marginTop: '83px' }}
+                    rowORColumn="row"
+                    justifyContent="center"
+                    alignItem="center"
+                >
+                    <FLexLayout rowORColumn="column" alignItem="center">
+                        <div className={Style['totalDownloads']}>{totalDownloadsLandingScreen}</div>
+                        <div className={Style['downloads-label']}>{'Downloads'}</div>
+                    </FLexLayout>
+                </FLexLayout>
+
+                {/* Rating container-number-container */}
+
+                <FLexLayout
+                    style={{ marginTop: '72px' }}
+                    rowORColumn="row"
+                    justifyContent="center"
+                    alignItem="center"
+                >
+                    <FLexLayout rowORColumn="column" alignItem="center">
+                        <div className={Style['totalDownloads']}>{rating}</div>
+                        <div className={Style['downloads-label']}>{'Ratings'}</div>
+                    </FLexLayout>
+                </FLexLayout>
+
+                {/* under-line */}
                 <FLexLayout rowORColumn="column" alignItem="center" justifyContent="center">
                     <div
                         className={Style.headingDiscover}
                         style={{ color: 'white', marginTop: '87px' }}
                     >
                         {' '}
-                        {'DISCOVER & EXPLORE'}{' '}
+                        {carouselText}{' '}
                     </div>
                 </FLexLayout>
 
@@ -382,12 +426,15 @@ export default function TemporaryDrawer() {
                     </div>
                 </FLexLayout>
 
-                <div
-                    className={Style.headingBold}
-                    style={{ marginLeft: `${0.13 * width}px`, marginRight: `${0.13 * width}px` }}
-                >
-                    {'A New way to interact with your Network!'}
-                </div>
+                <FLexLayout rowORColumn="row" justifyContent="center" alignItem="center">
+                    <div
+                        className={Style.headingBold}
+                    >
+                        {'A New way to interact with your Network!'}
+                    </div>
+                </FLexLayout>
+
+
 
                 <FLexLayout
                     style={{ marginLeft: `${0.1 * width}px`, marginRight: `${0.1 * width}px` }}
@@ -395,7 +442,7 @@ export default function TemporaryDrawer() {
                     justifyContent="center"
                     alignItem="center"
                 >
-                    <Carousel />
+                    <Carousel onTextChange={setCarouselText} />
                 </FLexLayout>
 
                 <FLexLayout

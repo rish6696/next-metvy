@@ -143,6 +143,7 @@ const _MetvyLearn = () => {
                             {cardData.name}
                         </div>
                     </FLexLayout>
+                    
 
                     {/* data-weeks-container */}
                     <FLexLayout rowORColumn="row" alignItem="center" justifyContent="center">
@@ -567,13 +568,13 @@ const _MetvyLearn = () => {
 
                 {/* brand-advertisement-container */}
 
+                <FLexLayout rowORColumn='row' justifyContent='center' alignItem='center' >
+
                 <FLexLayout
                     style={{
                         padding: '32px',
-                        width: `${0.87 * width}px`,
-                        height: `${340}px`,
-                        marginLeft: `${0.06 * width}px`,
-                        marginRight: `${0.06 * width}px`
+                        width: `${362}px`,
+                        height: `${340}px`
                     }}
                     rowORColumn="column"
                     className={Style['brand-advertisement-container']}
@@ -677,6 +678,11 @@ const _MetvyLearn = () => {
                             />
                         </FLexLayout>
                     </FLexLayout>
+               
+               
+               
+                </FLexLayout>
+
                 </FLexLayout>
 
                 {/* heading-text-check-our-program */}

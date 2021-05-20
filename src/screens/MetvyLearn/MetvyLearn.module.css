@@ -46,10 +46,6 @@
 .data-weeks-value-box {
     height: 61px;
     width: 61px;
-    border: 2px solid;
-    border-image-source: linear-gradient(152.19deg, #ffffff 0%, #45320a 100%);
-    box-shadow: 0px 0px 51px 6px rgba(24, 57, 87, 0.37);
-
     background: #ffffff;
     border-radius: 12px;
     font-family: poppinsSemiBold;

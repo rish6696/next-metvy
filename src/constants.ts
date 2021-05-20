@@ -296,3 +296,9 @@ and fulfils the gap in the current
 education system by focusing on a
 premium live learning experience
 through networking and mentorship.`;
+
+
+
+
+export const totalDownloadsLandingScreen = '40,000+' 
+export const rating ='4.1'

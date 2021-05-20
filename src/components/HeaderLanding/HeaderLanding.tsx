@@ -72,7 +72,7 @@ const _Header = () => {
 
     return (
         <FLexLayout
-            style={{ position: 'fixed', width: '100%' }}
+            style={{ position: 'fixed', width: '100%',zIndex:10 }}
             rowORColumn="row"
             justifyContent="between"
             className={HeaderStyle.headerContainer}

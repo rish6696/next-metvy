@@ -10,6 +10,8 @@
 
 .container {
     background-image: url('/icons/Background_1.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%
 }
 
 .subHeadingText {
@@ -60,13 +62,10 @@
 .headingBold {
     font-family: poppinsSemiBold;
     font-size: 30px;
-    font-weight: 600;
     line-height: 41px;
-    /* or 41px */
-
-    text-align: center;
-
     color: #ffffff;
+    text-align: center;
+    width: 80%;
 }
 
 .testimonialsHeading {
@@ -118,4 +117,19 @@ backdrop-filter: blur(61px);
   line-height: 11px;
   margin-top: 22px;
   margin-right: 12px;
+}
+
+.totalDownloads{
+    font-family: poppinsBold;
+    font-size: 40px;
+    line-height: 22px;
+    color: white;
+}
+
+.downloads-label{
+    font-family: poppinsMedium;
+    font-size: 14px;
+    line-height: 22px;
+    color: white;
+    margin-top: 21px;
 }

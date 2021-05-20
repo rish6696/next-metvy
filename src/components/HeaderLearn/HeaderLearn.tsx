@@ -72,6 +72,8 @@ const _Header = () => {
 
     return (
         <FLexLayout rowORColumn="column" style={{ width: '100%', position: 'fixed', zIndex: 100 }}>
+
+
             {/* hamburger with icon  */}
             <FLexLayout
                 style={{ width: '100%' }}
@@ -227,6 +229,9 @@ const _Header = () => {
                     <Image style={{ marginLeft: '28px' }} src="icons/Arrow 1.png" />
                 </FLexLayout>
             </FLexLayout>
+        
+        
+        
         </FLexLayout>
     );
 };
