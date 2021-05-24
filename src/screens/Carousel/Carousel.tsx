@@ -7,7 +7,7 @@ import dynamic from 'next/dynamic';
 
 
 interface Props{
-  onTextChange : React.Dispatch<React.SetStateAction<string>>
+  onTextChange : React.Dispatch<React.SetStateAction<string>>;
 }
 
 const Carousel = dynamic(() => import('react-spring-3d-carousel'), {
@@ -73,7 +73,7 @@ export default class Example extends Component<Props> {
 
     render() {
         return (
-            <div style={{ width: '100%', height: '500px', textAlign: 'center', marginTop: '40px' }}>
+            <div className={Style['container']} style={{  height: '500px', textAlign: 'center', marginTop: '40px' }}>
                 <Carousel
                     slides={this.slides}
                     goToSlide={this.state.goToSlide}

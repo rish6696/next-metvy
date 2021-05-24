@@ -1,0 +1,35 @@
+.container {
+    box-shadow: 0px 0px 67px 1px rgba(0, 0, 0, 0.19);
+    width: 286px;
+    height: 260px;
+    background: #ffffff;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+
+.testimonialText{
+    width: 80%;
+    text-align: center;
+    font-family: poppinsRegular;
+    font-size: 12px;
+    line-height: 18px;
+    margin-top: 24px;
+}
+
+
+.avatarName {
+    font-family: poppinsMedium;
+    font-size: 14px;
+}
+
+.avatarDesignation {
+    font-family: poppinsLight;
+    font-size: 9px;
+}
+
+
+.quotes{
+    font-family: poppinsExtraBold;
+    font-size: 20px;
+}

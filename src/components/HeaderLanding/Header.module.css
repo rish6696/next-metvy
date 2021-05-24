@@ -28,10 +28,30 @@
     cursor: pointer;
 }
 
+.menuItemsCoursesDesktop {
+    font-family: poppinsRegular;
+    font-size: 14;
+    margin-bottom: 32px;
+    cursor: pointer;
+}
+
 .accordionItem {
     font-family: poppinsMedium;
     font-size: 15px;
     line-height: 22px;
     color: #000000;
     margin-bottom: 15px;
+}
+
+.triangle-right {
+    width: 0;
+    height: 0;
+    border-top: 4px solid transparent;
+    border-left: 8px solid white;
+    border-bottom: 4px solid transparent;
+    margin-left: 11px;
+}
+
+.cursorPointer{
+    cursor: pointer;
 }

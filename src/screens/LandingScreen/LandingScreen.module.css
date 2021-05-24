@@ -1,8 +1,7 @@
 .brandText {
     height: 30px;
     font-family: poppinsSemiBold;
-    font-weight: 600;
-    font-size: 30px;
+    font-size: 28px;
     line-height: 22px;
     color: #ffffff;
     margin-top: 20px;
@@ -11,7 +10,7 @@
 .container {
     background-image: url('/icons/Background_1.png');
     background-repeat: no-repeat;
-    background-size: 100% 100%
+    background-size: 100% 100%;
 }
 
 .subHeadingText {
@@ -43,6 +42,9 @@
     box-sizing: border-box;
     border-radius: 10px;
     color: white;
+    padding: 20px;
+    width: 158px;
+    height: 58px;
 }
 
 .headingDiscover {
@@ -59,15 +61,6 @@
     color: #ffffff;
 }
 
-.headingBold {
-    font-family: poppinsSemiBold;
-    font-size: 30px;
-    line-height: 41px;
-    color: #ffffff;
-    text-align: center;
-    width: 80%;
-}
-
 .testimonialsHeading {
     padding: 14px 12px;
 
@@ -82,8 +75,8 @@
     border: 2px solid rgba(255, 255, 255, 1);
 
     mix-blend-mode: normal;
-filter: drop-shadow(8px 8px 47px rgba(255, 255, 255, 0.24));
-backdrop-filter: blur(61px);
+    filter: drop-shadow(8px 8px 47px rgba(255, 255, 255, 0.24));
+    backdrop-filter: blur(61px);
 }
 
 .testimonialText {
@@ -92,44 +85,388 @@ backdrop-filter: blur(61px);
     color: white;
 }
 
-.testimonialCard{
+.testimonialCard {
     background: rgba(255, 255, 255, 0.62);
     border-radius: 16px;
 }
 
-.testimonialUserName{
+.testimonialUserName {
     font-family: poppinsBold;
     font-size: 10px;
     color: black;
 }
 
-.testimonialUserDesignation{
+.testimonialUserDesignation {
     font-family: poppinsMedium;
     font-size: 10px;
     color: black;
 }
 
-
-.testimonialUserText{
-  font-family: poppinsRegular;
-  font-size: 9px;
-  color: black;
-  line-height: 11px;
-  margin-top: 22px;
-  margin-right: 12px;
+.testimonialUserText {
+    font-family: poppinsRegular;
+    font-size: 9px;
+    color: black;
+    line-height: 11px;
+    margin-top: 22px;
+    margin-right: 12px;
 }
 
-.totalDownloads{
+.explore-mentorship-card {
     font-family: poppinsBold;
-    font-size: 40px;
-    line-height: 22px;
+    font-size: 25px;
     color: white;
+    width: 339px;
+    height: 112.55px;
+    background: #202020;
+    border: 3px solid #ffffff;
+    box-shadow: 0px 6px 50px rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(14px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 77.5px;
+    cursor: pointer;
 }
 
-.downloads-label{
-    font-family: poppinsMedium;
-    font-size: 14px;
-    line-height: 22px;
+@media only screen and (min-width: 1000px) {
+    /*Tablets [601px -> 1200px]*/
+    .explore-mentorship-box {
+        width: 45%;
+    }
+
+    .totalDownloads {
+        font-family: poppinsBold;
+        font-size: 150px;
+        color: white;
+    }
+
+    .downloads-label {
+        font-family: poppinsMedium;
+        font-size: 30px;
+        color: white;
+        /* margin-top: 21px; */
+    }
+
+    .headingBold {
+        font-family: poppinsSemiBold;
+        font-size: 48px;
+        line-height: 41px;
+        color: #ffffff;
+        text-align: center;
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    /*Tablets [601px -> 1200px]*/
+    .explore-mentorship-box {
+        width: 55%;
+    }
+
+    .totalDownloads {
+        font-family: poppinsBold;
+        font-size: 98px;
+        color: white;
+    }
+
+    .downloads-label {
+        font-family: poppinsMedium;
+        font-size: 50px;
+        color: white;
+        margin-top: 21px;
+    }
+
+    .headingBold {
+        font-family: poppinsSemiBold;
+        font-size: 45px;
+        line-height: 41px;
+        color: #ffffff;
+        text-align: center;
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    /*Tablets [601px -> 1200px]*/
+    .explore-mentorship-box {
+        width: 55%;
+    }
+
+    .totalDownloads {
+        font-family: poppinsBold;
+        font-size: 78px;
+        color: white;
+    }
+
+    .downloads-label {
+        font-family: poppinsMedium;
+        font-size: 39px;
+        color: white;
+        margin-top: 21px;
+    }
+
+    .headingBold {
+        font-family: poppinsSemiBold;
+        font-size: 40px;
+        line-height: 41px;
+        color: #ffffff;
+        text-align: center;
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    /*Big smartphones [426px -> 600px]*/
+    .explore-mentorship-box {
+        width: 70%;
+    }
+
+    .totalDownloads {
+        font-family: poppinsBold;
+        font-size: 60px;
+        color: white;
+    }
+
+    .downloads-label {
+        font-family: poppinsMedium;
+        font-size: 21px;
+        color: white;
+        margin-top: 21px;
+    }
+
+    .headingBold {
+        font-family: poppinsSemiBold;
+        font-size: 35px;
+        line-height: 41px;
+        color: #ffffff;
+        text-align: center;
+        width: 80%;
+    }
+}
+@media only screen and (max-width: 425px) {
+    /*Small smartphones [325px -> 425px]*/
+    .explore-mentorship-box {
+        width: 90%;
+    }
+
+    .totalDownloads {
+        font-family: poppinsBold;
+        font-size: 40px;
+        color: white;
+    }
+
+    .downloads-label {
+        font-family: poppinsMedium;
+        font-size: 14px;
+        color: white;
+        margin-top: 21px;
+    }
+
+    .headingBold {
+        font-family: poppinsSemiBold;
+        font-size: 30px;
+        line-height: 41px;
+        color: #ffffff;
+        text-align: center;
+        width: 80%;
+    }
+}
+
+.scroll-left {
+    height: 50px;
+    overflow: hidden;
+    position: relative;
     color: white;
-    margin-top: 21px;
+}
+.scroll-left .effect {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    line-height: 50px;
+    text-align: center;
+    /* Starting position */
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    /* Apply animation to this element */
+    -moz-animation: scroll-left 10s linear infinite;
+    -webkit-animation: scroll-left 10s linear infinite;
+    animation: scroll-left 20s linear infinite;
+    
+}
+
+.scroll-left p:hover{
+    animation-play-state: paused;
+}
+
+
+/* Move it (define the animation) */
+/* @-moz-keyframes scroll-left {
+    0% {
+        -moz-transform: translateX(100%);
+    }
+    100% {
+        -moz-transform: translateX(-100%);
+    }
+}
+@-webkit-keyframes scroll-left {
+    0% {
+        -webkit-transform: translateX(100%);
+    }
+    100% {
+        -webkit-transform: translateX(-100%);
+    }
+} */
+@keyframes scroll-left {
+    0% {
+        -moz-transform: translateX(100%); /* Browser bug fix */
+        -webkit-transform: translateX(100%); /* Browser bug fix */
+        transform: translateX(100%);
+    }
+    100% {
+        -moz-transform: translateX(-100%); /* Browser bug fix */
+        -webkit-transform: translateX(-100%); /* Browser bug fix */
+        transform: translateX(-100%);
+    }
+}
+
+
+.effect{
+    position: relative;
+    animation-name: example;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    
+}
+
+
+  
+  @keyframes example {
+    0%   { left: 4000px; top:0px;}
+    100% { left:-1500px; top:0px;}
+  }
+
+
+
+
+
+@media only screen and (max-width: 638px) {
+    /*Small smartphones [325px -> 425px]*/
+
+    .featured-on-container{
+        width: 346px;
+        height: 320.16px;
+        background: #FFFFFF;
+        border-radius: 24px;
+      }
+    
+      .featured-on-heading{
+          font-family: poppinsMedium;
+          font-size: 31px;
+          margin-top: 34px;
+      }
+    
+    
+      .featured-on-underline{
+        height: 2px;
+        background: black;
+        margin-bottom :10px;
+        border-radius : 12px;
+    }
+    
+    
+    .featured-on-image{
+        width: 250px;
+        height: 115px;
+        margin-top : 24px
+    }
+
+    .featured-on-bottom-text{
+        font-family: poppinsRegular;
+        font-size: 20px;
+        margin-top: 12px;
+    }
+
+}
+
+
+@media only screen and (max-width: 400px) {
+    /*Small smartphones [325px -> 425px]*/
+
+    .featured-on-container{
+        width: 220px;
+        height: 205.16px;
+        background: #FFFFFF;
+        border-radius: 15px;
+      }
+    
+      .featured-on-heading{
+          font-family: poppinsMedium;
+          font-size: 20px;
+          margin-top: 22px;
+      }
+    
+    
+      .featured-on-underline{
+        height: 1px;
+        background: black;
+        margin-bottom :6px;
+        border-radius : 7px;
+    }
+    
+    
+    .featured-on-image{
+        width: 160px;
+        height: 75px;
+        margin-top : 16px
+    }
+
+    .featured-on-bottom-text{
+        font-family: poppinsRegular;
+        font-size: 13px;
+        margin-top: 8px;
+    }
+
+}
+
+
+@media only screen and (min-width: 638px) {
+    /*Small smartphones [325px -> 425px]*/
+    .featured-on-container{
+        width: 546px;
+        height: 493.16px;
+        background: #FFFFFF;
+        border-radius: 38px;
+      }
+    
+      .featured-on-heading{
+          font-family: poppinsMedium;
+          font-size: 48px;
+          margin-top: 52px;
+      }
+    
+    
+      .featured-on-underline{
+        height: 4px;
+        background: black;
+        margin-bottom :15px;
+        border-radius : 18px;
+    }
+    
+    
+    .featured-on-image{
+        width: 400px;
+        height: 178px;
+        margin-top : 35px
+    }
+    
+    .featured-on-bottom-text{
+        font-family: poppinsRegular;
+        font-size: 30px;
+        margin-top: 20px;
+    }
+}
+
+.explore-carousel-container{
+    width: 60%
 }

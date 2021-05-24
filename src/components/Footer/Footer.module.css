@@ -9,4 +9,9 @@
 
 .footer-items{
     margin-bottom: 19px;
+    cursor: pointer;
+}
+
+.footer-social-media-items{
+    cursor: pointer;
 }

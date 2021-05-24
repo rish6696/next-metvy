@@ -48,11 +48,11 @@ const  _Footer =()=>{
                       {/* social-media-icons-row  */}
 
                       <FLexLayout style={{width:'154px'}} rowORColumn='row' alignItem='center' justifyContent='between' >
-                        <Image style={{width:'21px',height:'21px'}} src='/icons/Vector_fb.png'  />
-                        <Image style={{width:'21px',height:'21px'}} src='/icons/010-linkedin.png'  />
-                        <Image style={{width:'21px',height:'21px'}} src='/icons/013-twitter.png'  />
-                        <Image style={{width:'21px',height:'21px'}} src='/icons/011-instagram.png'  />
-                        <Image style={{width:'21px',height:'21px'}} src='/icons/008-youtube.png'  />
+                        <Image className={Style['footer-social-media-items']} style={{width:'21px',height:'21px'}} src='/icons/Vector_fb.png'  />
+                        <Image className={Style['footer-social-media-items']} style={{width:'21px',height:'21px'}} src='/icons/010-linkedin.png'  />
+                        <Image className={Style['footer-social-media-items']} style={{width:'21px',height:'21px'}} src='/icons/013-twitter.png'  />
+                        <Image className={Style['footer-social-media-items']} style={{width:'21px',height:'21px'}} src='/icons/011-instagram.png'  />
+                        <Image className={Style['footer-social-media-items']} style={{width:'21px',height:'21px'}} src='/icons/008-youtube.png'  />
                       </FLexLayout>
                  </FLexLayout>
 
@@ -64,12 +64,6 @@ const  _Footer =()=>{
 
                       <div style={{fontFamily:'poppinsRegular',fontSize:'10px',color:'rgba(171, 171, 171, 1)'}} >{'© Copyright 2021, Metvy'}</div>
                  </FLexLayout>
-
-
-
-
-
-
             </FLexLayout>
         </FLexLayout>
     )

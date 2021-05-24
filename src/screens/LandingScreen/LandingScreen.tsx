@@ -1,28 +1,7 @@
-// import React from 'react'
-
-// const _LandingScreen = ()=>{
-//     return (
-//         <div>Hello World</div>
-//     )
-// }
-
-// export default _LandingScreen
-
-import Firstpart from './../../components/1stPart/FirstPart';
 import Header from '../../components/HeaderLanding/HeaderLanding';
 
 import React, { useEffect, useState } from 'react';
-import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import Button from '@material-ui/core/Button';
-import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import FLexLayout from '../../components/FlexLayout';
 import { Image } from 'react-bootstrap';
 import {
@@ -34,13 +13,16 @@ import {
 } from '../../constants';
 import Style from './LandingScreen.module.css';
 
-import dynamic from 'next/dynamic';
-import Link from 'next/link';
 import Carousel from '../Carousel/Carousel';
 import { useRouter } from 'next/router';
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import { Carousel as CarouselTestimonial } from 'react-responsive-carousel';
+import { connect } from 'react-redux';
+import { setWidth } from '../../redux/Actions/Screenconfig';
+import TestimonialCard from '../../components/TestimonialCard/testimonialCard';
+import Footer from '../../components/Footer/Footer';
+import { Link } from 'react-scroll';
 
 const useStyles = makeStyles({
     list: {
@@ -51,19 +33,21 @@ const useStyles = makeStyles({
     }
 });
 
-export default function TemporaryDrawer() {
+function _LandingScreen({ setWidth, width }) {
     const classes = useStyles();
-
-    const [width, setWidth] = useState(-1);
 
     useEffect(() => {
         setWidth(window.innerWidth);
+        window.addEventListener('resize', () => setWidth(window.innerWidth));
     }, []);
 
     const [showSidePanel, setShowSidePanel] = useState(false);
 
+    const mentorshipContainerBreakPoint = 1300;
 
-    const [carouselText,setCarouselText]=useState('CHATS')
+    const [carouselText, setCarouselText] = useState('CHATS');
+
+    const [animationState, setAnimationState] = useState('running');
 
     const slides = [
         {
@@ -146,7 +130,7 @@ export default function TemporaryDrawer() {
                 >
                     <FLexLayout justifyContent="center" alignItem="center" rowORColumn="column">
                         <Image
-                            style={{ width: '105px', height: '105px' }}
+                            style={{ width: '72px', height: '72px' }}
                             src="/icons/ic_launcher.png"
                         />
                         <div className={Style.brandText}>{brandName}</div>
@@ -169,6 +153,7 @@ export default function TemporaryDrawer() {
                     >
                         {' '}
                     </div>
+
                     <div
                         style={{
                             marginLeft: `${0.13 * width}px`,
@@ -178,6 +163,7 @@ export default function TemporaryDrawer() {
                     >
                         {firstPartText}
                     </div>
+
                     <div
                         style={{
                             height: '2px',
@@ -190,187 +176,261 @@ export default function TemporaryDrawer() {
                     </div>
                 </FLexLayout>
 
-                <FLexLayout
-                    style={{
-                        marginLeft: `${0.13 * width}px`,
-                        marginRight: `${0.13 * width}px`,
-                        marginTop: '60px'
-                    }}
-                    alignItem="center"
-                    justifyContent="between"
-                    rowORColumn="row"
-                >
-                    <FLexLayout rowORColumn="column" justifyContent="center" alignItem="center">
+                {/* explore networking  and mentorships-mobile  */}
+                {width < mentorshipContainerBreakPoint && (
+                    <FLexLayout rowORColumn="row" justifyContent="center" alignItem="center">
                         <FLexLayout
-                            rowORColumn="column"
-                            justifyContent="center"
+                            style={{
+                                marginTop: '60px'
+                            }}
                             alignItem="center"
-                            className={Style.navigationIcons}
-                            style={{
-                                width: `${width / 4}px`,
-                                height: `${width / 4}px`,
-                                textAlign: 'center',
-                                zIndex: 1
-                            }}
+                            justifyContent="around"
+                            rowORColumn="row"
+                            className={Style['explore-mentorship-box']}
                         >
-                            <Image
-                                style={{ width: `${0.12 * width}px`, height: `${0.1 * width}px` }}
-                                src="/icons/Explore.png"
-                            />
+                            <Link
+                                to="explore-carousel"
+                                spy={true}
+                                smooth={true}
+                                offset={-10}
+                                duration={500}
+                            >
+                                {/* card-1 */}
+                                <FLexLayout
+                                    rowORColumn="column"
+                                    justifyContent="center"
+                                    alignItem="center"
+                                >
+                                    <FLexLayout
+                                        rowORColumn="column"
+                                        justifyContent="center"
+                                        alignItem="center"
+                                        className={Style.navigationIcons}
+                                        style={{
+                                            width: `${105}px`,
+                                            height: `${105}px`,
+                                            textAlign: 'center',
+                                            zIndex: 1
+                                        }}
+                                    >
+                                        <Image
+                                            style={{
+                                                width: `${52}px`,
+                                                height: `${44}px`
+                                            }}
+                                            src="/icons/Explore.png"
+                                        />
+                                    </FLexLayout>
+
+                                    <div
+                                        style={{
+                                            color: 'white',
+                                            marginTop: '17px',
+                                            fontFamily: 'poppinsMedium',
+                                            fontSize: '14px'
+                                        }}
+                                    >
+                                        {' '}
+                                        Explore{' '}
+                                    </div>
+                                    <div
+                                        style={{
+                                            color: 'white',
+                                            fontFamily: 'poppinsBold',
+                                            fontSize: '14px'
+                                        }}
+                                    >
+                                        {' '}
+                                        Networking{' '}
+                                    </div>
+                                </FLexLayout>
+                            </Link>
+
+                            {/* card-2 */}
+                            <FLexLayout
+                                onClick={() => router.push('/MetvyLearn')}
+                                rowORColumn="column"
+                                justifyContent="center"
+                                alignItem="center"
+                            >
+                                <FLexLayout
+                                    rowORColumn="column"
+                                    justifyContent="center"
+                                    alignItem="center"
+                                    className={Style.navigationIcons}
+                                    style={{
+                                        width: `${105}px`,
+                                        height: `${105}px`,
+                                        textAlign: 'center'
+                                    }}
+                                >
+                                    <Image
+                                        style={{
+                                            width: `${52}px`,
+                                            height: `${44}px`
+                                        }}
+                                        src="/icons/mentorship.png"
+                                    />
+                                </FLexLayout>
+
+                                <div
+                                    style={{
+                                        color: 'white',
+                                        marginTop: '17px',
+                                        fontFamily: 'poppinsMedium',
+                                        fontSize: '14px'
+                                    }}
+                                >
+                                    {' '}
+                                    Explore{' '}
+                                </div>
+                                <div
+                                    style={{
+                                        color: 'white',
+                                        fontFamily: 'poppinsBold',
+                                        fontSize: '14px'
+                                    }}
+                                >
+                                    {' '}
+                                    Mentorship{' '}
+                                </div>
+                            </FLexLayout>
                         </FLexLayout>
-
-                        <div
-                            style={{
-                                color: 'white',
-                                marginTop: '17px',
-                                fontFamily: 'poppinsMedium',
-                                fontSize: '14px'
-                            }}
-                        >
-                            {' '}
-                            Explore{' '}
-                        </div>
-                        <div
-                            style={{ color: 'white', fontFamily: 'poppinsBold', fontSize: '14px' }}
-                        >
-                            {' '}
-                            Networking{' '}
-                        </div>
                     </FLexLayout>
+                )}
 
+                {/* explore and mentorship- desktop -container*/}
+                {width >= mentorshipContainerBreakPoint && (
                     <FLexLayout
-                        onClick={() => router.push('/MetvyLearn')}
+                        style={{ marginTop: '66px' }}
                         rowORColumn="column"
                         justifyContent="center"
                         alignItem="center"
                     >
+                        {/* explore and mentorship box */}
                         <FLexLayout
-                            rowORColumn="column"
-                            justifyContent="center"
+                            justifyContent="between"
                             alignItem="center"
-                            className={Style.navigationIcons}
-                            style={{
-                                width: `${width / 4}px`,
-                                height: `${width / 4}px`,
-                                textAlign: 'center'
-                            }}
+                            rowORColumn="row"
+                            style={{ width: '55%' }}
                         >
+                            {/* card-1 */}
+                            <Link
+                                to="explore-carousel"
+                                spy={true}
+                                smooth={true}
+                                offset={-10}
+                                duration={500}
+                            >
+                                <FLexLayout
+                                    justifyContent="center"
+                                    alignItem="center"
+                                    className={Style['explore-mentorship-card']}
+                                    rowORColumn="row"
+                                >
+                                    <Image
+                                        style={{
+                                            width: '69px',
+                                            height: '59px',
+                                            marginRight: '31px'
+                                        }}
+                                        src="/icons/Vector.png"
+                                    />
+                                    <div>{'Networking'}</div>
+                                </FLexLayout>
+                            </Link>
+
+                            {/* card-2 */}
+                            <FLexLayout
+                                justifyContent="center"
+                                alignItem="center"
+                                className={Style['explore-mentorship-card']}
+                                rowORColumn="row"
+                                onClick={() => router.push('/MetvyLearn')}
+                            >
+                                <Image
+                                    style={{ width: '69px', height: '59px', marginRight: '31px' }}
+                                    src="/icons/mentorship_desktop.png"
+                                />
+                                <div>{'Mentorship'}</div>
+                            </FLexLayout>
+                        </FLexLayout>
+                    </FLexLayout>
+                )}
+
+                {/* download play store container */}
+                <FLexLayout rowORColumn="row" justifyContent="center" alignItem="center">
+                    <FLexLayout
+                        rowORColumn="row"
+                        style={{
+                            marginTop: '76px'
+                        }}
+                        alignItem="center"
+                        justifyContent="center"
+                    >
+                        <FLexLayout
+                            className={Style.storeIcons}
+                            rowORColumn="row"
+                            alignItem="center"
+                            justifyContent="between"
+                            style={{ marginRight: '17px' }}
+                        >
+                            <FLexLayout
+                                rowORColumn="column"
+                                // style={{ marginRight: `${0.027 * width}px` }}
+                            >
+                                <div
+                                    style={{
+                                        fontFamily: 'poppinsSemiBold',
+                                        fontSize: '15px',
+                                        fontStyle: 'normal',
+                                        lineHeight: '17px'
+                                    }}
+                                >
+                                    Download
+                                </div>
+                                <div style={{ fontFamily: 'poppinsLight', fontSize: '9px' }}>
+                                    on Play Store
+                                </div>
+                            </FLexLayout>
+
                             <Image
-                                style={{
-                                    width: `${0.12 * width}px`,
-                                    height: `${0.1 * width}px`
-                                }}
-                                src="/icons/mentorship.png"
+                                style={{ height: `${27}px`, width: `${24}px` }}
+                                src="/icons/playstore.png"
                             />
                         </FLexLayout>
 
-                        <div
-                            style={{
-                                color: 'white',
-                                marginTop: '17px',
-                                fontFamily: 'poppinsMedium',
-                                fontSize: '14px'
-                            }}
-                        >
-                            {' '}
-                            Explore{' '}
-                        </div>
-                        <div
-                            style={{ color: 'white', fontFamily: 'poppinsBold', fontSize: '14px' }}
-                        >
-                            {' '}
-                            Mentorship{' '}
-                        </div>
-                    </FLexLayout>
-                </FLexLayout>
-
-                <FLexLayout
-                    rowORColumn="row"
-                    style={{
-                        marginLeft: `${0.13 * width}px`,
-                        marginRight: `${0.13 * width}px`,
-                        marginTop: '76px'
-                    }}
-                    alignItem="center"
-                    justifyContent="center"
-                >
-                    <FLexLayout
-                        className={Style.storeIcons}
-                        rowORColumn="row"
-                        style={{
-                            padding: '17px',
-                            width: `${0.35 * width}px`,
-                            height: `${0.12 * width}px`,
-                            marginRight: `${0.03 * width}px`
-                        }}
-                        alignItem="center"
-                        justifyContent="center"
-                    >
                         <FLexLayout
-                            rowORColumn="column"
-                            style={{ marginRight: `${0.027 * width}px` }}
+                            className={Style.storeIcons}
+                            rowORColumn="row"
+                            alignItem="center"
+                            justifyContent="between"
                         >
-                            <div
-                                style={{
-                                    fontFamily: 'poppinsSemiBold',
-                                    fontSize: '15px',
-                                    fontStyle: 'normal',
-                                    lineHeight: '17px'
-                                }}
-                            >
-                                Download
-                            </div>
-                            <div style={{ fontFamily: 'poppinsLight', fontSize: '9px' }}>
-                                onPlayStore
-                            </div>
+                            <FLexLayout rowORColumn="column">
+                                <div
+                                    style={{
+                                        fontFamily: 'poppinsSemiBold',
+                                        fontSize: '15px',
+                                        fontStyle: 'normal',
+                                        lineHeight: '17px'
+                                    }}
+                                >
+                                    Download
+                                </div>
+                                <div style={{ fontFamily: 'poppinsLight', fontSize: '9px' }}>
+                                    on App Store
+                                </div>
+                            </FLexLayout>
+
+                            <Image
+                                style={{ height: `${27}px`, width: `${24}px` }}
+                                src="/icons/Apple.png"
+                            />
                         </FLexLayout>
-
-                        <Image
-                            style={{ height: `${0.06 * width}px`, width: `${0.05 * width}px` }}
-                            src="/icons/playstore.png"
-                        />
-                    </FLexLayout>
-
-                    <FLexLayout
-                        className={Style.storeIcons}
-                        rowORColumn="row"
-                        style={{
-                            padding: '17px',
-                            width: `${0.35 * width}px`,
-                            height: `${0.12 * width}px`,
-                            marginRight: `${0.03 * width}px`
-                        }}
-                        alignItem="center"
-                        justifyContent="center"
-                    >
-                        <FLexLayout
-                            rowORColumn="column"
-                            style={{ marginRight: `${0.027 * width}px` }}
-                        >
-                            <div
-                                style={{
-                                    fontFamily: 'poppinsSemiBold',
-                                    fontSize: '15px',
-                                    fontStyle: 'normal',
-                                    lineHeight: '17px'
-                                }}
-                            >
-                                Download
-                            </div>
-                            <div style={{ fontFamily: 'poppinsLight', fontSize: '9px' }}>
-                                on App Store
-                            </div>
-                        </FLexLayout>
-
-                        <Image
-                            style={{ height: `${0.06 * width}px`, width: `${0.05 * width}px` }}
-                            src="/icons/apple.png"
-                        />
                     </FLexLayout>
                 </FLexLayout>
 
                 {/* Downloads-number-container */}
-
                 <FLexLayout
                     style={{ marginTop: '83px' }}
                     rowORColumn="row"
@@ -397,17 +457,19 @@ export default function TemporaryDrawer() {
                     </FLexLayout>
                 </FLexLayout>
 
-                {/* under-line */}
-                <FLexLayout rowORColumn="column" alignItem="center" justifyContent="center">
-                    <div
-                        className={Style.headingDiscover}
-                        style={{ color: 'white', marginTop: '87px' }}
-                    >
-                        {' '}
-                        {carouselText}{' '}
+                {/* a new way to interact */}
+                <FLexLayout
+                    style={{ marginTop: '60px' }}
+                    rowORColumn="row"
+                    justifyContent="center"
+                    alignItem="center"
+                >
+                    <div className={Style.headingBold}>
+                        {'A New way to interact with your Network!'}
                     </div>
                 </FLexLayout>
 
+                {/* underline */}
                 <FLexLayout
                     rowORColumn="column"
                     alignItem="center"
@@ -425,52 +487,375 @@ export default function TemporaryDrawer() {
                         {' '}
                     </div>
                 </FLexLayout>
+               
+                {/* carousel-3d+ heading _screen */}
+                <div id={'explore-carousel'}>
+                    {/* carousel-screen-name */}
+                    <FLexLayout rowORColumn="column" alignItem="center" justifyContent="center">
+                        <div
+                            className={Style.headingDiscover}
+                            style={{ color: 'white', marginTop: '90px' }}
+                        >
+                            {' '}
+                            {carouselText}{' '}
+                        </div>
+                    </FLexLayout>
 
-                <FLexLayout rowORColumn="row" justifyContent="center" alignItem="center">
-                    <div
-                        className={Style.headingBold}
-                    >
-                        {'A New way to interact with your Network!'}
-                    </div>
-                </FLexLayout>
+                    {/* explore-carousel-3d */}
+                    <FLexLayout rowORColumn="column" justifyContent="center" alignItem="center">
+                        <Carousel onTextChange={setCarouselText} />
+                    </FLexLayout>
+                </div>
 
-
-
+                {/* featured-on-container */}
                 <FLexLayout
-                    style={{ marginLeft: `${0.1 * width}px`, marginRight: `${0.1 * width}px` }}
-                    rowORColumn="column"
-                    justifyContent="center"
-                    alignItem="center"
-                >
-                    <Carousel onTextChange={setCarouselText} />
-                </FLexLayout>
-
-                <FLexLayout
-                    className={Style.testimonialsHeading}
+                    style={{ marginBottom: '100px' }}
                     rowORColumn="row"
                     justifyContent="center"
                     alignItem="center"
-                    style={{
-                        width: `${0.75 * width}px`,
-                        height: `${50}px`,
-                        marginLeft: `${0.12 * width}px`,
-                        marginRight: `${0.12 * width}px`
-                    }}
                 >
-                    <div className={Style.testimonialText}>{testimonialHeading}</div>
+                    {/* featured-on-box */}
+                    <FLexLayout
+                        alignItem="center"
+                        className={Style['featured-on-container']}
+                        rowORColumn="column"
+                    >
+                        {/* featured-on-heading */}
+                        <div className={Style['featured-on-heading']}>{'Featured On'}</div>
+
+                        {/* underline */}
+                        <FLexLayout
+                            rowORColumn="column"
+                            alignItem="center"
+                            justifyContent="center"
+                            style={{ marginTop: '25px' }}
+                        >
+                            <div
+                                className={Style['featured-on-underline']}
+                                style={{
+                                    width: `${0.05 * width}px`
+                                }}
+                            >
+                                {' '}
+                            </div>
+                        </FLexLayout>
+
+                        {/* images-featured-on */}
+                        <Image
+                            className={Style['featured-on-image']}
+                            src="/icons/Featured on 1.png"
+                        />
+                        <div className={Style['featured-on-bottom-text']}>
+                            {'& 30+ Media Houses'}
+                        </div>
+                    </FLexLayout>
                 </FLexLayout>
 
-                <CarouselTestimonial
-                    infiniteLoop={true}
-                    autoPlay={true}
-                    showArrows={false}
-                    showIndicators={false}
-                    showStatus={false}
-                    showThumbs={false}
+                {/* straight from community */}
+                <FLexLayout rowORColumn="row" justifyContent="center" alignItem="center">
+                    <FLexLayout
+                        className={Style.testimonialsHeading}
+                        rowORColumn="row"
+                        justifyContent="center"
+                        alignItem="center"
+                        style={{
+                            width: `${313}px`,
+                            height: `${50}px`,
+                            marginLeft: `${0.12 * width}px`,
+                            marginRight: `${0.12 * width}px`
+                        }}
+                    >
+                        <div className={Style.testimonialText}>{testimonialHeading}</div>
+                    </FLexLayout>
+                </FLexLayout>
+
+                {/* Testimonials */}
+                <FLexLayout
+                    style={{ overflow: 'hidden', marginTop: '30px' }}
+                    rowORColumn="row"
+                    justifyContent="end"
                 >
-                    {testimonials}
-                </CarouselTestimonial>
+                    <FLexLayout
+                        onMouseEnter={() => {
+                            setAnimationState('paused');
+                        }}
+                        onMouseLeave={() => {
+                            setAnimationState('running');
+                        }}
+                        className={Style['effect']}
+                        style={{
+                            width: '10000%',
+                            animationPlayState: animationState
+                        }}
+                        rowORColumn="row"
+                    >
+                        <TestimonialCard
+                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
+                            avatarImage="/icons/76.jpeg"
+                            designation="Accountant,Metvy"
+                            avatarName="Jane Doe"
+                        />
+
+                        <TestimonialCard
+                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
+                            avatarImage="/icons/76.jpeg"
+                            designation="Accountant,Metvy"
+                            avatarName="Jane Doe"
+                        />
+
+                        <TestimonialCard
+                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
+                            avatarImage="/icons/76.jpeg"
+                            designation="Accountant,Metvy"
+                            avatarName="Jane Doe"
+                        />
+
+                        <TestimonialCard
+                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
+                            avatarImage="/icons/76.jpeg"
+                            designation="Accountant,Metvy"
+                            avatarName="Jane Doe"
+                        />
+
+                        <TestimonialCard
+                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
+                            avatarImage="/icons/76.jpeg"
+                            designation="Accountant,Metvy"
+                            avatarName="Jane Doe"
+                        />
+
+                        <TestimonialCard
+                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
+                            avatarImage="/icons/76.jpeg"
+                            designation="Accountant,Metvy"
+                            avatarName="Jane Doe"
+                        />
+
+                        <TestimonialCard
+                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
+                            avatarImage="/icons/76.jpeg"
+                            designation="Accountant,Metvy"
+                            avatarName="Jane Doe"
+                        />
+
+                        <TestimonialCard
+                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
+                            avatarImage="/icons/76.jpeg"
+                            designation="Accountant,Metvy"
+                            avatarName="Jane Doe"
+                        />
+
+                        <TestimonialCard
+                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
+                            avatarImage="/icons/76.jpeg"
+                            designation="Accountant,Metvy"
+                            avatarName="Jane Doe"
+                        />
+
+                        <TestimonialCard
+                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
+                            avatarImage="/icons/76.jpeg"
+                            designation="Accountant,Metvy"
+                            avatarName="Jane Doe"
+                        />
+
+                        <TestimonialCard
+                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
+                            avatarImage="/icons/76.jpeg"
+                            designation="Accountant,Metvy"
+                            avatarName="Jane Doe"
+                        />
+
+                        <TestimonialCard
+                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
+                            avatarImage="/icons/76.jpeg"
+                            designation="Accountant,Metvy"
+                            avatarName="Jane Doe"
+                        />
+
+                        <TestimonialCard
+                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
+                            avatarImage="/icons/76.jpeg"
+                            designation="Accountant,Metvy"
+                            avatarName="Jane Doe"
+                        />
+
+                        <TestimonialCard
+                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
+                            avatarImage="/icons/76.jpeg"
+                            designation="Accountant,Metvy"
+                            avatarName="Jane Doe"
+                        />
+
+                        <TestimonialCard
+                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
+                            avatarImage="/icons/76.jpeg"
+                            designation="Accountant,Metvy"
+                            avatarName="Jane Doe"
+                        />
+
+                        <TestimonialCard
+                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
+                            avatarImage="/icons/76.jpeg"
+                            designation="Accountant,Metvy"
+                            avatarName="Jane Doe"
+                        />
+
+                        <TestimonialCard
+                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
+                            avatarImage="/icons/76.jpeg"
+                            designation="Accountant,Metvy"
+                            avatarName="Jane Doe"
+                        />
+
+                        <TestimonialCard
+                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
+                            avatarImage="/icons/76.jpeg"
+                            designation="Accountant,Metvy"
+                            avatarName="Jane Doe"
+                        />
+
+                        <TestimonialCard
+                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
+                            avatarImage="/icons/76.jpeg"
+                            designation="Accountant,Metvy"
+                            avatarName="Jane Doe"
+                        />
+
+                        <TestimonialCard
+                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
+                            avatarImage="/icons/76.jpeg"
+                            designation="Accountant,Metvy"
+                            avatarName="Jane Doe"
+                        />
+
+                        <TestimonialCard
+                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
+                            avatarImage="/icons/76.jpeg"
+                            designation="Accountant,Metvy"
+                            avatarName="Jane Doe"
+                        />
+
+                        <TestimonialCard
+                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
+                            avatarImage="/icons/76.jpeg"
+                            designation="Accountant,Metvy"
+                            avatarName="Jane Doe"
+                        />
+
+                        <TestimonialCard
+                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
+                            avatarImage="/icons/76.jpeg"
+                            designation="Accountant,Metvy"
+                            avatarName="Jane Doe"
+                        />
+
+                        <TestimonialCard
+                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
+                            avatarImage="/icons/76.jpeg"
+                            designation="Accountant,Metvy"
+                            avatarName="Jane Doe"
+                        />
+
+                        <TestimonialCard
+                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
+                            avatarImage="/icons/76.jpeg"
+                            designation="Accountant,Metvy"
+                            avatarName="Jane Doe"
+                        />
+
+                        <TestimonialCard
+                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
+                            avatarImage="/icons/76.jpeg"
+                            designation="Accountant,Metvy"
+                            avatarName="Jane Doe"
+                        />
+
+                        <TestimonialCard
+                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
+                            avatarImage="/icons/76.jpeg"
+                            designation="Accountant,Metvy"
+                            avatarName="Jane Doe"
+                        />
+
+                        <TestimonialCard
+                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
+                            avatarImage="/icons/76.jpeg"
+                            designation="Accountant,Metvy"
+                            avatarName="Jane Doe"
+                        />
+
+                        <TestimonialCard
+                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
+                            avatarImage="/icons/76.jpeg"
+                            designation="Accountant,Metvy"
+                            avatarName="Jane Doe"
+                        />
+
+                        <TestimonialCard
+                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
+                            avatarImage="/icons/76.jpeg"
+                            designation="Accountant,Metvy"
+                            avatarName="Jane Doe"
+                        />
+
+                        <TestimonialCard
+                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
+                            avatarImage="/icons/76.jpeg"
+                            designation="Accountant,Metvy"
+                            avatarName="Jane Doe"
+                        />
+
+                        <TestimonialCard
+                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
+                            avatarImage="/icons/76.jpeg"
+                            designation="Accountant,Metvy"
+                            avatarName="Jane Doe"
+                        />
+
+                        <TestimonialCard
+                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
+                            avatarImage="/icons/76.jpeg"
+                            designation="Accountant,Metvy"
+                            avatarName="Jane Doe"
+                        />
+
+                        <TestimonialCard
+                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
+                            avatarImage="/icons/76.jpeg"
+                            designation="Accountant,Metvy"
+                            avatarName="Jane Doe"
+                        />
+
+                        <TestimonialCard
+                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
+                            avatarImage="/icons/76.jpeg"
+                            designation="Accountant,Metvy"
+                            avatarName="Jane Doe"
+                        />
+
+                        <TestimonialCard
+                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
+                            avatarImage="/icons/76.jpeg"
+                            designation="Accountant,Metvy"
+                            avatarName="Jane Doe"
+                        />
+                    </FLexLayout>
+                </FLexLayout>
+
+                <Footer />
             </div>
         </div>
     );
 }
+
+const mapDispatchToProps = (state) => {
+    console.log(state);
+    return {
+        width: state.screenConfig.width
+    };
+};
+
+const mapActionToProps = { setWidth };
+
+export default connect(mapDispatchToProps, mapActionToProps)(_LandingScreen);
