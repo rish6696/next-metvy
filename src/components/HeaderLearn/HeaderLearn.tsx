@@ -9,8 +9,31 @@ import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 
 import { brandName, courses } from '../../constants';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+import IconButton from '@material-ui/core/IconButton';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+import { Style } from '@material-ui/icons';
+import { makeStyles } from '@material-ui/core/styles';
 
 const _Header = () => {
+    const useStyle = makeStyles({
+        root: {
+            fontFamily: 'poppinsRegular',
+            fontSize: '14px'
+        }
+    });
+
+    const classesMaterial = useStyle();
+
+    const [width, setWidth] = useState(-1);
+
+    const updateWindowSize = () => {
+        setWidth(window.innerWidth);
+    };
+
+    const hamburgerBreakPoint = 1300;
+
     const Accordion = withStyles({
         root: {
             border: '0px solid yellow',
@@ -30,7 +53,6 @@ const _Header = () => {
 
     const AccordionSummary = withStyles({
         root: {
-            // backgroundColor: 'red',
             padding: '0px',
             borderBottom: '0px solid red',
             minHeight: 5,
@@ -55,10 +77,9 @@ const _Header = () => {
 
     const menuItems = ['Features', 'Team', 'About Us', 'Contact'];
 
-    const [width, setWidth] = useState(-1);
-
     useEffect(() => {
         setWidth(window.innerWidth);
+        window.addEventListener('resize', updateWindowSize);
     }, []);
 
     const [showSidePanel, setShowSidePanel] = useState(false);
@@ -70,17 +91,108 @@ const _Header = () => {
             setExpanded(newExpanded ? panel : false);
         };
 
+    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
+    const open = Boolean(anchorEl);
+
+    const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const getHamburgerOrItems = () => {
+        if (width > hamburgerBreakPoint) {
+            return (
+                <FLexLayout
+                    alignItem="center"
+                    justifyContent="between"
+                    style={{
+                        fontFamily: 'poppinsRegular',
+                        fontSize: '18px',
+                        color: 'black',
+                        width: '45%',
+                        height: '100%',
+                        marginRight: '30px'
+                    }}
+                    rowORColumn="row"
+                >
+                    <div className={HeaderStyle['cursorPointer']}> About Us </div>
+
+                    <div className={HeaderStyle['cursorPointer']}>
+                        <FLexLayout onClick={handleMenu} alignItem="center" rowORColumn="row">
+                            <div> Metvy Learn </div>
+                            <div className={HeaderStyle['triangle-right']}></div>
+                        </FLexLayout>
+
+                        <Menu
+                            id="menu-appbar"
+                            anchorEl={anchorEl}
+                            anchorOrigin={{
+                                vertical: 'top',
+                                horizontal: 'right'
+                            }}
+                            keepMounted
+                            transformOrigin={{
+                                vertical: 'top',
+                                horizontal: 'right'
+                            }}
+                            open={open}
+                            onClose={handleClose}
+                        >
+                            {courses.map((x) => (
+                                <div className={Style['menuItemsCoursesDesktop']}>
+                                    <MenuItem
+                                        classes={{ root: classesMaterial.root }}
+                                        onClick={handleClose}
+                                    >
+                                        {x}
+                                    </MenuItem>
+                                </div>
+                            ))}
+                        </Menu>
+                    </div>
+
+                    <div className={HeaderStyle['cursorPointer']}> Team </div>
+
+                    <div className={HeaderStyle['cursorPointer']}> Blogs </div>
+
+                    <div className={HeaderStyle['cursorPointer']}> Career </div>
+
+                    <div className={HeaderStyle['cursorPointer']}> Contact Us </div>
+                </FLexLayout>
+            );
+        } else {
+            return (
+                <FLexLayout rowORColumn="row" alignItem="center">
+                    <Image
+                        onClick={() => setShowSidePanel(true)}
+                        className={HeaderStyle.headerIcon}
+                        src="/icons/menu (1).png"
+                    />
+                </FLexLayout>
+            );
+        }
+    };
+
     return (
-        <FLexLayout rowORColumn="column" style={{ width: '100%', position: 'fixed', zIndex: 100 }}>
-
-
+        <FLexLayout
+            style={{ position: 'fixed', width: '100%', zIndex: 10 }}
+            rowORColumn="column"
+            justifyContent="between"
+            className={HeaderStyle.headerContainer}
+        >
+           
             {/* hamburger with icon  */}
             <FLexLayout
-                style={{ width: '100%' }}
+                style={{ width: '100%',height:'60px' }}
                 rowORColumn="row"
                 justifyContent="between"
                 className={HeaderStyle.headerContainer}
             >
+                  {width < hamburgerBreakPoint && (
                 <Drawer
                     anchor={'right'}
                     open={showSidePanel}
@@ -89,11 +201,11 @@ const _Header = () => {
                     <FLexLayout
                         rowORColumn="column"
                         justifyContent="between"
-                        style={{ height: '100%' }}
+                        style={{ height: '100%',width:'300px' }}
                     >
                         <FLexLayout
                             rowORColumn="column"
-                            style={{ padding: '32px', width: `${0.72 * width}px` }}
+                            style={{ padding: '32px', width: `${0.72 * width}px`, height: '60%' }}
                         >
                             <div className={HeaderStyle.menuItemsText}> About Us </div>
 
@@ -180,6 +292,8 @@ const _Header = () => {
                         </FLexLayout>
                     </FLexLayout>
                 </Drawer>
+            )}
+                
 
                 <FLexLayout
                     rowORColumn="row"
@@ -192,22 +306,20 @@ const _Header = () => {
                     </FLexLayout>
                 </FLexLayout>
 
-                <FLexLayout rowORColumn="row" alignItem="center">
-                    <Image
-                        onClick={() => setShowSidePanel(true)}
-                        className={HeaderStyle.headerIcon}
-                        src="/icons/menu-learn.png"
-                    />
-                </FLexLayout>
+                {getHamburgerOrItems()}
             </FLexLayout>
+          
 
-            {/* banner  */}
+             {/* book a fitment and apply now container */}
             <FLexLayout style={{ width: '100%' }} rowORColumn="row">
+
+                {/* book a fitment -box */}
                 <FLexLayout
                     style={{
                         backgroundColor: 'rgba(214, 214, 214, 1)',
                         height: '50px',
-                        width: '100%'
+                        width: '100%',
+                        cursor:'pointer'
                     }}
                     rowORColumn="row"
                     justifyContent="center"
@@ -216,10 +328,12 @@ const _Header = () => {
                     <div className={`${HeaderStyle.bannerText}`}> {'Book a fitment call'} </div>
                 </FLexLayout>
 
+                
+                 {/* apply-now-box */}
                 <FLexLayout
                     justifyContent="center"
                     alignItem="center"
-                    style={{ backgroundColor: 'rgba(0, 0, 0, 1)', height: '50px', width: '100%' }}
+                    style={{ backgroundColor: 'rgba(0, 0, 0, 1)', height: '50px', width: '100%', cursor:'pointer' }}
                     rowORColumn="row"
                 >
                     <div className={`${HeaderStyle.bannerText} ${HeaderStyle.fitmentContainer}`}>
@@ -228,10 +342,10 @@ const _Header = () => {
                     </div>
                     <Image style={{ marginLeft: '28px' }} src="icons/Arrow 1.png" />
                 </FLexLayout>
+
+
             </FLexLayout>
-        
-        
-        
+
         </FLexLayout>
     );
 };

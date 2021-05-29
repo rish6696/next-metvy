@@ -104,7 +104,22 @@ export const coursesLearnScreenAdvertisementMetaData = [
         illustratorImg: '/icons/Consultant.png',
         illustratorImgHeight: '118px',
         illustratorImgWidth: '173px'
+    },
+    {
+        backgroundImage: '/icons/Golden_ 2.png',
+        text: 'Want to become an Entrepreneur?',
+        brands: [
+            { name: '/icons/Amazon logo.png', width: '48px', height: '19px' },
+            { name: '/icons/Adobe_Corporate_Logo.png', width: '54px', height: '14px' },
+            { name: '/icons/unnamed (1).png', width: '27px', height: '14px' },
+            { name: '/icons/bharatpe.png', width: '58px', height: '16px' },
+            { name: '/icons/Facebook-New-Logo.png', width: '37px', height: '14px' }
+        ],
+        illustratorImg: '/icons/Business 2.png',
+        illustratorImgHeight: '118px',
+        illustratorImgWidth: '173px'
     }
+    
 ];
 
 export const mentorData = [
@@ -276,6 +291,25 @@ export const programsCardsMetaData = [
             { name: '/icons/bcg-logo.png', width: '39px', height: '8px' }
         ],
         'box-shadow': '0px 0px 92px 0px rgba(0, 148, 255, 0.72)'
+    }, {
+        backgroundImage: '/icons/Golden_ 2.png',
+        name: 'Metvy Business Program',
+        weeks: 4,
+        peopleUpSkilled: '500+',
+        sessions: 20,
+        description: `Live Mentorship Program on Entrepreneurship
+        backed with Compendiums and Live
+        Projects crafted and led by top mentors`,
+        priceBeforeDiscount: '5,000',
+        princeAfterDiscount: '2,500',
+        brands: [
+            { name: '/icons/Amazon logo.png', width: '48px', height: '19px' },
+            { name: '/icons/Adobe_Corporate_Logo.png', width: '54px', height: '14px' },
+            { name: '/icons/unnamed (1).png', width: '27px', height: '14px' },
+            { name: '/icons/bharatpe.png', width: '58px', height: '16px' },
+            { name: '/icons/Facebook-New-Logo.png', width: '37px', height: '14px' }
+        ],
+        'box-shadow': '0px 0px 92px 0px rgba(255, 199, 0, 0.72)'
     }
 ];
 
