@@ -119,7 +119,6 @@ export const coursesLearnScreenAdvertisementMetaData = [
         illustratorImgHeight: '118px',
         illustratorImgWidth: '173px'
     }
-    
 ];
 
 export const mentorData = [
@@ -269,8 +268,7 @@ export const programsCardsMetaData = [
             { name: '/icons/Microsoft.png', width: '50px', height: '28px' },
             { name: '/icons/Tech Mahindra.png', width: '54px', height: '15px' }
         ],
-        'box-shadow': "0px 0px 70px 0px rgba(0, 255, 224, 0.4)"
-
+        'box-shadow': '0px 0px 70px 0px rgba(0, 255, 224, 0.4)'
     },
     {
         backgroundImage: '/icons/BLEU 2.png',
@@ -291,7 +289,8 @@ export const programsCardsMetaData = [
             { name: '/icons/bcg-logo.png', width: '39px', height: '8px' }
         ],
         'box-shadow': '0px 0px 92px 0px rgba(0, 148, 255, 0.72)'
-    }, {
+    },
+    {
         backgroundImage: '/icons/Golden_ 2.png',
         name: 'Metvy Business Program',
         weeks: 4,
@@ -331,8 +330,32 @@ education system by focusing on a
 premium live learning experience
 through networking and mentorship.`;
 
+export const totalDownloadsLandingScreen = '40,000+';
+export const rating = '4.1';
 
+interface courseDetailsScreenDataProps {
+    heading: string;
+    description: string;
+    weeksData: [{ time: string; content: string }];
+}
 
-
-export const totalDownloadsLandingScreen = '40,000+' 
-export const rating ='4.1'
+export const courseDetailsScreenData = {
+    research_program: {
+        heading: `Metvy Research Program`,
+        description: `Metvy Research Program is a 30-day up-skilling driven program in which the participants
+         get to learn how to write a competent research paper. The curriculum focuses on analyzing 
+         information sources, developing a questioning mindset, organizing your ideas within the necessary format 
+         and brainstorming original ideas.The participants will write their own research papers under constant
+        mentorship and support of our team.`,
+        weeksData: [
+            {
+                time: '4Hours',
+                content: `Peer group introduction over, giving a direction on how to
+        think about ideas. Extensive peer group networking. 
+        Understanding Entrepreneurship and Market Research,
+        How to pick the right problem? Understanding Marketing,
+        and Branding.`
+            }
+        ]
+    } as courseDetailsScreenDataProps
+};

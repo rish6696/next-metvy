@@ -15,8 +15,13 @@ import IconButton from '@material-ui/core/IconButton';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import { Style } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
+import { useRouter } from 'next/router';
+
 
 const _Header = () => {
+
+    const router = useRouter()
+
     const useStyle = makeStyles({
         root: {
             fontFamily: 'poppinsRegular',
@@ -146,7 +151,7 @@ const _Header = () => {
                                 <div className={Style['menuItemsCoursesDesktop']}>
                                     <MenuItem
                                         classes={{ root: classesMaterial.root }}
-                                        onClick={handleClose}
+                                        onClick={() => router.push('/research_program')}
                                     >
                                         {x}
                                     </MenuItem>
@@ -237,7 +242,7 @@ const _Header = () => {
                                             }}
                                         >
                                             {courses.map((x) => (
-                                                <div className={HeaderStyle.accordionItem}>
+                                                <div onClick={() => router.push('/research_program')} className={HeaderStyle.accordionItem}>
                                                     {' '}
                                                     {x}{' '}
                                                 </div>
@@ -289,14 +294,6 @@ const _Header = () => {
             <FLexLayout rowORColumn="row" alignItem="center" className={HeaderStyle.brandContainer}>
                 <Image className={HeaderStyle.headerIcon} src="/icons/ic_launcher.png" />
             </FLexLayout>
-
-            {/* <FLexLayout rowORColumn="row" alignItem="center">
-                <Image
-                    onClick={() => setShowSidePanel(true)}
-                    className={HeaderStyle.headerIcon}
-                    src="/icons/menu.png"
-                />
-            </FLexLayout> */}
 
             {getHamburgerOrItems()}
         </FLexLayout>

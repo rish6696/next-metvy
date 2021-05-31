@@ -1,0 +1,618 @@
+.container {
+    padding-top: 150px;
+    background-image: url('/icons/details_bg_mobile.png');
+    background-size: 100%;
+}
+
+.heading {
+    font-family: poppinsSemiBold;
+    font-size: 36px;
+    text-align: center;
+}
+
+.brand-advertisement-container {
+    box-shadow: 0px 12px 92px 0px rgba(0, 0, 0, 0.21);
+    background-color: #ffffff;
+}
+
+/* greater than max width desktop */
+@media only screen and (min-width: 1100px) {
+    .heading {
+        font-family: poppinsSemiBold;
+        font-size: 48px;
+        text-align: center;
+    }
+
+    .description {
+        font-family: poppinsRegular;
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .apply-now-button {
+        width: 290px;
+        height: 85px;
+
+        background: #ff869e;
+        box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.32);
+        border-radius: 24px;
+    }
+
+    .apply-now-text {
+        font-family: poppinsSemiBold;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .container {
+        padding-top: 150px;
+        background-image: url('/icons/details_bg_desktop.png');
+    }
+
+    .programs-heading {
+        font-family: poppinsSemiBoldItalic;
+        font-size: 68px;
+        text-align: center;
+        color: black;
+    }
+    .program-heading-container {
+        margin-top: 363px;
+    }
+
+    .content-description {
+        font-family: poppinsRegular;
+        font-size: 18px;
+        color: black;
+    }
+
+    .content-box {
+        width: 643px;
+        height: 265px;
+
+        background: #ffffff;
+        backdrop-filter: blur(50px);
+        /* Note: backdrop-filter has minimal browser support */
+
+        border-radius: 45px;
+        padding: 43px;
+    }
+
+    .week-label {
+        font-family: poppinsBoldItalic;
+        font-size: 72px;
+        color: white;
+    }
+
+    .hours-text {
+        font-family: poppinsRegular;
+        font-size: 24px;
+        color: white;
+    }
+
+    .week-box {
+        margin-right: 61px;
+    }
+
+    .program-structure-container {
+        background-color: black;
+        padding-top: 40px;
+        border-radius: 181px;
+    }
+
+    .who-is-this-for-container {
+        width: 1148px;
+        height: 417px;
+        background: #f9f9f9;
+        box-shadow: 0px 15px 100px rgba(0, 0, 0, 0.18);
+        margin-bottom: 73px;
+    }
+
+    .who-is-this-heading-box {
+        width: 100%;
+        height: 157px;
+        background: #ffffff;
+    }
+
+    .who-is-this-heading {
+        font-family: poppinsSemiBoldItalic;
+        font-size: 60px;
+    }
+
+    .who-is-this-for-content {
+        font-family: poppinsRegular;
+        font-size: 28px;
+        line-height: 52px;
+        padding: 41px;
+    }
+
+    .phrase {
+        font-family: poppinsMediumItalic;
+        font-size: 40px;
+        text-align: center;
+    }
+    .perks-heading {
+        font-family: poppinsSemiBoldItalic;
+        font-size: 96px;
+    }
+
+
+
+    .perks-box {
+        width: 576px;
+        height: 310px;
+        background: #ffffff;
+        box-shadow: 0px 29px 81px rgba(0, 0, 0, 0.17);
+        border-radius: 13px;
+    }
+
+    .circular-pop-up-container {
+        width: 170px;
+        height: 170px;
+        border-radius: 50%;
+
+        background: #ff869e;
+        box-shadow: 0px 4px 81px rgba(0, 0, 0, 0.17);
+        position: relative;
+        left: 203px;
+        top: -85px
+    }
+
+
+    .perks-box-content{
+        font-family: poppinsMedium;
+        font-size: 26px;
+        padding: 10px;
+        position: relative;
+        top: -35px;
+        margin-left: 20px;
+        margin-right: 20px;
+
+        text-align: center;
+    }
+
+    .perks-icon{
+        width: 76px;
+        height: 63px;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .heading {
+        font-family: poppinsSemiBold;
+        font-size: 46px;
+        text-align: center;
+    }
+
+    .description {
+        font-family: poppinsRegular;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .apply-now-button {
+        width: 215px;
+        height: 70px;
+
+        background: #ff869e;
+        box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.32);
+        border-radius: 24px;
+    }
+
+    .apply-now-text {
+        font-family: poppinsSemiBold;
+        font-size: 26px;
+        text-align: center;
+    }
+
+    .programs-heading {
+        font-family: poppinsSemiBoldItalic;
+        font-size: 54px;
+        text-align: center;
+        color: black;
+    }
+
+    .program-heading-container {
+        margin-top: 190px;
+    }
+
+    .content-description {
+        font-family: poppinsRegular;
+        font-size: 19px;
+        color: black;
+        line-height: 35px;
+    }
+
+    .content-box {
+        width: 460px;
+        height: 270px;
+
+        background: #ffffff;
+        backdrop-filter: blur(50px);
+        /* Note: backdrop-filter has minimal browser support */
+
+        border-radius: 26px;
+        padding: 17px;
+    }
+
+    .week-label {
+        font-family: poppinsBoldItalic;
+        font-size: 52px;
+        color: white;
+    }
+
+    .hours-text {
+        font-family: poppinsRegular;
+        font-size: 19px;
+        color: white;
+    }
+
+    .week-box {
+        margin-right: 28px;
+    }
+
+    .program-structure-container {
+        background-color: black;
+        padding-top: 47px;
+        border-radius: 98px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .heading {
+        font-family: poppinsSemiBold;
+        font-size: 42px;
+        text-align: center;
+    }
+
+    .description {
+        font-family: poppinsRegular;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .apply-now-button {
+        width: 205px;
+        height: 66px;
+
+        background: #ff869e;
+        box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.32);
+        border-radius: 24px;
+    }
+
+    .apply-now-text {
+        font-family: poppinsSemiBold;
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .programs-heading {
+        font-family: poppinsSemiBoldItalic;
+        font-size: 48px;
+        text-align: center;
+        color: black;
+    }
+
+    .program-heading-container {
+        margin-top: 150px;
+    }
+
+    .content-description {
+        font-family: poppinsRegular;
+        font-size: 15px;
+        color: black;
+        line-height: 24px;
+    }
+
+    .content-box {
+        width: 280px;
+        height: 270px;
+
+        background: #ffffff;
+        backdrop-filter: blur(50px);
+        /* Note: backdrop-filter has minimal browser support */
+
+        border-radius: 24px;
+        padding: 17px;
+    }
+
+    .week-label {
+        font-family: poppinsBoldItalic;
+        font-size: 40px;
+        color: white;
+    }
+
+    .hours-text {
+        font-family: poppinsRegular;
+        font-size: 17px;
+        color: white;
+    }
+
+    .week-box {
+        margin-right: 25px;
+    }
+
+    .program-structure-container {
+        background-color: black;
+        padding-top: 43px;
+        border-radius: 93px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .heading {
+        font-family: poppinsSemiBold;
+        font-size: 36px;
+        text-align: center;
+    }
+
+    .description {
+        font-family: poppinsRegular;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .apply-now-button {
+        width: 190px;
+        height: 66px;
+
+        background: #ff869e;
+        box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.32);
+        border-radius: 21px;
+    }
+
+    .apply-now-text {
+        font-family: poppinsSemiBold;
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .programs-heading {
+        font-family: poppinsSemiBoldItalic;
+        font-size: 38px;
+        text-align: center;
+        color: black;
+    }
+
+    .program-heading-container {
+        margin-top: 103px;
+    }
+
+    .content-description {
+        font-family: poppinsRegular;
+        font-size: 12px;
+        color: black;
+        line-height: 22px;
+    }
+
+    .content-box {
+        width: 225px;
+        height: 245px;
+
+        background: #ffffff;
+        backdrop-filter: blur(50px);
+        /* Note: backdrop-filter has minimal browser support */
+
+        border-radius: 20px;
+        padding: 15px;
+    }
+
+    .week-label {
+        font-family: poppinsBoldItalic;
+        font-size: 36px;
+        color: white;
+    }
+
+    .hours-text {
+        font-family: poppinsRegular;
+        font-size: 15px;
+        color: white;
+    }
+
+    .week-box {
+        margin-right: 22px;
+    }
+
+    .program-structure-container {
+        background-color: black;
+        padding-top: 40px;
+        border-radius: 90px;
+    }
+
+    .who-is-this-for-container {
+        width: 80%;
+        height: 300px;
+        background: #f9f9f9;
+        box-shadow: 0px 15px 100px rgba(0, 0, 0, 0.18);
+        margin-bottom: 65px;
+    }
+
+    .who-is-this-heading-box {
+        width: 100%;
+        height: 110px;
+        background: #ffffff;
+    }
+
+    .who-is-this-heading {
+        font-family: poppinsSemiBoldItalic;
+        font-size: 28px;
+    }
+
+    .who-is-this-for-content {
+        font-family: poppinsRegular;
+        font-size: 14px;
+        line-height: 25px;
+        padding: 18px;
+    }
+
+    .phrase {
+        font-family: poppinsMediumItalic;
+        font-size: 22px;
+        text-align: center;
+    }
+
+
+    .perks-heading {
+        font-family: poppinsSemiBoldItalic;
+        font-size: 52px;
+    }
+
+    .perks-box {
+        width: 310px;
+        height: 164px;
+        background: #ffffff;
+        box-shadow: 0px 29px 81px rgba(0, 0, 0, 0.17);
+        border-radius: 13px;
+    }
+
+    .circular-pop-up-container {
+        width: 78px;
+        height: 78px;
+        border-radius: 50%;
+
+        background: #ff869e;
+        box-shadow: 0px 4px 81px rgba(0, 0, 0, 0.17);
+        position: relative;
+        left: 116px;
+        top: -39px
+    }
+
+
+    .perks-box-content{
+        font-family: poppinsMedium;
+        font-size: 14px;
+        padding: 10px;
+        position: relative;
+        top: -20px;
+        margin-left: 10px;
+        margin-right: 10px;
+
+        text-align: center;
+    }
+
+    .perks-icon{
+        width: 35px;
+        height: 29px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .heading {
+        font-family: poppinsSemiBold;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .description {
+        font-family: poppinsRegular;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .apply-now-button {
+        width: 171px;
+        height: 46px;
+
+        background: #ff869e;
+        box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.32);
+        border-radius: 17px;
+    }
+
+    .apply-now-text {
+        font-family: poppinsSemiBold;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .programs-heading {
+        font-family: poppinsSemiBoldItalic;
+        font-size: 36px;
+        text-align: center;
+        color: black;
+    }
+
+    .program-heading-container {
+        margin-top: 103px;
+    }
+
+    .content-description {
+        font-family: poppinsRegular;
+        font-size: 10px;
+        color: black;
+        line-height: 21px;
+    }
+
+    .content-box {
+        width: 190px;
+        height: 230px;
+
+        background: #ffffff;
+        backdrop-filter: blur(50px);
+        /* Note: backdrop-filter has minimal browser support */
+
+        border-radius: 17px;
+        padding: 13px;
+    }
+
+    .week-label {
+        font-family: poppinsBoldItalic;
+        font-size: 32px;
+        color: white;
+    }
+
+    .hours-text {
+        font-family: poppinsRegular;
+        font-size: 12px;
+        color: white;
+    }
+
+    .week-box {
+        margin-right: 18px;
+    }
+
+    .program-structure-container {
+        background-color: black;
+        padding-top: 40px;
+        border-radius: 90px;
+    }
+
+    .who-is-this-for-container {
+        width: 320px;
+        height: 280px;
+        background: #f9f9f9;
+        box-shadow: 0px 15px 100px rgba(0, 0, 0, 0.18);
+        margin-bottom: 55px;
+    }
+
+    .who-is-this-heading-box {
+        width: 100%;
+        height: 90px;
+        background: #ffffff;
+    }
+
+    .who-is-this-heading {
+        font-family: poppinsSemiBoldItalic;
+        font-size: 24px;
+    }
+
+    .who-is-this-for-content {
+        font-family: poppinsRegular;
+        font-size: 12px;
+        line-height: 23px;
+        padding: 14px;
+    }
+
+    .phrase {
+        font-family: poppinsMediumItalic;
+        font-size: 18px;
+        text-align: center;
+    }
+    .perks-heading {
+        font-family: poppinsSemiBoldItalic;
+        font-size: 45px;
+    }
+}
+
+.mentors-from-brand-container {
+    position: relative;
+    top: -170px;
+}

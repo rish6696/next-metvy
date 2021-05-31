@@ -20,6 +20,13 @@ a {
   src: url("../public/fonts/Poppins-Medium.ttf");
 } 
 
+@font-face {
+  font-family: "poppinsMediumItalic";
+  src: url("../public/fonts/Poppins-MediumItalic.ttf");
+} 
+
+
+
 
 @font-face {
   font-family: "poppinsBlack";
