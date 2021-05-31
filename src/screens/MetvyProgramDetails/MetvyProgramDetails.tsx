@@ -8,13 +8,13 @@ import { setWidth } from '../../redux/Actions/Screenconfig';
 import { Image } from 'react-bootstrap';
 
 interface Props {
-    course: 'research_program';
+    course: string | string[] | 'research_program';
     width: number;
     setWidth: (number) => void;
 }
 
 const _ProgramDetails = ({ width, setWidth, course }: Props) => {
-    const metaData = courseDetailsScreenData[course];
+    const metaData = courseDetailsScreenData[course as string ];
 
     return (
         <div>
