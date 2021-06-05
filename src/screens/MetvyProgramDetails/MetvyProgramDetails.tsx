@@ -6,6 +6,8 @@ import { courseDetailsScreenData } from '../../constants';
 import { connect } from 'react-redux';
 import { setWidth } from '../../redux/Actions/Screenconfig';
 import { Image } from 'react-bootstrap';
+import Footer from '../../components/Footer/Footer';
+
 
 interface Props {
     course: string | string[] | 'research_program';
@@ -379,7 +381,7 @@ const _ProgramDetails = ({ width, setWidth, course }: Props) => {
                 {/* perks-container-1 */}
                 {[1, 2, 3, 4, 5].map((x) => (
                     <FLexLayout
-                        style={{ marginTop: '100px' }}
+                        className={Style['perks-container']}
                         rowORColumn="row"
                         justifyContent="center"
                         alignItem="center"
@@ -406,6 +408,63 @@ const _ProgramDetails = ({ width, setWidth, course }: Props) => {
                         </FLexLayout>
                     </FLexLayout>
                 ))}
+
+
+                {/* apply-now-button */}
+                <FLexLayout
+                    style={{ marginTop: '159px' }}
+                    justifyContent="center"
+                    alignItem="center"
+                    rowORColumn="row"
+                >
+                    <FLexLayout
+                        justifyContent="center"
+                        alignItem="center"
+                        rowORColumn="row"
+                        className={Style['apply-now-button']}
+                    >
+                        <div className={Style['apply-now-text']}>{'Apply Now'}</div>
+                    </FLexLayout>
+                </FLexLayout>
+
+               
+                 {/* Perks Text */}
+                <FLexLayout
+                    justifyContent="center"
+                    alignItem="center"
+                    rowORColumn="row"
+                    style={{ marginTop: '100px' }}
+                >
+                    <FLexLayout
+                        style={{ width: '80%' }}
+                        rowORColumn="row"
+                        justifyContent="center"
+                        alignItem="center"
+                    >
+                        <div className={Style['perks-heading']}>{`Explore MCP`}</div>
+                    </FLexLayout>
+                </FLexLayout>
+                 
+                  {/* drop-a-query-box */}
+                <FLexLayout
+                    className={Style.queryBox}
+                    justifyContent="center"
+                    alignItem="center"
+                    rowORColumn="row"
+                >
+                    <FLexLayout alignItem="center" rowORColumn="row">
+                        <div>{'Drop in a Query'}</div>
+                        <Image
+                            style={{ marginLeft: '13px', width: '27px', height: '15px' }}
+                            src="icons/Arrow 2.png"
+                        />
+                    </FLexLayout>
+                </FLexLayout>
+
+                {/* footer-box */}
+                <Footer />
+
+
             </div>
         </div>
     );

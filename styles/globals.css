@@ -75,12 +75,34 @@ a {
   src: url("../public/fonts/Poppins-LightItalic.ttf");
 } 
 
+
+@font-face {
+  font-family: "poppinsBoldItalic";
+  src: url("../public/fonts/Poppins-BoldItalic.ttf");
+} 
+
 /* .carousel {
   z-index: -100;
 } */
 
 .slider{
   z-index: 5;
+}
+
+
+input{
+  border-width: 0px;
+  background-color: transparent;
+}
+
+textarea:focus, input:focus{
+  outline: none;
+  padding: 0px;
+}
+
+select{
+  border: 0px;
+  outline: none;
 }
 
 

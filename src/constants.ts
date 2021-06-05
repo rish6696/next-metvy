@@ -336,7 +336,12 @@ export const rating = '4.1';
 interface courseDetailsScreenDataProps {
     heading: string;
     description: string;
-    weeksData: [{ time: string; content: string }];
+    weeksData: [
+        { time: string; content: string },
+        { time: string; content: string },
+        { time: string; content: string },
+        { time: string; content: string }
+    ];
 }
 
 export const courseDetailsScreenData = {
@@ -355,7 +360,91 @@ export const courseDetailsScreenData = {
         Understanding Entrepreneurship and Market Research,
         How to pick the right problem? Understanding Marketing,
         and Branding.`
+            },
+            {
+                time: '4Hours',
+                content: `Peer group introduction over, giving a direction on how to
+    think about ideas. Extensive peer group networking. 
+    Understanding Entrepreneurship and Market Research,
+    How to pick the right problem? Understanding Marketing,
+    and Branding.`
+            },
+            {
+                time: '4Hours',
+                content: `Peer group introduction over, giving a direction on how to
+    think about ideas. Extensive peer group networking. 
+    Understanding Entrepreneurship and Market Research,
+    How to pick the right problem? Understanding Marketing,
+    and Branding.`
+            },
+            {
+                time: '4Hours',
+                content: `Peer group introduction over, giving a direction on how to
+    think about ideas. Extensive peer group networking. 
+    Understanding Entrepreneurship and Market Research,
+    How to pick the right problem? Understanding Marketing,
+    and Branding.`
+            }
+        ],
+        whoIsThisForText: `The Metvy Research Program is for anyone who wants to understand the
+        fundamentals of Academic Research as well as Market Research. Everything
+        will be worked upon from scratch, so even if you have not even written a
+        research essay, this is absolutely for you.`,
+
+        themeColor: '#ffffff',
+        perks: [
+            {
+                content: `One-on-one networking and
+            mentorship from Academicians and
+            and Industry Experts in Live Sessions`,
+                imageName: '/icons/imgName.png'
+            },
+            {
+                content: `One-on-one networking and
+            mentorship from Academicians and
+            and Industry Experts in Live Sessions`,
+                imageName: '/icons/imgName.png'
+            },
+            {
+                content: `One-on-one networking and
+            mentorship from Academicians and
+            and Industry Experts in Live Sessions`,
+                imageName: '/icons/imgName.png'
+            },
+            {
+                content: `One-on-one networking and
+            mentorship from Academicians and
+            and Industry Experts in Live Sessions`,
+                imageName: '/icons/imgName.png'
             }
         ]
     } as courseDetailsScreenDataProps
+};
+
+export const enrollScreenCourseData = [
+    {
+        bgColor: '#fe94a9',
+        style: { marginTop: '28px' },
+        price: 2499,
+        programName: 'Metvy Research Program'
+    },
+    { bgColor: '#ffb502', price: 2499, programName: 'Metvy Business Program' },
+    { bgColor: '#9adf08', price: 2499, programName: 'Metvy Design Program' },
+    { bgColor: '#00ceab', price: 2499, programName: 'Metvy AI Program' },
+    { bgColor: ' #7fc2ff', price: 2499, programName: 'Metvy Consultancy Program' }
+];
+
+export const MONTHS = {
+    JAN: 'January',
+    FEB: 'February',
+    MARCH: 'March',
+    APRIL: 'April',
+    MAY: 'May',
+    JUNE: 'June',
+    JULY: 'July',
+    AUGUST: 'August',
+    SEPTEMBER: 'September',
+    OCTOBER: 'October',
+    NOVEMBER: 'November',
+    DECEMBER: 'December'
 };

@@ -174,6 +174,10 @@
         width: 76px;
         height: 63px;
     }
+
+    .perks-container{
+        margin-top: 200px;
+    }
 }
 
 @media only screen and (max-width: 1100px) {
@@ -255,6 +259,88 @@
         padding-top: 47px;
         border-radius: 98px;
     }
+
+    .who-is-this-for-container {
+        width: 80%;
+        height: 300px;
+        background: #f9f9f9;
+        box-shadow: 0px 15px 100px rgba(0, 0, 0, 0.18);
+        margin-bottom: 70px;
+    }
+
+    .who-is-this-heading-box {
+        width: 100%;
+        height: 130px;
+        background: #ffffff;
+    }
+
+    .who-is-this-heading {
+        font-family: poppinsSemiBoldItalic;
+        font-size: 32px;
+    }
+
+    .who-is-this-for-content {
+        font-family: poppinsRegular;
+        font-size: 16px;
+        line-height: 28px;
+        padding: 25px;
+    }
+
+    .phrase {
+        font-family: poppinsMediumItalic;
+        font-size: 26px;
+        text-align: center;
+    }
+
+
+    .perks-heading {
+        font-family: poppinsSemiBoldItalic;
+        font-size: 65px;
+    }
+
+    .perks-box {
+        width: 410px;
+        height: 220px;
+        background: #ffffff;
+        box-shadow: 0px 29px 81px rgba(0, 0, 0, 0.17);
+        border-radius: 13px;
+    }
+
+    .circular-pop-up-container {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+
+        background: #ff869e;
+        box-shadow: 0px 4px 81px rgba(0, 0, 0, 0.17);
+        position: relative;
+        left: 150px;
+        top: -55px
+    }
+
+
+    .perks-box-content{
+        font-family: poppinsMedium;
+        font-size: 20px;
+        padding: 10px;
+        position: relative;
+        top: -20px;
+        margin-left: 10px;
+        margin-right: 10px;
+
+        text-align: center;
+    }
+
+    .perks-icon{
+        width: 52px;
+        height: 48px;
+    }
+
+    .perks-container{
+        margin-top: 120px;
+    }
+
+    
 }
 
 @media only screen and (max-width: 800px) {
@@ -335,6 +421,86 @@
         background-color: black;
         padding-top: 43px;
         border-radius: 93px;
+    }
+
+    .who-is-this-for-container {
+        width: 80%;
+        height: 300px;
+        background: #f9f9f9;
+        box-shadow: 0px 15px 100px rgba(0, 0, 0, 0.18);
+        margin-bottom: 70px;
+    }
+
+    .who-is-this-heading-box {
+        width: 100%;
+        height: 130px;
+        background: #ffffff;
+    }
+
+    .who-is-this-heading {
+        font-family: poppinsSemiBoldItalic;
+        font-size: 32px;
+    }
+
+    .who-is-this-for-content {
+        font-family: poppinsRegular;
+        font-size: 16px;
+        line-height: 28px;
+        padding: 25px;
+    }
+
+    .phrase {
+        font-family: poppinsMediumItalic;
+        font-size: 26px;
+        text-align: center;
+    }
+
+
+    .perks-heading {
+        font-family: poppinsSemiBoldItalic;
+        font-size: 65px;
+    }
+
+    .perks-box {
+        width: 410px;
+        height: 220px;
+        background: #ffffff;
+        box-shadow: 0px 29px 81px rgba(0, 0, 0, 0.17);
+        border-radius: 13px;
+    }
+
+    .circular-pop-up-container {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+
+        background: #ff869e;
+        box-shadow: 0px 4px 81px rgba(0, 0, 0, 0.17);
+        position: relative;
+        left: 150px;
+        top: -55px
+    }
+
+
+    .perks-box-content{
+        font-family: poppinsMedium;
+        font-size: 20px;
+        padding: 10px;
+        position: relative;
+        top: -20px;
+        margin-left: 10px;
+        margin-right: 10px;
+
+        text-align: center;
+    }
+
+    .perks-icon{
+        width: 52px;
+        height: 48px;
+    }
+
+    .perks-container{
+        margin-top: 120px;
     }
 }
 
@@ -493,6 +659,10 @@
         width: 35px;
         height: 29px;
     }
+
+    .perks-container{
+        margin-top: 100px;
+    }
 }
 
 @media only screen and (max-width: 400px) {
@@ -610,9 +780,19 @@
         font-family: poppinsSemiBoldItalic;
         font-size: 45px;
     }
+    .perks-container{
+        margin-top: 100px;
+    }
 }
 
 .mentors-from-brand-container {
     position: relative;
     top: -170px;
+}
+
+.queryBox {
+    width: 1005;
+    height: 52px;
+    background: #e9e9e9;
+    margin-top: 69px;
 }
