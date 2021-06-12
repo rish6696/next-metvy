@@ -1,49 +1,72 @@
-import React, { useState, createRef, RefObject } from 'react';
+import React, { useState, createRef, RefObject, useEffect, Ref } from 'react';
 import Style from './Enroll.module.css';
 import FLexLayout from '../../components/FlexLayout';
 import HeaderLearn from '../../components/HeaderLearn/HeaderLearn';
 import { Image } from 'react-bootstrap';
 import { enrollScreenCourseData, MONTHS } from '../../constants';
+import apiConfig from '../../api-services/apiConfig';
+import ServerDown from '../../components/ServerDown/ServerDown';
+import Loader from '../../components/LoaderComponent/LoaderComponent';
+import Scroll from 'react-scroll';
 
-const _EnrollScreen = () => {
+import {
+    getCourses,
+    addOrRemoveCourseToBuy,
+    selectMonth,
+    setSelectMonthError,
+    setMinimumOneCourseError,
+    getInvoice,
+    Cart_Items,
+    Invoice,
+    payCourse,
+    PAY_COURSE_API_REQUEST_CONTRACT
+} from '../../redux/Actions/Courses';
+
+import { connect } from 'react-redux';
+import { StoreStateInterface } from '../../redux/reducers/index';
+import { Course } from '../../redux/Actions/Courses';
+import { CourseSelectionStatus } from '../../redux/reducers/CoursesData';
+
+interface Props {
+    getCourses(): any;
+    addOrRemoveCourseToBuy(string): any;
+    coursesData: Course[];
+    courseSelectStatus: CourseSelectionStatus;
+    selectMonth: Function;
+    setSelectMonthError: Function;
+    minimumOneCourseError: string;
+    setMinimumOneCourseError: Function;
+    isServerDown: boolean;
+    showEnrollScreenLoader: boolean;
+    getInvoice: (cartItems: Cart_Items) => void;
+    invoiceData: Invoice;
+    getInvoiceError: string;
+    payCourse: (payCourseData: PAY_COURSE_API_REQUEST_CONTRACT) => void;
+}
+
+const _EnrollScreen = (props: Props) => {
     const [checked, setChecked] = React.useState(true);
+
+    const {
+        getCourses,
+        courseSelectStatus,
+        coursesData,
+        addOrRemoveCourseToBuy,
+        selectMonth,
+        setSelectMonthError,
+        minimumOneCourseError,
+        setMinimumOneCourseError,
+        isServerDown,
+        showEnrollScreenLoader,
+        getInvoice,
+        invoiceData,
+        getInvoiceError,
+        payCourse
+    } = props;
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setChecked(event.target.checked);
     };
-
-    const [courseSelectStatus, setCourseSelectStatus] = useState({
-        'Metvy Research Program': {
-            availableMonths: [MONTHS.MAY, MONTHS.JUNE, MONTHS.JULY],
-            selectMonth: 'Please Select a Batch',
-            courseSelected: false,
-            showError: false
-        },
-        'Metvy Business Program': {
-            availableMonths: [MONTHS.MAY, MONTHS.JUNE, MONTHS.JULY],
-            selectMonth: 'Please Select a Batch',
-            courseSelected: false,
-            showError: false
-        },
-        'Metvy AI Program': {
-            availableMonths: [MONTHS.MAY, MONTHS.JUNE, MONTHS.JULY],
-            selectMonth: 'Please Select a Batch',
-            courseSelected: false,
-            showError: false
-        },
-        'Metvy Consultancy Program': {
-            availableMonths: [MONTHS.MAY, MONTHS.JUNE, MONTHS.JULY],
-            selectMonth: 'Please Select a Batch',
-            courseSelected: false,
-            showError: false
-        },
-        'Metvy Design Program': {
-            availableMonths: [MONTHS.MAY, MONTHS.JUNE, MONTHS.JULY],
-            selectMonth: 'Please Select a Batch',
-            courseSelected: false,
-            showError: false
-        }
-    });
 
     const [selectBatchError, setSelectBatchError] = useState('');
 
@@ -58,6 +81,8 @@ const _EnrollScreen = () => {
     const phoneRef: RefObject<HTMLInputElement> = createRef();
     const schoolRef: RefObject<HTMLInputElement> = createRef();
     const streamRef: RefObject<HTMLInputElement> = createRef();
+
+    const invoiceDataContainerRef: Ref<HTMLDivElement> = createRef();
 
     const [email, setEmail] = useState('');
     const [emailError, setEmailError] = useState('');
@@ -91,40 +116,41 @@ const _EnrollScreen = () => {
     const [stream, setStream] = useState('');
     const [streamError, setStreamError] = useState('');
 
+    useEffect(() => {
+        getCourses();
+    }, []);
+
+    useEffect(() => {
+        if (invoiceData && invoiceData.invoiceCourses.length > 0) {
+            const scroll = Scroll.animateScroll;
+            console.log('going to scroll');
+            scroll.scrollToBottom();
+        }
+    }, [invoiceData]);
+
     const onStreamChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         if (streamError.length != 0) setStreamError('');
         setStream(event.target.value);
     };
 
-    const onProgramValueChange = (programName) => {
-        let temp = {};
+    const onDisCountCodeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setDiscountCode(event.target.value);
+    };
 
-        temp[programName] = {
-            ...courseSelectStatus[programName],
-            courseSelected: !courseSelectStatus[programName].courseSelected
-        };
-
+    const onProgramValueChange = (courseId) => {
         return () => {
-            setSelectBatchError('');
-            setCourseSelectStatus({ ...courseSelectStatus, ...temp });
+            addOrRemoveCourseToBuy(courseId);
         };
     };
 
     const onMonthSelected = (event) => {
-        const { programName } = JSON.parse(event.currentTarget.dataset.info);
+        const { courseId } = JSON.parse(event.currentTarget.dataset.info);
         const month = event.target.value;
-
-        let temp = {};
-        temp[programName] = {
-            ...courseSelectStatus[programName],
-            selectMonth: month,
-            showError: false
-        };
-        setCourseSelectStatus({ ...courseSelectStatus, ...temp });
+        selectMonth(parseInt(month), courseId);
     };
 
     const onConfirmButtonClicked = () => {
-        // check if the name is empty or not
+        //check if the name is empty or not
         if (name.length == 0) {
             setNameError('**Name cannot be empty');
             nameRef.current.focus();
@@ -168,21 +194,16 @@ const _EnrollScreen = () => {
         }
 
         // checking if the courses select have valid month of enrollment or not
-        //if not then setting the required error
+        // if not then setting the required error
 
-        Object.keys(courseSelectStatus).forEach((programName) => {
-            if (courseSelectStatus[programName].courseSelected === true) {
-                const selectMonth = courseSelectStatus[programName].selectMonth;
-                const availableMonths = courseSelectStatus[programName].availableMonths;
+        Object.keys(courseSelectStatus).forEach((courseId) => {
+            if (courseSelectStatus[courseId].courseSelected === true) {
+                const selectMonth = courseSelectStatus[courseId].selectMonth;
+                const availableMonths = courseSelectStatus[courseId].availableMonths;
 
                 if (availableMonths.indexOf(selectMonth) === -1) {
-                    let temp = {};
-
-                    temp[programName] = {
-                        ...courseSelectStatus[programName],
-                        showError: true
-                    };
-                    setCourseSelectStatus({ ...courseSelectStatus, ...temp });
+                    setSelectMonthError(courseId);
+                    return;
                 }
             }
         });
@@ -197,9 +218,53 @@ const _EnrollScreen = () => {
         }
 
         if (selectedAtLeastOneCourse == 0) {
-            setSelectBatchError('**Please Enroll in at least one course');
+            setMinimumOneCourseError('**Please Enroll in at least one course');
+            return;
         }
+
+        let cartCourses: { courseId: string; month: number }[] = [];
+
+        Object.keys(courseSelectStatus).forEach((courseId) => {
+            if (courseSelectStatus[courseId].courseSelected === true) {
+                cartCourses.push({
+                    courseId: courseId,
+                    month: courseSelectStatus[courseId].selectMonth
+                });
+            }
+        });
+
+        getInvoice({
+            discountCoupon: discountCode,
+            courses: cartCourses
+        });
     };
+
+    const onPayButtonClicked = () => {
+        let cartCourses: { courseId: string; month: number }[] = [];
+
+        Object.keys(courseSelectStatus).forEach((courseId) => {
+            if (courseSelectStatus[courseId].courseSelected === true) {
+                cartCourses.push({
+                    courseId: courseId,
+                    month: courseSelectStatus[courseId].selectMonth
+                });
+            }
+        });
+
+        payCourse({
+            name,
+            email,
+            phone: mobile,
+            discountCoupon: discountCode,
+            school,
+            stream,
+            courses: cartCourses
+        });
+    };
+
+    if (isServerDown === true) {
+        return <ServerDown />;
+    }
 
     return (
         <div>
@@ -413,104 +478,116 @@ const _EnrollScreen = () => {
                                 <div>{'Select Programs'}</div>
                             </FLexLayout>
 
-                            {enrollScreenCourseData.map((x, i) => {
-                                return (
-                                    <FLexLayout
-                                        keyVal={i}
-                                        justifyContent="between"
-                                        rowORColumn="row"
-                                        alignItem="start"
-                                        style={{ ...x.style }}
-                                        className={Style['program-with-input-row']}
-                                    >
-                                        {/* check-box */}
-                                        <input
-                                            onChange={onProgramValueChange(x.programName)}
-                                            checked={setCourseSelectStatus[x.programName]}
-                                            type="checkbox"
-                                            className={Style['checkbox-input']}
-                                        />
+                            {coursesData &&
+                                coursesData.map((x, i) => {
+                                    return (
+                                        <FLexLayout
+                                            keyVal={i}
+                                            justifyContent="between"
+                                            rowORColumn="row"
+                                            alignItem="start"
+                                            style={{ ...x.style }}
+                                            className={Style['program-with-input-row']}
+                                        >
+                                            {/* check-box */}
+                                            <input
+                                                onChange={onProgramValueChange(x._id)}
+                                                //  checked={setCourseSelectStatus[x._id]}
+                                                type="checkbox"
+                                                className={Style['checkbox-input']}
+                                            />
 
-                                        {/* program-name-with-select-field */}
+                                            {/* program-name-with-select-field */}
 
-                                        <FLexLayout rowORColumn="column">
-                                            {/* program-name */}
-                                            <FLexLayout
-                                                justifyContent="around"
-                                                className={Style['program-name']}
-                                                rowORColumn="row"
-                                                alignItem="center"
-                                                style={{ backgroundColor: x.bgColor }}
-                                            >
+                                            <FLexLayout rowORColumn="column">
                                                 {/* program-name */}
-                                                <div>{x.programName}</div>
-
-                                                {/* price-box */}
                                                 <FLexLayout
-                                                    justifyContent="center"
-                                                    className={Style['price-box']}
+                                                    justifyContent="between"
+                                                    className={Style['program-name']}
                                                     rowORColumn="row"
                                                     alignItem="center"
+                                                    style={{
+                                                        backgroundColor: x.bgColor,
+                                                        paddingLeft: '15px',
+                                                        paddingRight: '5px'
+                                                    }}
                                                 >
-                                                    <div>&#8377; 2599</div>
-                                                </FLexLayout>
-                                            </FLexLayout>
+                                                    {/* program-name */}
+                                                    <div>{x.programName}</div>
 
-                                            {/* select-batch-field-with-dropdown */}
-
-                                            {courseSelectStatus &&
-                                                courseSelectStatus[x.programName].courseSelected ===
-                                                    true && (
+                                                    {/* price-box */}
                                                     <FLexLayout
-                                                        className={Style['select-a-batch-dropDown']}
-                                                        rowORColumn="column"
-                                                    >
-                                                        <select
-                                                            onChange={onMonthSelected}
-                                                            style={{ width: '100%' }}
-                                                            data-info={`{ "programName": "${x.programName}" }`}
-                                                        >
-                                                            <option
-                                                                value=""
-                                                                selected
-                                                                disabled
-                                                                hidden
-                                                            >
-                                                                Please Select a Batch
-                                                            </option>
-
-                                                            {courseSelectStatus[
-                                                                x.programName
-                                                            ].availableMonths.map((month) => {
-                                                                return (
-                                                                    <option value={month}>
-                                                                        {month}
-                                                                    </option>
-                                                                );
-                                                            })}
-                                                        </select>
-                                                    </FLexLayout>
-                                                )}
-
-                                            {/* select-a-batch-error */}
-                                            {courseSelectStatus &&
-                                                courseSelectStatus[x.programName].showError ===
-                                                    true && (
-                                                    <FLexLayout
-                                                        className={Style['batch-month-error']}
+                                                        justifyContent="center"
+                                                        className={Style['price-box']}
                                                         rowORColumn="row"
                                                         alignItem="center"
-                                                        justifyContent="center"
                                                     >
-                                                        {
-                                                            '*Please select a batch. This is a required Field'
-                                                        }
+                                                        <div>&#8377; {x.coursePrice}</div>
                                                     </FLexLayout>
-                                                )}
+                                                </FLexLayout>
+
+                                                {/* select-batch-field-with-dropdown */}
+
+                                                {courseSelectStatus &&
+                                                    courseSelectStatus[x._id].courseSelected ===
+                                                        true && (
+                                                        <FLexLayout
+                                                            className={
+                                                                Style['select-a-batch-dropDown']
+                                                            }
+                                                            rowORColumn="column"
+                                                        >
+                                                            <select
+                                                                onChange={onMonthSelected}
+                                                                style={{ width: '100%' }}
+                                                                data-info={`{ "courseId": "${x._id}" }`}
+                                                            >
+                                                                <option
+                                                                    value=""
+                                                                    selected
+                                                                    disabled
+                                                                    hidden
+                                                                >
+                                                                    Please Select a Batch
+                                                                </option>
+
+                                                                {courseSelectStatus[
+                                                                    x._id
+                                                                ].availableMonths.map(
+                                                                    (month, i) => {
+                                                                        return (
+                                                                            <option
+                                                                                key={i}
+                                                                                value={month}
+                                                                            >
+                                                                                {MONTHS[month]}
+                                                                            </option>
+                                                                        );
+                                                                    }
+                                                                )}
+                                                            </select>
+                                                        </FLexLayout>
+                                                    )}
+
+                                                {/* select-a-batch-error */}
+                                                {courseSelectStatus &&
+                                                    courseSelectStatus[x._id].showError ===
+                                                        true && (
+                                                        <FLexLayout
+                                                            className={Style['batch-month-error']}
+                                                            rowORColumn="row"
+                                                            alignItem="center"
+                                                            justifyContent="center"
+                                                        >
+                                                            {
+                                                                '*Please select a batch. This is a required Field'
+                                                            }
+                                                        </FLexLayout>
+                                                    )}
+                                            </FLexLayout>
                                         </FLexLayout>
-                                    </FLexLayout>
-                                );
-                            })}
+                                    );
+                                })}
 
                             <FLexLayout
                                 className={Style['invalidDiscountCouponError']}
@@ -518,7 +595,7 @@ const _EnrollScreen = () => {
                                 justifyContent="center"
                                 alignItem="center"
                             >
-                                <div>{selectBatchError}</div>
+                                <div>{minimumOneCourseError}</div>
                             </FLexLayout>
 
                             {/* have-discount-coupon-box */}
@@ -527,11 +604,13 @@ const _EnrollScreen = () => {
                                 rowORColumn="row"
                                 justifyContent="center"
                                 alignItem="center"
-                                style={
-                                    discountCodeError.length == 0 ? {} : { border: '2px solid red' }
-                                }
                             >
-                                <div>{'Have a discount coupon ?'}</div>
+                                <input
+                                    onChange={onDisCountCodeChange}
+                                    value={discountCode}
+                                    style={{ width: '80%', textAlign: 'center' }}
+                                    placeholder="Have a discount coupon ?"
+                                />
                             </FLexLayout>
 
                             <FLexLayout
@@ -540,7 +619,7 @@ const _EnrollScreen = () => {
                                 justifyContent="center"
                                 alignItem="center"
                             >
-                                <div>{discountCodeError}</div>
+                                <div>{getInvoiceError}</div>
                             </FLexLayout>
 
                             {/* confirm-now */}
@@ -550,157 +629,164 @@ const _EnrollScreen = () => {
                                 justifyContent="center"
                                 alignItem="center"
                                 onClick={onConfirmButtonClicked}
+                                style={{ marginBottom: '40px' }}
                             >
                                 <div>{'Confirm '}</div>
                             </FLexLayout>
                         </form>
 
+                        {showEnrollScreenLoader == true && <Loader />}
+
                         {/* bill-items-container */}
-                        <FLexLayout
-                            alignItem="center"
-                            className={Style['bill-items-container']}
-                            rowORColumn="column"
-                        >
-                            {/* bill - item-1 */}
+                        {invoiceData.invoiceCourses && invoiceData.invoiceCourses.length > 0 && (
                             <FLexLayout
-                                style={{ width: '80%' }}
-                                rowORColumn="row"
-                                justifyContent="between"
-                                className={Style['bill-item-row']}
+                                alignItem="center"
+                                className={Style['bill-items-container']}
+                                rowORColumn="column"
                             >
-                                {/* program-name-with -month */}
-                                <FLexLayout rowORColumn="column">
+                                {invoiceData.invoiceCourses.map((invoiceCourse) => {
+                                    return (
+                                        <FLexLayout
+                                            style={{ width: '80%' }}
+                                            rowORColumn="row"
+                                            justifyContent="between"
+                                            className={Style['bill-item-row']}
+                                        >
+                                            {/* program-name-with -month */}
+                                            <FLexLayout rowORColumn="column">
+                                                <div className={Style['bill-item-program-name']}>
+                                                    {' '}
+                                                    {invoiceCourse.courseName}
+                                                </div>
+                                                <div className={Style['bill-item-program-month']}>
+                                                    {`${MONTHS[invoiceCourse.month]} Cohort`}
+                                                </div>
+                                            </FLexLayout>
+
+                                            {/* price-box */}
+                                            <FLexLayout
+                                                justifyContent="center"
+                                                className={Style['price-box-bill-item']}
+                                                rowORColumn="row"
+                                                alignItem="center"
+                                            >
+                                                <div>&#8377; {invoiceCourse.price}</div>
+                                            </FLexLayout>
+                                        </FLexLayout>
+                                    );
+                                })}
+
+                                {/* subtotal-box  */}
+                                <FLexLayout
+                                    style={{ width: '80%' }}
+                                    rowORColumn="row"
+                                    justifyContent="between"
+                                    className={Style['bill-item-row']}
+                                >
                                     <div className={Style['bill-item-program-name']}>
                                         {' '}
-                                        {'Metvy Business Program'}
+                                        {'Subtotal'}
                                     </div>
-                                    <div className={Style['bill-item-program-month']}>
-                                        {'May Cohort'}
-                                    </div>
+
+                                    {/* price-box */}
+                                    <FLexLayout
+                                        justifyContent="center"
+                                        className={Style['price-box-bill-item']}
+                                        rowORColumn="row"
+                                        alignItem="center"
+                                    >
+                                        <div>&#8377; {invoiceData.subTotal}</div>
+                                    </FLexLayout>
                                 </FLexLayout>
 
-                                {/* price-box */}
+                                {/* discount-box */}
                                 <FLexLayout
-                                    justifyContent="center"
-                                    className={Style['price-box-bill-item']}
+                                    style={{ width: '80%' }}
                                     rowORColumn="row"
-                                    alignItem="center"
+                                    justifyContent="between"
+                                    className={Style['bill-item-row']}
+                                    id={Style['promo-code-applied-box']}
                                 >
-                                    <div>&#8377; 2599</div>
+                                    <div>
+                                        <span className={Style['promoCode-text']}>
+                                            {'Promo Code Applied'}
+                                        </span>{' '}
+                                        <span className={Style['promoCode-value']}>
+                                            {'20% Discount'}
+                                        </span>
+                                    </div>
+
+                                    {/* price-box */}
+                                    <FLexLayout
+                                        justifyContent="center"
+                                        className={Style['price-box-bill-item']}
+                                        rowORColumn="row"
+                                        alignItem="center"
+                                    >
+                                        <div> - &#8377; {invoiceData.disCountAmount}</div>
+                                    </FLexLayout>
                                 </FLexLayout>
                             </FLexLayout>
-
-                            {/* bill - item-1 */}
-                            <FLexLayout
-                                style={{ width: '80%' }}
-                                rowORColumn="row"
-                                justifyContent="between"
-                                className={Style['bill-item-row']}
-                            >
-                                {/* program-name-with -month */}
-                                <FLexLayout rowORColumn="column">
-                                    <div className={Style['bill-item-program-name']}>
-                                        {' '}
-                                        {'Metvy Business Program'}
-                                    </div>
-                                    <div className={Style['bill-item-program-month']}>
-                                        {'May Cohort'}
-                                    </div>
-                                </FLexLayout>
-
-                                {/* price-box */}
-                                <FLexLayout
-                                    justifyContent="center"
-                                    className={Style['price-box-bill-item']}
-                                    rowORColumn="row"
-                                    alignItem="center"
-                                >
-                                    <div>&#8377; 2599</div>
-                                </FLexLayout>
-                            </FLexLayout>
-
-                            {/* bill - item-1 */}
-                            <FLexLayout
-                                style={{ width: '80%' }}
-                                rowORColumn="row"
-                                justifyContent="between"
-                                className={Style['bill-item-row']}
-                            >
-                                <div className={Style['bill-item-program-name']}> {'Subtotal'}</div>
-
-                                {/* price-box */}
-                                <FLexLayout
-                                    justifyContent="center"
-                                    className={Style['price-box-bill-item']}
-                                    rowORColumn="row"
-                                    alignItem="center"
-                                >
-                                    <div>&#8377; 2599</div>
-                                </FLexLayout>
-                            </FLexLayout>
-
-                            {/* bill - item-1 */}
-                            <FLexLayout
-                                style={{ width: '80%' }}
-                                rowORColumn="row"
-                                justifyContent="between"
-                                className={Style['bill-item-row']}
-                                id={Style['promo-code-applied-box']}
-                            >
-                                <div>
-                                    <span className={Style['promoCode-text']}>
-                                        {'Promo Code Applied'}
-                                    </span>{' '}
-                                    <span className={Style['promoCode-value']}>
-                                        {'20% Discount'}
-                                    </span>
-                                </div>
-
-                                {/* price-box */}
-                                <FLexLayout
-                                    justifyContent="center"
-                                    className={Style['price-box-bill-item']}
-                                    rowORColumn="row"
-                                    alignItem="center"
-                                >
-                                    <div> - &#8377; 599</div>
-                                </FLexLayout>
-                            </FLexLayout>
-                        </FLexLayout>
+                        )}
 
                         {/* check-out-amount */}
-                        <FLexLayout
-                            style={{ width: '80%' }}
-                            rowORColumn="row"
-                            justifyContent="between"
-                            className={Style['checkout-amount']}
-                        >
-                            <div> {'Checkout Amount'} </div>
+                        {invoiceData.invoiceCourses && invoiceData.invoiceCourses.length > 0 && (
+                            <FLexLayout
+                                style={{ width: '80%' }}
+                                rowORColumn="row"
+                                justifyContent="between"
+                                className={Style['checkout-amount']}
+                                ref={invoiceDataContainerRef}
+                            >
+                                <div> {'Checkout Amount'} </div>
 
-                            {/* price-box */}
-                            <div> &#8377; 3999</div>
-                        </FLexLayout>
+                                {/* price-box */}
+                                <div> &#8377; {invoiceData.checkoutAmount}</div>
+                            </FLexLayout>
+                        )}
                     </FLexLayout>
                 </FLexLayout>
 
                 {/* pay- now container */}
-                <FLexLayout rowORColumn="row" justifyContent="center" alignItem="center">
-                    {/* confirm-now */}
-                    <FLexLayout
-                        className={Style['confirm-now-button']}
-                        rowORColumn="row"
-                        justifyContent="center"
-                        alignItem="center"
-                        onClick={onConfirmButtonClicked}
-                    >
-                        <div>{'Pay Now'}</div>
+                {invoiceData && invoiceData.invoiceCourses.length > 0 && (
+                    <FLexLayout rowORColumn="row" justifyContent="center" alignItem="center">
+                        {/* pay-now button */}
+                        <FLexLayout
+                            className={Style['confirm-now-button']}
+                            rowORColumn="row"
+                            justifyContent="center"
+                            alignItem="center"
+                            onClick={onPayButtonClicked}
+                            style={{ marginBottom: '20px' }}
+                        >
+                            <div>{'Pay Now'}</div>
+                        </FLexLayout>
                     </FLexLayout>
-                </FLexLayout>
-
-
+                )}
             </div>
         </div>
     );
 };
 
-export default _EnrollScreen;
+const mapStateToProps = (state: StoreStateInterface) => {
+    return {
+        coursesData: state.courses.courseData,
+        courseSelectStatus: state.courses.courseSelectionStatus,
+        minimumOneCourseError: state.courses.minimumOneCourseError,
+        isServerDown: state.serverDownError.error,
+        showEnrollScreenLoader: state.loaderShow.enrollScreen,
+        invoiceData: state.courses.invoiceData,
+        getInvoiceError: state.courses.invoiceError
+    };
+};
+
+const mapDispatchToProps = {
+    getCourses,
+    addOrRemoveCourseToBuy,
+    selectMonth,
+    setSelectMonthError,
+    setMinimumOneCourseError,
+    getInvoice,payCourse
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(_EnrollScreen);

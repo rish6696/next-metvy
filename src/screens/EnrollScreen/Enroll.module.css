@@ -314,6 +314,367 @@
     }
 }
 
+
+@media only screen and (min-width: 900px) {
+    .enroll-form-container {
+        width: 740px;
+        background: #ffffff;
+        box-shadow: 0px 4px 56px rgba(0, 0, 0, 0.25);
+        margin-top: 49px;
+    }
+
+    .days-mentorship-text {
+        width: 80%;
+        text-align: center;
+        margin-top: 62px;
+        font-family: poppinsMedium;
+        font-size: 28px;
+    }
+
+    #name-input-box {
+        margin-top: 46px;
+    }
+
+    .input-box {
+        width: 420px;
+        height: 54px;
+
+        background: #f3f3f3;
+        border-radius: 18px;
+
+        padding-top: 16px;
+        padding-bottom: 16px;
+        padding-left: 24px;
+
+        font-family: poppinsItalic;
+        font-size: 18px;
+        margin-top: 14px;
+    }
+
+    .select-programs-heading-box {
+        width: 420px;
+        height: 54px;
+        margin-top: 39px;
+
+        background: #ffffff;
+        box-shadow: 0px 7px 26px rgba(0, 0, 0, 0.16);
+        font-family: poppinsRegular;
+        font-size: 18px;
+    }
+
+    .program-with-input-row {
+        width: 420px;
+        margin-top: 20px;
+    }
+
+    .program-name {
+        width: 390px;
+        height: 60px;
+        border-radius: 26px;
+        font-family: poppinsBold;
+        font-size: 16px;
+    }
+
+    .price-box {
+        width: 90px;
+        height: 32px;
+        background: #ffffff;
+        border-radius: 16px;
+        font-family: poppinsItalic;
+        font-size: 18px;
+    }
+
+    .discount-coupon-heading-box {
+        width: 420px;
+        height: 70px;
+        background: #f3f3f3;
+        border-radius: 14px;
+        margin-top: 37px;
+        font-family: poppinsRegular;
+        font-size: 18px;
+    }
+
+    .confirm-now-button {
+        width: 420px;
+        height: 62px;
+        background: #000000;
+        border-radius: 16px;
+        font-family: poppinsRegular;
+        font-size: 23px;
+        color: white;
+        cursor: pointer;
+        margin-top: 34px;
+    }
+
+    .select-a-batch-dropDown {
+        font-family: poppinsItalic;
+        font-size: 17px;
+        border-bottom: 1px solid grey;
+        padding-bottom: 15px;
+        margin-top: 26px;
+    }
+
+    .checkbox-input {
+        margin-top: 23px;
+    }
+
+    .batch-month-error {
+        font-family: poppinsMedium;
+        font-size: 18px;
+        color: red;
+    }
+
+    .invalidDiscountCouponError {
+        font-family: poppinsRegular;
+        font-size: 18px;
+        color: red;
+        margin-top: 12px;
+        margin-bottom: 18px;
+    }
+
+    .studentFelidsError {
+        font-family: poppinsRegular;
+        font-size: 18px;
+        color: red;
+        margin-top: 42px;
+    }
+
+    .bill-items-container {
+        width: 100%;
+        background: #ffffff;
+        box-shadow: 0px 0px 21px rgba(0, 0, 0, 0.12);
+        margin-top: 40px;
+    }
+
+    .bill-item-program-name{
+        font-family: poppinsRegular;
+        font-size:  18px;
+        line-height: 15px;
+    }
+
+    .bill-item-program-month{
+        font-family: poppinsRegular;
+        font-size: 15px;
+        color: #AFAFAF;
+        line-height: 12px;
+        margin-top: 14px;
+    }
+    .price-box-bill-item{
+        font-family: poppinsRegular;
+        font-size: 18px;
+    }
+
+    .bill-item-row{
+      margin-top: 22px;
+    }
+
+    .promoCode-text{
+        font-family: poppinsRegular;
+        font-size: 18px;
+        color: #3BB0A3;
+    }
+
+    .promoCode-value{
+        font-family: poppinsBoldItalic;
+        font-size: 18px;
+        color: #3BB0A3;
+    }
+
+
+    .checkout-amount{
+        font-family: poppinsBold;
+        font-size: 22px;
+        margin-top: 24px;
+        margin-bottom: 29px;
+    }
+
+    #promo-code-applied-box{
+       margin-bottom: 17px;
+    }
+}
+
+
+@media only screen and (max-width: 900px) {
+    .enroll-form-container {
+        width: 540px;
+        background: #ffffff;
+        box-shadow: 0px 4px 56px rgba(0, 0, 0, 0.25);
+        margin-top: 39px;
+    }
+
+    .days-mentorship-text {
+        width: 80%;
+        text-align: center;
+        margin-top: 49px;
+        font-family: poppinsMedium;
+        font-size: 23px;
+    }
+
+    #name-input-box {
+        margin-top: 39px;
+    }
+
+    .input-box {
+        width: 340px;
+        height: 40px;
+
+        background: #f3f3f3;
+        border-radius: 14px;
+
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-left: 18px;
+
+        font-family: poppinsItalic;
+        font-size: 14px;
+        margin-top: 9px;
+    }
+
+    .select-programs-heading-box {
+        width: 340px;
+        height: 40px;
+        margin-top: 33px;
+
+        background: #ffffff;
+        box-shadow: 0px 7px 26px rgba(0, 0, 0, 0.16);
+        font-family: poppinsRegular;
+        font-size: 14px;
+    }
+
+    .program-with-input-row {
+        width: 340px;
+        margin-top: 14px;
+    }
+
+    .program-name {
+        width: 300px;
+        height: 40px;
+        border-radius: 22px;
+        font-family: poppinsBold;
+        font-size: 14px;
+    }
+
+    .price-box {
+        width: 60px;
+        height: 24px;
+        background: #ffffff;
+        border-radius: 12px;
+        font-family: poppinsItalic;
+        font-size: 13px;
+    }
+
+    .discount-coupon-heading-box {
+        width: 320px;
+        height: 40px;
+        background: #f3f3f3;
+        border-radius: 10px;
+        margin-top: 28px;
+        font-family: poppinsRegular;
+        font-size: 14px;
+    }
+
+    .confirm-now-button {
+        width: 320px;
+        height: 52px;
+        background: #000000;
+        border-radius: 14px;
+        font-family: poppinsRegular;
+        font-size: 18px;
+        color: white;
+        cursor: pointer;
+        margin-top: 29px;
+    }
+
+    .select-a-batch-dropDown {
+        font-family: poppinsItalic;
+        font-size: 14px;
+        border-bottom: 1px solid grey;
+        padding-bottom: 12px;
+        margin-top: 19px;
+    }
+
+    .checkbox-input {
+        margin-top: 14px;
+    }
+
+    .batch-month-error {
+        font-family: poppinsMedium;
+        font-size: 14px;
+        color: red;
+    }
+
+    .invalidDiscountCouponError {
+        font-family: poppinsRegular;
+        font-size: 14px;
+        color: red;
+        margin-top: 8px;
+        margin-bottom: 12px;
+    }
+
+    .studentFelidsError {
+        font-family: poppinsRegular;
+        font-size: 14px;
+        color: red;
+        margin-top: 30px;
+    }
+
+    .bill-items-container {
+        width: 100%;
+        background: #ffffff;
+        box-shadow: 0px 0px 21px rgba(0, 0, 0, 0.12);
+        margin-top: 34px;
+    }
+
+    .bill-item-program-name{
+        font-family: poppinsRegular;
+        font-size:  15px;
+        line-height: 15px;
+    }
+
+    .bill-item-program-month{
+        font-family: poppinsRegular;
+        font-size: 12px;
+        color: #AFAFAF;
+        line-height: 12px;
+        margin-top: 12px;
+    }
+    .price-box-bill-item{
+        font-family: poppinsRegular;
+        font-size: 14px;
+    }
+
+    .bill-item-row{
+      margin-top: 17px;
+    }
+
+    .promoCode-text{
+        font-family: poppinsRegular;
+        font-size: 14px;
+        color: #3BB0A3;
+    }
+
+    .promoCode-value{
+        font-family: poppinsBoldItalic;
+        font-size: 12px;
+        color: #3BB0A3;
+    }
+
+
+    .checkout-amount{
+        font-family: poppinsBold;
+        font-size: 17px;
+        margin-top: 22px;
+        margin-bottom: 22px;
+    }
+
+    #promo-code-applied-box{
+       margin-bottom: 12px;
+    }
+}
+
+
+
+
 @media only screen and (max-width: 600px) {
     .enroll-form-container {
         width: 340px;
@@ -456,6 +817,7 @@
         font-size: 8px;
         color: #AFAFAF;
         line-height: 12px;
+        margin-top: 0px;
     }
     .price-box-bill-item{
         font-family: poppinsRegular;
@@ -489,6 +851,8 @@
     #promo-code-applied-box{
        margin-bottom: 8px;
     }
-
-   
 }
+
+
+
+

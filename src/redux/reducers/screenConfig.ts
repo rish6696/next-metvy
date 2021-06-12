@@ -1,4 +1,4 @@
-import { SET_WIDTH } from '../Actions/types'
+import { ActionTypes }  from '../Actions/types'
 
 
 const defaultState={
@@ -7,16 +7,15 @@ const defaultState={
 }
 
 
-interface Action {
-    type : string,
-    payload: any
+export interface ScreenConfigState {
+    height:number,
+    width:number
 }
-  
 
+export const ScreenConfig =(state=defaultState,action)=>{
 
-export const ScreenConfig =(state=defaultState,action:Action)=>{
     switch (action.type) {
-        case SET_WIDTH :
+        case  ActionTypes.SET_WIDTH :
             return { ...state,width: action.payload.width }
         default:
             return state

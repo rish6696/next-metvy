@@ -22,6 +22,7 @@ import { connect } from 'react-redux';
 import { setWidth } from '../../redux/Actions/Screenconfig';
 import TestimonialCard from '../../components/TestimonialCard/testimonialCard';
 import Footer from '../../components/Footer/Footer';
+
 import { Link } from 'react-scroll';
 
 const useStyles = makeStyles({

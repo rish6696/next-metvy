@@ -434,17 +434,25 @@ export const enrollScreenCourseData = [
     { bgColor: ' #7fc2ff', price: 2499, programName: 'Metvy Consultancy Program' }
 ];
 
-export const MONTHS = {
-    JAN: 'January',
-    FEB: 'February',
-    MARCH: 'March',
-    APRIL: 'April',
-    MAY: 'May',
-    JUNE: 'June',
-    JULY: 'July',
-    AUGUST: 'August',
-    SEPTEMBER: 'September',
-    OCTOBER: 'October',
-    NOVEMBER: 'November',
-    DECEMBER: 'December'
+
+interface Months {
+  [n: number] :string
+}
+export const MONTHS : Months = {
+    1: 'January',
+    2: 'February',
+    3: 'March',
+    4: 'April',
+    5: 'May',
+    6: 'June',
+    7: 'July',
+    8: 'August',
+    9: 'September',
+    10: 'October',
+    11: 'November',
+    12: 'December'
 };
+
+
+
+

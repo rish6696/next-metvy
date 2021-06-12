@@ -1,6 +1,12 @@
-import { SET_WIDTH  } from './types'
+import { ActionTypes } from './types'
 
-export const setWidth = ( width )=>{
-    return { type: SET_WIDTH ,payload:{width} }
+
+export interface SetWidthAction {
+    type : ActionTypes.SET_WIDTH,
+    payload : { width:number,height ?:number }
+}
+
+export const setWidth = ( width:number ):SetWidthAction=>{
+    return { type: ActionTypes.SET_WIDTH ,payload:{ width } }
 }
 
