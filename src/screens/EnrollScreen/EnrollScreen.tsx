@@ -68,6 +68,8 @@ const _EnrollScreen = (props: Props) => {
         setChecked(event.target.checked);
     };
 
+    console.log(props.courseSelectStatus)
+
     const [selectBatchError, setSelectBatchError] = useState('');
 
     const [discountCode, setDiscountCode] = useState('');
@@ -150,7 +152,7 @@ const _EnrollScreen = (props: Props) => {
     };
 
     const onConfirmButtonClicked = () => {
-        //check if the name is empty or not
+      //  check if the name is empty or not
         if (name.length == 0) {
             setNameError('**Name cannot be empty');
             nameRef.current.focus();
@@ -196,17 +198,22 @@ const _EnrollScreen = (props: Props) => {
         // checking if the courses select have valid month of enrollment or not
         // if not then setting the required error
 
-        Object.keys(courseSelectStatus).forEach((courseId) => {
-            if (courseSelectStatus[courseId].courseSelected === true) {
-                const selectMonth = courseSelectStatus[courseId].selectMonth;
-                const availableMonths = courseSelectStatus[courseId].availableMonths;
+
+        for (let i = 0; i < Object.keys(courseSelectStatus).length; i++) {
+            if (courseSelectStatus[Object.keys(courseSelectStatus)[i]].courseSelected == true) {
+
+                const selectMonth = courseSelectStatus[Object.keys(courseSelectStatus)[i]].selectMonth;
+                const availableMonths = courseSelectStatus[Object.keys(courseSelectStatus)[i]].availableMonths;
 
                 if (availableMonths.indexOf(selectMonth) === -1) {
-                    setSelectMonthError(courseId);
+                    setSelectMonthError(Object.keys(courseSelectStatus)[i]);
                     return;
                 }
+                
             }
-        });
+        }
+
+
 
         // checking atleast 1 course is enrolled or not
         let selectedAtLeastOneCourse = 0;
@@ -418,7 +425,7 @@ const _EnrollScreen = (props: Props) => {
 
                                 <FLexLayout rowORColumn="column" className={Style['input-box']}>
                                     <input
-                                        type="number"
+                                        type="tel"
                                         ref={phoneRef}
                                         required={true}
                                         placeholder="Mobile"

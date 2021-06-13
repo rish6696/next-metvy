@@ -1,7 +1,7 @@
 const  GET_URL={
     0 :'https://api2.metvy.com',
     1: 'http://api-staging.metvy.com',
-    2: 'http://192.168.1.2:3000'
+    2: 'http://192.168.1.3:3000'
 }
 
 const env = 0;
