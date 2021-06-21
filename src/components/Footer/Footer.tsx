@@ -2,10 +2,28 @@ import React from 'react'
 import FLexLayout from '../FlexLayout'
 import Style from './Footer.module.css'
 import {Image} from 'react-bootstrap'
+import { BASE_URL } from '../../api-services/api-constants'
 
 
 
 const  _Footer =()=>{
+
+    const onRefundPolicyClick =()=>{
+       window.open(`${BASE_URL}/api/learn/refund-policy`)
+    }
+
+    const onPrivacyPolicyClick =()=>{
+        window.open(`${BASE_URL}/api/learn/privacy-policy`)
+     }
+
+
+     const onConditionsClick =()=>{
+        window.open(`${BASE_URL}/api/learn/terms-condition`)
+     }
+ 
+ 
+
+
     return(
         // footer-container-black
         <FLexLayout  className={Style['footer-container-black']}  rowORColumn='row' justifyContent='center' alignItem='center' >
@@ -19,7 +37,7 @@ const  _Footer =()=>{
 
                     {/* items-colum-1 */}
                     <FLexLayout  rowORColumn='column' >
-                        <div className={Style['footer-items']} >{'Home'}</div>
+                        <div className={Style['footer-items']} >{'Contact Us'}</div>
                         <div  className={Style['footer-items']} >{'Blogs'}</div>
                         <div  className={Style['footer-items']} >{'Careers'}</div>
                     </FLexLayout>
@@ -27,9 +45,9 @@ const  _Footer =()=>{
 
                       {/* items-colum-2 */}
                     <FLexLayout  rowORColumn='column' >
-                        <div  className={Style['footer-items']} >{'Terms & Conditions'}</div>
-                        <div  className={Style['footer-items']} >{'Contact Us'}</div>
-                        <div  className={Style['footer-items']} >{'Privacy Policy'}</div>
+                        <div onClick={onConditionsClick}  className={Style['footer-items']} >{'Terms & Conditions'}</div>
+                        <div onClick={onRefundPolicyClick}  className={Style['footer-items']} >{'Refund Policy'}</div>
+                        <div onClick={onPrivacyPolicyClick}  className={Style['footer-items']} >{'Privacy Policy'}</div>
                     </FLexLayout>
     
                 </FLexLayout>
