@@ -15,6 +15,7 @@ import IconButton from '@material-ui/core/IconButton';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import { Style } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
+import { useRouter } from 'next/router';
 
 const _Header = () => {
     const useStyle = makeStyles({
@@ -33,6 +34,7 @@ const _Header = () => {
     };
 
     const hamburgerBreakPoint = 1300;
+    const router = useRouter();
 
     const Accordion = withStyles({
         root: {
@@ -108,7 +110,7 @@ const _Header = () => {
             return (
                 <FLexLayout
                     alignItem="center"
-                    justifyContent="between"
+                    justifyContent="end"
                     style={{
                         fontFamily: 'poppinsRegular',
                         fontSize: '18px',
@@ -119,9 +121,9 @@ const _Header = () => {
                     }}
                     rowORColumn="row"
                 >
-                    <div className={HeaderStyle['cursorPointer']}> About Us </div>
+                    <div  onClick={() => router.push('/team')}  style={{marginLeft:'20px'}} className={HeaderStyle['cursorPointer']}> About Us </div>
 
-                    <div className={HeaderStyle['cursorPointer']}>
+                    <div  style={{marginLeft:'20px'}} className={HeaderStyle['cursorPointer']}>
                         <FLexLayout onClick={handleMenu} alignItem="center" rowORColumn="row">
                             <div> Metvy Learn </div>
                             <div className={HeaderStyle['triangle-right']}></div>
@@ -155,13 +157,9 @@ const _Header = () => {
                         </Menu>
                     </div>
 
-                    <div className={HeaderStyle['cursorPointer']}> Team </div>
+                    <div  onClick={() => router.push('/team')}  style={{marginLeft:'20px'}} className={HeaderStyle['cursorPointer']}> Team </div>
 
-                    <div className={HeaderStyle['cursorPointer']}> Blogs </div>
-
-                    <div className={HeaderStyle['cursorPointer']}> Career </div>
-
-                    <div className={HeaderStyle['cursorPointer']}> Contact Us </div>
+                   
                 </FLexLayout>
             );
         } else {
@@ -207,7 +205,7 @@ const _Header = () => {
                             rowORColumn="column"
                             style={{ padding: '32px', width: `${0.72 * width}px`, height: '60%' }}
                         >
-                            <div className={HeaderStyle.menuItemsText}> About Us </div>
+                            <div  onClick={() => router.push('/team')} className={HeaderStyle.menuItemsText}> About Us </div>
 
                             <div className={HeaderStyle.menuItemsText}>
                                 <Accordion
@@ -255,13 +253,9 @@ const _Header = () => {
                                 </Accordion>
                             </div>
 
-                            <div className={HeaderStyle.menuItemsText}> Team </div>
+                            <div  onClick={() => router.push('/team')}  className={HeaderStyle.menuItemsText}> Team </div>
 
-                            <div className={HeaderStyle.menuItemsText}> Blogs </div>
 
-                            <div className={HeaderStyle.menuItemsText}> Career </div>
-
-                            <div className={HeaderStyle.menuItemsText}> Contact Us </div>
                         </FLexLayout>
 
                         <FLexLayout
@@ -301,7 +295,7 @@ const _Header = () => {
                     className={HeaderStyle.brandContainer}
                 >
                     <FLexLayout rowORColumn="row" justifyContent="center" alignItem="center">
-                        <Image className={HeaderStyle.headerIcon} src="/icons/MetvyLearnLogo.png" />
+                        <Image onClick={()=>router.push('/')} style={{cursor:'pointer'}} className={HeaderStyle.headerIcon} src="/icons/MetvyLearnLogo.png" />
                         <div className={HeaderStyle.MetvyLearnHeading}> Metvy Learn </div>
                     </FLexLayout>
                 </FLexLayout>

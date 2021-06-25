@@ -189,6 +189,43 @@ export const mentorData = [
     }
 ];
 
+
+export const teamData = [
+    {
+        firstName: 'Shawrya',
+        lastName: 'Mehrotra',
+        imageName: '/icons/Shawrya.png',
+        title: "Founder & CEO",
+        description: "Worked with Ogilvy, SproutBox, YC Startup School Alum.",
+        institute :"Kirori Mal College, DU"
+    },
+    {
+        firstName: 'Rajan',
+        lastName: 'Luthra',
+        imageName: '/icons/Rajan.png',
+        title: "Co-Founder",
+        description: "Worked with ASA, Inc42, YC Startup School Alum",
+        institute :"Kirori Mal College, DU"
+    },
+    {
+        firstName: 'Royina',
+        lastName: 'Chabbra',
+        imageName: '/icons/Royina.png',
+        title: "Head of Revenue",
+        description: "English Honours Major, Worked with Lexjury - A L aw Firm",
+        institute :"Lady Shri Ram College, DU"
+    },
+    {
+        firstName: 'Vipul',
+        lastName: 'Ghai',
+        imageName: '/icons/Vipul.png',
+        title: "Head of Design",
+        description: "Project Lead (Metvy Design Program)",
+        institute :"The Design Village, Noida"
+    },
+];
+
+
 export const programsCardsMetaData = [
     {
         backgroundImage: '/icons/Golden_ 2.png',
@@ -452,6 +489,43 @@ export const MONTHS : Months = {
     11: 'November',
     12: 'December'
 };
+
+
+export const contactDetails = {
+    phone:"+91 98219 64864",
+    email :"support@metvy.com",
+    address:"1044 First Floor, IFFCO Colony, Sector 17B, Gurugram, Haryana"
+}
+
+export const socialMediaLinks ={
+    facebook: "https://www.facebook.com/Metvyapp/",
+    instagram :"https://www.instagram.com/metvy.app/?hl=en",
+    linkedIn:"https://in.linkedin.com/company/metvynetworking",
+    twitter:"https://twitter.com/metvy_app?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor",
+    youtube:"https://www.youtube.com/c/Metvy"
+}
+
+
+
+export const aboutUs = `Having bagged an internship at Ogilvy, Shawrya was going through a book on the life and journey of 
+Mr. Dhirubhai Ambani - how he had leveraged his networking skills, from officials to people he met at
+tea-stalls, to get what he wanted. This brought to Shawrya’s mind the difficulties that we face when it
+comes to networking, and ironically, we are the generation of social networking. It was this moment
+that started the journey named Metvy. He decided to network with as many people as possible, and 
+needless to say, it wasn’t a bed of roses. This pushed him into wondering that in the world where
+everything is automated, what if this could be too? What if he could give everyone a chance to utilize
+this sea of human potential around them? Because for all we know the person we are in search of
+might be just beside us, and we wouldn’t know about it at all. But what if they could?
+
+Like every great initiative, this too started off as an idea - an idea that was addictive, an idea which,
+if solved could cease a lot of problems. It is then that the proper concept of Metvy and what it would
+be doing was finalized. Metvy was supposed to aim at utilizing the infinite human potential present
+hyper-locally through an automated intuitive platform that would provide need-based networking
+where people would be able to find the kind of people they were looking for around them.
+
+Shawrya’s idea of Metvy met the support of Rajan and they both started on the journey of putting
+Metvy on the charts. Their dedication and Metvy’s growing credibility led to the growth of the team
+that is now called “The Metvy Family.”`
 
 
 

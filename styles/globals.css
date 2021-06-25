@@ -79,6 +79,15 @@ a {
   src: url("../public/fonts/Poppins-BoldItalic.ttf");
 } 
 
+@font-face {
+  font-family: "poppinsThin";
+  src: url("../public/fonts/Poppins-Thin.ttf");
+} 
+
+
+
+
+
 /* .carousel {
   z-index: -100;
 } */

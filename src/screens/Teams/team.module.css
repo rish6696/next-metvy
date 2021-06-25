@@ -1,0 +1,797 @@
+.brandText {
+    height: 30px;
+    font-family: poppinsSemiBold;
+    font-size: 30px;
+    line-height: 22px;
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+.container {
+    background-image: url('/icons/MacBook Pro - Home.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.subHeadingText {
+    font-family: poppinsRegular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
+    align-items: center;
+    text-align: center;
+
+    color: #ffffff;
+}
+
+.navigationIcons {
+    height: 25%;
+    width: 25%;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 3px solid #ffffff;
+    box-shadow: 0px 6px 50px rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(14px);
+    /* Note: backdrop-filter has minimal browser support */
+}
+
+.storeIcons {
+    background: #000000;
+    border: 2px solid #ffffff;
+    box-sizing: border-box;
+    border-radius: 10px;
+    color: white;
+    padding: 20px;
+    width: 158px;
+    height: 58px;
+}
+
+.headingDiscover {
+    font-family: PoppinsMedium;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    /* or 24px */
+
+    text-align: center;
+    letter-spacing: 0.1em;
+
+    color: #ffffff;
+}
+
+.testimonialsHeading {
+    padding: 14px 12px;
+
+    background: linear-gradient(
+        95.02deg,
+        rgba(255, 255, 255, 0.23) 0%,
+        rgba(255, 255, 255, 0) 100.55%
+    );
+
+    border-radius: 16px;
+
+    border: 2px solid rgba(255, 255, 255, 1);
+
+    mix-blend-mode: normal;
+    filter: drop-shadow(8px 8px 47px rgba(255, 255, 255, 0.24));
+    backdrop-filter: blur(61px);
+}
+
+.testimonialText {
+    font-family: poppinsItalic;
+    font-size: 14px;
+    color: white;
+}
+
+.testimonialCard {
+    background: rgba(255, 255, 255, 0.62);
+    border-radius: 16px;
+}
+
+.testimonialUserName {
+    font-family: poppinsBold;
+    font-size: 10px;
+    color: black;
+}
+
+.testimonialUserDesignation {
+    font-family: poppinsMedium;
+    font-size: 10px;
+    color: black;
+}
+
+.testimonialUserText {
+    font-family: poppinsRegular;
+    font-size: 9px;
+    color: black;
+    line-height: 11px;
+    margin-top: 22px;
+    margin-right: 12px;
+}
+
+.explore-mentorship-card {
+    font-family: poppinsBold;
+    font-size: 25px;
+    color: white;
+    width: 339px;
+    height: 112.55px;
+    background: #202020;
+    border: 3px solid #ffffff;
+    box-shadow: 0px 6px 50px rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(14px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 77.5px;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 1000px) {
+    /*Tablets [601px -> 1200px]*/
+    .explore-mentorship-box {
+        width: 45%;
+    }
+
+    .totalDownloads {
+        font-family: poppinsBold;
+        font-size: 150px;
+        color: white;
+    }
+
+    .downloads-label {
+        font-family: poppinsMedium;
+        font-size: 30px;
+        color: white;
+        /* margin-top: 21px; */
+    }
+
+    .headingBold {
+        font-family: poppinsSemiBold;
+        font-size: 48px;
+        line-height: 41px;
+        color: #ffffff;
+        text-align: center;
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    /*Tablets [601px -> 1200px]*/
+    .explore-mentorship-box {
+        width: 55%;
+    }
+
+    .totalDownloads {
+        font-family: poppinsBold;
+        font-size: 98px;
+        color: white;
+    }
+
+    .downloads-label {
+        font-family: poppinsMedium;
+        font-size: 50px;
+        color: white;
+        margin-top: 21px;
+    }
+
+    .headingBold {
+        font-family: poppinsSemiBold;
+        font-size: 45px;
+        line-height: 41px;
+        color: #ffffff;
+        text-align: center;
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    /*Tablets [601px -> 1200px]*/
+    .explore-mentorship-box {
+        width: 55%;
+    }
+
+    .totalDownloads {
+        font-family: poppinsBold;
+        font-size: 78px;
+        color: white;
+    }
+
+    .downloads-label {
+        font-family: poppinsMedium;
+        font-size: 39px;
+        color: white;
+        margin-top: 21px;
+    }
+
+    .headingBold {
+        font-family: poppinsSemiBold;
+        font-size: 40px;
+        line-height: 41px;
+        color: #ffffff;
+        text-align: center;
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    /*Big smartphones [426px -> 600px]*/
+    .explore-mentorship-box {
+        width: 70%;
+    }
+
+    .totalDownloads {
+        font-family: poppinsBold;
+        font-size: 60px;
+        color: white;
+    }
+
+    .downloads-label {
+        font-family: poppinsMedium;
+        font-size: 21px;
+        color: white;
+        margin-top: 21px;
+    }
+
+    .headingBold {
+        font-family: poppinsSemiBold;
+        font-size: 35px;
+        line-height: 41px;
+        color: #ffffff;
+        text-align: center;
+        width: 80%;
+    }
+}
+@media only screen and (max-width: 425px) {
+    /*Small smartphones [325px -> 425px]*/
+    .explore-mentorship-box {
+        width: 90%;
+    }
+
+    .totalDownloads {
+        font-family: poppinsBold;
+        font-size: 40px;
+        color: white;
+    }
+
+    .downloads-label {
+        font-family: poppinsMedium;
+        font-size: 14px;
+        color: white;
+        margin-top: 21px;
+    }
+
+    .headingBold {
+        font-family: poppinsSemiBold;
+        font-size: 30px;
+        line-height: 41px;
+        color: #ffffff;
+        text-align: center;
+        width: 80%;
+    }
+}
+
+.scroll-left {
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+    color: white;
+}
+.scroll-left .effect {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    line-height: 50px;
+    text-align: center;
+    /* Starting position */
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    /* Apply animation to this element */
+    -moz-animation: scroll-left 10s linear infinite;
+    -webkit-animation: scroll-left 10s linear infinite;
+    animation: scroll-left 20s linear infinite;
+    
+}
+
+.scroll-left p:hover{
+    animation-play-state: paused;
+}
+
+
+/* Move it (define the animation) */
+/* @-moz-keyframes scroll-left {
+    0% {
+        -moz-transform: translateX(100%);
+    }
+    100% {
+        -moz-transform: translateX(-100%);
+    }
+}
+@-webkit-keyframes scroll-left {
+    0% {
+        -webkit-transform: translateX(100%);
+    }
+    100% {
+        -webkit-transform: translateX(-100%);
+    }
+} */
+@keyframes scroll-left {
+    0% {
+        -moz-transform: translateX(100%); /* Browser bug fix */
+        -webkit-transform: translateX(100%); /* Browser bug fix */
+        transform: translateX(100%);
+    }
+    100% {
+        -moz-transform: translateX(-100%); /* Browser bug fix */
+        -webkit-transform: translateX(-100%); /* Browser bug fix */
+        transform: translateX(-100%);
+    }
+}
+
+
+.effect{
+    position: relative;
+    animation-name: example;
+    animation-duration: 150s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    
+}
+
+
+  
+  @keyframes example {
+    0%   { left: 4000px; top:0px;}
+    100% { left:-1500px; top:0px;}
+  }
+
+
+
+
+
+@media only screen and (max-width: 638px) {
+    /*Small smartphones [325px -> 425px]*/
+
+    .featured-on-container{
+        width: 346px;
+        height: 320.16px;
+        background: #FFFFFF;
+        border-radius: 24px;
+      }
+    
+      .featured-on-heading{
+          font-family: poppinsMedium;
+          font-size: 31px;
+          margin-top: 34px;
+      }
+    
+    
+      .featured-on-underline{
+        height: 2px;
+        background: black;
+        margin-bottom :10px;
+        border-radius : 12px;
+    }
+    
+    
+    .featured-on-image{
+        width: 250px;
+        height: 115px;
+        margin-top : 24px
+    }
+
+    .featured-on-bottom-text{
+        font-family: poppinsRegular;
+        font-size: 20px;
+        margin-top: 12px;
+    }
+
+}
+
+
+@media only screen and (max-width: 400px) {
+    /*Small smartphones [325px -> 425px]*/
+
+    .featured-on-container{
+        width: 220px;
+        height: 205.16px;
+        background: #FFFFFF;
+        border-radius: 15px;
+      }
+    
+      .featured-on-heading{
+          font-family: poppinsMedium;
+          font-size: 20px;
+          margin-top: 22px;
+      }
+    
+    
+      .featured-on-underline{
+        height: 1px;
+        background: black;
+        margin-bottom :6px;
+        border-radius : 7px;
+    }
+    
+    
+    .featured-on-image{
+        width: 160px;
+        height: 75px;
+        margin-top : 16px
+    }
+
+    .featured-on-bottom-text{
+        font-family: poppinsRegular;
+        font-size: 13px;
+        margin-top: 8px;
+    }
+
+}
+
+
+@media only screen and (min-width: 638px) {
+    /*Small smartphones [325px -> 425px]*/
+    .featured-on-container{
+        width: 546px;
+        height: 493.16px;
+        background: #FFFFFF;
+        border-radius: 38px;
+      }
+    
+      .featured-on-heading{
+          font-family: poppinsMedium;
+          font-size: 48px;
+          margin-top: 52px;
+      }
+    
+    
+      .featured-on-underline{
+        height: 4px;
+        background: black;
+        margin-bottom :15px;
+        border-radius : 18px;
+    }
+    
+    
+    .featured-on-image{
+        width: 400px;
+        height: 178px;
+        margin-top : 35px
+    }
+    
+    .featured-on-bottom-text{
+        font-family: poppinsRegular;
+        font-size: 30px;
+        margin-top: 20px;
+    }
+}
+
+.explore-carousel-container{
+    width: 60%
+}
+
+
+
+
+
+
+
+
+.fitmentContainer {
+    color: white;
+}
+
+
+
+.mentorshipCard {
+    font-family: poppinsSemiBoldItalic;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.25);
+}
+
+
+
+
+
+.brand-advertisement-container {
+    box-shadow: 0px 12px 92px 0px rgba(0, 0, 0, 0.21);
+    margin-top: 84px;
+    background-color: #ffffff;
+}
+
+.programCard {
+    border-radius: 16px;
+}
+
+.programHeading {
+    font-family: poppinsBold;
+    font-size: 22px;
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.data-weeks-value-box {
+    height: 61px;
+    width: 61px;
+    background: #ffffff;
+    border-radius: 12px;
+    font-family: poppinsSemiBold;
+    font-size: 20px;
+}
+
+.data-value-label {
+    font-family: poppinsMedium;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.apply-now-button {
+    border: 2px solid;
+    border-image-source: linear-gradient(152.19deg, #ffffff 0%, #45320a 100%);
+    height: 53px;
+    background: #000000;
+    box-shadow: 0px 0px 228px 6px rgba(255, 168, 0, 0.43);
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.apply-now-text {
+    font-family: poppinsMedium;
+    font-size: 14px;
+    color: white;
+}
+
+.perks-box {
+    width: 157.02px;
+    height: 57.73px;
+    border-radius: 16px;
+    box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.25);
+}
+
+.testimonial-learn-card {
+    height: 160px;
+    background: #ffffff;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.35);
+    border-radius: 12px;
+    padding: 20px;
+}
+.mentor-card {
+    height: 352px;
+    width: 283px;
+    background: #ffffff;
+    box-shadow: 0px 0px 70px rgba(0, 0, 0, 0.14);
+    border-radius: 20px;
+}
+
+.circular-image-container{
+    position: relative;
+    top: -108px; 
+
+}
+
+.circular-image {
+    height: 175px;
+    width: 175px;
+    border-radius: 50%;
+}
+
+
+
+.mentorDescription {
+    margin-bottom: 16px;
+}
+
+.scholars-from-card {
+    box-shadow: 0px 0px 70px 0px rgba(0, 0, 0, 0.14);
+    background-color: white;
+    width: 361px;
+    height: 474px;
+    margin-top: 177px;
+    background: #ffffff;
+    box-shadow: 0px 0px 70px rgba(0, 0, 0, 0.14);
+}
+
+.queryBox {
+    width: 1005;
+    height: 52px;
+    background: #e9e9e9;
+    margin-top: 69px;
+}
+
+
+
+@media only screen and (min-width: 300px) {
+    .statsBox {
+        background: black;
+        box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.25);
+        border-radius: 13px;
+        color: white;
+        width: 95px;
+        height: 65px;
+    }
+
+    .stats-value{
+        font-family: poppinsSemiBold;
+        font-size: 16px;
+    }
+
+    .stats-label{
+        font-family: poppinsRegular;
+        font-size: 7px;
+    }
+    .bannerText {
+        font-family: poppinsRegular;
+
+        /* 6px gap */
+        font-size: 11px;
+        
+         /* 8 px gap  */
+        line-height: 8px;
+        
+        text-align: center;
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 500px) {
+    .statsBox {
+        background: black;
+        box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.25);
+        border-radius: 21px;
+        color: white;
+        width: 160px;
+        height: 110px;
+    }
+
+    .stats-value{
+        font-family: poppinsSemiBold;
+        font-size: 27px;
+    }
+
+    .stats-label{
+        font-family: poppinsRegular;
+        font-size: 12px;
+    }
+
+    .bannerText {
+        font-family: poppinsRegular;
+
+        /* 6px gap */
+        font-size: 17px;
+        
+         /* 8 px gap  */
+        line-height: 16px;
+        
+        text-align: center;
+        width: 80%;
+    }
+
+   
+}
+
+@media only screen and (min-width: 700px) {
+    .statsBox {
+        background: black;
+        box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.25);
+        border-radius: 29px;
+        color: white;
+        width: 225px;
+        height: 155px;
+    }
+
+    .stats-value{
+        font-family: poppinsSemiBold;
+        font-size: 38px;
+    }
+
+    .stats-label{
+        font-family: poppinsRegular;
+        font-size: 17px;
+    }
+
+    .bannerText {
+        font-family: poppinsRegular;
+
+        /* 6px gap */
+        font-size: 23px;
+        
+         /* 8 px gap  */
+        line-height: 24px;
+        
+        text-align: center;
+        width: 80%;
+    }
+}
+
+
+
+@media only screen and (min-width: 900px) {
+    .statsBox {
+        background: black;
+        box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.25);
+        border-radius: 37px;
+        color: white;
+        width: 290px;
+        height: 200px;
+    }
+
+    .stats-value{
+        font-family: poppinsSemiBold;
+        font-size: 49px;
+    }
+
+    .stats-label{
+        font-family: poppinsRegular;
+        font-size: 22px;
+    }
+
+    .bannerText {
+        font-family: poppinsRegular;
+
+        /* 6px gap */
+        font-size: 29px;
+        
+         /* 8 px gap  */
+        line-height: 32px;
+
+        text-align: center;
+        width: 80%;
+    }
+}
+
+
+@media only screen and (min-width: 1100px) {
+    .statsBox {
+        background: black;
+        box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.25);
+        border-radius: 45px;
+        color: white;
+        width: 350px;
+        height: 250px;
+    }
+
+    .stats-value{
+        font-family: poppinsSemiBold;
+        font-size: 60px;
+    }
+
+    .stats-label{
+        font-family: poppinsRegular;
+        font-size: 28px;
+    }
+
+
+    .bannerText {
+        font-family: poppinsRegular;
+        font-size: 36px;
+        line-height: 40px;
+        text-align: center;
+        width: 80%;
+    }
+}
+
+.effect{
+    position: relative;
+    animation-name: example;
+    animation-duration: 150s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes example {
+    0%   { left: 4000px; top:0px;}
+    100% { left:-1500px; top:0px;}
+  }
+
+.aboutUs{
+    font-family: poppinsRegular;
+    font-size: 20px;
+    line-height: 32px;
+    color: white;
+    margin-top: 40px;
+
+}

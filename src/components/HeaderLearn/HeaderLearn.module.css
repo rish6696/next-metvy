@@ -15,6 +15,7 @@
 
 .brandContainer {
     margin-left: 33px;
+    cursor: pointer;
 }
 
 .menuItemsText {
@@ -49,4 +50,8 @@
 
 .fitmentContainer {
     color: white;
+}
+
+.cursorPointer{
+    cursor: pointer;
 }

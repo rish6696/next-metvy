@@ -19,6 +19,7 @@
 
 .brandContainer {
     margin-left: 33px;
+    cursor: pointer;
 }
 
 .menuItemsText {
