@@ -9,7 +9,8 @@ import {
     firstPartText,
     rating,
     testimonialHeading,
-    totalDownloadsLandingScreen
+    totalDownloadsLandingScreen,
+    appTestimonialsData
 } from '../../constants';
 import Style from './LandingScreen.module.css';
 
@@ -374,7 +375,8 @@ function _LandingScreen({ setWidth, width }) {
                             rowORColumn="row"
                             alignItem="center"
                             justifyContent="between"
-                            style={{ marginRight: '17px' }}
+                            style={{ marginRight: '17px',cursor: "pointer"}}
+                            onClick={()=>window.open("https://play.google.com/store/apps/details?id=com.metvy&hl=en_IN&gl=US")}
                         >
                             <FLexLayout
                                 rowORColumn="column"
@@ -406,6 +408,9 @@ function _LandingScreen({ setWidth, width }) {
                             rowORColumn="row"
                             alignItem="center"
                             justifyContent="between"
+                            style={{ marginRight: '17px',cursor: "pointer"}}
+                            onClick={()=>window.open("https://apps.apple.com/in/app/metvy-professional-networking/id1521043145")}
+
                         >
                             <FLexLayout rowORColumn="column">
                                 <div
@@ -428,6 +433,8 @@ function _LandingScreen({ setWidth, width }) {
                                 src="/icons/Apple.png"
                             />
                         </FLexLayout>
+
+                    
                     </FLexLayout>
                 </FLexLayout>
 
@@ -590,124 +597,12 @@ function _LandingScreen({ setWidth, width }) {
                         }}
                         rowORColumn="row"
                     >
-                        <TestimonialCard
-                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
-                            avatarImage="/icons/76.jpeg"
-                            designation="Accountant,Metvy"
-                            avatarName="Jane Doe"
-                        />
-
-                        <TestimonialCard
-                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
-                            avatarImage="/icons/76.jpeg"
-                            designation="Accountant,Metvy"
-                            avatarName="Jane Doe"
-                        />
-
-                        <TestimonialCard
-                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
-                            avatarImage="/icons/76.jpeg"
-                            designation="Accountant,Metvy"
-                            avatarName="Jane Doe"
-                        />
-
-                        <TestimonialCard
-                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
-                            avatarImage="/icons/76.jpeg"
-                            designation="Accountant,Metvy"
-                            avatarName="Jane Doe"
-                        />
-
-                        <TestimonialCard
-                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
-                            avatarImage="/icons/76.jpeg"
-                            designation="Accountant,Metvy"
-                            avatarName="Jane Doe"
-                        />
-
-                        <TestimonialCard
-                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
-                            avatarImage="/icons/76.jpeg"
-                            designation="Accountant,Metvy"
-                            avatarName="Jane Doe"
-                        />
-
-                        <TestimonialCard
-                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
-                            avatarImage="/icons/76.jpeg"
-                            designation="Accountant,Metvy"
-                            avatarName="Jane Doe"
-                        />
-
-                        <TestimonialCard
-                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
-                            avatarImage="/icons/76.jpeg"
-                            designation="Accountant,Metvy"
-                            avatarName="Jane Doe"
-                        />
-
-                        <TestimonialCard
-                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
-                            avatarImage="/icons/76.jpeg"
-                            designation="Accountant,Metvy"
-                            avatarName="Jane Doe"
-                        />
-
-                        <TestimonialCard
-                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
-                            avatarImage="/icons/76.jpeg"
-                            designation="Accountant,Metvy"
-                            avatarName="Jane Doe"
-                        />
-
-                        <TestimonialCard
-                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
-                            avatarImage="/icons/76.jpeg"
-                            designation="Accountant,Metvy"
-                            avatarName="Jane Doe"
-                        />
-
-                        <TestimonialCard
-                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
-                            avatarImage="/icons/76.jpeg"
-                            designation="Accountant,Metvy"
-                            avatarName="Jane Doe"
-                        />
-
-                        <TestimonialCard
-                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
-                            avatarImage="/icons/76.jpeg"
-                            designation="Accountant,Metvy"
-                            avatarName="Jane Doe"
-                        />
-
-                        <TestimonialCard
-                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
-                            avatarImage="/icons/76.jpeg"
-                            designation="Accountant,Metvy"
-                            avatarName="Jane Doe"
-                        />
-
-                        <TestimonialCard
-                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
-                            avatarImage="/icons/76.jpeg"
-                            designation="Accountant,Metvy"
-                            avatarName="Jane Doe"
-                        />
-
-                        <TestimonialCard
-                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
-                            avatarImage="/icons/76.jpeg"
-                            designation="Accountant,Metvy"
-                            avatarName="Jane Doe"
-                        />
-
-                        <TestimonialCard
-                            testimonialText={`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
-                            avatarImage="/icons/76.jpeg"
-                            designation="Accountant,Metvy"
-                            avatarName="Jane Doe"
-                        />
+                       {appTestimonialsData.map(testimonial=>( <TestimonialCard
+                            testimonialText={testimonial.text}
+                            avatarImage={testimonial.imageName}
+                            designation={testimonial.title}
+                            avatarName={testimonial.fullName}
+                        />))}
 
                     </FLexLayout>
                 </FLexLayout>

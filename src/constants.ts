@@ -1,5 +1,5 @@
 export const brandName = 'Metvy';
-export const firstPartText = 'A One-Stop-Shop for All your Professional Networking Needs.';
+export const firstPartText = 'A One-Stop-Destination for All your Professional Networking Needs.';
 
 export const testimonialHeading = 'Straight from our community';
 
@@ -25,12 +25,11 @@ export const firstPartCardData = [
 ];
 
 export const courses = [
-    'Business program',
-    'Design program',
-    'AI Bootcamp',
-    'Research Program',
-    'Consultancy program',
-    'Personalized mentorship'
+    { name: 'Research Program', routePath: '/research_program' },
+    { name: 'Design program', routePath: '/design_program' },
+    { name: 'AI Bootcamp Program', routePath: '/AI_Bootcamp_program' },
+    { name: 'Consultancy Program', routePath: '/consultancy_program' },
+    { name: 'Business Program', routePath: '/business_program' }
 ];
 
 export const coursesLearnScreenAdvertisementMetaData = [
@@ -189,42 +188,40 @@ export const mentorData = [
     }
 ];
 
-
 export const teamData = [
     {
         firstName: 'Shawrya',
         lastName: 'Mehrotra',
         imageName: '/icons/Shawrya.png',
-        title: "Founder & CEO",
-        description: "Worked with Ogilvy, SproutBox, YC Startup School Alum.",
-        institute :"Kirori Mal College, DU"
+        title: 'Founder & CEO',
+        description: 'Worked with Ogilvy, SproutBox, YC Startup School Alum.',
+        institute: 'Kirori Mal College, DU'
     },
     {
         firstName: 'Rajan',
         lastName: 'Luthra',
         imageName: '/icons/Rajan.png',
-        title: "Co-Founder",
-        description: "Worked with ASA, Inc42, YC Startup School Alum",
-        institute :"Kirori Mal College, DU"
+        title: 'Co-Founder',
+        description: 'Worked with ASA, Inc42, YC Startup School Alum',
+        institute: 'Kirori Mal College, DU'
     },
     {
         firstName: 'Royina',
         lastName: 'Chabbra',
         imageName: '/icons/Royina.png',
-        title: "Head of Revenue",
-        description: "English Honours Major, Worked with Lexjury - A L aw Firm",
-        institute :"Lady Shri Ram College, DU"
+        title: 'Head of Revenue',
+        description: 'English Honours Major, Worked with Lexjury - A L aw Firm',
+        institute: 'Lady Shri Ram College, DU'
     },
     {
         firstName: 'Vipul',
         lastName: 'Ghai',
         imageName: '/icons/Vipul.png',
-        title: "Head of Design",
-        description: "Project Lead (Metvy Design Program)",
-        institute :"The Design Village, Noida"
-    },
+        title: 'Head of Design',
+        description: 'Project Lead (Metvy Design Program)',
+        institute: 'The Design Village, Noida'
+    }
 ];
-
 
 export const programsCardsMetaData = [
     {
@@ -245,7 +242,8 @@ export const programsCardsMetaData = [
             { name: '/icons/bharatpe.png', width: '58px', height: '16px' },
             { name: '/icons/Facebook-New-Logo.png', width: '37px', height: '14px' }
         ],
-        'box-shadow': '0px 0px 92px 0px rgba(255, 199, 0, 0.72)'
+        'box-shadow': '0px 0px 92px 0px rgba(255, 199, 0, 0.72)',
+        routePath: '/business_program'
     },
     {
         backgroundImage: '/icons/RED-ISH 2.png',
@@ -265,7 +263,8 @@ export const programsCardsMetaData = [
             { name: '/icons/tifr-logo-blue.png', width: '32px', height: '16px' },
             { name: '/icons/OXFORD UNI.png', width: '63px', height: '21px' }
         ],
-        'box-shadow': '0px 0px 92px 0px rgba(255, 0, 92, 0.72)'
+        'box-shadow': '0px 0px 92px 0px rgba(255, 0, 92, 0.72)',
+        routePath: '/research_program'
     },
     {
         backgroundImage: '/icons/Olive- 2.png',
@@ -285,7 +284,8 @@ export const programsCardsMetaData = [
             { name: '/icons/Unknown.png', width: '40px', height: '22px' },
             { name: '/icons/Studio Archohm.png', width: '24px', height: '25px' }
         ],
-        'box-shadow': '0px 0px 92px 0px rgba(128, 255, 0, 0.72)'
+        'box-shadow': '0px 0px 92px 0px rgba(128, 255, 0, 0.72)',
+        routePath: '/design_program'
     },
     {
         backgroundImage: '/icons/GREEN 2.png',
@@ -305,7 +305,8 @@ export const programsCardsMetaData = [
             { name: '/icons/Microsoft.png', width: '50px', height: '28px' },
             { name: '/icons/Tech Mahindra.png', width: '54px', height: '15px' }
         ],
-        'box-shadow': '0px 0px 70px 0px rgba(0, 255, 224, 0.4)'
+        'box-shadow': '0px 0px 70px 0px rgba(0, 255, 224, 0.4)',
+        routePath: '/AI_Bootcamp_program'
     },
     {
         backgroundImage: '/icons/BLEU 2.png',
@@ -325,7 +326,8 @@ export const programsCardsMetaData = [
             { name: '/icons/unnamed.png', width: '49px', height: '22px' },
             { name: '/icons/bcg-logo.png', width: '39px', height: '8px' }
         ],
-        'box-shadow': '0px 0px 92px 0px rgba(0, 148, 255, 0.72)'
+        'box-shadow': '0px 0px 92px 0px rgba(0, 148, 255, 0.72)',
+        routePath: '/consultancy_program'
     },
     {
         backgroundImage: '/icons/Golden_ 2.png',
@@ -345,7 +347,8 @@ export const programsCardsMetaData = [
             { name: '/icons/bharatpe.png', width: '58px', height: '16px' },
             { name: '/icons/Facebook-New-Logo.png', width: '37px', height: '14px' }
         ],
-        'box-shadow': '0px 0px 92px 0px rgba(255, 199, 0, 0.72)'
+        'box-shadow': '0px 0px 92px 0px rgba(255, 199, 0, 0.72)',
+        routePath: '/business_program'
     }
 ];
 
@@ -384,79 +387,255 @@ interface courseDetailsScreenDataProps {
 export const courseDetailsScreenData = {
     research_program: {
         heading: `Metvy Research Program`,
-        description: `Metvy Research Program is a 30-day up-skilling driven program in which the participants
-         get to learn how to write a competent research paper. The curriculum focuses on analyzing 
-         information sources, developing a questioning mindset, organizing your ideas within the necessary format 
-         and brainstorming original ideas.The participants will write their own research papers under constant
-        mentorship and support of our team.`,
+        description: `Metvy Research Program is a 30-day up-skilling driven program in which the participants get to learn how to write a competent research paper. The curriculum focuses on analysing information sources, developing a questioning mindset, organising your ideas within the necessary format and brainstorming original ideas.
+
+The participants will write their own research papers under constant mentorship and support of our team.`,
         weeksData: [
             {
                 time: '4Hours',
-                content: `Peer group introduction over, giving a direction on how to
-        think about ideas. Extensive peer group networking. 
-        Understanding Entrepreneurship and Market Research,
-        How to pick the right problem? Understanding Marketing,
-        and Branding.`
+                content: `Peer group introduction giving a direction on what is Academic Research, how to go about Research, Fundamentals of Research, Understanding Preliminary Research,  Basic Steps in the Process, Structuring of the Paper.`
             },
             {
                 time: '4Hours',
-                content: `Peer group introduction over, giving a direction on how to
-    think about ideas. Extensive peer group networking. 
-    Understanding Entrepreneurship and Market Research,
-    How to pick the right problem? Understanding Marketing,
-    and Branding.`
+                content: `Understanding Critical Reading, What is Preliminary Research, What is Market Research, Understanding the Components of a Research Paper, Understanding Composing Styles, Figuring Out A Field of Interest, Choosing a Topic.`
             },
             {
                 time: '4Hours',
-                content: `Peer group introduction over, giving a direction on how to
-    think about ideas. Extensive peer group networking. 
-    Understanding Entrepreneurship and Market Research,
-    How to pick the right problem? Understanding Marketing,
-    and Branding.`
+                content: `Creating a Timeline Your Paper,  Understanding Literature Reviews, Launching a Research Project, Drafting  Abstracts, Statistics for Research, Writing a Research Article, Understanding Market Research in Depth and Doing Your Own Research.`
             },
             {
                 time: '4Hours',
-                content: `Peer group introduction over, giving a direction on how to
-    think about ideas. Extensive peer group networking. 
-    Understanding Entrepreneurship and Market Research,
-    How to pick the right problem? Understanding Marketing,
-    and Branding.`
+                content: `Proceeding and delving into Strengthening the Research Skills, Working on the Paper under the Guidance of In-house Experts as well as Academic Scholars, 
+Creating and Discovering one’s own Writing Style and progressing with the First Draft.`
             }
         ],
-        whoIsThisForText: `The Metvy Research Program is for anyone who wants to understand the
-        fundamentals of Academic Research as well as Market Research. Everything
-        will be worked upon from scratch, so even if you have not even written a
-        research essay, this is absolutely for you.`,
+        whoIsThisForText: `The Metvy Research Program is for anyone who wants to understand the fundamentals of Academic Research as well as Market Research. Everything will be worked upon from scratch, so even if you have not even written a research essay, this is absolutely for you.`,
 
-        themeColor: '#ffffff',
+        themeColor: '#FF869E',
         perks: [
             {
-                content: `One-on-one networking and
-            mentorship from Academicians and
-            and Industry Experts in Live Sessions`,
-                imageName: '/icons/imgName.png'
+                content: `One-on-one networking and mentorship from Academicians and Industry Experts in Live Sessions.`,
+                imageName: '/icons/Connect.png'
             },
             {
-                content: `One-on-one networking and
-            mentorship from Academicians and
-            and Industry Experts in Live Sessions`,
-                imageName: '/icons/imgName.png'
+                content: `A chance to grab an Internship at Metvy`,
+                imageName: '/icons/Suitcase.png'
             },
             {
-                content: `One-on-one networking and
-            mentorship from Academicians and
-            and Industry Experts in Live Sessions`,
-                imageName: '/icons/imgName.png'
+                content: `Personalised Letter of Recommendation`,
+                imageName: '/icons/Certificate.png'
             },
             {
-                content: `One-on-one networking and
-            mentorship from Academicians and
-            and Industry Experts in Live Sessions`,
-                imageName: '/icons/imgName.png'
+                content: `Constructive feedbacks and reading material curated by experts`,
+                imageName: '/icons/Thumbs up.png'
+            },
+            {
+                content: `A bespoke experience with In-house Mentors as well as Practical Tasks`,
+                imageName: '/icons/Stars.png',
+                style: { height: '35px', width: '70%' }
             }
         ]
-    } as courseDetailsScreenDataProps
+    },
+
+    business_program: {
+        heading: `Metvy Business Program`,
+        description: `  Metvy Business Program uses Metvy's culture of high-tech entrepreneurship to help young & aspiring entrepreneurs understand the entire venture creation process; from generating ideas to building feasible, innovation-driven businesses.
+
+The program spans over 30 days, consisting of 15 expert sessions, modules on 8 different functions of management and entrepreneurship and live group projects and tasks where you create your own venture.`,
+        weeksData: [
+            {
+                time: '4Hours',
+                content: ` Peer group introduction giving a direction on how to think about ideas.
+Extensive peer group networking. Understanding Entrepreneurship and Market Research, How to pick the right problem? Understanding Marketing, and Branding. `
+            },
+            {
+                time: '4Hours',
+                content: ` Finding your Co-founder and Founding Team, Building an MVP and experimenting in a lean way. Understanding Product Management, Product Market fit, Taking user feedback. Understanding Human Resources.`
+            },
+            {
+                time: '4Hours',
+                content: `Startup Growth, Iterating to validate your ideas, understanding a sales pitch. Gain some possible traction via a Branding experiment. Business Development & Sales and Business Expansion. Understanding Revenue Models.`
+            },
+            {
+                time: '4Hours',
+                content: `Finance and Strategy Building Cost Sheets and Strategizing on a Revenue Model. Understanding Valuations and Fundraising What do investors look for? Understanding Pitch Decks Creating a deck to Pitch to an In-house panel as a Team.`
+            }
+        ],
+        whoIsThisForText: `The Metvy Business Program is for anyone who wants to delve deeper into the corporate world of business, startups and entrepreneurship. It helps you become inspiring leaders, successful managers and breakthrough entrepreneurs, regardless of your field or level of expertise.`,
+
+        themeColor: '#FFBE01',
+        perks: [
+            {
+                content: `One-on-one networking and mentorship live sessions from C-Level Industry Executives & In-house Experts`,
+                imageName: '/icons/Connect.png'
+            },
+            {
+                content: `A chance to grab an Internship at Metvy`,
+                imageName: '/icons/Suitcase.png'
+            },
+            {
+                content: `Personalised Letter of Recommendation`,
+                imageName: '/icons/Certificate.png'
+            },
+            {
+                content: `Constant feedbacks and guidance with curated learning modules`,
+                imageName: '/icons/Thumbs up.png'
+            },
+            {
+                content: `A bespoke experience with In-house Mentors as well as Practical Tasks`,
+                imageName: '/icons/Stars.png'
+            }
+        ]
+    },
+    design_program: {
+        heading: `Metvy Design Program`,
+        description: `The Metvy Design Program aims to help budding creative professionals by providing them with in-depth understanding about different design-based ideologies like Graphic Design, Product Designing, UI/UX and inculcating a proper design ideology using industry-oriented tasks and activities.
+
+With focus on design softwares like Photoshop, Indesign, Adobe Illustrator, Adobe XD, the aim would be on understanding Design Thinking Fundamentals.`,
+
+        weeksData: [
+            {
+                time: '4Hours',
+                content: ` Peer group introduction giving a direction on how to think about ideas.
+Extensive peer group networking. Understanding Entrepreneurship and Market Research, How to pick the right problem? Understanding Marketing, and Branding.`
+            },
+            {
+                time: '4Hours',
+                content: `Application of the Fundamentals and Narrative, Building for Meaningful designs. Introduction to Adobe XD, Introduction to Figma, Introduction to Photoshop, Basic Design Thinking Fundamentals.`
+            },
+            {
+                time: '4Hours',
+                content: `Creating Compositions and Narratives, Using industry standard tools to create Dynamic Compositions, Introduction to Typography, Introduction to User Interface/ User Experience Principles, Fundamentals of User Interface/User Experience.`
+            },
+            {
+                time: '4Hours',
+                content: `Stages of the User Interface/User Experience Development Process, Principles & Theories for User Interface, Studying User Journey, Behavioural Change, Current Best Practices and Conventions, Live Project on UI/UX.`
+            }
+        ],
+        whoIsThisForText: `The Metvy Design Program is for anyone who wants to understand Design Thinking Fundamentals, Graphic Design, UI/UX Principles. No prior experience in the field of Graphic Design or UI/UX is required. All you need is a creative bent of mind!`,
+
+        themeColor: '#99DF0C',
+        perks: [
+            {
+                content: `One-on-one networking and mentorship with In-house Design Experts and Industry Experts`,
+                imageName: '/icons/Connect.png'
+            },
+            {
+                content: `A chance to grab an Internship at Metvy`,
+                imageName: '/icons/Suitcase.png'
+            },
+            {
+                content: `Personalised Letter of Recommendation`,
+                imageName: '/icons/Certificate.png'
+            },
+            {
+                content: `Constant feedbacks and guidance and preparation material curated by experts`,
+                imageName: '/icons/Thumbs up.png'
+            },
+            {
+                content: `A bespoke experience with In-house Mentors as well as Practical Tasks`,
+                imageName: '/icons/Stars.png'
+            }
+        ]
+    },
+    consultancy_program: {
+        heading: `Metvy Consultancy Program`,
+        description: ` Metvy Consultancy Program consists of everything you need to make it into the Big 3’s - From the basics of cracking case studies and making your way through guesstimates and presentations, understanding and honing your Personal Interview and Group Discussion skills while being mentored by Consultants from top companies.`,
+        weeksData: [
+            {
+                time: '4Hours',
+                content: `Peer group introduction giving an Introduction to Consultancy as a Industry, Roles in a Consulting Firm, Skills Required to be a Consultant, Understanding the Problem Solving Process, Insights into the Recruitment Process, Future Trends in Consulting.`
+            },
+            {
+                time: '4Hours',
+                content: ` Learning How to Crack Consulting Case Interviews, Basic Frameworks involved in Types of Case Studies: Profitability, Mergers and Acquisitions, Market Entry amongst others, Basics of Finance, Practicing and Solving Multiple Case Studies.`
+            },
+            {
+                time: '4Hours',
+                content: `Understanding Various Industries and Creating Data Sheets, Understanding Guesstimates, Basics of Client Liaisoning, Practicing and Solving Guesstimates, Understanding the Logical Approaches & Implementing the Frameworks.`
+            },
+            {
+                time: '4Hours',
+                content: `Building Your Curriculum Vitae, Cracking Interviews Personalized Grooming, Mock Interviews and Group Discussions, Making the right Decks, Understanding the Recruiter’s Mindset, Insights into the Life of a Consultant.`
+            }
+        ],
+        whoIsThisForText: `The Metvy Consultancy Program is for anyone who aspires to make it to the Big 3’s. No matter how daunting you feel it is to get into the industry, we’re going to help you crack the hacks to become a management consultant.`,
+
+        themeColor: '#79C4FC',
+        perks: [
+            {
+                content: `One-on-one networking and mentorship from Consultants working in the Big 3`,
+                imageName: '/icons/Connect.png'
+            },
+            {
+                content: `A chance to grab an Internship at Metvy`,
+                imageName: '/icons/Suitcase.png'
+            },
+            {
+                content: `Personalised Letter of Recommendation`,
+                imageName: '/icons/Certificate.png'
+            },
+            {
+                content: `Constant feedbacks and guidance and preparation material curated by experts`,
+                imageName: '/icons/Thumbs up.png'
+            },
+{
+                content: `A bespoke experience with In-house Mentors as well as Practical Tasks`,
+                imageName: '/icons/Stars.png'
+            }
+        ]
+    },
+    AI_Bootcamp_program: {
+        heading: `Metvy AI Bootcamp`,
+        description: `Metvy Artificial Intelligence Bootcamp uses fundamental knowledge of AI, a high-tech based infrastructure and live classes to provide students with an application of the technical aspects in the industry.
+ Having Google Summer of Code Mentors, MLH Fellows, as personal mentors, there would 12 live classes where subjects like applications of AI in the industry, learning python from scratch for non-tech professionals and building a working algorithm for an industry use case live will be covered.`,
+        weeksData: [
+            {
+                time: '4Hours',
+                content: `Peer group introduction with the Mentor, Introducing people to the world of Artificial Intelligence, Understanding Theory of Artificial Intelligence and it’s Algorithms, Artificial Intelligence Search Based Techniques, Introduction to Problem Solving.`
+            },
+            {
+                time: '4Hours',
+                content: ` Heuristics, Informed Search  Strategies, Constraint  Satisfaction, Solving  Problems by Searching, State  Space Formulation,  Introduction to Python,  Flow  Control, Python Functions,  Data Types, Objects and Classes, File Handling.`
+            },
+            {
+                time: '4Hours',
+                content: ` Introduction to Machine Learning, What is Machine Learning, Machine Learning Pipeline, Types of Machine Learning Algorithms, Tasks in Machine Learning, Clustering, Regression, Uses of Machine Learning, Introduction to Natural Language Processing.`
+            },
+            {
+                time: '4Hours',
+                content: `Understanding Neural Networks and Deep Learning, KNN Algorithms and their working, When is KNN used, How is the K Factor chosen, Project on Classical Machine Learning Algorithms, Project on Neural Networks.`
+            }
+        ],
+        whoIsThisForText: `The Metvy AI Bootcamp is for anyone who wants to understand applications of AI in the industry, learning python from scratch and building a working algorithm for an industry use case live.
+The program requires no coding background or prior knowledge of the same and is apt for non tech backgrounds too.`,
+
+        themeColor: '#01D2AF',
+        perks: [
+            {
+                content: `
+One-on-one live classes and mentorship from top mentors from GSoC, EY, Tech Mahindra`,
+                imageName: '/icons/Connect.png'
+            },
+            {
+                content: `A chance to grab an Internship at Metvy`,
+                imageName: '/icons/Suitcase.png'
+            },
+            {
+                content: `Personalised Letter of Recommendation`,
+                imageName: '/icons/Certificate.png'
+            },
+            {
+                content: `Constant feedbacks and guidance and preparation material curated by experts`,
+                imageName: '/icons/Thumbs up.png'
+            }
+        ]
+    }
+
+
 };
+
+export const allowedRoutesPath = Object.keys(courseDetailsScreenData);
 
 export const enrollScreenCourseData = [
     {
@@ -471,11 +650,10 @@ export const enrollScreenCourseData = [
     { bgColor: ' #7fc2ff', price: 2499, programName: 'Metvy Consultancy Program' }
 ];
 
-
 interface Months {
-  [n: number] :string
+    [n: number]: string;
 }
-export const MONTHS : Months = {
+export const MONTHS: Months = {
     1: 'January',
     2: 'February',
     3: 'March',
@@ -490,22 +668,19 @@ export const MONTHS : Months = {
     12: 'December'
 };
 
-
 export const contactDetails = {
-    phone:"+91 98219 64864",
-    email :"support@metvy.com",
-    address:"1044 First Floor, IFFCO Colony, Sector 17B, Gurugram, Haryana"
-}
+    phone: '+91 98219 64864',
+    email: 'support@metvy.com',
+    address: '1044 First Floor, IFFCO Colony, Sector 17B, Gurugram, Haryana'
+};
 
-export const socialMediaLinks ={
-    facebook: "https://www.facebook.com/Metvyapp/",
-    instagram :"https://www.instagram.com/metvy.app/?hl=en",
-    linkedIn:"https://in.linkedin.com/company/metvynetworking",
-    twitter:"https://twitter.com/metvy_app?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor",
-    youtube:"https://www.youtube.com/c/Metvy"
-}
-
-
+export const socialMediaLinks = {
+    facebook: 'https://www.facebook.com/Metvyapp/',
+    instagram: 'https://www.instagram.com/metvy.app/?hl=en',
+    linkedIn: 'https://in.linkedin.com/company/metvynetworking',
+    twitter: 'https://twitter.com/metvy_app?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor',
+    youtube: 'https://www.youtube.com/c/Metvy'
+};
 
 export const aboutUs = `Having bagged an internship at Ogilvy, Shawrya was going through a book on the life and journey of 
 Mr. Dhirubhai Ambani - how he had leveraged his networking skills, from officials to people he met at
@@ -525,8 +700,602 @@ where people would be able to find the kind of people they were looking for arou
 
 Shawrya’s idea of Metvy met the support of Rajan and they both started on the journey of putting
 Metvy on the charts. Their dedication and Metvy’s growing credibility led to the growth of the team
-that is now called “The Metvy Family.”`
+that is now called “The Metvy Family.”`;
 
+export const appTestimonialsData = [
+    {
+        fullName: 'Manan Gupta',
+        imageName: '/icons/Manan.png',
+        text: `I have tried a lot of apps with similar purposes but this one
+         is way better than the rest. Love how easy the app makes networking and having
+          a conversation with like minded people! Also the meetup feature is fantastic.`,
+        title: 'Analyst at Bain & Co.'
+    },
+    {
+        fullName: 'Devyani Rana',
+        imageName: '/icons/Devyani.png',
+        text: `Metvy provides a more comprehensible picture of your professional relationships,
+         making it an ideal tool to kick-start your networking. But, apart from the exposure, 
+         what I like best about it is how it emphasises character development and networking.`,
+        title: 'Intern at Bain & Co.'
+    },
+    {
+        fullName: 'Pradyumna Chouhan',
+        imageName: '/icons/Pradyumna.png',
+        text: `I enjoyed the app since it allowed me to connect to the right mentors and industry experts.
+         I found a lot of internship possibilities because of this app. It provided networking opportunities
+          as well as meeting possibilities. It’s amazing!`,
+        title: 'Ex-Mex Enterprises'
+    },
+    {
+        fullName: 'Teesta Saha',
+        imageName: '/icons/Teesta.png',
+        text: `I was looking for an app for premium networking experiences, I think the search is over! 
+        Glad that I came across this app, this makes my professional networking experience flawless.
+         The business card feature and the meet up feature are my favourite!`,
+        title: 'Student at  DSE, Ex-KPMG'
+    },
+    {
+        fullName: 'Prisha Jain',
+        imageName: '/icons/Prisha.png',
+        text: `I was looking for an app for premium networking experiences, I think the search is over! 
+        Glad that I came across this app, this makes my professional networking experience flawless.
+         The business card feature and the meet up feature are my favourite!`,
+        title: 'Student at LSR'
+    },
+    {
+        fullName: 'Keshav Daga',
+        imageName: '/icons/Keshav.png',
+        text: `The perfect platform to have a seamless networking experience and connect with people
+         from diversebackgrounds. It is a massive professional aid that’s a must have for everyone,
+          I would highly recommend it!`,
+        title: 'PGP at IIM Kozhikode '
+    },
+    {
+        fullName: 'Manan Gupta',
+        imageName: '/icons/Manan.png',
+        text: `I have tried a lot of apps with similar purposes but this one
+         is way better than the rest. Love how easy the app makes networking and having
+          a conversation with like minded people! Also the meetup feature is fantastic.`,
+        title: 'Analyst at Bain & Co.'
+    },
+    {
+        fullName: 'Devyani Rana',
+        imageName: '/icons/Devyani.png',
+        text: `Metvy provides a more comprehensible picture of your professional relationships,
+         making it an ideal tool to kick-start your networking. But, apart from the exposure, 
+         what I like best about it is how it emphasises character development and networking.`,
+        title: 'Intern at Bain & Co.'
+    },
+    {
+        fullName: 'Pradyumna Chouhan',
+        imageName: '/icons/Pradyumna.png',
+        text: `I enjoyed the app since it allowed me to connect to the right mentors and industry experts.
+         I found a lot of internship possibilities because of this app. It provided networking opportunities
+          as well as meeting possibilities. It’s amazing!`,
+        title: 'Ex-Mex Enterprises'
+    },
+    {
+        fullName: 'Teesta Saha',
+        imageName: '/icons/Teesta.png',
+        text: `I was looking for an app for premium networking experiences, I think the search is over! 
+        Glad that I came across this app, this makes my professional networking experience flawless.
+         The business card feature and the meet up feature are my favourite!`,
+        title: 'Student at  DSE, Ex-KPMG'
+    },
+    {
+        fullName: 'Prisha Jain',
+        imageName: '/icons/Prisha.png',
+        text: `I was looking for an app for premium networking experiences, I think the search is over! 
+        Glad that I came across this app, this makes my professional networking experience flawless.
+         The business card feature and the meet up feature are my favourite!`,
+        title: 'Student at LSR'
+    },
+    {
+        fullName: 'Keshav Daga',
+        imageName: '/icons/Keshav.png',
+        text: `The perfect platform to have a seamless networking experience and connect with people
+         from diversebackgrounds. It is a massive professional aid that’s a must have for everyone,
+          I would highly recommend it!`,
+        title: 'PGP at IIM Kozhikode '
+    },
+    {
+        fullName: 'Manan Gupta',
+        imageName: '/icons/Manan.png',
+        text: `I have tried a lot of apps with similar purposes but this one
+         is way better than the rest. Love how easy the app makes networking and having
+          a conversation with like minded people! Also the meetup feature is fantastic.`,
+        title: 'Analyst at Bain & Co.'
+    },
+    {
+        fullName: 'Devyani Rana',
+        imageName: '/icons/Devyani.png',
+        text: `Metvy provides a more comprehensible picture of your professional relationships,
+         making it an ideal tool to kick-start your networking. But, apart from the exposure, 
+         what I like best about it is how it emphasises character development and networking.`,
+        title: 'Intern at Bain & Co.'
+    },
+    {
+        fullName: 'Pradyumna Chouhan',
+        imageName: '/icons/Pradyumna.png',
+        text: `I enjoyed the app since it allowed me to connect to the right mentors and industry experts.
+         I found a lot of internship possibilities because of this app. It provided networking opportunities
+          as well as meeting possibilities. It’s amazing!`,
+        title: 'Ex-Mex Enterprises'
+    },
+    {
+        fullName: 'Teesta Saha',
+        imageName: '/icons/Teesta.png',
+        text: `I was looking for an app for premium networking experiences, I think the search is over! 
+        Glad that I came across this app, this makes my professional networking experience flawless.
+         The business card feature and the meet up feature are my favourite!`,
+        title: 'Student at  DSE, Ex-KPMG'
+    },
+    {
+        fullName: 'Prisha Jain',
+        imageName: '/icons/Prisha.png',
+        text: `I was looking for an app for premium networking experiences, I think the search is over! 
+        Glad that I came across this app, this makes my professional networking experience flawless.
+         The business card feature and the meet up feature are my favourite!`,
+        title: 'Student at LSR'
+    },
+    {
+        fullName: 'Keshav Daga',
+        imageName: '/icons/Keshav.png',
+        text: `The perfect platform to have a seamless networking experience and connect with people
+         from diversebackgrounds. It is a massive professional aid that’s a must have for everyone,
+          I would highly recommend it!`,
+        title: 'PGP at IIM Kozhikode '
+    },
+    {
+        fullName: 'Manan Gupta',
+        imageName: '/icons/Manan.png',
+        text: `I have tried a lot of apps with similar purposes but this one
+         is way better than the rest. Love how easy the app makes networking and having
+          a conversation with like minded people! Also the meetup feature is fantastic.`,
+        title: 'Analyst at Bain & Co.'
+    },
+    {
+        fullName: 'Devyani Rana',
+        imageName: '/icons/Devyani.png',
+        text: `Metvy provides a more comprehensible picture of your professional relationships,
+         making it an ideal tool to kick-start your networking. But, apart from the exposure, 
+         what I like best about it is how it emphasises character development and networking.`,
+        title: 'Intern at Bain & Co.'
+    },
+    {
+        fullName: 'Pradyumna Chouhan',
+        imageName: '/icons/Pradyumna.png',
+        text: `I enjoyed the app since it allowed me to connect to the right mentors and industry experts.
+         I found a lot of internship possibilities because of this app. It provided networking opportunities
+          as well as meeting possibilities. It’s amazing!`,
+        title: 'Ex-Mex Enterprises'
+    },
+    {
+        fullName: 'Teesta Saha',
+        imageName: '/icons/Teesta.png',
+        text: `I was looking for an app for premium networking experiences, I think the search is over! 
+        Glad that I came across this app, this makes my professional networking experience flawless.
+         The business card feature and the meet up feature are my favourite!`,
+        title: 'Student at  DSE, Ex-KPMG'
+    },
+    {
+        fullName: 'Prisha Jain',
+        imageName: '/icons/Prisha.png',
+        text: `I was looking for an app for premium networking experiences, I think the search is over! 
+        Glad that I came across this app, this makes my professional networking experience flawless.
+         The business card feature and the meet up feature are my favourite!`,
+        title: 'Student at LSR'
+    },
+    {
+        fullName: 'Keshav Daga',
+        imageName: '/icons/Keshav.png',
+        text: `The perfect platform to have a seamless networking experience and connect with people
+         from diversebackgrounds. It is a massive professional aid that’s a must have for everyone,
+          I would highly recommend it!`,
+        title: 'PGP at IIM Kozhikode '
+    },
+    {
+        fullName: 'Manan Gupta',
+        imageName: '/icons/Manan.png',
+        text: `I have tried a lot of apps with similar purposes but this one
+         is way better than the rest. Love how easy the app makes networking and having
+          a conversation with like minded people! Also the meetup feature is fantastic.`,
+        title: 'Analyst at Bain & Co.'
+    },
+    {
+        fullName: 'Devyani Rana',
+        imageName: '/icons/Devyani.png',
+        text: `Metvy provides a more comprehensible picture of your professional relationships,
+         making it an ideal tool to kick-start your networking. But, apart from the exposure, 
+         what I like best about it is how it emphasises character development and networking.`,
+        title: 'Intern at Bain & Co.'
+    },
+    {
+        fullName: 'Pradyumna Chouhan',
+        imageName: '/icons/Pradyumna.png',
+        text: `I enjoyed the app since it allowed me to connect to the right mentors and industry experts.
+         I found a lot of internship possibilities because of this app. It provided networking opportunities
+          as well as meeting possibilities. It’s amazing!`,
+        title: 'Ex-Mex Enterprises'
+    },
+    {
+        fullName: 'Teesta Saha',
+        imageName: '/icons/Teesta.png',
+        text: `I was looking for an app for premium networking experiences, I think the search is over! 
+        Glad that I came across this app, this makes my professional networking experience flawless.
+         The business card feature and the meet up feature are my favourite!`,
+        title: 'Student at  DSE, Ex-KPMG'
+    },
+    {
+        fullName: 'Prisha Jain',
+        imageName: '/icons/Prisha.png',
+        text: `I was looking for an app for premium networking experiences, I think the search is over! 
+        Glad that I came across this app, this makes my professional networking experience flawless.
+         The business card feature and the meet up feature are my favourite!`,
+        title: 'Student at LSR'
+    },
+    {
+        fullName: 'Keshav Daga',
+        imageName: '/icons/Keshav.png',
+        text: `The perfect platform to have a seamless networking experience and connect with people
+         from diversebackgrounds. It is a massive professional aid that’s a must have for everyone,
+          I would highly recommend it!`,
+        title: 'PGP at IIM Kozhikode '
+    }
+];
 
-
-
+export const learnTestimonialsData = [
+    {
+        fullName: 'Sayani Chakraborty',
+        imageName: '/icons/Sayani.png',
+        text: `I express my sincere gratitude to Metvy. Learn. Being a part of Metvy Learning
+         Program has been a great experience for me. The sessions never failed to pique my interest
+          and the live projects helped me to develop and nurture my designing skills. Definitely it is a great course to be a part of.`,
+        title: 'Statistics Major, LSR'
+    },
+    {
+        fullName: 'Heena Oberoi',
+        imageName: '/icons/Heena.png',
+        text: `It was a very informative program with lessons on cracking case studies, guesstimates &
+         personal interviews. It gave me an opportunity to interact with senior consultants from MBB firms
+          which gave me clarity on consulting industries.`,
+        title: 'Ex-KPMG, SRCC Alumni.'
+    },
+    {
+        fullName: 'Allina Tiwari ',
+        imageName: '/icons/Allina.png',
+        text: `Metvy Consultancy Program is an unconventional opportunity to network
+         with industry experts and make amazing connections. The course module is highly
+          informative containing weekly tasks and compendiums which pushes your mind to
+           develop a structured thinking.`,
+        title: 'Economics Hons., DCAC'
+    },
+    {
+        fullName: 'Swathi Dhamodaran',
+        imageName: '/icons/Swathi.png',
+        text: `The program comes with an element of practicality and
+         ensures a flexible and bespoke experience for everyone! You
+          also learn about different elements of how startups are
+           supposed to function. If you want to work on your own idea,
+            this is an amazing point to start.`,
+        title: 'Analyst, Goldman Sachs'
+    },
+    {
+        fullName: 'Akash Singhal',
+        imageName: '/icons/Akash.png',
+        text: `I feel lucky to be a part of Metvy Learn's Metvy Business Program, wherein
+         I got opportunities to interact with industry leaders and learn from their
+          experiences. I would try my level best to incorporate these learnings
+           in my style of work.`,
+        title: 'MBA, IIT Kanpur'
+    },
+    {
+        fullName: 'Pratham Surana ',
+        imageName: '/icons/Pratham.png',
+        text: `The journey at Metvy was really amazing! Every task helped
+         us in learning something new, It made us think out of the box! I
+          could see a change in myself, I'm more open to thoughts and opinions
+          , also it taught me how to go about things in future.`,
+        title: 'B.Sc. Hons., Hindu College'
+    },
+    {
+        fullName: 'Prabhdeep Keer',
+        imageName: '/icons/Prabhdeep.png',
+        text: `I express my sincere gratitude to Metvy Learn. Being a part of Metvy
+         Research Program taught me a lot. The sessions never failed to pique my interest
+          and the live projects helped me to develop and nurture my researching skills.
+          Definitely it is a great program to be a part of.`,
+        title: 'Project Intern at SVR Group '
+    },
+    {
+        fullName: 'Gyana Ranjan',
+        imageName: '/icons/Gyana.png',
+        text: `This course did a wonderful job of walking through some complex and broad
+         topics. I've done other AI learning with the same ideas, and I felt that this was 
+         presented very well. I'm very grateful that it was made and even prouder to work
+          for the company that made it.`,
+        title: 'Associate Analyst, Ugam'
+    },
+    {
+        fullName: 'Sheryl Lazer',
+        imageName: '/icons/Sheryl.png',
+        text: `I really enjoyed the Metvy AI Bootcamp Program. It was interactive and practical.
+        I now understand the real meaning of AI ML and Python. I was really unaware of the Ethics
+         and Bias part of AI which I learnt in the course.`,
+        title: 'Economics Hons., JMC'
+    },
+    {
+        fullName: 'Apoorva Dasila',
+        imageName: '/icons/Apoorva.png',
+        text: `It is an unconventional opportunity to network with industry experts from
+         the Big 4 companies. The course module was highly informative containing weekly
+          tasks and compendiums which pushes your mind to develop a structured thinking.
+           Thanks, Metvy!`,
+        title: 'NIFT Chennai'
+    },
+    {
+        fullName: 'Sayani Chakraborty',
+        imageName: '/icons/Sayani.png',
+        text: `I express my sincere gratitude to Metvy. Learn. Being a part of Metvy Learning
+         Program has been a great experience for me. The sessions never failed to pique my interest
+          and the live projects helped me to develop and nurture my designing skills. Definitely it is a great course to be a part of.`,
+        title: 'Statistics Major, LSR'
+    },
+    {
+        fullName: 'Heena Oberoi',
+        imageName: '/icons/Heena.png',
+        text: `It was a very informative program with lessons on cracking case studies, guesstimates &
+         personal interviews. It gave me an opportunity to interact with senior consultants from MBB firms
+          which gave me clarity on consulting industries.`,
+        title: 'Ex-KPMG, SRCC Alumni.'
+    },
+    {
+        fullName: 'Allina Tiwari ',
+        imageName: '/icons/Allina.png',
+        text: `Metvy Consultancy Program is an unconventional opportunity to network
+         with industry experts and make amazing connections. The course module is highly
+          informative containing weekly tasks and compendiums which pushes your mind to
+           develop a structured thinking.`,
+        title: 'Economics Hons., DCAC'
+    },
+    {
+        fullName: 'Swathi Dhamodaran',
+        imageName: '/icons/Swathi.png',
+        text: `The program comes with an element of practicality and
+         ensures a flexible and bespoke experience for everyone! You
+          also learn about different elements of how startups are
+           supposed to function. If you want to work on your own idea,
+            this is an amazing point to start.`,
+        title: 'Analyst, Goldman Sachs'
+    },
+    {
+        fullName: 'Akash Singhal',
+        imageName: '/icons/Akash.png',
+        text: `I feel lucky to be a part of Metvy Learn's Metvy Business Program, wherein
+         I got opportunities to interact with industry leaders and learn from their
+          experiences. I would try my level best to incorporate these learnings
+           in my style of work.`,
+        title: 'MBA, IIT Kanpur'
+    },
+    {
+        fullName: 'Pratham Surana ',
+        imageName: '/icons/Pratham.png',
+        text: `The journey at Metvy was really amazing! Every task helped
+         us in learning something new, It made us think out of the box! I
+          could see a change in myself, I'm more open to thoughts and opinions
+          , also it taught me how to go about things in future.`,
+        title: 'B.Sc. Hons., Hindu College'
+    },
+    {
+        fullName: 'Prabhdeep Keer',
+        imageName: '/icons/Prabhdeep.png',
+        text: `I express my sincere gratitude to Metvy Learn. Being a part of Metvy
+         Research Program taught me a lot. The sessions never failed to pique my interest
+          and the live projects helped me to develop and nurture my researching skills.
+          Definitely it is a great program to be a part of.`,
+        title: 'Project Intern at SVR Group '
+    },
+    {
+        fullName: 'Gyana Ranjan',
+        imageName: '/icons/Gyana.png',
+        text: `This course did a wonderful job of walking through some complex and broad
+         topics. I've done other AI learning with the same ideas, and I felt that this was 
+         presented very well. I'm very grateful that it was made and even prouder to work
+          for the company that made it.`,
+        title: 'Associate Analyst, Ugam'
+    },
+    {
+        fullName: 'Sheryl Lazer',
+        imageName: '/icons/Sheryl.png',
+        text: `I really enjoyed the Metvy AI Bootcamp Program. It was interactive and practical.
+        I now understand the real meaning of AI ML and Python. I was really unaware of the Ethics
+         and Bias part of AI which I learnt in the course.`,
+        title: 'Economics Hons., JMC'
+    },
+    {
+        fullName: 'Apoorva Dasila',
+        imageName: '/icons/Apoorva.png',
+        text: `It is an unconventional opportunity to network with industry experts from
+         the Big 4 companies. The course module was highly informative containing weekly
+          tasks and compendiums which pushes your mind to develop a structured thinking.
+           Thanks, Metvy!`,
+        title: 'NIFT Chennai'
+    },
+    {
+        fullName: 'Sayani Chakraborty',
+        imageName: '/icons/Sayani.png',
+        text: `I express my sincere gratitude to Metvy. Learn. Being a part of Metvy Learning
+         Program has been a great experience for me. The sessions never failed to pique my interest
+          and the live projects helped me to develop and nurture my designing skills. Definitely it is a great course to be a part of.`,
+        title: 'Statistics Major, LSR'
+    },
+    {
+        fullName: 'Heena Oberoi',
+        imageName: '/icons/Heena.png',
+        text: `It was a very informative program with lessons on cracking case studies, guesstimates &
+         personal interviews. It gave me an opportunity to interact with senior consultants from MBB firms
+          which gave me clarity on consulting industries.`,
+        title: 'Ex-KPMG, SRCC Alumni.'
+    },
+    {
+        fullName: 'Allina Tiwari ',
+        imageName: '/icons/Allina.png',
+        text: `Metvy Consultancy Program is an unconventional opportunity to network
+         with industry experts and make amazing connections. The course module is highly
+          informative containing weekly tasks and compendiums which pushes your mind to
+           develop a structured thinking.`,
+        title: 'Economics Hons., DCAC'
+    },
+    {
+        fullName: 'Swathi Dhamodaran',
+        imageName: '/icons/Swathi.png',
+        text: `The program comes with an element of practicality and
+         ensures a flexible and bespoke experience for everyone! You
+          also learn about different elements of how startups are
+           supposed to function. If you want to work on your own idea,
+            this is an amazing point to start.`,
+        title: 'Analyst, Goldman Sachs'
+    },
+    {
+        fullName: 'Akash Singhal',
+        imageName: '/icons/Akash.png',
+        text: `I feel lucky to be a part of Metvy Learn's Metvy Business Program, wherein
+         I got opportunities to interact with industry leaders and learn from their
+          experiences. I would try my level best to incorporate these learnings
+           in my style of work.`,
+        title: 'MBA, IIT Kanpur'
+    },
+    {
+        fullName: 'Pratham Surana ',
+        imageName: '/icons/Pratham.png',
+        text: `The journey at Metvy was really amazing! Every task helped
+         us in learning something new, It made us think out of the box! I
+          could see a change in myself, I'm more open to thoughts and opinions
+          , also it taught me how to go about things in future.`,
+        title: 'B.Sc. Hons., Hindu College'
+    },
+    {
+        fullName: 'Prabhdeep Keer',
+        imageName: '/icons/Prabhdeep.png',
+        text: `I express my sincere gratitude to Metvy Learn. Being a part of Metvy
+         Research Program taught me a lot. The sessions never failed to pique my interest
+          and the live projects helped me to develop and nurture my researching skills.
+          Definitely it is a great program to be a part of.`,
+        title: 'Project Intern at SVR Group '
+    },
+    {
+        fullName: 'Gyana Ranjan',
+        imageName: '/icons/Gyana.png',
+        text: `This course did a wonderful job of walking through some complex and broad
+         topics. I've done other AI learning with the same ideas, and I felt that this was 
+         presented very well. I'm very grateful that it was made and even prouder to work
+          for the company that made it.`,
+        title: 'Associate Analyst, Ugam'
+    },
+    {
+        fullName: 'Sheryl Lazer',
+        imageName: '/icons/Sheryl.png',
+        text: `I really enjoyed the Metvy AI Bootcamp Program. It was interactive and practical.
+        I now understand the real meaning of AI ML and Python. I was really unaware of the Ethics
+         and Bias part of AI which I learnt in the course.`,
+        title: 'Economics Hons., JMC'
+    },
+    {
+        fullName: 'Apoorva Dasila',
+        imageName: '/icons/Apoorva.png',
+        text: `It is an unconventional opportunity to network with industry experts from
+         the Big 4 companies. The course module was highly informative containing weekly
+          tasks and compendiums which pushes your mind to develop a structured thinking.
+           Thanks, Metvy!`,
+        title: 'NIFT Chennai'
+    },
+    {
+        fullName: 'Sayani Chakraborty',
+        imageName: '/icons/Sayani.png',
+        text: `I express my sincere gratitude to Metvy. Learn. Being a part of Metvy Learning
+         Program has been a great experience for me. The sessions never failed to pique my interest
+          and the live projects helped me to develop and nurture my designing skills. Definitely it is a great course to be a part of.`,
+        title: 'Statistics Major, LSR'
+    },
+    {
+        fullName: 'Heena Oberoi',
+        imageName: '/icons/Heena.png',
+        text: `It was a very informative program with lessons on cracking case studies, guesstimates &
+         personal interviews. It gave me an opportunity to interact with senior consultants from MBB firms
+          which gave me clarity on consulting industries.`,
+        title: 'Ex-KPMG, SRCC Alumni.'
+    },
+    {
+        fullName: 'Allina Tiwari ',
+        imageName: '/icons/Allina.png',
+        text: `Metvy Consultancy Program is an unconventional opportunity to network
+         with industry experts and make amazing connections. The course module is highly
+          informative containing weekly tasks and compendiums which pushes your mind to
+           develop a structured thinking.`,
+        title: 'Economics Hons., DCAC'
+    },
+    {
+        fullName: 'Swathi Dhamodaran',
+        imageName: '/icons/Swathi.png',
+        text: `The program comes with an element of practicality and
+         ensures a flexible and bespoke experience for everyone! You
+          also learn about different elements of how startups are
+           supposed to function. If you want to work on your own idea,
+            this is an amazing point to start.`,
+        title: 'Analyst, Goldman Sachs'
+    },
+    {
+        fullName: 'Akash Singhal',
+        imageName: '/icons/Akash.png',
+        text: `I feel lucky to be a part of Metvy Learn's Metvy Business Program, wherein
+         I got opportunities to interact with industry leaders and learn from their
+          experiences. I would try my level best to incorporate these learnings
+           in my style of work.`,
+        title: 'MBA, IIT Kanpur'
+    },
+    {
+        fullName: 'Pratham Surana ',
+        imageName: '/icons/Pratham.png',
+        text: `The journey at Metvy was really amazing! Every task helped
+         us in learning something new, It made us think out of the box! I
+          could see a change in myself, I'm more open to thoughts and opinions
+          , also it taught me how to go about things in future.`,
+        title: 'B.Sc. Hons., Hindu College'
+    },
+    {
+        fullName: 'Prabhdeep Keer',
+        imageName: '/icons/Prabhdeep.png',
+        text: `I express my sincere gratitude to Metvy Learn. Being a part of Metvy
+         Research Program taught me a lot. The sessions never failed to pique my interest
+          and the live projects helped me to develop and nurture my researching skills.
+          Definitely it is a great program to be a part of.`,
+        title: 'Project Intern at SVR Group '
+    },
+    {
+        fullName: 'Gyana Ranjan',
+        imageName: '/icons/Gyana.png',
+        text: `This course did a wonderful job of walking through some complex and broad
+         topics. I've done other AI learning with the same ideas, and I felt that this was 
+         presented very well. I'm very grateful that it was made and even prouder to work
+          for the company that made it.`,
+        title: 'Associate Analyst, Ugam'
+    },
+    {
+        fullName: 'Sheryl Lazer',
+        imageName: '/icons/Sheryl.png',
+        text: `I really enjoyed the Metvy AI Bootcamp Program. It was interactive and practical.
+        I now understand the real meaning of AI ML and Python. I was really unaware of the Ethics
+         and Bias part of AI which I learnt in the course.`,
+        title: 'Economics Hons., JMC'
+    },
+    {
+        fullName: 'Apoorva Dasila',
+        imageName: '/icons/Apoorva.png',
+        text: `It is an unconventional opportunity to network with industry experts from
+         the Big 4 companies. The course module was highly informative containing weekly
+          tasks and compendiums which pushes your mind to develop a structured thinking.
+           Thanks, Metvy!`,
+        title: 'NIFT Chennai'
+    }
+];

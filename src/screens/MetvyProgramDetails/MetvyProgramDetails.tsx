@@ -2,12 +2,13 @@ import React from 'react';
 import Style from './MetvyProgramDetails.module.css';
 import HeaderLearn from '../../components/HeaderLearn/HeaderLearn';
 import FLexLayout from '../../components/FlexLayout';
-import { courseDetailsScreenData } from '../../constants';
+import NotFound from '../../components/NotFound/NotFound';
+import { allowedRoutesPath, courseDetailsScreenData } from '../../constants';
 import { connect } from 'react-redux';
 import { setWidth } from '../../redux/Actions/Screenconfig';
 import { Image } from 'react-bootstrap';
 import Footer from '../../components/Footer/Footer';
-
+import { useRouter } from 'next/router';
 
 interface Props {
     course: string | string[] | 'research_program';
@@ -16,7 +17,13 @@ interface Props {
 }
 
 const _ProgramDetails = ({ width, setWidth, course }: Props) => {
-    const metaData = courseDetailsScreenData[course as string ];
+    const metaData = courseDetailsScreenData[course as string];
+
+    if (course && allowedRoutesPath.indexOf(course as string) == -1) {
+        return <NotFound />;
+    }
+
+    const router = useRouter();
 
     return (
         <div>
@@ -83,21 +90,25 @@ const _ProgramDetails = ({ width, setWidth, course }: Props) => {
 
                 {/* apply-now-button */}
 
-                <FLexLayout
-                    style={{ marginTop: '60px' }}
-                    justifyContent="center"
-                    alignItem="center"
-                    rowORColumn="row"
-                >
+                {metaData && (
                     <FLexLayout
+                        style={{ marginTop: '60px' }}
                         justifyContent="center"
                         alignItem="center"
                         rowORColumn="row"
-                        className={Style['apply-now-button']}
                     >
-                        <div className={Style['apply-now-text']}>{'Apply Now'}</div>
+                        <FLexLayout
+                            justifyContent="center"
+                            alignItem="center"
+                            rowORColumn="row"
+                            className={Style['apply-now-button']}
+                            style={{ backgroundColor: metaData.themeColor,cursor:'pointer' }}
+                            onClick={()=>router.push('/Enroll')}
+                        >
+                            <div className={Style['apply-now-text']}>{'Apply Now'}</div>
+                        </FLexLayout>
                     </FLexLayout>
-                </FLexLayout>
+                )}
 
                 {/* program-structure-heading */}
                 <FLexLayout
@@ -124,77 +135,24 @@ const _ProgramDetails = ({ width, setWidth, course }: Props) => {
                         alignItem="center"
                         className={Style['program-structure-container']}
                     >
-                        {/* week-1-box */}
-                        <FLexLayout style={{ marginBottom: '105px' }} rowORColumn="row">
-                            {/* week-number-box */}
-                            <FLexLayout className={Style['week-box']} rowORColumn="column">
-                                <div className={Style['week-label']}>{'Week-1'}</div>
-                                <FLexLayout rowORColumn="row" justifyContent={'end'}>
-                                    <div className={Style['hours-text']}>{'4 Hours'}</div>
+                        {metaData.weeksData.map((week, i) => (
+                            <FLexLayout style={{ marginBottom: '105px' }} rowORColumn="row">
+                                {/* week-number-box */}
+                                <FLexLayout className={Style['week-box']} rowORColumn="column">
+                                    <div className={Style['week-label']}>{`Week-${i + 1}`}</div>
+                                    <FLexLayout rowORColumn="row" justifyContent={'end'}>
+                                        <div className={Style['hours-text']}>{week.time}</div>
+                                    </FLexLayout>
+                                </FLexLayout>
+
+                                {/* content-box */}
+                                <FLexLayout className={Style['content-box']} rowORColumn="row">
+                                    <div className={Style['content-description']}>
+                                        {week.content}
+                                    </div>
                                 </FLexLayout>
                             </FLexLayout>
-
-                            {/* content-box */}
-                            <FLexLayout className={Style['content-box']} rowORColumn="row">
-                                <div className={Style['content-description']}>
-                                    {metaData.weeksData[0].content}
-                                </div>
-                            </FLexLayout>
-                        </FLexLayout>
-
-                        {/* week-2-box */}
-                        <FLexLayout style={{ marginBottom: '105px' }} rowORColumn="row">
-                            {/* week-number-box */}
-                            <FLexLayout className={Style['week-box']} rowORColumn="column">
-                                <div className={Style['week-label']}>{'Week-1'}</div>
-                                <FLexLayout rowORColumn="row" justifyContent={'end'}>
-                                    <div className={Style['hours-text']}>{'4 Hours'}</div>
-                                </FLexLayout>
-                            </FLexLayout>
-
-                            {/* content-box */}
-                            <FLexLayout className={Style['content-box']} rowORColumn="row">
-                                <div className={Style['content-description']}>
-                                    {metaData.weeksData[0].content}
-                                </div>
-                            </FLexLayout>
-                        </FLexLayout>
-
-                        {/* week-3-box */}
-                        <FLexLayout style={{ marginBottom: '105px' }} rowORColumn="row">
-                            {/* week-number-box */}
-                            <FLexLayout className={Style['week-box']} rowORColumn="column">
-                                <div className={Style['week-label']}>{'Week-1'}</div>
-                                <FLexLayout rowORColumn="row" justifyContent={'end'}>
-                                    <div className={Style['hours-text']}>{'4 Hours'}</div>
-                                </FLexLayout>
-                            </FLexLayout>
-
-                            {/* content-box */}
-                            <FLexLayout className={Style['content-box']} rowORColumn="row">
-                                <div className={Style['content-description']}>
-                                    {metaData.weeksData[0].content}
-                                </div>
-                            </FLexLayout>
-                        </FLexLayout>
-
-                        {/* week-4-box */}
-                        <FLexLayout style={{ marginBottom: '305px' }} rowORColumn="row">
-                            {/* week-number-box */}
-                            <FLexLayout className={Style['week-box']} rowORColumn="column">
-                                <div className={Style['week-label']}>{'Week-1'}</div>
-                                <FLexLayout rowORColumn="row" justifyContent={'end'}>
-                                    <div className={Style['hours-text']}>{'4 Hours'}</div>
-                                </FLexLayout>
-                            </FLexLayout>
-
-                            {/* content-box */}
-                            <FLexLayout className={Style['content-box']} rowORColumn="row">
-                                <div className={Style['content-description']}>
-                                    {metaData.weeksData[0].content}
-                                </div>
-                            </FLexLayout>
-                        </FLexLayout>
+                        ))}
                     </FLexLayout>
                 )}
 
@@ -325,27 +283,33 @@ const _ProgramDetails = ({ width, setWidth, course }: Props) => {
                 </FLexLayout>
 
                 {/* who-is-this-for-section */}
-                <FLexLayout rowORColumn="column" justifyContent="center" alignItem="center">
-                    {/* who-is-this-for-container */}
-                    <FLexLayout className={Style['who-is-this-for-container']} rowORColumn="column">
+                {metaData && (
+                    <FLexLayout rowORColumn="column" justifyContent="center" alignItem="center">
+                        {/* who-is-this-for-container */}
                         <FLexLayout
-                            rowORColumn="row"
-                            justifyContent="center"
-                            alignItem="center"
-                            className={Style['who-is-this-heading-box']}
+                            className={Style['who-is-this-for-container']}
+                            rowORColumn="column"
                         >
-                            <div className={Style['who-is-this-heading']}>
-                                {'Who is this for ?'}
-                            </div>
-                        </FLexLayout>
+                            <FLexLayout
+                                rowORColumn="row"
+                                justifyContent="center"
+                                alignItem="center"
+                                className={Style['who-is-this-heading-box']}
+                            >
+                                <div className={Style['who-is-this-heading']}>
+                                    {'Who is this for ?'}
+                                </div>
+                            </FLexLayout>
 
-                        <FLexLayout className={Style['who-is-this-for-content']} rowORColumn="row">
-                            <div>{`The Metvy Research Program is for anyone who wants to understand the fundamentals of Academic Research as well as Market Research.
-                        Everything will be worked upon from scratch, so even if you have not even written a
-                        research essay, this is absolutely for you.`}</div>
+                            <FLexLayout
+                                className={Style['who-is-this-for-content']}
+                                rowORColumn="row"
+                            >
+                                <div>{metaData.whoIsThisForText}</div>
+                            </FLexLayout>
                         </FLexLayout>
                     </FLexLayout>
-                </FLexLayout>
+                )}
 
                 {/* phrase-container */}
                 <FLexLayout justifyContent="center" alignItem="center" rowORColumn="row">
@@ -379,7 +343,7 @@ const _ProgramDetails = ({ width, setWidth, course }: Props) => {
                 </FLexLayout>
 
                 {/* perks-container-1 */}
-                {[1, 2, 3, 4, 5].map((x) => (
+                {metaData &&  metaData.perks.map((perk) => (
                     <FLexLayout
                         className={Style['perks-container']}
                         rowORColumn="row"
@@ -394,42 +358,46 @@ const _ProgramDetails = ({ width, setWidth, course }: Props) => {
                                 rowORColumn="column"
                                 justifyContent="center"
                                 alignItem="center"
+                                style={{ backgroundColor: metaData.themeColor }}
                             >
                                 <Image
                                     className={Style['perks-icon']}
-                                    src="/icons/Vector (3).png"
+                                    src={perk.imageName}
+                                    style={perk.style}
                                 />
                             </FLexLayout>
 
                             {/* perks-box-content */}
                             <FLexLayout className={Style['perks-box-content']} rowORColumn="row">
-                                <div>{`One-on-one networking and mentorship from Academicians and  Industry Experts in Live Sessions`}</div>
+                                <div>{perk.content}</div>
                             </FLexLayout>
                         </FLexLayout>
                     </FLexLayout>
-                ))}
-
+                )) }
 
                 {/* apply-now-button */}
-                <FLexLayout
-                    style={{ marginTop: '159px' }}
-                    justifyContent="center"
-                    alignItem="center"
-                    rowORColumn="row"
-                >
+                {metaData && (
                     <FLexLayout
+                        style={{ marginTop: '159px',marginBottom: '50px' }}
                         justifyContent="center"
                         alignItem="center"
                         rowORColumn="row"
-                        className={Style['apply-now-button']}
                     >
-                        <div className={Style['apply-now-text']}>{'Apply Now'}</div>
+                        <FLexLayout
+                            justifyContent="center"
+                            alignItem="center"
+                            rowORColumn="row"
+                            className={Style['apply-now-button']}
+                            style={{ backgroundColor: metaData.themeColor,cursor:'pointer' }}
+                            onClick={()=>router.push('/Enroll')}
+                        >
+                            <div className={Style['apply-now-text']}>{'Apply Now'}</div>
+                        </FLexLayout>
                     </FLexLayout>
-                </FLexLayout>
+                )}
 
-               
-                 {/* Perks Text */}
-                <FLexLayout
+                {/* Perks Text */}
+                {/* <FLexLayout
                     justifyContent="center"
                     alignItem="center"
                     rowORColumn="row"
@@ -443,10 +411,10 @@ const _ProgramDetails = ({ width, setWidth, course }: Props) => {
                     >
                         <div className={Style['perks-heading']}>{`Explore MCP`}</div>
                     </FLexLayout>
-                </FLexLayout>
-                 
-                  {/* drop-a-query-box */}
-                <FLexLayout
+                </FLexLayout> */}
+
+                {/* drop-a-query-box */}
+                {/* <FLexLayout
                     className={Style.queryBox}
                     justifyContent="center"
                     alignItem="center"
@@ -459,12 +427,10 @@ const _ProgramDetails = ({ width, setWidth, course }: Props) => {
                             src="icons/Arrow 2.png"
                         />
                     </FLexLayout>
-                </FLexLayout>
+                </FLexLayout> */}
 
                 {/* footer-box */}
                 <Footer />
-
-
             </div>
         </div>
     );

@@ -16,6 +16,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import { Style } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 import { useRouter } from 'next/router';
+import { route } from 'next/dist/next-server/server/router';
 
 const _Header = () => {
     const useStyle = makeStyles({
@@ -145,12 +146,12 @@ const _Header = () => {
                             onClose={handleClose}
                         >
                             {courses.map((x) => (
-                                <div className={Style['menuItemsCoursesDesktop']}>
+                                <div onClick={()=>router.push(x.routePath)} className={Style['menuItemsCoursesDesktop']}>
                                     <MenuItem
                                         classes={{ root: classesMaterial.root }}
                                         onClick={handleClose}
                                     >
-                                        {x}
+                                        {x.name}
                                     </MenuItem>
                                 </div>
                             ))}
@@ -243,9 +244,9 @@ const _Header = () => {
                                             }}
                                         >
                                             {courses.map((x) => (
-                                                <div className={HeaderStyle.accordionItem}>
+                                                <div onClick={()=>router.push(x.routePath)} className={HeaderStyle.accordionItem}>
                                                     {' '}
-                                                    {x}{' '}
+                                                    {x.name}{' '}
                                                 </div>
                                             ))}
                                         </div>
@@ -295,7 +296,7 @@ const _Header = () => {
                     className={HeaderStyle.brandContainer}
                 >
                     <FLexLayout rowORColumn="row" justifyContent="center" alignItem="center">
-                        <Image onClick={()=>router.push('/')} style={{cursor:'pointer'}} className={HeaderStyle.headerIcon} src="/icons/MetvyLearnLogo.png" />
+                        <Image onClick={()=>router.push('/MetvyLearn')} style={{cursor:'pointer'}} className={HeaderStyle.headerIcon} src="/icons/MetvyLearnLogo.png" />
                         <div className={HeaderStyle.MetvyLearnHeading}> Metvy Learn </div>
                     </FLexLayout>
                 </FLexLayout>
@@ -315,6 +316,7 @@ const _Header = () => {
                         width: '100%',
                         cursor:'pointer'
                     }}
+                    onClick={()=>window.open("https://calendly.com/metvy-learn/fitment-call")}
                     rowORColumn="row"
                     justifyContent="center"
                     alignItem="center"
@@ -329,6 +331,7 @@ const _Header = () => {
                     alignItem="center"
                     style={{ backgroundColor: 'rgba(0, 0, 0, 1)', height: '50px', width: '100%', cursor:'pointer' }}
                     rowORColumn="row"
+                    onClick={()=>router.push('/Enroll')}
                 >
                     <div className={`${HeaderStyle.bannerText} ${HeaderStyle.fitmentContainer}`}>
                         {' '}

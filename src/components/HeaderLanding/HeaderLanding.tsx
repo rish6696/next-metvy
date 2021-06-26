@@ -149,9 +149,9 @@ const _Header = () => {
                                 <div className={Style['menuItemsCoursesDesktop']}>
                                     <MenuItem
                                         classes={{ root: classesMaterial.root }}
-                                        onClick={() => router.push('/research_program')}
+                                        onClick={() => router.push(x.routePath)}
                                     >
-                                        {x}
+                                        {x.name}
                                     </MenuItem>
                                 </div>
                             ))}
@@ -242,11 +242,11 @@ const _Header = () => {
                                         >
                                             {courses.map((x) => (
                                                 <div
-                                                    onClick={() => router.push('/research_program')}
+                                                    onClick={() => router.push(x.routePath)}
                                                     className={HeaderStyle.accordionItem}
                                                 >
                                                     {' '}
-                                                    {x}{' '}
+                                                    {x.name}{' '}
                                                 </div>
                                             ))}
                                         </div>
