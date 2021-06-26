@@ -432,7 +432,7 @@ Creating and Discovering one’s own Writing Style and progressing with the Firs
             {
                 content: `A bespoke experience with In-house Mentors as well as Practical Tasks`,
                 imageName: '/icons/Stars.png',
-                style: { height: '35px', width: '70%' }
+                style: { height: '25%', width: '70%' }
             }
         ]
     },
@@ -466,7 +466,7 @@ Extensive peer group networking. Understanding Entrepreneurship and Market Resea
         themeColor: '#FFBE01',
         perks: [
             {
-                content: `One-on-one networking and mentorship live sessions from C-Level Industry Executives & In-house Experts`,
+                content: `One-on-one networking and mentorship live sessions from C-Level Industry Executives`,
                 imageName: '/icons/Connect.png'
             },
             {
@@ -483,7 +483,8 @@ Extensive peer group networking. Understanding Entrepreneurship and Market Resea
             },
             {
                 content: `A bespoke experience with In-house Mentors as well as Practical Tasks`,
-                imageName: '/icons/Stars.png'
+                imageName: '/icons/Stars.png',
+                style: { height: '25%', width: '70%' }
             }
         ]
     },
@@ -534,7 +535,8 @@ Extensive peer group networking. Understanding Entrepreneurship and Market Resea
             },
             {
                 content: `A bespoke experience with In-house Mentors as well as Practical Tasks`,
-                imageName: '/icons/Stars.png'
+                imageName: '/icons/Stars.png',
+                style: { height: '25%', width: '70%' }
             }
         ]
     },
@@ -581,7 +583,8 @@ Extensive peer group networking. Understanding Entrepreneurship and Market Resea
             },
 {
                 content: `A bespoke experience with In-house Mentors as well as Practical Tasks`,
-                imageName: '/icons/Stars.png'
+                imageName: '/icons/Stars.png',
+                style: { height: '25%', width: '70%' }
             }
         ]
     },
@@ -627,7 +630,8 @@ One-on-one live classes and mentorship from top mentors from GSoC, EY, Tech Mahi
             },
             {
                 content: `Constant feedbacks and guidance and preparation material curated by experts`,
-                imageName: '/icons/Thumbs up.png'
+                imageName: '/icons/Thumbs up.png',
+                style: { height: '25%', width: '70%' }
             }
         ]
     }

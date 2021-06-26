@@ -945,7 +945,7 @@ const _MetvyLearn = ({ width, setWidth }) => {
                                 style={{ marginTop: '25px' }}
                                 alignItem="center"
                             >
-                                <Image src="/icons/Paytm-Logo 1.png" />
+                                <Image style={{width:'58px',height:'21px'}} src="/icons/Paytm-Logo 1.png" />
                                 <Image height="22px" width="68px" src="/icons/ig-logo 1.png" />
                                 <Image
                                     height="13px"
