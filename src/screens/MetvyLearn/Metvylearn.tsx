@@ -897,7 +897,7 @@ const _MetvyLearn = ({ width, setWidth }) => {
                             >
                                 <Image height="30px" width="76px" src="/icons/Amazon logo.png" />
                                 <Image height="23px" width="44px" src="/icons/unnamed (1).png" />
-                                <Image height="19px" width="70px" src="/icons/BharatPe 1.png" />
+                                <Image height="19px" width="70px" src="/icons/bharatpe.png" />
                             </FLexLayout>
 
                             {/* icon-row-2 */}

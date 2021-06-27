@@ -8,7 +8,7 @@ import MuiAccordion from '@material-ui/core/Accordion';
 import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 
-import { brandName, courses } from '../../constants';
+import { brandName, courses ,socialMediaLinks} from '../../constants';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import IconButton from '@material-ui/core/IconButton';
@@ -279,10 +279,10 @@ const _Header = () => {
                             </div>
 
                             <FLexLayout rowORColumn="row">
-                                <Image style={{ marginRight: '18px' }} src="icons/twitter.png" />
-                                <Image style={{ marginRight: '18px' }} src="icons/instagram.png" />
-                                <Image style={{ marginRight: '18px' }} src="icons/facebook.png" />
-                                <Image style={{ marginRight: '18px' }} src="icons/linkedin.png" />
+                                <Image  onClick={()=>window.open(socialMediaLinks.twitter)} style={{ marginRight: '18px' }} src="icons/twitter.png" />
+                                <Image  onClick={()=>window.open(socialMediaLinks.instagram)} style={{ marginRight: '18px' }} src="icons/instagram.png" />
+                                <Image  onClick={()=>window.open(socialMediaLinks.facebook)} style={{ marginRight: '18px' }} src="icons/facebook.png" />
+                                <Image  onClick={()=>window.open(socialMediaLinks.linkedIn)} style={{ marginRight: '18px' }} src="icons/linkedin.png" />
                             </FLexLayout>
                         </FLexLayout>
                     </FLexLayout>

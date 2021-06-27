@@ -317,8 +317,9 @@ export const programsCardsMetaData = [
         description: `Live Mentorship Program on Consultancy
         backed with Compendiums and Live
         Projects crafted and led by top Consultants.`,
-        priceBeforeDiscount: '3,500',
-        princeAfterDiscount: '6,999',
+        priceBeforeDiscount: ' 6,999',
+        princeAfterDiscount: '3,500',
+       
         brands: [
             { name: '/icons/bain-logo.png', width: '38px', height: '19px' },
             { name: '/icons/Wipro_Logo_New.png', width: '35px', height: '29px' },
