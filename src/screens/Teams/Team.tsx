@@ -393,6 +393,23 @@ function _LandingScreen({ setWidth, width }) {
                                                         {mentor.institute}{' '}
                                                     </div>
                                                 </FLexLayout>
+
+                                                 {/* linkedin-icon-container */}
+
+                                                 <FLexLayout
+                                                    rowORColumn="row"
+                                                    justifyContent="center"
+                                                    alignItem="center"
+                                                    style={{ position: 'relative', top: '-15px' }}
+                                                >
+                                                    <Image
+                                                        src="/icons/linkedin 1.png"
+                                                        style={{ cursor:'pointer',width: '24px', height: '24px' }}
+                                                        onClick={()=>window.open(mentor.linkedIn)}
+                                                    />
+                                                </FLexLayout>
+
+
                                             </FLexLayout>
                                         </FLexLayout>
                                     </Col>

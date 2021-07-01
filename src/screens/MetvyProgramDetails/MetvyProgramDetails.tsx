@@ -140,7 +140,8 @@ const _ProgramDetails = ({ width, setWidth, course }: Props) => {
                                 {/* week-number-box */}
                                 <FLexLayout className={Style['week-box']} rowORColumn="column">
                                     <div className={Style['week-label']}>{`Week-${i + 1}`}</div>
-                                    <FLexLayout rowORColumn="row" justifyContent={'end'}>
+                                    <FLexLayout rowORColumn="row" alignItem='center' justifyContent={'end'}>
+                                        <Image src='/icons/Clock.png' style={{width:'16px',height:'16px',marginRight:'10px'}} />
                                         <div className={Style['hours-text']}>{week.time}</div>
                                     </FLexLayout>
                                 </FLexLayout>

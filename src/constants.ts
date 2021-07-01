@@ -45,7 +45,8 @@ export const coursesLearnScreenAdvertisementMetaData = [
         ],
         illustratorImg: '/icons/Business 2.png',
         illustratorImgHeight: '118px',
-        illustratorImgWidth: '173px'
+        illustratorImgWidth: '173px',
+        routePath: '/business_program'
     },
     {
         backgroundImage: '/icons/RED-ISH 2.png',
@@ -59,7 +60,8 @@ export const coursesLearnScreenAdvertisementMetaData = [
         ],
         illustratorImg: '/icons/Research.png',
         illustratorImgHeight: '118px',
-        illustratorImgWidth: '173px'
+        illustratorImgWidth: '173px',
+        routePath: '/research_program'
     },
     {
         backgroundImage: '/icons/Olive- 2.png',
@@ -73,7 +75,8 @@ export const coursesLearnScreenAdvertisementMetaData = [
         ],
         illustratorImg: '/icons/Design.png',
         illustratorImgHeight: '118px',
-        illustratorImgWidth: '173px'
+        illustratorImgWidth: '173px',
+        routePath: '/design_program'
     },
 
     {
@@ -88,7 +91,8 @@ export const coursesLearnScreenAdvertisementMetaData = [
         ],
         illustratorImg: '/icons/AI.png',
         illustratorImgHeight: '118px',
-        illustratorImgWidth: '173px'
+        illustratorImgWidth: '173px',
+         routePath: '/AI_Bootcamp_program'
     },
     {
         backgroundImage: '/icons/BLEU 2.png',
@@ -102,7 +106,8 @@ export const coursesLearnScreenAdvertisementMetaData = [
         ],
         illustratorImg: '/icons/Consultant.png',
         illustratorImgHeight: '118px',
-        illustratorImgWidth: '173px'
+        illustratorImgWidth: '173px',
+        routePath: '/consultancy_program'
     },
     {
         backgroundImage: '/icons/Golden_ 2.png',
@@ -116,7 +121,8 @@ export const coursesLearnScreenAdvertisementMetaData = [
         ],
         illustratorImg: '/icons/Business 2.png',
         illustratorImgHeight: '118px',
-        illustratorImgWidth: '173px'
+        illustratorImgWidth: '173px',
+        routePath: '/business_program'
     }
 ];
 
@@ -195,23 +201,26 @@ export const teamData = [
         imageName: '/icons/Shawrya.png',
         title: 'Founder & CEO',
         description: 'Worked with Ogilvy, SproutBox, YC Startup School Alum.',
-        institute: 'Kirori Mal College, DU'
+        institute: 'Kirori Mal College, DU',
+        linkedIn:'http://linkedin.com/in/shawrya'
     },
     {
         firstName: 'Rajan',
         lastName: 'Luthra',
         imageName: '/icons/Rajan.png',
         title: 'Co-Founder',
-        description: 'Worked with ASA, Inc42, YC Startup School Alum',
-        institute: 'Kirori Mal College, DU'
+        description: 'Worked with ASA,YC Startup School Alum',
+        institute: 'Kirori Mal College, DU',
+        linkedIn:'http://linkedin.com/in/rajan-luthra'
     },
     {
         firstName: 'Royina',
-        lastName: 'Chabbra',
+        lastName: 'Chhabra',
         imageName: '/icons/Royina.png',
         title: 'Head of Revenue',
         description: 'English Honours Major, Worked with Lexjury - A L aw Firm',
-        institute: 'Lady Shri Ram College, DU'
+        institute: 'Lady Shri Ram College, DU',
+        linkedIn:"http://linkedin.com/in/royinachhabra"
     },
     {
         firstName: 'Vipul',
@@ -219,7 +228,9 @@ export const teamData = [
         imageName: '/icons/Vipul.png',
         title: 'Head of Design',
         description: 'Project Lead (Metvy Design Program)',
-        institute: 'The Design Village, Noida'
+        institute: 'The Design Village, Noida',
+        linkedIn:"http://linkedin.com/in/vipul-ghai-70aa291a8"
+
     }
 ];
 
@@ -330,27 +341,6 @@ export const programsCardsMetaData = [
         'box-shadow': '0px 0px 92px 0px rgba(0, 148, 255, 0.72)',
         routePath: '/consultancy_program'
     },
-    {
-        backgroundImage: '/icons/Golden_ 2.png',
-        name: 'Metvy Business Program',
-        weeks: 4,
-        peopleUpSkilled: '500+',
-        sessions: 20,
-        description: `Live Mentorship Program on Entrepreneurship
-        backed with Compendiums and Live
-        Projects crafted and led by top mentors`,
-        priceBeforeDiscount: '5,000',
-        princeAfterDiscount: '2,500',
-        brands: [
-            { name: '/icons/Amazon logo.png', width: '48px', height: '19px' },
-            { name: '/icons/Adobe_Corporate_Logo.png', width: '54px', height: '14px' },
-            { name: '/icons/unnamed (1).png', width: '27px', height: '14px' },
-            { name: '/icons/bharatpe.png', width: '58px', height: '16px' },
-            { name: '/icons/Facebook-New-Logo.png', width: '37px', height: '14px' }
-        ],
-        'box-shadow': '0px 0px 92px 0px rgba(255, 199, 0, 0.72)',
-        routePath: '/business_program'
-    }
 ];
 
 export const testimonialLearn =
@@ -393,19 +383,19 @@ export const courseDetailsScreenData = {
 The participants will write their own research papers under constant mentorship and support of our team.`,
         weeksData: [
             {
-                time: '4Hours',
+                time: '4 Hours',
                 content: `Peer group introduction giving a direction on what is Academic Research, how to go about Research, Fundamentals of Research, Understanding Preliminary Research,  Basic Steps in the Process, Structuring of the Paper.`
             },
             {
-                time: '4Hours',
+                time: '4 Hours',
                 content: `Understanding Critical Reading, What is Preliminary Research, What is Market Research, Understanding the Components of a Research Paper, Understanding Composing Styles, Figuring Out A Field of Interest, Choosing a Topic.`
             },
             {
-                time: '4Hours',
+                time: '4 Hours',
                 content: `Creating a Timeline Your Paper,  Understanding Literature Reviews, Launching a Research Project, Drafting  Abstracts, Statistics for Research, Writing a Research Article, Understanding Market Research in Depth and Doing Your Own Research.`
             },
             {
-                time: '4Hours',
+                time: '4 Hours',
                 content: `Proceeding and delving into Strengthening the Research Skills, Working on the Paper under the Guidance of In-house Experts as well as Academic Scholars, 
 Creating and Discovering one’s own Writing Style and progressing with the First Draft.`
             }
@@ -445,20 +435,20 @@ Creating and Discovering one’s own Writing Style and progressing with the Firs
 The program spans over 30 days, consisting of 15 expert sessions, modules on 8 different functions of management and entrepreneurship and live group projects and tasks where you create your own venture.`,
         weeksData: [
             {
-                time: '4Hours',
+                time: '4 Hours',
                 content: ` Peer group introduction giving a direction on how to think about ideas.
 Extensive peer group networking. Understanding Entrepreneurship and Market Research, How to pick the right problem? Understanding Marketing, and Branding. `
             },
             {
-                time: '4Hours',
+                time: '4 Hours',
                 content: ` Finding your Co-founder and Founding Team, Building an MVP and experimenting in a lean way. Understanding Product Management, Product Market fit, Taking user feedback. Understanding Human Resources.`
             },
             {
-                time: '4Hours',
+                time: '4 Hours',
                 content: `Startup Growth, Iterating to validate your ideas, understanding a sales pitch. Gain some possible traction via a Branding experiment. Business Development & Sales and Business Expansion. Understanding Revenue Models.`
             },
             {
-                time: '4Hours',
+                time: '4 Hours',
                 content: `Finance and Strategy Building Cost Sheets and Strategizing on a Revenue Model. Understanding Valuations and Fundraising What do investors look for? Understanding Pitch Decks Creating a deck to Pitch to an In-house panel as a Team.`
             }
         ],
@@ -497,20 +487,20 @@ With focus on design softwares like Photoshop, Indesign, Adobe Illustrator, Adob
 
         weeksData: [
             {
-                time: '4Hours',
+                time: '4 Hours',
                 content: ` Peer group introduction giving a direction on how to think about ideas.
 Extensive peer group networking. Understanding Entrepreneurship and Market Research, How to pick the right problem? Understanding Marketing, and Branding.`
             },
             {
-                time: '4Hours',
+                time: '4 Hours',
                 content: `Application of the Fundamentals and Narrative, Building for Meaningful designs. Introduction to Adobe XD, Introduction to Figma, Introduction to Photoshop, Basic Design Thinking Fundamentals.`
             },
             {
-                time: '4Hours',
+                time: '4 Hours',
                 content: `Creating Compositions and Narratives, Using industry standard tools to create Dynamic Compositions, Introduction to Typography, Introduction to User Interface/ User Experience Principles, Fundamentals of User Interface/User Experience.`
             },
             {
-                time: '4Hours',
+                time: '4 Hours',
                 content: `Stages of the User Interface/User Experience Development Process, Principles & Theories for User Interface, Studying User Journey, Behavioural Change, Current Best Practices and Conventions, Live Project on UI/UX.`
             }
         ],
@@ -546,19 +536,19 @@ Extensive peer group networking. Understanding Entrepreneurship and Market Resea
         description: ` Metvy Consultancy Program consists of everything you need to make it into the Big 3’s - From the basics of cracking case studies and making your way through guesstimates and presentations, understanding and honing your Personal Interview and Group Discussion skills while being mentored by Consultants from top companies.`,
         weeksData: [
             {
-                time: '4Hours',
+                time: '4 Hours',
                 content: `Peer group introduction giving an Introduction to Consultancy as a Industry, Roles in a Consulting Firm, Skills Required to be a Consultant, Understanding the Problem Solving Process, Insights into the Recruitment Process, Future Trends in Consulting.`
             },
             {
-                time: '4Hours',
+                time: '4 Hours',
                 content: ` Learning How to Crack Consulting Case Interviews, Basic Frameworks involved in Types of Case Studies: Profitability, Mergers and Acquisitions, Market Entry amongst others, Basics of Finance, Practicing and Solving Multiple Case Studies.`
             },
             {
-                time: '4Hours',
+                time: '4 Hours',
                 content: `Understanding Various Industries and Creating Data Sheets, Understanding Guesstimates, Basics of Client Liaisoning, Practicing and Solving Guesstimates, Understanding the Logical Approaches & Implementing the Frameworks.`
             },
             {
-                time: '4Hours',
+                time: '4 Hours',
                 content: `Building Your Curriculum Vitae, Cracking Interviews Personalized Grooming, Mock Interviews and Group Discussions, Making the right Decks, Understanding the Recruiter’s Mindset, Insights into the Life of a Consultant.`
             }
         ],
@@ -595,19 +585,19 @@ Extensive peer group networking. Understanding Entrepreneurship and Market Resea
  Having Google Summer of Code Mentors, MLH Fellows, as personal mentors, there would 12 live classes where subjects like applications of AI in the industry, learning python from scratch for non-tech professionals and building a working algorithm for an industry use case live will be covered.`,
         weeksData: [
             {
-                time: '4Hours',
+                time: '4 Hours',
                 content: `Peer group introduction with the Mentor, Introducing people to the world of Artificial Intelligence, Understanding Theory of Artificial Intelligence and it’s Algorithms, Artificial Intelligence Search Based Techniques, Introduction to Problem Solving.`
             },
             {
-                time: '4Hours',
+                time: '4 Hours',
                 content: ` Heuristics, Informed Search  Strategies, Constraint  Satisfaction, Solving  Problems by Searching, State  Space Formulation,  Introduction to Python,  Flow  Control, Python Functions,  Data Types, Objects and Classes, File Handling.`
             },
             {
-                time: '4Hours',
+                time: '4 Hours',
                 content: ` Introduction to Machine Learning, What is Machine Learning, Machine Learning Pipeline, Types of Machine Learning Algorithms, Tasks in Machine Learning, Clustering, Regression, Uses of Machine Learning, Introduction to Natural Language Processing.`
             },
             {
-                time: '4Hours',
+                time: '4 Hours',
                 content: `Understanding Neural Networks and Deep Learning, KNN Algorithms and their working, When is KNN used, How is the K Factor chosen, Project on Classical Machine Learning Algorithms, Project on Neural Networks.`
             }
         ],
@@ -956,7 +946,7 @@ export const learnTestimonialsData = [
         imageName: '/icons/Sayani.png',
         text: `I express my sincere gratitude to Metvy. Learn. Being a part of Metvy Learning
          Program has been a great experience for me. The sessions never failed to pique my interest
-          and the live projects helped me to develop and nurture my designing skills. Definitely it is a great course to be a part of.`,
+          and the live projects helped me to develop and nurture my designing skills.`,
         title: 'Statistics Major, LSR'
     },
     {
@@ -1044,7 +1034,7 @@ export const learnTestimonialsData = [
         imageName: '/icons/Sayani.png',
         text: `I express my sincere gratitude to Metvy. Learn. Being a part of Metvy Learning
          Program has been a great experience for me. The sessions never failed to pique my interest
-          and the live projects helped me to develop and nurture my designing skills. Definitely it is a great course to be a part of.`,
+          and the live projects helped me to develop and nurture my designing skills.`,
         title: 'Statistics Major, LSR'
     },
     {
@@ -1132,7 +1122,7 @@ export const learnTestimonialsData = [
         imageName: '/icons/Sayani.png',
         text: `I express my sincere gratitude to Metvy. Learn. Being a part of Metvy Learning
          Program has been a great experience for me. The sessions never failed to pique my interest
-          and the live projects helped me to develop and nurture my designing skills. Definitely it is a great course to be a part of.`,
+          and the live projects helped me to develop and nurture my designing skills`,
         title: 'Statistics Major, LSR'
     },
     {
@@ -1220,7 +1210,7 @@ export const learnTestimonialsData = [
         imageName: '/icons/Sayani.png',
         text: `I express my sincere gratitude to Metvy. Learn. Being a part of Metvy Learning
          Program has been a great experience for me. The sessions never failed to pique my interest
-          and the live projects helped me to develop and nurture my designing skills. Definitely it is a great course to be a part of.`,
+          and the live projects helped me to develop and nurture my designing skills.`,
         title: 'Statistics Major, LSR'
     },
     {

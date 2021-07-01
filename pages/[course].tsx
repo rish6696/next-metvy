@@ -15,6 +15,8 @@ export default function Home() {
             <Head>
                 <title>Metvy</title>
                 <link rel="icon" href="/icons/ic_launcher.png" />
+                <script src="//code.tidio.co/uhenqkwcqosun9a0nqc2o5b1xj10nzdp.js" async></script>
+
             </Head>
             <MetvyProgramDetailsScreen course={course} />
         </div>

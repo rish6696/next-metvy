@@ -26,6 +26,7 @@ import { connect } from 'react-redux';
 import { StoreStateInterface } from '../../redux/reducers/index';
 import { Course } from '../../redux/Actions/Courses';
 import { CourseSelectionStatus } from '../../redux/reducers/CoursesData';
+import Moment from 'moment';
 
 interface Props {
     getCourses(): any;
@@ -68,7 +69,7 @@ const _EnrollScreen = (props: Props) => {
         setChecked(event.target.checked);
     };
 
-    console.log(props.courseSelectStatus)
+    console.log(props.courseSelectStatus);
 
     const [selectBatchError, setSelectBatchError] = useState('');
 
@@ -151,8 +152,16 @@ const _EnrollScreen = (props: Props) => {
         selectMonth(parseInt(month), courseId);
     };
 
+    const getCourseMonthInfo = (monthNumber) => {
+        const date = Moment();
+        date.set('M', monthNumber - 1);
+        return `${date.startOf('M').get('D')}st ${date.format('MMMM YYYY')} - ${date
+            .endOf('M')
+            .get('D')}th ${date.format('MMMM YYYY')}`;
+    };
+
     const onConfirmButtonClicked = () => {
-      //  check if the name is empty or not
+        //  check if the name is empty or not
         if (name.length == 0) {
             setNameError('**Name cannot be empty');
             nameRef.current.focus();
@@ -198,22 +207,19 @@ const _EnrollScreen = (props: Props) => {
         // checking if the courses select have valid month of enrollment or not
         // if not then setting the required error
 
-
         for (let i = 0; i < Object.keys(courseSelectStatus).length; i++) {
             if (courseSelectStatus[Object.keys(courseSelectStatus)[i]].courseSelected == true) {
-
-                const selectMonth = courseSelectStatus[Object.keys(courseSelectStatus)[i]].selectMonth;
-                const availableMonths = courseSelectStatus[Object.keys(courseSelectStatus)[i]].availableMonths;
+                const selectMonth =
+                    courseSelectStatus[Object.keys(courseSelectStatus)[i]].selectMonth;
+                const availableMonths =
+                    courseSelectStatus[Object.keys(courseSelectStatus)[i]].availableMonths;
 
                 if (availableMonths.indexOf(selectMonth) === -1) {
                     setSelectMonthError(Object.keys(courseSelectStatus)[i]);
                     return;
                 }
-                
             }
         }
-
-
 
         // checking atleast 1 course is enrolled or not
         let selectedAtLeastOneCourse = 0;
@@ -567,7 +573,7 @@ const _EnrollScreen = (props: Props) => {
                                                                                 key={i}
                                                                                 value={month}
                                                                             >
-                                                                                {MONTHS[month]}
+                                                                                {getCourseMonthInfo(month)}
                                                                             </option>
                                                                         );
                                                                     }
@@ -793,7 +799,8 @@ const mapDispatchToProps = {
     selectMonth,
     setSelectMonthError,
     setMinimumOneCourseError,
-    getInvoice,payCourse
+    getInvoice,
+    payCourse
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(_EnrollScreen);

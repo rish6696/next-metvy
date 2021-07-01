@@ -126,10 +126,11 @@ const _MetvyLearn = ({ width, setWidth }) => {
     const getAdvertisementCard = (advertisement, marginRight) => {
         return (
             <FLexLayout
-                style={{ marginTop: '29px', height: '376px', marginRight: marginRight }}
+                style={{ marginTop: '29px', height: '376px', marginRight: marginRight,cursor:'pointer' }}
                 rowORColumn="row"
                 justifyContent="center"
                 alignItem="center"
+                onClick={() => router.push(advertisement.routePath)}
             >
                 <FLexLayout
                     className={Style.mentorshipCard}
@@ -1367,10 +1368,10 @@ const _MetvyLearn = ({ width, setWidth }) => {
                                 alignItem="center"
                             >
                                 <div style={{ fontFamily: 'poppinsSemiBold', fontSize: '15px' }}>
-                                    {'Live Mentorship'}
+                                    {'Letter'}
                                 </div>
                                 <div style={{ fontFamily: 'poppinsMedium', fontSize: '9px' }}>
-                                    {'With Experts'}
+                                    {'of Recommendation '}
                                 </div>
                             </FLexLayout>
 
@@ -1387,10 +1388,10 @@ const _MetvyLearn = ({ width, setWidth }) => {
                                 alignItem="center"
                             >
                                 <div style={{ fontFamily: 'poppinsSemiBold', fontSize: '15px' }}>
-                                    {'Certificate'}
+                                    {'Internship'}
                                 </div>
                                 <div style={{ fontFamily: 'poppinsMedium', fontSize: '9px' }}>
-                                    {'of  Internship'}
+                                    {'Opportunity at Metvy'}
                                 </div>
                             </FLexLayout>
                         </FLexLayout>
