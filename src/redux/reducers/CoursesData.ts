@@ -1,4 +1,4 @@
-import { Course, Invoice } from '../Actions/Courses';
+import { Course, DiscountCoupons, Invoice } from '../Actions/Courses';
 import { ActionTypes, Action } from '../Actions/types';
 
 export interface CourseSelectionStatus {
@@ -16,8 +16,15 @@ export interface CourseReducerState {
     selectBatchError: string;
     minimumOneCourseError: string;
     invoiceData: Invoice;
-    invoiceError : string;
-    paymentLink: string
+    invoiceError: string;
+    paymentLink: string;
+}
+
+export interface DiscountCouponReducerState {
+    discountCodes: DiscountCoupons[];
+    selectedDiscountCodeId: string;
+    selectedDiscountCodeText: string;
+    selectedDiscountCodePercent: number;
 }
 
 export const courses = (
@@ -30,13 +37,15 @@ export const courses = (
             checkoutAmount: -1,
             disCountAmount: -1,
             subTotal: -1,
-            invoiceCourses: []
+            invoiceCourses: [],
+            discountCoupon: '',
+            percentageDiscount: -1
         },
-        invoiceError : '',
-        paymentLink:''
+        invoiceError: '',
+        paymentLink: ''
     },
     action: Action
-) : CourseReducerState => {
+): CourseReducerState => {
     switch (action.type) {
         case ActionTypes.GET_COURSES:
             let courseSelectionStatusRef: CourseSelectionStatus = {};
@@ -68,7 +77,15 @@ export const courses = (
                 ...state,
                 courseSelectionStatus: { ...state.courseSelectionStatus, ...temp },
                 selectBatchError: '',
-                minimumOneCourseError: ''
+                minimumOneCourseError: '',
+                invoiceData: {
+                    checkoutAmount: -1,
+                    disCountAmount: -1,
+                    invoiceCourses: [],
+                    discountCoupon: '',
+                    percentageDiscount: -1,
+                    subTotal: -1
+                }
             };
 
         case ActionTypes.SELECT_MONTH:
@@ -109,20 +126,86 @@ export const courses = (
         case ActionTypes.GET_INVOICE:
             return {
                 ...state,
-                invoiceData :action.payload
-            }
+                invoiceData: action.payload
+            };
 
         case ActionTypes.SET_GET_INVOICE_ERROR:
-            return{
+            return {
                 ...state,
-                invoiceError : action.payload
-            }
+                invoiceError: action.payload
+            };
 
         case ActionTypes.PAY_COURSE:
             return {
                 ...state,
                 paymentLink: action.payload
-            }
+            };
+        case ActionTypes.APPLY_DISCOUNT_CODE:
+            return {
+                ...state,
+                invoiceData: {
+                    checkoutAmount: -1,
+                    disCountAmount: -1,
+                    invoiceCourses: [],
+                    discountCoupon: '',
+                    percentageDiscount: -1,
+                    subTotal: -1
+                }
+            };
+        default:
+            return state;
+    }
+};
+
+export const discountCodeReducer = (
+    state: DiscountCouponReducerState = {
+        discountCodes: [],
+        selectedDiscountCodeId: '',
+        selectedDiscountCodePercent: -1,
+        selectedDiscountCodeText: ''
+    },
+    action: Action
+): DiscountCouponReducerState => {
+    switch (action.type) {
+        case ActionTypes.GET_DISCOUNT_COUPONS:
+            return { ...state, discountCodes: action.payload };
+
+        case ActionTypes.APPLY_DISCOUNT_CODE:
+            return {
+                ...state,
+                selectedDiscountCodeId: action.payload.selectedDiscountCodeId,
+                selectedDiscountCodePercent: action.payload.selectedDiscountCodePercent,
+                selectedDiscountCodeText: action.payload.selectedDiscountCodeText
+            };
+
+        case ActionTypes.ADD_OR_REMOVE_COURSE_TO_BUY:
+            return {
+                ...state,
+                selectedDiscountCodeId: '',
+                selectedDiscountCodePercent: -1,
+                selectedDiscountCodeText: ''
+            };
+
+        default:
+            return state;
+    }
+};
+
+export interface DiscountModalReducerState {
+    open: boolean;
+}
+
+export const discountModalReducer = (
+    state: DiscountModalReducerState = { open: false },
+    action: Action
+): DiscountModalReducerState => {
+    switch (action.type) {
+        case ActionTypes.SET_MODAL_STATE:
+            return { ...state, open: action.payload };
+
+        case ActionTypes.APPLY_DISCOUNT_CODE:
+            return { open: false };
+
         default:
             return state;
     }

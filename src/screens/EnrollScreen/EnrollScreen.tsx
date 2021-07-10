@@ -8,6 +8,7 @@ import apiConfig from '../../api-services/apiConfig';
 import ServerDown from '../../components/ServerDown/ServerDown';
 import Loader from '../../components/LoaderComponent/LoaderComponent';
 import Scroll from 'react-scroll';
+import DiscountModal from '../../components/discountModal/DiscountModal';
 
 import {
     getCourses,
@@ -19,7 +20,10 @@ import {
     Cart_Items,
     Invoice,
     payCourse,
-    PAY_COURSE_API_REQUEST_CONTRACT
+    PAY_COURSE_API_REQUEST_CONTRACT,
+    getDiscountCoupons,
+    DiscountCoupons,
+    setModalAction
 } from '../../redux/Actions/Courses';
 
 import { connect } from 'react-redux';
@@ -43,6 +47,12 @@ interface Props {
     invoiceData: Invoice;
     getInvoiceError: string;
     payCourse: (payCourseData: PAY_COURSE_API_REQUEST_CONTRACT) => void;
+    getDiscountCoupons: () => void;
+    discountCoupons: DiscountCoupons[];
+    setModalAction: (modalState: boolean) => void;
+    selectedDiscountCouponText: string;
+    selectedDiscountCouponId: string;
+    selectedDiscountCouponPercent: number;
 }
 
 const _EnrollScreen = (props: Props) => {
@@ -62,16 +72,22 @@ const _EnrollScreen = (props: Props) => {
         getInvoice,
         invoiceData,
         getInvoiceError,
-        payCourse
+        payCourse,
+        getDiscountCoupons,
+        discountCoupons,
+        setModalAction,
+        selectedDiscountCouponText,
+        selectedDiscountCouponId,
+        selectedDiscountCouponPercent
     } = props;
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setChecked(event.target.checked);
     };
 
-    console.log(props.courseSelectStatus);
-
     const [selectBatchError, setSelectBatchError] = useState('');
+
+    
 
     const [discountCode, setDiscountCode] = useState('');
     const [discountCodeError, setDiscountCodeError] = useState('**Invalid Discount code');
@@ -121,12 +137,12 @@ const _EnrollScreen = (props: Props) => {
 
     useEffect(() => {
         getCourses();
+        getDiscountCoupons();
     }, []);
 
     useEffect(() => {
         if (invoiceData && invoiceData.invoiceCourses.length > 0) {
             const scroll = Scroll.animateScroll;
-            console.log('going to scroll');
             scroll.scrollToBottom();
         }
     }, [invoiceData]);
@@ -159,6 +175,12 @@ const _EnrollScreen = (props: Props) => {
             .endOf('M')
             .get('D')}th ${date.format('MMMM YYYY')}`;
     };
+
+
+    const getTextForDiscountCodeButton =():string=>{
+       if(selectedDiscountCouponPercent==-1) return "Use Discount Coupon"
+       return `Applied ${selectedDiscountCouponText} for ${selectedDiscountCouponPercent}% off` 
+    }
 
     const onConfirmButtonClicked = () => {
         //  check if the name is empty or not
@@ -247,7 +269,7 @@ const _EnrollScreen = (props: Props) => {
         });
 
         getInvoice({
-            discountCoupon: discountCode,
+            discountCouponID: selectedDiscountCouponId,
             courses: cartCourses
         });
     };
@@ -268,7 +290,7 @@ const _EnrollScreen = (props: Props) => {
             name,
             email,
             phone: mobile,
-            discountCoupon: discountCode,
+            discountCouponID: selectedDiscountCouponId,
             school,
             stream,
             courses: cartCourses
@@ -573,7 +595,9 @@ const _EnrollScreen = (props: Props) => {
                                                                                 key={i}
                                                                                 value={month}
                                                                             >
-                                                                                {getCourseMonthInfo(month)}
+                                                                                {getCourseMonthInfo(
+                                                                                    month
+                                                                                )}
                                                                             </option>
                                                                         );
                                                                     }
@@ -612,7 +636,7 @@ const _EnrollScreen = (props: Props) => {
                             </FLexLayout>
 
                             {/* have-discount-coupon-box */}
-                            <FLexLayout
+                            {/* <FLexLayout
                                 className={Style['discount-coupon-heading-box']}
                                 rowORColumn="row"
                                 justifyContent="center"
@@ -633,6 +657,24 @@ const _EnrollScreen = (props: Props) => {
                                 alignItem="center"
                             >
                                 <div>{getInvoiceError}</div>
+                            </FLexLayout> */}
+
+                            {/* apply for discount code */}
+                            <FLexLayout
+                                className={Style['confirm-now-button']}
+                                rowORColumn="row"
+                                justifyContent="center"
+                                alignItem="center"
+                                onClick={() => setModalAction(true)}
+                                style={{ marginBottom: '40px' }}
+                            >
+                                <FLexLayout rowORColumn="row" alignItem="center">
+                                    <div>{getTextForDiscountCodeButton()}</div>
+                                    <Image
+                                        style={{ marginLeft: '28px', height: '24px' }}
+                                        src="icons/Arrow 1.png"
+                                    />
+                                </FLexLayout>
                             </FLexLayout>
 
                             {/* confirm-now */}
@@ -713,32 +755,34 @@ const _EnrollScreen = (props: Props) => {
                                 </FLexLayout>
 
                                 {/* discount-box */}
-                                <FLexLayout
-                                    style={{ width: '80%' }}
-                                    rowORColumn="row"
-                                    justifyContent="between"
-                                    className={Style['bill-item-row']}
-                                    id={Style['promo-code-applied-box']}
-                                >
-                                    <div>
-                                        <span className={Style['promoCode-text']}>
-                                            {'Promo Code Applied'}
-                                        </span>{' '}
-                                        <span className={Style['promoCode-value']}>
-                                            {'20% Discount'}
-                                        </span>
-                                    </div>
-
-                                    {/* price-box */}
-                                    <FLexLayout
-                                        justifyContent="center"
-                                        className={Style['price-box-bill-item']}
-                                        rowORColumn="row"
-                                        alignItem="center"
-                                    >
-                                        <div> - &#8377; {invoiceData.disCountAmount}</div>
-                                    </FLexLayout>
-                                </FLexLayout>
+                                { invoiceData.disCountAmount !==0 && (
+                                     <FLexLayout
+                                     style={{ width: '80%' }}
+                                     rowORColumn="row"
+                                     justifyContent="between"
+                                     className={Style['bill-item-row']}
+                                     id={Style['promo-code-applied-box']}
+                                 >
+                                     <div>
+                                         <span className={Style['promoCode-text']}>
+                                             {`${invoiceData.discountCoupon} Code Applied`}
+                                         </span>{' '}
+                                         <span className={Style['promoCode-value']}>
+                                             {`${invoiceData.percentageDiscount}% Discount`}
+                                         </span>
+                                     </div>
+ 
+                                     {/* price-box */}
+                                     <FLexLayout
+                                         justifyContent="center"
+                                         className={Style['price-box-bill-item']}
+                                         rowORColumn="row"
+                                         alignItem="center"
+                                     >
+                                         <div> - &#8377; {invoiceData.disCountAmount}</div>
+                                     </FLexLayout>
+                                 </FLexLayout>
+                                )}
                             </FLexLayout>
                         )}
 
@@ -777,6 +821,7 @@ const _EnrollScreen = (props: Props) => {
                     </FLexLayout>
                 )}
             </div>
+            <DiscountModal />
         </div>
     );
 };
@@ -789,7 +834,11 @@ const mapStateToProps = (state: StoreStateInterface) => {
         isServerDown: state.serverDownError.error,
         showEnrollScreenLoader: state.loaderShow.enrollScreen,
         invoiceData: state.courses.invoiceData,
-        getInvoiceError: state.courses.invoiceError
+        getInvoiceError: state.courses.invoiceError,
+        discountCoupons: state.discountCouponData.discountCodes,
+        selectedDiscountCouponText: state.discountCouponData.selectedDiscountCodeText,
+        selectedDiscountCouponId: state.discountCouponData.selectedDiscountCodeId,
+        selectedDiscountCouponPercent: state.discountCouponData.selectedDiscountCodePercent
     };
 };
 
@@ -800,7 +849,9 @@ const mapDispatchToProps = {
     setSelectMonthError,
     setMinimumOneCourseError,
     getInvoice,
-    payCourse
+    payCourse,
+    getDiscountCoupons,
+    setModalAction
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(_EnrollScreen);

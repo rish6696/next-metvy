@@ -84,6 +84,12 @@ a {
   src: url("../public/fonts/Poppins-Thin.ttf");
 } 
 
+@font-face {
+  font-family: "poppinsExtraBoldItalic";
+  src: url("../public/fonts/Poppins-ExtraBoldItalic.ttf");
+} 
+
+
 
 
 

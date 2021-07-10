@@ -24,6 +24,16 @@ export interface Invoice {
     subTotal: number;
     disCountAmount: number;
     checkoutAmount: number;
+    discountCoupon: string;
+    percentageDiscount: number;
+}
+
+export interface DiscountCoupons {
+    _id: string;
+    code: string;
+    percentDiscount: number;
+    isActive: boolean;
+    numberOfCourses: number;
 }
 
 export interface SetMinimumOneCourseError {
@@ -60,12 +70,52 @@ export interface GET_INVOICE {
     payload: Invoice;
 }
 
+export interface GET_DISCOUNT_COUPONS_ACTION {
+    type: ActionTypes.GET_DISCOUNT_COUPONS;
+    payload: DiscountCoupons[];
+}
+
 export const setMinimumOneCourseError = () => {
     return {
         type: ActionTypes.SET_MINIMUM_ONE_COURSE_ERROR,
         payload: '** Please Select at least one course'
     };
 };
+
+export interface APPLY_DISCOUNT_CODE_ACTION_PAYLOAD {
+    selectedDiscountCodeId: string;
+    selectedDiscountCodePercent: number;
+    selectedDiscountCodeText: string;
+}
+
+export interface ApplyDiscountCodeAction {
+    type: ActionTypes.APPLY_DISCOUNT_CODE;
+    payload: APPLY_DISCOUNT_CODE_ACTION_PAYLOAD;
+}
+
+export const applyDiscountCode = (
+    applyDiscountCodePayload: APPLY_DISCOUNT_CODE_ACTION_PAYLOAD
+): ApplyDiscountCodeAction => {
+    return {
+        type: ActionTypes.APPLY_DISCOUNT_CODE,
+        payload: applyDiscountCodePayload
+    };
+};
+
+
+export interface SET_MODAL_ACTION {
+    type: ActionTypes.SET_MODAL_STATE,
+    payload : boolean 
+}
+
+
+export const setModalAction =(modalState:boolean):SET_MODAL_ACTION=>{
+  return {
+      type:ActionTypes.SET_MODAL_STATE, payload : modalState
+  }
+}
+
+
 
 export const addOrRemoveCourseToBuy = (course_id: string) => {
     return { type: ActionTypes.ADD_OR_REMOVE_COURSE_TO_BUY, payload: course_id };
@@ -89,7 +139,7 @@ export const selectMonth = (month: number, courseId: string) => {
 };
 
 export interface Cart_Items {
-    discountCoupon: string;
+    discountCouponID: string;
     courses: { month: number; courseId: string }[];
 }
 
@@ -103,6 +153,26 @@ export const getInvoice = (cartItems: Cart_Items) => {
 
             const { data } = await apiConfig.post<Invoice>('/api/learn/get-invoice', cartItems);
             dispatch<GET_INVOICE>({ type: ActionTypes.GET_INVOICE, payload: data });
+        } catch (error) {
+            if (error && error.response) {
+                dispatch<SET_GET_INVOICE_ERROR>({
+                    type: ActionTypes.SET_GET_INVOICE_ERROR,
+                    payload: error.response.data.message
+                });
+            }
+            dispatch<SET_SERVER_DOWN>({ type: ActionTypes.SET_SERVER_DOWN });
+        }
+    };
+};
+
+export const getDiscountCoupons = () => {
+    return async (dispatch: Dispatch) => {
+        try {
+            const { data } = await apiConfig.get<DiscountCoupons[]>('/api/learn/discount-codes');
+            dispatch<GET_DISCOUNT_COUPONS_ACTION>({
+                type: ActionTypes.GET_DISCOUNT_COUPONS,
+                payload: data
+            });
         } catch (error) {
             if (error && error.response) {
                 dispatch<SET_GET_INVOICE_ERROR>({
@@ -135,7 +205,7 @@ export interface PAY_COURSE_API_REQUEST_CONTRACT {
     phone: string;
     school: string;
     stream: string;
-    discountCoupon: string;
+    discountCouponID: string;
     courses: { month: number; courseId: string }[];
 }
 
@@ -161,13 +231,15 @@ export const payCourse = (payCourseData: PAY_COURSE_API_REQUEST_CONTRACT) => {
                 payCourseData
             );
 
-            console.log(data)
+            console.log(data);
 
             window.location.href = data.paymentLink;
-            dispatch<PAY_COURSE_ACTION>({ type: ActionTypes.PAY_COURSE, payload: data.paymentLink });
-
+            dispatch<PAY_COURSE_ACTION>({
+                type: ActionTypes.PAY_COURSE,
+                payload: data.paymentLink
+            });
         } catch (error) {
-            console.log(error)
+            console.log(error);
             if (error && error.response) {
                 dispatch<SET_GET_INVOICE_ERROR>({
                     type: ActionTypes.SET_GET_INVOICE_ERROR,

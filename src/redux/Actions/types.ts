@@ -7,7 +7,7 @@ import {
     SET_SERVER_DOWN,
     GET_INVOICE,
     SET_GET_INVOICE_ERROR,
-    PAY_COURSE_ACTION
+    PAY_COURSE_ACTION,GET_DISCOUNT_COUPONS_ACTION,ApplyDiscountCodeAction,SET_MODAL_ACTION
 } from './Courses';
 
 import { SET_LOADER_STATUS_ENROLL_SCREEN } from './Loader';
@@ -25,7 +25,7 @@ export enum ActionTypes {
     GET_INVOICE,
     SET_LOADER_STATUS_ENROLL_SCREEN,
     SET_GET_INVOICE_ERROR,
-    PAY_COURSE
+    PAY_COURSE,GET_DISCOUNT_COUPONS,APPLY_DISCOUNT_CODE,SET_MODAL_STATE
 }
 
 export type Action =
@@ -40,4 +40,7 @@ export type Action =
     | GET_INVOICE
     | SET_GET_INVOICE_ERROR
     |PAY_COURSE_ACTION
+    |GET_DISCOUNT_COUPONS_ACTION
+    |ApplyDiscountCodeAction
+    | SET_MODAL_ACTION
 ;
