@@ -7,16 +7,17 @@ import { StoreStateInterface } from '../../redux/reducers';
 import { DiscountCoupons } from '../../redux/Actions/Courses';
 import DiscountCouponRow from '../../components/DiscountCouponRow/DiscountCouponRow';
 import { Container, Row, Col } from 'react-bootstrap';
-import { setModalAction } from '../../redux/Actions/Courses'
+import { setModalAction } from '../../redux/Actions/Courses';
+import EditableDisCountCoupon from '../EditableDiscountCoupon/EditableDiscountCoupon';
 
 export interface ModalProps {
     discountCoupons: DiscountCoupons[];
     modalShow: boolean;
-    setModalAction : (modalState:boolean) => void
+    setModalAction: (modalState: boolean) => void;
 }
 
 function SimpleModal(props: ModalProps) {
-    const { discountCoupons,modalShow,setModalAction } = props;
+    const { discountCoupons, modalShow, setModalAction } = props;
 
     function rand() {
         return Math.round(Math.random() * 20) - 10;
@@ -37,7 +38,7 @@ function SimpleModal(props: ModalProps) {
         return makeStyles((theme) => ({
             paper: {
                 position: 'absolute',
-                width:  (0.95) * width,
+                width: 0.95 * width,
                 backgroundColor: theme.palette.background.paper,
                 border: '0px solid #000',
                 boxShadow: theme.shadows[5],
@@ -46,20 +47,25 @@ function SimpleModal(props: ModalProps) {
         }));
     };
 
-
     const [modalStyle] = React.useState(getModalStyle);
     const body = () => {
         if (typeof window !== 'undefined') {
             return (
-                <div style={modalStyle} className={getMakeStyle(window.innerWidth)().paper}>
-                    <Container fluid={true}  >
+                <div
+                    style={modalStyle}
+                    className={getMakeStyle(window.innerWidth)().paper}
+                >
+                    <Container fluid={true}>
                         <Row>
-                            {discountCoupons.map((discountCoupon) => (
-                                <DiscountCouponRow
-                                    discountCoupon={discountCoupon}
-                                    key={discountCoupon._id}
-                                />
-                            ))}
+                            {[
+                                <EditableDisCountCoupon />,
+                                ...discountCoupons.map((discountCoupon) => (
+                                    <DiscountCouponRow
+                                        discountCoupon={discountCoupon}
+                                        key={discountCoupon._id}
+                                    />
+                                ))
+                            ]}
                         </Row>
                     </Container>
                 </div>
@@ -72,7 +78,7 @@ function SimpleModal(props: ModalProps) {
         <div>
             <Modal
                 open={modalShow}
-                onClose={()=>setModalAction(!modalShow)}
+                onClose={() => setModalAction(!modalShow)}
                 aria-labelledby="simple-modal-title"
                 aria-describedby="simple-modal-description"
             >
@@ -85,12 +91,12 @@ function SimpleModal(props: ModalProps) {
 const mapStateToProps = (state: StoreStateInterface) => {
     return {
         discountCoupons: state.discountCouponData.discountCodes,
-        modalShow : state.discountModal.open
+        modalShow: state.discountModal.open
     };
 };
 
 const mapDispatchToProps = {
-  setModalAction
+    setModalAction
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SimpleModal);

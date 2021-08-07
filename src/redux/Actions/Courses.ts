@@ -141,6 +141,7 @@ export const selectMonth = (month: number, courseId: string) => {
 export interface Cart_Items {
     discountCouponID: string;
     courses: { month: number; courseId: string }[];
+    editableDiscountCoupon: string;
 }
 
 export const getInvoice = (cartItems: Cart_Items) => {
@@ -154,11 +155,17 @@ export const getInvoice = (cartItems: Cart_Items) => {
             const { data } = await apiConfig.post<Invoice>('/api/learn/get-invoice', cartItems);
             dispatch<GET_INVOICE>({ type: ActionTypes.GET_INVOICE, payload: data });
         } catch (error) {
+            dispatch<SET_LOADER_STATUS_ENROLL_SCREEN>({
+                type: ActionTypes.SET_LOADER_STATUS_ENROLL_SCREEN,
+                payload: false
+            });
+
             if (error && error.response) {
                 dispatch<SET_GET_INVOICE_ERROR>({
                     type: ActionTypes.SET_GET_INVOICE_ERROR,
                     payload: error.response.data.message
                 });
+                return;
             }
             dispatch<SET_SERVER_DOWN>({ type: ActionTypes.SET_SERVER_DOWN });
         }
@@ -207,6 +214,7 @@ export interface PAY_COURSE_API_REQUEST_CONTRACT {
     stream: string;
     discountCouponID: string;
     courses: { month: number; courseId: string }[];
+    editableDiscountCoupon :string
 }
 
 export interface PAY_COURSE_API_RESPONSE_CONTRACT {
@@ -240,6 +248,7 @@ export const payCourse = (payCourseData: PAY_COURSE_API_REQUEST_CONTRACT) => {
             });
         } catch (error) {
             console.log(error);
+            
             if (error && error.response) {
                 dispatch<SET_GET_INVOICE_ERROR>({
                     type: ActionTypes.SET_GET_INVOICE_ERROR,

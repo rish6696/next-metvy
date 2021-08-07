@@ -1,0 +1,72 @@
+.container {
+    width: 289px;
+    background: #ffffff;
+    box-shadow: 0px 7px 27px rgba(0, 0, 0, 0.19);
+    margin: 10px;
+    padding: 15px;
+}
+
+.use-title {
+    font-family: poppinsItalic;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+    color: #000000;
+}
+
+.code {
+    font-family: poppinsExtraBoldItalic;
+    font-size: 16px;
+    color: #3bb0a3;
+}
+
+.percent {
+    font-family: poppinsBoldItalic;
+    font-size: 14px;
+    color: #3bb0a3;
+}
+
+.description-selected {
+    font-family: poppinsMediumItalic;
+    font-size: 9px;
+}
+
+.description-disabled {
+    font-family: poppinsMediumItalic;
+    font-size: 9px;
+    color: #ff0000;
+}
+
+.apply-now-button-active {
+    width: 86px;
+    height: 23px;
+    background: #000000;
+    border-radius: 9.5px;
+    cursor: pointer;
+    color: white;
+    font-family: poppinsRegular;
+    font-size: 10px;
+}
+
+.apply-now-button-inactive {
+    width: 86px;
+    height: 23px;
+    background: #B3B3B3;
+    border-radius: 9.5px;
+    cursor: pointer;
+    color: white;
+    font-family: poppinsRegular;
+    font-size: 10px;
+}
+
+.discount-input{
+    width: 127px;
+    height: 23px;
+    border-radius: 12px;
+    border: 1px solid #D1D1D1;
+    font-family: poppinsBold;
+    font-size: 10px;
+    color: #B3B3B3;
+}
+

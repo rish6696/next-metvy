@@ -32,6 +32,8 @@ export const courses = [
     { name: 'Business Program', routePath: '/business_program' }
 ];
 
+export const EDITABLE_DISCOUNT_CODE_ID = "#EDIT_TABLE_DISCOUNT_CODE#"
+
 export const coursesLearnScreenAdvertisementMetaData = [
     {
         backgroundImage: '/icons/Golden_ 2.png',

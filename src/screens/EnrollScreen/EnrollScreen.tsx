@@ -86,9 +86,6 @@ const _EnrollScreen = (props: Props) => {
     };
 
     const [selectBatchError, setSelectBatchError] = useState('');
-
-    
-
     const [discountCode, setDiscountCode] = useState('');
     const [discountCodeError, setDiscountCodeError] = useState('**Invalid Discount code');
 
@@ -179,6 +176,7 @@ const _EnrollScreen = (props: Props) => {
 
     const getTextForDiscountCodeButton =():string=>{
        if(selectedDiscountCouponPercent==-1) return "Use Discount Coupon"
+       if(selectedDiscountCouponPercent== -20 ) return `Applied ${selectedDiscountCouponText}`
        return `Applied ${selectedDiscountCouponText} for ${selectedDiscountCouponPercent}% off` 
     }
 
@@ -270,7 +268,7 @@ const _EnrollScreen = (props: Props) => {
 
         getInvoice({
             discountCouponID: selectedDiscountCouponId,
-            courses: cartCourses
+            courses: cartCourses,editableDiscountCoupon:selectedDiscountCouponText
         });
     };
 
@@ -293,7 +291,7 @@ const _EnrollScreen = (props: Props) => {
             discountCouponID: selectedDiscountCouponId,
             school,
             stream,
-            courses: cartCourses
+            courses: cartCourses,editableDiscountCoupon:selectedDiscountCouponText
         });
     };
 
@@ -635,20 +633,7 @@ const _EnrollScreen = (props: Props) => {
                                 <div>{minimumOneCourseError}</div>
                             </FLexLayout>
 
-                            {/* have-discount-coupon-box */}
-                            {/* <FLexLayout
-                                className={Style['discount-coupon-heading-box']}
-                                rowORColumn="row"
-                                justifyContent="center"
-                                alignItem="center"
-                            >
-                                <input
-                                    onChange={onDisCountCodeChange}
-                                    value={discountCode}
-                                    style={{ width: '80%', textAlign: 'center' }}
-                                    placeholder="Have a discount coupon ?"
-                                />
-                            </FLexLayout>
+                            
 
                             <FLexLayout
                                 className={Style['invalidDiscountCouponError']}
@@ -657,7 +642,7 @@ const _EnrollScreen = (props: Props) => {
                                 alignItem="center"
                             >
                                 <div>{getInvoiceError}</div>
-                            </FLexLayout> */}
+                            </FLexLayout> 
 
                             {/* apply for discount code */}
                             <FLexLayout

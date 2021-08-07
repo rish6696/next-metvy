@@ -82,8 +82,8 @@ const _DiscountCoupon = (props: Props) => {
     };
 
     return (
-        <Col>
-            <FLexLayout rowORColumn="row" justifyContent="center" alignItem="center">
+        <Col style={{padding:"0px"}} >
+            <FLexLayout  rowORColumn="row" justifyContent="center" alignItem="center">
                 {/* inner-container */}
                 <FLexLayout rowORColumn="column" className={Style['container']}>
                     {/* row-1 */}
