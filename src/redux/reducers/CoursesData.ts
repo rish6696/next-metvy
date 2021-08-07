@@ -134,6 +134,12 @@ export const courses = (
                 ...state,
                 invoiceError: action.payload
             };
+        
+         case  ActionTypes.APPLY_DISCOUNT_CODE:
+             return {
+                 ...state,
+                 invoiceError: ''
+             }
 
         case ActionTypes.PAY_COURSE:
             return {

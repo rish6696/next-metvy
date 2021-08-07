@@ -59,6 +59,13 @@ const _EditableDiscountCoupon = (props:Props) => {
     const onInputChange = (event:React.ChangeEvent<HTMLInputElement> )=>{
         setEditableDiscount(event.target.value)
     }
+
+
+    const getPlaceHolderStyle = ()=>{
+        if(editableDiscountCoupon.length==0){
+            return { fontSize: "6px",  fontFamily: "poppinsBold" }
+        }
+    }
     
 
     return (
@@ -86,6 +93,7 @@ const _EditableDiscountCoupon = (props:Props) => {
                             justifyContent="center"
                             alignItem="center"
                             className={Style['discount-input']}
+                            style={getPlaceHolderStyle()}
                         >
                             <input  onChange={onInputChange} style={{width:"100%",paddingLeft:"10px",textTransform:'uppercase'}} maxLength={6} placeholder="Enter a discount code" />
                         </FLexLayout>
