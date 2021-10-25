@@ -166,8 +166,13 @@ const _EnrollScreen = (props: Props) => {
     };
 
     const getCourseMonthInfo = (monthNumber) => {
-        const date = Moment();
+        let date = Moment();
         date.set('M', monthNumber - 1);
+
+        if(monthNumber  < Moment().get('M')+1 ){
+            console.log("Inside my if ")
+            date = date.add('y',1)
+        }
         return `${date.startOf('M').get('D')}st ${date.format('MMMM YYYY')} - ${date
             .endOf('M')
             .get('D')}th ${date.format('MMMM YYYY')}`;
