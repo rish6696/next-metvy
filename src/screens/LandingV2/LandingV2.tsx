@@ -21,21 +21,21 @@ const _Landing = ({ setWidth, width }) => {
 
     const masterClasses = [
         {
-            imgName: 'shawrya.png',
+            imgName: 'Shawrya.png',
             title: 'How to build a Startup ?',
             name: 'Shawrya Mehrotra',
             date: '29th October,2021',
             time: '6-7 PM'
         },
         {
-            imgName: 'shawrya.png',
+            imgName: 'Shawrya.png',
             title: 'How to build a Startup ?',
             name: 'Shawrya Mehrotra',
             date: '29th October,2021',
             time: '6-7 PM'
         },
         {
-            imgName: 'shawrya.png',
+            imgName: 'Shawrya.png',
             title: 'How to build a Startup ?',
             name: 'Shawrya Mehrotra',
             date: '29th October,2021',
