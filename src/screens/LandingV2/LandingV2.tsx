@@ -1314,6 +1314,7 @@ const _Landing = ({ setWidth, width }) => {
                         rowORColumn="column"
                         justifyContent="center"
                         alignItem="center"
+                        style={{width:'80%'}}
                     >
                         <p>
                             {' '}
