@@ -4,15 +4,20 @@ import BackgroundBlur from '../../components/BackgroundEffectBlur/BackgroundEffe
 import FLexLayout from '../../components/FlexLayout';
 import { Image, Row, Container, Col } from 'react-bootstrap';
 import { setWidth } from '../../redux/Actions/Screenconfig';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import Carousel from '../Carousel/Carousel';
+import TestimonialCard from '../../components/TestimonialsV2/testimonialV2';
+import { appTestimonialsData } from '../../constants';
+import Footer from '../../components/Footer/Footer';
+
 
 const _Landing = ({ setWidth, width }) => {
     useEffect(() => {
         setWidth(window.innerWidth);
         window.addEventListener('resize', () => setWidth(window.innerWidth));
     }, []);
+
+    const [animationState, setAnimationState] = useState('running');
 
     const masterClasses = [
         {
@@ -1145,11 +1150,14 @@ const _Landing = ({ setWidth, width }) => {
                     </FLexLayout>
                 )}
 
-                {/* master-class-desktop */}
+                {/* master-class-both desktop-and-mobile */}
                 {
                     <FLexLayout rowORColumn="column">
                         <FLexLayout
-                            style={{ position: 'relative', bottom: width > '1260' ? '120px' :'0px' }}
+                            style={{
+                                position: 'relative',
+                                bottom: width > '1260' ? '120px' : '0px'
+                            }}
                             className={Style['master-class-heading']}
                             rowORColumn="column"
                             justifyContent="center"
@@ -1157,7 +1165,13 @@ const _Landing = ({ setWidth, width }) => {
                         >
                             <div>{'Upcoming Metvy Learn Masterclasses'}</div>
                         </FLexLayout>
-                        <FLexLayout style={{position:'relative',bottom: width > '1260' ? '100px' :'0px'}} rowORColumn="row">
+                        <FLexLayout
+                            style={{
+                                position: 'relative',
+                                bottom: width > '1260' ? '100px' : '0px'
+                            }}
+                            rowORColumn="row"
+                        >
                             <Container>
                                 <Row>
                                     {masterClasses.map((masterClass) => {
@@ -1285,9 +1299,68 @@ const _Landing = ({ setWidth, width }) => {
                                 </Row>
                             </Container>
                         </FLexLayout>
-                        ;
                     </FLexLayout>
                 }
+
+                {/* Trusted-text-testimonial-headline */}
+                <FLexLayout
+                    justifyContent="center"
+                    alignItem="center"
+                    className={Style['trusted-testimonial-headline']}
+                    rowORColumn="row"
+                    style={{ width: '100%' }}
+                >
+                    <FLexLayout
+                        rowORColumn="column"
+                        justifyContent="center"
+                        alignItem="center"
+                    >
+                        <p>
+                            {' '}
+                            Trusted by{' '}
+                            <span style={{ color: '#1371FF' }}>
+                                {' '}
+                                2000+{' '}
+                            </span>{' '}
+                            Young Professionals & Students{' '}
+                        </p>
+                    </FLexLayout>
+                </FLexLayout>
+
+                {/* Testimonials-Container-HorizontalScrool */}
+
+                <FLexLayout
+                    style={{ overflow: 'hidden', marginTop: '30px' }}
+                    rowORColumn="row"
+                    justifyContent="end"
+                >
+                    <FLexLayout
+                        onMouseEnter={() => {
+                            setAnimationState('paused');
+                        }}
+                        onMouseLeave={() => {
+                            setAnimationState('running');
+                        }}
+                        className={Style['effect']}
+                        style={{
+                            width: '10000%',
+                            animationPlayState: animationState,
+                            marginBottom :'100px'
+                        }}
+                        rowORColumn="row"
+                    >
+                       {appTestimonialsData.map(testimonial=>( <TestimonialCard
+                            testimonialText={testimonial.text}
+                            avatarImage={testimonial.imageName}
+                            designation={testimonial.title}
+                            avatarName={testimonial.fullName}
+                        />))}
+
+                    </FLexLayout>
+                </FLexLayout>
+
+                <Footer/>
+
             </FLexLayout>
         </div>
     );

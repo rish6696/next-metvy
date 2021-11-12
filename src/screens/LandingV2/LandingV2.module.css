@@ -168,6 +168,13 @@
         -webkit-text-fill-color: transparent;
         margin-top: 50px;
     }
+
+    .trusted-testimonial-headline {
+        font-family: 'poppinsSemiBold';
+        font-size: 20px;
+        margin-top: 100px;
+        text-align: center;
+    }
 }
 
 /* 400-600  */
@@ -334,6 +341,12 @@
         -webkit-text-fill-color: transparent;
         margin-top: 50px;
     }
+    .trusted-testimonial-headline {
+        font-family: 'poppinsSemiBold';
+        font-size: 20px;
+        margin-top: 100px;
+        text-align: center;
+    }    
 }
 
 /* 600-800  */
@@ -743,6 +756,13 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
+
+    .trusted-testimonial-headline {
+        font-family: 'poppinsSemiBold';
+        font-size: 36px;
+        margin-top: 100px;
+        text-align: center;
+    }
 }
 
 .mentors-from-title {
@@ -839,4 +859,80 @@
 
     background: #1371ff;
     border-radius: 16px;
+}
+
+.scroll-left {
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+    color: white;
+}
+.scroll-left .effect {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    line-height: 50px;
+    text-align: center;
+    /* Starting position */
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    /* Apply animation to this element */
+    -moz-animation: scroll-left 10s linear infinite;
+    -webkit-animation: scroll-left 10s linear infinite;
+    animation: scroll-left 20s linear infinite;
+}
+
+.scroll-left p:hover {
+    animation-play-state: paused;
+}
+
+/* Move it (define the animation) */
+/* @-moz-keyframes scroll-left {
+    0% {
+        -moz-transform: translateX(100%);
+    }
+    100% {
+        -moz-transform: translateX(-100%);
+    }
+}
+@-webkit-keyframes scroll-left {
+    0% {
+        -webkit-transform: translateX(100%);
+    }
+    100% {
+        -webkit-transform: translateX(-100%);
+    }
+} */
+@keyframes scroll-left {
+    0% {
+        -moz-transform: translateX(100%); /* Browser bug fix */
+        -webkit-transform: translateX(100%); /* Browser bug fix */
+        transform: translateX(100%);
+    }
+    100% {
+        -moz-transform: translateX(-100%); /* Browser bug fix */
+        -webkit-transform: translateX(-100%); /* Browser bug fix */
+        transform: translateX(-100%);
+    }
+}
+
+.effect {
+    position: relative;
+    animation-name: example;
+    animation-duration: 150s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes example {
+    0% {
+        left: 4000px;
+        top: 0px;
+    }
+    100% {
+        left: -1500px;
+        top: 0px;
+    }
 }
