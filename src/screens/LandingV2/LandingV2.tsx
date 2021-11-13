@@ -2,19 +2,39 @@ import Style from './LandingV2.module.css';
 import HeaderV2 from '../../components/HeaderV2/HeaderV2';
 import BackgroundBlur from '../../components/BackgroundEffectBlur/BackgroundEffectBlur';
 import FLexLayout from '../../components/FlexLayout';
-import { Image, Row, Container, Col } from 'react-bootstrap';
+import { Image, Row, Container, Col, Carousel } from 'react-bootstrap';
 import { setWidth } from '../../redux/Actions/Screenconfig';
 import { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import TestimonialCard from '../../components/TestimonialsV2/testimonialV2';
 import { appTestimonialsData } from '../../constants';
 import Footer from '../../components/Footer/Footer';
-
+import { useRouter } from 'next/router';
 
 const _Landing = ({ setWidth, width }) => {
+    const router = useRouter();
+
+    const changingTexts = [
+        { text: 'Live Industry Experts.', color: '#5C4DFF' },
+        { text: 'Peers.', color: '#FF784D' },
+        { text: 'Community.', color: '#F19B1B' },
+        { text: 'Cohorts.', color: '#A463F6' },
+        { text: 'Personalised Care.', color: '#FF77A8' }
+    ];
+
+    const mentorsImageName = ['/icons/Mentor - 1.png', '/icons/Mentor - 2.png'];
+
+    const [currentWordIndex, setCurrentWordIndex] = useState(0);
+
     useEffect(() => {
         setWidth(window.innerWidth);
         window.addEventListener('resize', () => setWidth(window.innerWidth));
+
+        const intervalID = setInterval(() => {
+            setCurrentWordIndex((index) => (index + 1) % changingTexts.length);
+        }, 3000);
+
+        return () => clearInterval(intervalID);
     }, []);
 
     const [animationState, setAnimationState] = useState('running');
@@ -52,17 +72,19 @@ const _Landing = ({ setWidth, width }) => {
                 >
                     <div className={Style['Learning-Text']}>
                         Learning is Better with{' '}
-                        <span className={Style['Live-Text']}> Live </span>{' '}
-                        <span className={Style['Changing-Text']}>
+                        <span
+                            style={{
+                                color: changingTexts[currentWordIndex].color
+                            }}
+                            className={Style['Live-Text']}
+                        >
                             {' '}
-                            Industry Experts.
-                        </span>
+                            {changingTexts[currentWordIndex].text}{' '}
+                        </span>{' '}
                     </div>
 
                     <div className={Style['sub-advertisement-text']}>
-                        {
-                            'Curated – Peer to Peer - Mentorship & Networking Ecosystem'
-                        }
+                        {'Curated – Peer to Peer - Mentorship & get Ecosystem'}
                     </div>
 
                     <FLexLayout
@@ -70,6 +92,8 @@ const _Landing = ({ setWidth, width }) => {
                         rowORColumn="row"
                         justifyContent="center"
                         alignItem="center"
+                        style={{ cursor: 'pointer' }}
+                        onClick={() => router.push('/MetvyLearn')}
                     >
                         <div>{'Get Started'}</div>
                     </FLexLayout>
@@ -175,20 +199,41 @@ const _Landing = ({ setWidth, width }) => {
                         </FLexLayout>
                     )}
 
-                    {/* Mentors-Image */}
-                    <FLexLayout
-                        rowORColumn="row"
-                        justifyContent={'center'}
-                        alignItem="center"
-                    >
-                        <img
-                            style={{
-                                width: getImageWidth(),
-                                aspectRatio: '511 : 607'
-                            }}
-                            src="/icons/mentor-image-desktop 451w.png"
-                        />
-                    </FLexLayout>
+                    <Carousel slide={false} interval={2000} fade={true} controls={false} indicators={false} >
+                        <Carousel.Item>
+                            <FLexLayout
+                                rowORColumn="row"
+                                justifyContent={'center'}
+                                alignItem="center"
+                            >
+                                <img
+                                    style={{
+                                        width: getImageWidth(),
+                                        aspectRatio: '511 : 607'
+                                    }}
+                                    src="/icons/Mentor - 1.png"
+                                />
+                            </FLexLayout>
+                        </Carousel.Item>
+
+                        <Carousel.Item>
+                            <FLexLayout
+                                rowORColumn="row"
+                                justifyContent={'center'}
+                                alignItem="center"
+                            >
+                                <img
+                                    style={{
+                                        width: getImageWidth(),
+                                        aspectRatio: '511 : 607'
+                                    }}
+                                    src="/icons/Mentor - 2.png"
+                                />
+                            </FLexLayout>
+                        </Carousel.Item>
+
+
+                    </Carousel>
                 </FLexLayout>
 
                 {width < 1000 && (
@@ -950,8 +995,11 @@ const _Landing = ({ setWidth, width }) => {
                         {/* image-app */}
                         <FLexLayout rowORColumn="row">
                             <img src="/icons/app-shots.png" />
+
                             {/* <Carousel onTextChange={()=>{}} /> */}
                             {/* style={{width:'50%',marginLeft:'100px'}} */}
+
+                            
                         </FLexLayout>
 
                         {/* play-store app-store-buttons */}
@@ -1314,7 +1362,7 @@ const _Landing = ({ setWidth, width }) => {
                         rowORColumn="column"
                         justifyContent="center"
                         alignItem="center"
-                        style={{width:'80%'}}
+                        style={{ width: '80%' }}
                     >
                         <p>
                             {' '}
@@ -1346,22 +1394,85 @@ const _Landing = ({ setWidth, width }) => {
                         style={{
                             width: '10000%',
                             animationPlayState: animationState,
-                            marginBottom :'100px'
+                            marginBottom: '100px'
                         }}
                         rowORColumn="row"
                     >
-                       {appTestimonialsData.map(testimonial=>( <TestimonialCard
-                            testimonialText={testimonial.text}
-                            avatarImage={testimonial.imageName}
-                            designation={testimonial.title}
-                            avatarName={testimonial.fullName}
-                        />))}
-
+                        {appTestimonialsData.map((testimonial) => (
+                            <TestimonialCard
+                                testimonialText={testimonial.text}
+                                avatarImage={testimonial.imageName}
+                                designation={testimonial.title}
+                                avatarName={testimonial.fullName}
+                            />
+                        ))}
                     </FLexLayout>
                 </FLexLayout>
 
-                <Footer/>
+                {/* featured On Banner */}
+                <FLexLayout
+                    rowORColumn="row"
+                    justifyContent="center"
+                    alignItem="center"
+                >
+                    <FLexLayout
+                        justifyContent="center"
+                        alignItem="center"
+                        className={Style['banner-container']}
+                        rowORColumn="row"
+                    >
+                        {'Featured On'}
+                    </FLexLayout>
+                </FLexLayout>
 
+                {/* featured-on-icons */}
+                <FLexLayout
+                    alignItem="center"
+                    justifyContent="center"
+                    rowORColumn="column"
+                >
+                    <FLexLayout
+                        justifyContent="between"
+                        alignItem="center"
+                        style={{ width: '80%' }}
+                        rowORColumn="row"
+                    >
+                        <img
+                            className={Style['InC-Icon']}
+                            src="/icons/I42.png"
+                        />
+                        <img
+                            className={Style['daily-hunt-icon']}
+                            src="/icons/DH.png"
+                        />
+                        <img
+                            className={Style['your-story-icon']}
+                            src="/icons/your_story.png"
+                        />
+                        <img
+                            className={Style['tedx-icon']}
+                            src="/icons/tedx-logo 1.png"
+                        />
+                    </FLexLayout>
+
+                    <FLexLayout
+                        style={{ marginTop: '40px', marginBottom: '100px' }}
+                        className={Style['lower-icons-container']}
+                        justifyContent="between"
+                        rowORColumn="row"
+                    >
+                        <img
+                            className={Style['yahoo-finance-icon']}
+                            src="/icons/YF.png"
+                        />
+                        <img
+                            className={Style['yahoo-news-icon']}
+                            src="/icons/YN.png"
+                        />
+                    </FLexLayout>
+                </FLexLayout>
+
+                <Footer />
             </FLexLayout>
         </div>
     );

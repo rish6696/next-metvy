@@ -113,9 +113,9 @@ const _HeaderV2 = () => {
                     alignItem="center"
                     justifyContent="end"
                     style={{
-                        fontFamily: 'poppinsRegular',
-                        fontSize: '18px',
-                        color: 'white',
+                        fontFamily: 'poppinsSemiBold',
+                        fontSize: '16px',
+                        color: 'black',
                         width: '45%',
                         height: '100%',
                         marginRight: '30px'
@@ -166,6 +166,17 @@ const _HeaderV2 = () => {
                         {' '}
                         Team{' '}
                     </div>
+
+
+                    <div
+                        onClick={() => router.push('/team')}
+                        className={HeaderStyle['cursorPointer']}
+                        style={{marginLeft:'20px'}}
+                    >
+                        {' '}
+                        Community{' '}
+                    </div>
+
                 </FLexLayout>
             );
         } else {
