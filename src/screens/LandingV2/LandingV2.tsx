@@ -84,7 +84,7 @@ const _Landing = ({ setWidth, width }) => {
                     </div>
 
                     <div className={Style['sub-advertisement-text']}>
-                        {'Curated – Peer to Peer - Mentorship & get Ecosystem'}
+                        {'Curated – Peer to Peer - Mentorship & Networking Ecosystem'}
                     </div>
 
                     <FLexLayout
@@ -497,29 +497,13 @@ const _Landing = ({ setWidth, width }) => {
                 {width > 1260 && (
                     <FLexLayout
                         rowORColumn="column"
-                        style={{ position: 'relative', marginTop: '10px' }}
+                        style={{  marginTop: '10px' }}
                     >
-                        <FLexLayout
-                            rowORColumn="row"
-                            justifyContent="center"
-                            alignItem="center"
-                        >
-                            <FLexLayout
-                                className={
-                                    Style['community-shaded-box-desktop']
-                                }
-                                rowORColumn="row"
-                            >
-                                {' '}
-                            </FLexLayout>
-                        </FLexLayout>
-
                         {/* outer-box-overlapping-content-box */}
 
                         <FLexLayout
                             rowORColumn="row"
                             style={{
-                                position: 'absolute',
                                 width: '100%',
                                 paddingLeft: '60px'
                             }}
@@ -1206,12 +1190,12 @@ const _Landing = ({ setWidth, width }) => {
                                 position: 'relative',
                                 bottom: width > '1260' ? '120px' : '0px'
                             }}
-                            className={Style['master-class-heading']}
+                           
                             rowORColumn="column"
                             justifyContent="center"
                             alignItem="center"
                         >
-                            <div>{'Upcoming Metvy Learn Masterclasses'}</div>
+                            <div   className={Style['master-class-heading']} >{'Upcoming Metvy Learn Masterclasses'}</div>
                         </FLexLayout>
                         <FLexLayout
                             style={{

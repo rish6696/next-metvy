@@ -45,7 +45,7 @@
         background: #3bb0a3;
         border-radius: 16px;
         width: 125px;
-        aspect-ratio: 159/46;
+        height: 46px;
         color: white;
         margin-top: 25px;
 
@@ -175,52 +175,52 @@
         margin-top: 100px;
         text-align: center;
     }
-    
-    .InC-Icon{
+
+    .InC-Icon {
         width: 62px;
         height: 18px;
-     }
- 
-     .daily-hunt-icon{
-         width: 104px;
-         height: 35px;
-     }
- 
-     .your-story-icon{
-         width: 58px;
-         height: 20px;
-     }
- 
-     .tedx-icon {
-         width: 58px;
-         height: 17px;
-     }
- 
-     .yahoo-finance-icon{
-         width: 73px;
-         height: 27px;
-     }
- 
-     .yahoo-news-icon{
-         width: 73px;
-         height: 26px;
-     }
- 
-     .lower-icons-container{
-         width: 180px;
-     }
- 
-     .banner-container {
-         width: 289px;
-         height: 73px;
-         font-family: 'poppinsSemiBold';
-         font-size: 20px;
-         background: linear-gradient(92.67deg, #B0D0FF -11.18%, #FF5F7C 111.77%);
-         border-radius: 20px;
-         color: white;
-         margin-top: 105px;
-         margin-bottom: 103px;
-     }
+    }
+
+    .daily-hunt-icon {
+        width: 104px;
+        height: 35px;
+    }
+
+    .your-story-icon {
+        width: 58px;
+        height: 20px;
+    }
+
+    .tedx-icon {
+        width: 58px;
+        height: 17px;
+    }
+
+    .yahoo-finance-icon {
+        width: 73px;
+        height: 27px;
+    }
+
+    .yahoo-news-icon {
+        width: 73px;
+        height: 26px;
+    }
+
+    .lower-icons-container {
+        width: 180px;
+    }
+
+    .banner-container {
+        width: 289px;
+        height: 73px;
+        font-family: 'poppinsSemiBold';
+        font-size: 20px;
+        background: linear-gradient(92.67deg, #b0d0ff -11.18%, #ff5f7c 111.77%);
+        border-radius: 20px;
+        color: white;
+        margin-top: 105px;
+        margin-bottom: 103px;
+    }
 }
 
 /* 400-600  */
@@ -271,7 +271,7 @@
         background: #3bb0a3;
         border-radius: 16px;
         width: 129px;
-        aspect-ratio: 159/46;
+        height: 46px;
         color: white;
         margin-top: 25px;
 
@@ -394,53 +394,51 @@
         text-align: center;
     }
 
-
-    .InC-Icon{
+    .InC-Icon {
         width: 62px;
         height: 18px;
-     }
- 
-     .daily-hunt-icon{
-         width: 104px;
-         height: 35px;
-     }
- 
-     .your-story-icon{
-         width: 58px;
-         height: 20px;
-     }
- 
-     .tedx-icon {
-         width: 58px;
-         height: 17px;
-     }
- 
-     .yahoo-finance-icon{
-         width: 73px;
-         height: 27px;
-     }
- 
-     .yahoo-news-icon{
-         width: 73px;
-         height: 26px;
-     }
- 
-     .lower-icons-container{
-         width: 180px;
-     }
- 
-     .banner-container {
-         width: 289px;
-         height: 73px;
-         font-family: 'poppinsSemiBold';
-         font-size: 20px;
-         background: linear-gradient(92.67deg, #B0D0FF -11.18%, #FF5F7C 111.77%);
-         border-radius: 20px;
-         color: white;
-         margin-top: 105px;
-         margin-bottom: 103px;
-     }
+    }
 
+    .daily-hunt-icon {
+        width: 104px;
+        height: 35px;
+    }
+
+    .your-story-icon {
+        width: 58px;
+        height: 20px;
+    }
+
+    .tedx-icon {
+        width: 58px;
+        height: 17px;
+    }
+
+    .yahoo-finance-icon {
+        width: 73px;
+        height: 27px;
+    }
+
+    .yahoo-news-icon {
+        width: 73px;
+        height: 26px;
+    }
+
+    .lower-icons-container {
+        width: 180px;
+    }
+
+    .banner-container {
+        width: 289px;
+        height: 73px;
+        font-family: 'poppinsSemiBold';
+        font-size: 20px;
+        background: linear-gradient(92.67deg, #b0d0ff -11.18%, #ff5f7c 111.77%);
+        border-radius: 20px;
+        color: white;
+        margin-top: 105px;
+        margin-bottom: 103px;
+    }
 }
 
 /* 600-800  */
@@ -479,7 +477,7 @@
         background: #3bb0a3;
         border-radius: 16px;
         width: 134px;
-        aspect-ratio: 159/46;
+        height: 46px;
         color: white;
         margin-top: 25px;
 
@@ -601,7 +599,7 @@
         background: #3bb0a3;
         border-radius: 16px;
         width: 134px;
-        aspect-ratio: 159/46;
+        height: 46px;
         color: white;
         margin-top: 25px;
 
@@ -708,7 +706,7 @@
         background: #3bb0a3;
         border-radius: 16px;
         width: 159px;
-        aspect-ratio: 159/46;
+        height: 46px;
         color: white;
         margin-top: 25px;
 
@@ -858,17 +856,17 @@
         text-align: center;
     }
 
-    .InC-Icon{
-       width: 160px;
-       height: 48px;
+    .InC-Icon {
+        width: 160px;
+        height: 48px;
     }
 
-    .daily-hunt-icon{
+    .daily-hunt-icon {
         width: 270px;
         height: 91px;
     }
 
-    .your-story-icon{
+    .your-story-icon {
         width: 129px;
         height: 44px;
     }
@@ -878,17 +876,17 @@
         height: 45px;
     }
 
-    .yahoo-finance-icon{
+    .yahoo-finance-icon {
         width: 150px;
         height: 55px;
     }
 
-    .yahoo-news-icon{
+    .yahoo-news-icon {
         width: 150px;
         height: 53px;
     }
 
-    .lower-icons-container{
+    .lower-icons-container {
         width: 368px;
     }
 
@@ -897,13 +895,12 @@
         height: 73px;
         font-family: 'poppinsSemiBold';
         font-size: 32px;
-        background: linear-gradient(92.67deg, #B0D0FF -11.18%, #FF5F7C 111.77%);
+        background: linear-gradient(92.67deg, #b0d0ff -11.18%, #ff5f7c 111.77%);
         border-radius: 20px;
         color: white;
         margin-top: 105px;
         margin-bottom: 103px;
     }
-    
 }
 
 .mentors-from-title {
