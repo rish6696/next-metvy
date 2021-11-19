@@ -1,5 +1,6 @@
 export const brandName = 'Metvy';
-export const firstPartText = 'A One-Stop-Destination for All your Professional Networking Needs.';
+export const firstPartText =
+    'A One-Stop-Destination for All your Professional Networking Needs.';
 
 export const testimonialHeading = 'Straight from our community';
 
@@ -32,7 +33,7 @@ export const courses = [
     { name: 'Business Program', routePath: '/business_program' }
 ];
 
-export const EDITABLE_DISCOUNT_CODE_ID = "#EDIT_TABLE_DISCOUNT_CODE#"
+export const EDITABLE_DISCOUNT_CODE_ID = '#EDIT_TABLE_DISCOUNT_CODE#';
 
 export const coursesLearnScreenAdvertisementMetaData = [
     {
@@ -40,10 +41,18 @@ export const coursesLearnScreenAdvertisementMetaData = [
         text: 'Want to become an Entrepreneur?',
         brands: [
             { name: '/icons/Amazon logo.png', width: '48px', height: '19px' },
-            { name: '/icons/Adobe_Corporate_Logo.png', width: '54px', height: '14px' },
+            {
+                name: '/icons/Adobe_Corporate_Logo.png',
+                width: '54px',
+                height: '14px'
+            },
             { name: '/icons/unnamed (1).png', width: '27px', height: '14px' },
             { name: '/icons/bharatpe.png', width: '58px', height: '16px' },
-            { name: '/icons/Facebook-New-Logo.png', width: '37px', height: '14px' }
+            {
+                name: '/icons/Facebook-New-Logo.png',
+                width: '37px',
+                height: '14px'
+            }
         ],
         illustratorImg: '/icons/Business 2.png',
         illustratorImgHeight: '118px',
@@ -57,7 +66,11 @@ export const coursesLearnScreenAdvertisementMetaData = [
             { name: '/icons/Ashoka_Uni.png', width: '54px', height: '22px' },
             { name: '/icons/KREA LOGO.png', width: '37px', height: '19px' },
             { name: '/icons/ICRIER.png', width: '46px', height: '25px' },
-            { name: '/icons/tifr-logo-blue.png', width: '32px', height: '16px' },
+            {
+                name: '/icons/tifr-logo-blue.png',
+                width: '32px',
+                height: '16px'
+            },
             { name: '/icons/OXFORD UNI.png', width: '63px', height: '21px' }
         ],
         illustratorImg: '/icons/Research.png',
@@ -94,15 +107,23 @@ export const coursesLearnScreenAdvertisementMetaData = [
         illustratorImg: '/icons/AI.png',
         illustratorImgHeight: '118px',
         illustratorImgWidth: '173px',
-         routePath: '/AI_Bootcamp_program'
+        routePath: '/AI_Bootcamp_program'
     },
     {
         backgroundImage: '/icons/BLEU 2.png',
         text: 'Want to become a Consultant?',
         brands: [
             { name: '/icons/bain-logo.png', width: '38px', height: '19px' },
-            { name: '/icons/Wipro_Logo_New.png', width: '35px', height: '29px' },
-            { name: '/icons/McKinsey_&_Company-Logo.png', width: '64px', height: '42px' },
+            {
+                name: '/icons/Wipro_Logo_New.png',
+                width: '35px',
+                height: '29px'
+            },
+            {
+                name: '/icons/McKinsey_&_Company-Logo.png',
+                width: '64px',
+                height: '42px'
+            },
             { name: '/icons/unnamed.png', width: '49px', height: '22px' },
             { name: '/icons/bcg-logo.png', width: '39px', height: '8px' }
         ],
@@ -116,10 +137,18 @@ export const coursesLearnScreenAdvertisementMetaData = [
         text: 'Want to become an Entrepreneur?',
         brands: [
             { name: '/icons/Amazon logo.png', width: '48px', height: '19px' },
-            { name: '/icons/Adobe_Corporate_Logo.png', width: '54px', height: '14px' },
+            {
+                name: '/icons/Adobe_Corporate_Logo.png',
+                width: '54px',
+                height: '14px'
+            },
             { name: '/icons/unnamed (1).png', width: '27px', height: '14px' },
             { name: '/icons/bharatpe.png', width: '58px', height: '16px' },
-            { name: '/icons/Facebook-New-Logo.png', width: '37px', height: '14px' }
+            {
+                name: '/icons/Facebook-New-Logo.png',
+                width: '37px',
+                height: '14px'
+            }
         ],
         illustratorImg: '/icons/Business 2.png',
         illustratorImgHeight: '118px',
@@ -204,7 +233,7 @@ export const teamData = [
         title: 'Founder & CEO',
         description: 'Worked with Ogilvy, SproutBox, YC Startup School Alum.',
         institute: 'Kirori Mal College, DU',
-        linkedIn:'http://linkedin.com/in/shawrya'
+        linkedIn: 'http://linkedin.com/in/shawrya'
     },
     {
         firstName: 'Rajan',
@@ -213,7 +242,7 @@ export const teamData = [
         title: 'Co-Founder',
         description: 'Worked with ASA,YC Startup School Alum',
         institute: 'Kirori Mal College, DU',
-        linkedIn:'http://linkedin.com/in/rajan-luthra'
+        linkedIn: 'http://linkedin.com/in/rajan-luthra'
     },
     {
         firstName: 'Royina',
@@ -222,7 +251,7 @@ export const teamData = [
         title: 'Head of Revenue',
         description: 'English Honours Major, Worked with Lexjury - A L aw Firm',
         institute: 'Lady Shri Ram College, DU',
-        linkedIn:"http://linkedin.com/in/royinachhabra"
+        linkedIn: 'http://linkedin.com/in/royinachhabra'
     },
     {
         firstName: 'Vipul',
@@ -231,8 +260,7 @@ export const teamData = [
         title: 'Head of Design',
         description: 'Project Lead (Metvy Design Program)',
         institute: 'The Design Village, Noida',
-        linkedIn:"http://linkedin.com/in/vipul-ghai-70aa291a8"
-
+        linkedIn: 'http://linkedin.com/in/vipul-ghai-70aa291a8'
     }
 ];
 
@@ -250,10 +278,18 @@ export const programsCardsMetaData = [
         princeAfterDiscount: '2,500',
         brands: [
             { name: '/icons/Amazon logo.png', width: '48px', height: '19px' },
-            { name: '/icons/Adobe_Corporate_Logo.png', width: '54px', height: '14px' },
+            {
+                name: '/icons/Adobe_Corporate_Logo.png',
+                width: '54px',
+                height: '14px'
+            },
             { name: '/icons/unnamed (1).png', width: '27px', height: '14px' },
             { name: '/icons/bharatpe.png', width: '58px', height: '16px' },
-            { name: '/icons/Facebook-New-Logo.png', width: '37px', height: '14px' }
+            {
+                name: '/icons/Facebook-New-Logo.png',
+                width: '37px',
+                height: '14px'
+            }
         ],
         'box-shadow': '0px 0px 92px 0px rgba(255, 199, 0, 0.72)',
         routePath: '/business_program'
@@ -273,7 +309,11 @@ export const programsCardsMetaData = [
             { name: '/icons/Ashoka_Uni.png', width: '54px', height: '22px' },
             { name: '/icons/KREA LOGO.png', width: '37px', height: '19px' },
             { name: '/icons/ICRIER.png', width: '46px', height: '25px' },
-            { name: '/icons/tifr-logo-blue.png', width: '32px', height: '16px' },
+            {
+                name: '/icons/tifr-logo-blue.png',
+                width: '32px',
+                height: '16px'
+            },
             { name: '/icons/OXFORD UNI.png', width: '63px', height: '21px' }
         ],
         'box-shadow': '0px 0px 92px 0px rgba(255, 0, 92, 0.72)',
@@ -332,17 +372,25 @@ export const programsCardsMetaData = [
         Projects crafted and led by top Consultants.`,
         priceBeforeDiscount: ' 6,999',
         princeAfterDiscount: '3,500',
-       
+
         brands: [
             { name: '/icons/bain-logo.png', width: '38px', height: '19px' },
-            { name: '/icons/Wipro_Logo_New.png', width: '35px', height: '29px' },
-            { name: '/icons/McKinsey_&_Company-Logo.png', width: '64px', height: '42px' },
+            {
+                name: '/icons/Wipro_Logo_New.png',
+                width: '35px',
+                height: '29px'
+            },
+            {
+                name: '/icons/McKinsey_&_Company-Logo.png',
+                width: '64px',
+                height: '42px'
+            },
             { name: '/icons/unnamed.png', width: '49px', height: '22px' },
             { name: '/icons/bcg-logo.png', width: '39px', height: '8px' }
         ],
         'box-shadow': '0px 0px 92px 0px rgba(0, 148, 255, 0.72)',
         routePath: '/consultancy_program'
-    },
+    }
 ];
 
 export const testimonialLearn =
@@ -574,7 +622,7 @@ Extensive peer group networking. Understanding Entrepreneurship and Market Resea
                 content: `Constant feedbacks and guidance and preparation material curated by experts`,
                 imageName: '/icons/Thumbs up.png'
             },
-{
+            {
                 content: `A bespoke experience with In-house Mentors as well as Practical Tasks`,
                 imageName: '/icons/Stars.png',
                 style: { height: '25%', width: '70%' }
@@ -628,8 +676,6 @@ One-on-one live classes and mentorship from top mentors from GSoC, EY, Tech Mahi
             }
         ]
     }
-
-
 };
 
 export const allowedRoutesPath = Object.keys(courseDetailsScreenData);
@@ -644,7 +690,11 @@ export const enrollScreenCourseData = [
     { bgColor: '#ffb502', price: 2499, programName: 'Metvy Business Program' },
     { bgColor: '#9adf08', price: 2499, programName: 'Metvy Design Program' },
     { bgColor: '#00ceab', price: 2499, programName: 'Metvy AI Program' },
-    { bgColor: ' #7fc2ff', price: 2499, programName: 'Metvy Consultancy Program' }
+    {
+        bgColor: ' #7fc2ff',
+        price: 2499,
+        programName: 'Metvy Consultancy Program'
+    }
 ];
 
 interface Months {
@@ -675,7 +725,8 @@ export const socialMediaLinks = {
     facebook: 'https://www.facebook.com/Metvyapp/',
     instagram: 'https://www.instagram.com/metvy.app/?hl=en',
     linkedIn: 'https://in.linkedin.com/company/metvynetworking',
-    twitter: 'https://twitter.com/metvy_app?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor',
+    twitter:
+        'https://twitter.com/metvy_app?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor',
     youtube: 'https://www.youtube.com/c/Metvy'
 };
 
@@ -1295,4 +1346,43 @@ export const learnTestimonialsData = [
            Thanks, Metvy!`,
         title: 'NIFT Chennai'
     }
+];
+
+export const state = [
+    'Andhra Pradesh',
+    'Arunachal Pradesh',
+    'Assam',
+    'Bihar',
+    'Chhattisgarh',
+    'Goa',
+    'Gujarat',
+    'Haryana',
+    'Himachal Pradesh',
+    'Jammu and Kashmir',
+    'Jharkhand',
+    'Karnataka',
+    'Kerala',
+    'Madhya Pradesh',
+    'Maharashtra',
+    'Manipur',
+    'Meghalaya',
+    'Mizoram',
+    'Nagaland',
+    'Odisha',
+    'Punjab',
+    'Rajasthan',
+    'Sikkim',
+    'Tamil Nadu',
+    'Telangana',
+    'Tripura',
+    'Uttarakhand',
+    'Uttar Pradesh',
+    'West Bengal',
+    'Andaman and Nicobar Islands',
+    'Chandigarh',
+    'Dadra and Nagar Haveli',
+    'Daman and Diu',
+    'Delhi',
+    'Lakshadweep',
+    'Puducherry'
 ];
