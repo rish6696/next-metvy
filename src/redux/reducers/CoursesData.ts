@@ -39,7 +39,8 @@ export const courses = (
             subTotal: -1,
             invoiceCourses: [],
             discountCoupon: '',
-            percentageDiscount: -1
+            percentageDiscount: -1,
+            gstAmount: -1,
         },
         invoiceError: '',
         paymentLink: ''
@@ -84,7 +85,8 @@ export const courses = (
                     invoiceCourses: [],
                     discountCoupon: '',
                     percentageDiscount: -1,
-                    subTotal: -1
+                    subTotal: -1,
+                    gstAmount:-1
                 }
             };
 
@@ -155,7 +157,7 @@ export const courses = (
                     invoiceCourses: [],
                     discountCoupon: '',
                     percentageDiscount: -1,
-                    subTotal: -1
+                    subTotal: -1, gstAmount: -1
                 }
             };
         default:

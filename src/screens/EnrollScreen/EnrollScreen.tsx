@@ -3,7 +3,7 @@ import Style from './Enroll.module.css';
 import FLexLayout from '../../components/FlexLayout';
 import HeaderLearn from '../../components/HeaderLearn/HeaderLearn';
 import { Image } from 'react-bootstrap';
-import { enrollScreenCourseData, MONTHS } from '../../constants';
+import { enrollScreenCourseData, MONTHS,state } from '../../constants';
 import apiConfig from '../../api-services/apiConfig';
 import ServerDown from '../../components/ServerDown/ServerDown';
 import Loader from '../../components/LoaderComponent/LoaderComponent';
@@ -87,7 +87,9 @@ const _EnrollScreen = (props: Props) => {
 
     const [selectBatchError, setSelectBatchError] = useState('');
     const [discountCode, setDiscountCode] = useState('');
-    const [discountCodeError, setDiscountCodeError] = useState('**Invalid Discount code');
+    const [discountCodeError, setDiscountCodeError] = useState(
+        '**Invalid Discount code'
+    );
 
     const [name, setName] = useState('');
     const [nameError, setNameError] = useState('');
@@ -97,11 +99,24 @@ const _EnrollScreen = (props: Props) => {
     const phoneRef: RefObject<HTMLInputElement> = createRef();
     const schoolRef: RefObject<HTMLInputElement> = createRef();
     const streamRef: RefObject<HTMLInputElement> = createRef();
+    const stateRef: RefObject<HTMLSelectElement> = createRef();
 
     const invoiceDataContainerRef: Ref<HTMLDivElement> = createRef();
 
     const [email, setEmail] = useState('');
     const [emailError, setEmailError] = useState('');
+
+
+    const [stateValue,setSateValue] = useState('')
+    const [stateError,setStateError] = useState('');
+
+
+    const onStateValueChange =(event)=>{
+        const state = event.target.value;
+        setStateError("")
+        setSateValue(state);
+    }
+
 
     const onEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         if (emailError.length != 0) setEmailError('');
@@ -149,7 +164,9 @@ const _EnrollScreen = (props: Props) => {
         setStream(event.target.value);
     };
 
-    const onDisCountCodeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const onDisCountCodeChange = (
+        event: React.ChangeEvent<HTMLInputElement>
+    ) => {
         setDiscountCode(event.target.value);
     };
 
@@ -169,21 +186,21 @@ const _EnrollScreen = (props: Props) => {
         let date = Moment();
         date.set('M', monthNumber - 1);
 
-        if(monthNumber  < Moment().get('M')+1 ){
-            console.log("Inside my if ")
-            date = date.add('y',1)
+        if (monthNumber < Moment().get('M') + 1) {
+            console.log('Inside my if ');
+            date = date.add('y', 1);
         }
-        return `${date.startOf('M').get('D')}st ${date.format('MMMM YYYY')} - ${date
-            .endOf('M')
-            .get('D')}th ${date.format('MMMM YYYY')}`;
+        return `${date.startOf('M').get('D')}st ${date.format(
+            'MMMM YYYY'
+        )} - ${date.endOf('M').get('D')}th ${date.format('MMMM YYYY')}`;
     };
 
-
-    const getTextForDiscountCodeButton =():string=>{
-       if(selectedDiscountCouponPercent==-1) return "Use Discount Coupon"
-       if(selectedDiscountCouponPercent== -20 ) return `Applied ${selectedDiscountCouponText}`
-       return `Applied ${selectedDiscountCouponText} for ${selectedDiscountCouponPercent}% off` 
-    }
+    const getTextForDiscountCodeButton = (): string => {
+        if (selectedDiscountCouponPercent == -1) return 'Use Discount Coupon';
+        if (selectedDiscountCouponPercent == -20)
+            return `Applied ${selectedDiscountCouponText}`;
+        return `Applied ${selectedDiscountCouponText} for ${selectedDiscountCouponPercent}% off`;
+    };
 
     const onConfirmButtonClicked = () => {
         //  check if the name is empty or not
@@ -229,15 +246,27 @@ const _EnrollScreen = (props: Props) => {
             return;
         }
 
+        // check if state is not selected
+        if(stateValue.length==0){
+            setStateError('**Please select your state')
+            stateRef.current.focus();
+            return;
+        }
+
         // checking if the courses select have valid month of enrollment or not
         // if not then setting the required error
 
         for (let i = 0; i < Object.keys(courseSelectStatus).length; i++) {
-            if (courseSelectStatus[Object.keys(courseSelectStatus)[i]].courseSelected == true) {
+            if (
+                courseSelectStatus[Object.keys(courseSelectStatus)[i]]
+                    .courseSelected == true
+            ) {
                 const selectMonth =
-                    courseSelectStatus[Object.keys(courseSelectStatus)[i]].selectMonth;
+                    courseSelectStatus[Object.keys(courseSelectStatus)[i]]
+                        .selectMonth;
                 const availableMonths =
-                    courseSelectStatus[Object.keys(courseSelectStatus)[i]].availableMonths;
+                    courseSelectStatus[Object.keys(courseSelectStatus)[i]]
+                        .availableMonths;
 
                 if (availableMonths.indexOf(selectMonth) === -1) {
                     setSelectMonthError(Object.keys(courseSelectStatus)[i]);
@@ -249,7 +278,10 @@ const _EnrollScreen = (props: Props) => {
         // checking atleast 1 course is enrolled or not
         let selectedAtLeastOneCourse = 0;
         for (let i = 0; i < Object.keys(courseSelectStatus).length; i++) {
-            if (courseSelectStatus[Object.keys(courseSelectStatus)[i]].courseSelected == true) {
+            if (
+                courseSelectStatus[Object.keys(courseSelectStatus)[i]]
+                    .courseSelected == true
+            ) {
                 selectedAtLeastOneCourse = 1;
                 break;
             }
@@ -273,7 +305,8 @@ const _EnrollScreen = (props: Props) => {
 
         getInvoice({
             discountCouponID: selectedDiscountCouponId,
-            courses: cartCourses,editableDiscountCoupon:selectedDiscountCouponText
+            courses: cartCourses,
+            editableDiscountCoupon: selectedDiscountCouponText
         });
     };
 
@@ -296,7 +329,8 @@ const _EnrollScreen = (props: Props) => {
             discountCouponID: selectedDiscountCouponId,
             school,
             stream,
-            courses: cartCourses,editableDiscountCoupon:selectedDiscountCouponText
+            courses: cartCourses,
+            editableDiscountCoupon: selectedDiscountCouponText,state:stateValue
         });
     };
 
@@ -341,7 +375,10 @@ const _EnrollScreen = (props: Props) => {
                     }}
                 >
                     <FLexLayout rowORColumn="row">
-                        <div> {'India’s First Curated Live Mentorship Experience'}</div>
+                        <div>
+                            {' '}
+                            {'India’s First Curated Live Mentorship Experience'}
+                        </div>
                     </FLexLayout>
                 </FLexLayout>
 
@@ -373,7 +410,9 @@ const _EnrollScreen = (props: Props) => {
                         alignItem="center"
                     >
                         <div className={Style['stats-value']}>{'1000+'}</div>
-                        <div className={Style['stats-label']}>{'Participants'}</div>
+                        <div className={Style['stats-label']}>
+                            {'Participants'}
+                        </div>
                     </FLexLayout>
 
                     {/* stats-box-3 */}
@@ -390,7 +429,11 @@ const _EnrollScreen = (props: Props) => {
                 </FLexLayout>
 
                 {/* enroll-form-container */}
-                <FLexLayout rowORColumn="row" justifyContent="center" alignItem="center">
+                <FLexLayout
+                    rowORColumn="row"
+                    justifyContent="center"
+                    alignItem="center"
+                >
                     <FLexLayout
                         className={Style['enroll-form-container']}
                         rowORColumn="column"
@@ -405,7 +448,10 @@ const _EnrollScreen = (props: Props) => {
 
                         <form>
                             {/* name-box */}
-                            <FLexLayout id={Style['name-input-box']} rowORColumn="column">
+                            <FLexLayout
+                                id={Style['name-input-box']}
+                                rowORColumn="column"
+                            >
                                 <FLexLayout
                                     className={Style['studentFelidsError']}
                                     rowORColumn="column"
@@ -413,7 +459,10 @@ const _EnrollScreen = (props: Props) => {
                                     <div>{nameError}</div>
                                 </FLexLayout>
 
-                                <FLexLayout rowORColumn="column" className={Style['input-box']}>
+                                <FLexLayout
+                                    rowORColumn="column"
+                                    className={Style['input-box']}
+                                >
                                     <input
                                         value={name}
                                         onChange={onNameChange}
@@ -433,7 +482,10 @@ const _EnrollScreen = (props: Props) => {
                                     <div>{emailError}</div>
                                 </FLexLayout>
 
-                                <FLexLayout rowORColumn="column" className={Style['input-box']}>
+                                <FLexLayout
+                                    rowORColumn="column"
+                                    className={Style['input-box']}
+                                >
                                     <input
                                         type="email"
                                         value={email}
@@ -454,7 +506,10 @@ const _EnrollScreen = (props: Props) => {
                                     <div>{mobileError}</div>
                                 </FLexLayout>
 
-                                <FLexLayout rowORColumn="column" className={Style['input-box']}>
+                                <FLexLayout
+                                    rowORColumn="column"
+                                    className={Style['input-box']}
+                                >
                                     <input
                                         type="tel"
                                         ref={phoneRef}
@@ -475,7 +530,10 @@ const _EnrollScreen = (props: Props) => {
                                     <div>{schoolError}</div>
                                 </FLexLayout>
 
-                                <FLexLayout rowORColumn="column" className={Style['input-box']}>
+                                <FLexLayout
+                                    rowORColumn="column"
+                                    className={Style['input-box']}
+                                >
                                     <input
                                         value={school}
                                         onChange={onSchoolChange}
@@ -495,7 +553,10 @@ const _EnrollScreen = (props: Props) => {
                                     <div>{streamError}</div>
                                 </FLexLayout>
 
-                                <FLexLayout rowORColumn="column" className={Style['input-box']}>
+                                <FLexLayout
+                                    rowORColumn="column"
+                                    className={Style['input-box']}
+                                >
                                     <input
                                         value={stream}
                                         onChange={onStreamChange}
@@ -504,6 +565,31 @@ const _EnrollScreen = (props: Props) => {
                                         placeholder="Stream / Course / Subjects / Profession"
                                     />
                                 </FLexLayout>
+                            </FLexLayout>
+
+
+                            {/* drop-down-error */}
+                            <FLexLayout
+                                    className={Style['studentFelidsError']}
+                                    rowORColumn="column"
+                                >
+                                    <div>{stateError}</div>
+                                </FLexLayout>
+
+
+                            {/* state-dropdown */}
+                            <FLexLayout
+                                rowORColumn="column"
+                                justifyContent="center"
+                                alignItem="center"
+                                className={Style['select-a-batch-dropDown']}
+                            >
+                                <select ref={stateRef} onChange={onStateValueChange} style={{fontFamily:'poppinsItalic',fontSize:'15px',width:'100%'}} >
+                                    <option value="" selected disabled hidden>
+                                        Where are you from ?
+                                    </option>
+                                     {state.map(x=>(<option value={x} > {x} </option>))}
+                                </select>
                             </FLexLayout>
 
                             {/* select-programs */}
@@ -525,14 +611,20 @@ const _EnrollScreen = (props: Props) => {
                                             rowORColumn="row"
                                             alignItem="start"
                                             style={{ ...x.style }}
-                                            className={Style['program-with-input-row']}
+                                            className={
+                                                Style['program-with-input-row']
+                                            }
                                         >
                                             {/* check-box */}
                                             <input
-                                                onChange={onProgramValueChange(x._id)}
+                                                onChange={onProgramValueChange(
+                                                    x._id
+                                                )}
                                                 //  checked={setCourseSelectStatus[x._id]}
                                                 type="checkbox"
-                                                className={Style['checkbox-input']}
+                                                className={
+                                                    Style['checkbox-input']
+                                                }
                                             />
 
                                             {/* program-name-with-select-field */}
@@ -541,11 +633,14 @@ const _EnrollScreen = (props: Props) => {
                                                 {/* program-name */}
                                                 <FLexLayout
                                                     justifyContent="between"
-                                                    className={Style['program-name']}
+                                                    className={
+                                                        Style['program-name']
+                                                    }
                                                     rowORColumn="row"
                                                     alignItem="center"
                                                     style={{
-                                                        backgroundColor: x.bgColor,
+                                                        backgroundColor:
+                                                            x.bgColor,
                                                         paddingLeft: '15px',
                                                         paddingRight: '5px'
                                                     }}
@@ -556,28 +651,40 @@ const _EnrollScreen = (props: Props) => {
                                                     {/* price-box */}
                                                     <FLexLayout
                                                         justifyContent="center"
-                                                        className={Style['price-box']}
+                                                        className={
+                                                            Style['price-box']
+                                                        }
                                                         rowORColumn="row"
                                                         alignItem="center"
                                                     >
-                                                        <div>&#8377; {x.coursePrice}</div>
+                                                        <div>
+                                                            &#8377;{' '}
+                                                            {x.coursePrice}
+                                                        </div>
                                                     </FLexLayout>
                                                 </FLexLayout>
 
                                                 {/* select-batch-field-with-dropdown */}
 
                                                 {courseSelectStatus &&
-                                                    courseSelectStatus[x._id].courseSelected ===
+                                                    courseSelectStatus[x._id]
+                                                        .courseSelected ===
                                                         true && (
                                                         <FLexLayout
                                                             className={
-                                                                Style['select-a-batch-dropDown']
+                                                                Style[
+                                                                    'select-a-batch-dropDown'
+                                                                ]
                                                             }
                                                             rowORColumn="column"
                                                         >
                                                             <select
-                                                                onChange={onMonthSelected}
-                                                                style={{ width: '100%' }}
+                                                                onChange={
+                                                                    onMonthSelected
+                                                                }
+                                                                style={{
+                                                                    width: '100%'
+                                                                }}
                                                                 data-info={`{ "courseId": "${x._id}" }`}
                                                             >
                                                                 <option
@@ -586,17 +693,26 @@ const _EnrollScreen = (props: Props) => {
                                                                     disabled
                                                                     hidden
                                                                 >
-                                                                    Please Select a Batch
+                                                                    Please
+                                                                    Select a
+                                                                    Batch
                                                                 </option>
 
                                                                 {courseSelectStatus[
                                                                     x._id
                                                                 ].availableMonths.map(
-                                                                    (month, i) => {
+                                                                    (
+                                                                        month,
+                                                                        i
+                                                                    ) => {
                                                                         return (
                                                                             <option
-                                                                                key={i}
-                                                                                value={month}
+                                                                                key={
+                                                                                    i
+                                                                                }
+                                                                                value={
+                                                                                    month
+                                                                                }
                                                                             >
                                                                                 {getCourseMonthInfo(
                                                                                     month
@@ -611,10 +727,14 @@ const _EnrollScreen = (props: Props) => {
 
                                                 {/* select-a-batch-error */}
                                                 {courseSelectStatus &&
-                                                    courseSelectStatus[x._id].showError ===
-                                                        true && (
+                                                    courseSelectStatus[x._id]
+                                                        .showError === true && (
                                                         <FLexLayout
-                                                            className={Style['batch-month-error']}
+                                                            className={
+                                                                Style[
+                                                                    'batch-month-error'
+                                                                ]
+                                                            }
                                                             rowORColumn="row"
                                                             alignItem="center"
                                                             justifyContent="center"
@@ -638,8 +758,6 @@ const _EnrollScreen = (props: Props) => {
                                 <div>{minimumOneCourseError}</div>
                             </FLexLayout>
 
-                            
-
                             <FLexLayout
                                 className={Style['invalidDiscountCouponError']}
                                 rowORColumn="row"
@@ -647,7 +765,7 @@ const _EnrollScreen = (props: Props) => {
                                 alignItem="center"
                             >
                                 <div>{getInvoiceError}</div>
-                            </FLexLayout> 
+                            </FLexLayout>
 
                             {/* apply for discount code */}
                             <FLexLayout
@@ -658,10 +776,16 @@ const _EnrollScreen = (props: Props) => {
                                 onClick={() => setModalAction(true)}
                                 style={{ marginBottom: '40px' }}
                             >
-                                <FLexLayout rowORColumn="row" alignItem="center">
+                                <FLexLayout
+                                    rowORColumn="row"
+                                    alignItem="center"
+                                >
                                     <div>{getTextForDiscountCodeButton()}</div>
                                     <Image
-                                        style={{ marginLeft: '28px', height: '24px' }}
+                                        style={{
+                                            marginLeft: '28px',
+                                            height: '24px'
+                                        }}
                                         src="icons/Arrow 1.png"
                                     />
                                 </FLexLayout>
@@ -683,120 +807,215 @@ const _EnrollScreen = (props: Props) => {
                         {showEnrollScreenLoader == true && <Loader />}
 
                         {/* bill-items-container */}
-                        {invoiceData.invoiceCourses && invoiceData.invoiceCourses.length > 0 && (
-                            <FLexLayout
-                                alignItem="center"
-                                className={Style['bill-items-container']}
-                                rowORColumn="column"
-                            >
-                                {invoiceData.invoiceCourses.map((invoiceCourse) => {
-                                    return (
+                        {invoiceData.invoiceCourses &&
+                            invoiceData.invoiceCourses.length > 0 && (
+                                <FLexLayout
+                                    alignItem="center"
+                                    className={Style['bill-items-container']}
+                                    rowORColumn="column"
+                                >
+                                    {invoiceData.invoiceCourses.map(
+                                        (invoiceCourse) => {
+                                            return (
+                                                <FLexLayout
+                                                    style={{ width: '80%' }}
+                                                    rowORColumn="row"
+                                                    justifyContent="between"
+                                                    className={
+                                                        Style['bill-item-row']
+                                                    }
+                                                >
+                                                    {/* program-name-with -month */}
+                                                    <FLexLayout rowORColumn="column">
+                                                        <div
+                                                            className={
+                                                                Style[
+                                                                    'bill-item-program-name'
+                                                                ]
+                                                            }
+                                                        >
+                                                            {' '}
+                                                            {
+                                                                invoiceCourse.courseName
+                                                            }
+                                                        </div>
+                                                        <div
+                                                            className={
+                                                                Style[
+                                                                    'bill-item-program-month'
+                                                                ]
+                                                            }
+                                                        >
+                                                            {`${
+                                                                MONTHS[
+                                                                    invoiceCourse
+                                                                        .month
+                                                                ]
+                                                            } Cohort`}
+                                                        </div>
+                                                    </FLexLayout>
+
+                                                    {/* price-box */}
+                                                    <FLexLayout
+                                                        justifyContent="center"
+                                                        className={
+                                                            Style[
+                                                                'price-box-bill-item'
+                                                            ]
+                                                        }
+                                                        rowORColumn="row"
+                                                        alignItem="center"
+                                                    >
+                                                        <div>
+                                                            &#8377;{' '}
+                                                            {
+                                                                invoiceCourse.price
+                                                            }
+                                                        </div>
+                                                    </FLexLayout>
+                                                </FLexLayout>
+                                            );
+                                        }
+                                    )}
+
+
+                                     {/* gst-box  */}
+                                     <FLexLayout
+                                        style={{ width: '80%' }}
+                                        rowORColumn="row"
+                                        justifyContent="between"
+                                        className={Style['bill-item-row']}
+                                    >
+                                        <div
+                                            className={
+                                                Style['bill-item-program-name']
+                                            }
+                                        >
+                                            {' '}
+                                            {'GST Charged'}
+                                        </div>
+
+                                        {/* price-box */}
+                                        <FLexLayout
+                                            justifyContent="center"
+                                            className={
+                                                Style['price-box-bill-item']
+                                            }
+                                            rowORColumn="row"
+                                            alignItem="center"
+                                        >
+                                            <div>
+                                                &#8377; {invoiceData.gstAmount}
+                                            </div>
+                                        </FLexLayout>
+                                    </FLexLayout>
+
+                                    {/* subtotal-box  */}
+                                    <FLexLayout
+                                        style={{ width: '80%' }}
+                                        rowORColumn="row"
+                                        justifyContent="between"
+                                        className={Style['bill-item-row']}
+                                    >
+                                        <div
+                                            className={
+                                                Style['bill-item-program-name']
+                                            }
+                                        >
+                                            {' '}
+                                            {'Subtotal'}
+                                        </div>
+
+                                        {/* price-box */}
+                                        <FLexLayout
+                                            justifyContent="center"
+                                            className={
+                                                Style['price-box-bill-item']
+                                            }
+                                            rowORColumn="row"
+                                            alignItem="center"
+                                        >
+                                            <div>
+                                                &#8377; {invoiceData.subTotal}
+                                            </div>
+                                        </FLexLayout>
+                                    </FLexLayout>
+
+                                    {/* discount-box */}
+                                    {invoiceData.disCountAmount !== 0 && (
                                         <FLexLayout
                                             style={{ width: '80%' }}
                                             rowORColumn="row"
                                             justifyContent="between"
                                             className={Style['bill-item-row']}
+                                            id={Style['promo-code-applied-box']}
                                         >
-                                            {/* program-name-with -month */}
-                                            <FLexLayout rowORColumn="column">
-                                                <div className={Style['bill-item-program-name']}>
-                                                    {' '}
-                                                    {invoiceCourse.courseName}
-                                                </div>
-                                                <div className={Style['bill-item-program-month']}>
-                                                    {`${MONTHS[invoiceCourse.month]} Cohort`}
-                                                </div>
-                                            </FLexLayout>
+                                            <div>
+                                                <span
+                                                    className={
+                                                        Style['promoCode-text']
+                                                    }
+                                                >
+                                                    {`${invoiceData.discountCoupon} Code Applied`}
+                                                </span>{' '}
+                                                <span
+                                                    className={
+                                                        Style['promoCode-value']
+                                                    }
+                                                >
+                                                    {`${invoiceData.percentageDiscount}% Discount`}
+                                                </span>
+                                            </div>
 
                                             {/* price-box */}
                                             <FLexLayout
                                                 justifyContent="center"
-                                                className={Style['price-box-bill-item']}
+                                                className={
+                                                    Style['price-box-bill-item']
+                                                }
                                                 rowORColumn="row"
                                                 alignItem="center"
                                             >
-                                                <div>&#8377; {invoiceCourse.price}</div>
+                                                <div>
+                                                    {' '}
+                                                    - &#8377;{' '}
+                                                    {invoiceData.disCountAmount}
+                                                </div>
                                             </FLexLayout>
                                         </FLexLayout>
-                                    );
-                                })}
+                                    )}
+                                </FLexLayout>
+                            )}
 
-                                {/* subtotal-box  */}
+                        {/* check-out-amount */}
+                        {invoiceData.invoiceCourses &&
+                            invoiceData.invoiceCourses.length > 0 && (
                                 <FLexLayout
                                     style={{ width: '80%' }}
                                     rowORColumn="row"
                                     justifyContent="between"
-                                    className={Style['bill-item-row']}
+                                    className={Style['checkout-amount']}
+                                    ref={invoiceDataContainerRef}
                                 >
-                                    <div className={Style['bill-item-program-name']}>
-                                        {' '}
-                                        {'Subtotal'}
-                                    </div>
+                                    <div> {'Checkout Amount'} </div>
 
                                     {/* price-box */}
-                                    <FLexLayout
-                                        justifyContent="center"
-                                        className={Style['price-box-bill-item']}
-                                        rowORColumn="row"
-                                        alignItem="center"
-                                    >
-                                        <div>&#8377; {invoiceData.subTotal}</div>
-                                    </FLexLayout>
+                                    <div>
+                                        {' '}
+                                        &#8377; {invoiceData.checkoutAmount}
+                                    </div>
                                 </FLexLayout>
-
-                                {/* discount-box */}
-                                { invoiceData.disCountAmount !==0 && (
-                                     <FLexLayout
-                                     style={{ width: '80%' }}
-                                     rowORColumn="row"
-                                     justifyContent="between"
-                                     className={Style['bill-item-row']}
-                                     id={Style['promo-code-applied-box']}
-                                 >
-                                     <div>
-                                         <span className={Style['promoCode-text']}>
-                                             {`${invoiceData.discountCoupon} Code Applied`}
-                                         </span>{' '}
-                                         <span className={Style['promoCode-value']}>
-                                             {`${invoiceData.percentageDiscount}% Discount`}
-                                         </span>
-                                     </div>
- 
-                                     {/* price-box */}
-                                     <FLexLayout
-                                         justifyContent="center"
-                                         className={Style['price-box-bill-item']}
-                                         rowORColumn="row"
-                                         alignItem="center"
-                                     >
-                                         <div> - &#8377; {invoiceData.disCountAmount}</div>
-                                     </FLexLayout>
-                                 </FLexLayout>
-                                )}
-                            </FLexLayout>
-                        )}
-
-                        {/* check-out-amount */}
-                        {invoiceData.invoiceCourses && invoiceData.invoiceCourses.length > 0 && (
-                            <FLexLayout
-                                style={{ width: '80%' }}
-                                rowORColumn="row"
-                                justifyContent="between"
-                                className={Style['checkout-amount']}
-                                ref={invoiceDataContainerRef}
-                            >
-                                <div> {'Checkout Amount'} </div>
-
-                                {/* price-box */}
-                                <div> &#8377; {invoiceData.checkoutAmount}</div>
-                            </FLexLayout>
-                        )}
+                            )}
                     </FLexLayout>
                 </FLexLayout>
 
                 {/* pay- now container */}
                 {invoiceData && invoiceData.invoiceCourses.length > 0 && (
-                    <FLexLayout rowORColumn="row" justifyContent="center" alignItem="center">
+                    <FLexLayout
+                        rowORColumn="row"
+                        justifyContent="center"
+                        alignItem="center"
+                    >
                         {/* pay-now button */}
                         <FLexLayout
                             className={Style['confirm-now-button']}
@@ -826,9 +1045,12 @@ const mapStateToProps = (state: StoreStateInterface) => {
         invoiceData: state.courses.invoiceData,
         getInvoiceError: state.courses.invoiceError,
         discountCoupons: state.discountCouponData.discountCodes,
-        selectedDiscountCouponText: state.discountCouponData.selectedDiscountCodeText,
-        selectedDiscountCouponId: state.discountCouponData.selectedDiscountCodeId,
-        selectedDiscountCouponPercent: state.discountCouponData.selectedDiscountCodePercent
+        selectedDiscountCouponText:
+            state.discountCouponData.selectedDiscountCodeText,
+        selectedDiscountCouponId:
+            state.discountCouponData.selectedDiscountCodeId,
+        selectedDiscountCouponPercent:
+            state.discountCouponData.selectedDiscountCodePercent
     };
 };
 
