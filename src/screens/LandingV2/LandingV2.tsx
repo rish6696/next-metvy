@@ -24,6 +24,22 @@ const _Landing = ({ setWidth, width }) => {
 
     const mentorsImageName = ['/icons/Mentor - 1.png', '/icons/Mentor - 2.png'];
 
+    const exploreAppImagesMobile = [
+        '/icons/1_MAP_mobile.png',
+        '/icons/2_EXPLORE_mobile.png',
+        '/icons/3_MEETUP_mobile.png',
+        '/icons/4_CHAT_mobile.png',
+        '/icons/5_VIDEO CALL_mobile.png'
+    ];
+
+    const exploreImagesDesktop = [
+        '/icons/1_Map_desktop.png',
+        '/icons/2_Discover & Explore_desktop.png',
+        '/icons/3_Meet up_desktop.png',
+        '/icons/4_Chat_desktop.png',
+        '/icons/5_Video Call_desktop.png'
+    ];
+
     const [currentWordIndex, setCurrentWordIndex] = useState(0);
 
     useEffect(() => {
@@ -84,7 +100,9 @@ const _Landing = ({ setWidth, width }) => {
                     </div>
 
                     <div className={Style['sub-advertisement-text']}>
-                        {'Curated – Peer to Peer - Mentorship & Networking Ecosystem'}
+                        {
+                            'Curated – Peer to Peer - Mentorship & Networking Ecosystem'
+                        }
                     </div>
 
                     <FLexLayout
@@ -199,7 +217,13 @@ const _Landing = ({ setWidth, width }) => {
                         </FLexLayout>
                     )}
 
-                    <Carousel slide={false} interval={2000} fade={true} controls={false} indicators={false} >
+                    <Carousel
+                        slide={false}
+                        interval={2000}
+                        fade={true}
+                        controls={false}
+                        indicators={false}
+                    >
                         <Carousel.Item>
                             <FLexLayout
                                 rowORColumn="row"
@@ -231,8 +255,6 @@ const _Landing = ({ setWidth, width }) => {
                                 />
                             </FLexLayout>
                         </Carousel.Item>
-
-
                     </Carousel>
                 </FLexLayout>
 
@@ -497,7 +519,7 @@ const _Landing = ({ setWidth, width }) => {
                 {width > 1260 && (
                     <FLexLayout
                         rowORColumn="column"
-                        style={{  marginTop: '10px' }}
+                        style={{ marginTop: '10px' }}
                     >
                         {/* outer-box-overlapping-content-box */}
 
@@ -975,15 +997,42 @@ const _Landing = ({ setWidth, width }) => {
 
                 {/* Discover & Explore-Desktop */}
                 {width >= 1260 && (
-                    <FLexLayout rowORColumn="row">
+                    <FLexLayout
+                        style={{ marginTop: '200px' }}
+                        rowORColumn="row"
+                    >
                         {/* image-app */}
-                        <FLexLayout rowORColumn="row">
-                            <img src="/icons/app-shots.png" />
-
-                            {/* <Carousel onTextChange={()=>{}} /> */}
-                            {/* style={{width:'50%',marginLeft:'100px'}} */}
-
-                            
+                        <FLexLayout
+                            style={{ marginLeft: '80px' }}
+                            rowORColumn="row"
+                        >
+                            <Carousel
+                                slide={false}
+                                interval={2000}
+                                fade={true}
+                                controls={false}
+                                indicators={false}
+                            >
+                                {exploreAppImagesMobile.map((imgName) => {
+                                    return (
+                                        <Carousel.Item>
+                                            <FLexLayout
+                                                rowORColumn="row"
+                                                justifyContent={'center'}
+                                                alignItem="center"
+                                            >
+                                                <img
+                                                    style={{
+                                                        width: '421px',
+                                                        height: '516px'
+                                                    }}
+                                                    src={imgName}
+                                                />
+                                            </FLexLayout>
+                                        </Carousel.Item>
+                                    );
+                                })}
+                            </Carousel>
                         </FLexLayout>
 
                         {/* play-store app-store-buttons */}
@@ -991,6 +1040,7 @@ const _Landing = ({ setWidth, width }) => {
                             rowORColumn="row"
                             justifyContent="center"
                             alignItem="center"
+                            style={{ marginLeft: '240px' }}
                         >
                             <FLexLayout rowORColumn="column">
                                 <div className={Style['discover-explore-text']}>
@@ -1033,6 +1083,9 @@ const _Landing = ({ setWidth, width }) => {
                                         rowORColumn="row"
                                         alignItem="center"
                                         justifyContent="between"
+                                        onClick={()=>window.open("https://play.google.com/store/apps/details?id=com.metvy&hl=en_IN&gl=US")}
+                                        style={{cursor:'pointer'}}
+
                                     >
                                         <div style={{ lineHeight: '14px' }}>
                                             Download <br />{' '}
@@ -1061,6 +1114,9 @@ const _Landing = ({ setWidth, width }) => {
                                         rowORColumn="row"
                                         alignItem="center"
                                         justifyContent="between"
+                                        style={{ marginRight: '17px',cursor: "pointer"}}
+                                        onClick={()=>window.open("https://apps.apple.com/in/app/metvy-professional-networking/id1521043145")}
+                                        
                                     >
                                         <div style={{ lineHeight: '14px' }}>
                                             Download <br />{' '}
@@ -1114,9 +1170,40 @@ const _Landing = ({ setWidth, width }) => {
                             A New way to interact <br /> with your Network!
                         </div>
 
-                        {/* <FLexLayout justifyContent='center' alignItem='center' rowORColumn="column">
-                            <img src="/icons/app-shots.png" />
-                        </FLexLayout> */}
+                        <FLexLayout
+                            justifyContent="center"
+                            alignItem="center"
+                            rowORColumn="column"
+                        >
+                        
+                            <Carousel
+                                slide={false}
+                                interval={2000}
+                                fade={true}
+                                controls={false}
+                                indicators={false}
+                            >
+                                {exploreAppImagesMobile.map((imgName) => {
+                                    return (
+                                        <Carousel.Item>
+                                            <FLexLayout
+                                                rowORColumn="row"
+                                                justifyContent={'center'}
+                                                alignItem="center"
+                                            >
+                                                <img
+                                                    style={{
+                                                        width: '330px',
+                                                        height: '404px'
+                                                    }}
+                                                    src={imgName}
+                                                />
+                                            </FLexLayout>
+                                        </Carousel.Item>
+                                    );
+                                })}
+                            </Carousel>
+                        </FLexLayout>
 
                         {/* buttons-for-stores*/}
                         <FLexLayout
@@ -1133,6 +1220,8 @@ const _Landing = ({ setWidth, width }) => {
                                 rowORColumn="row"
                                 alignItem="center"
                                 justifyContent="between"
+                                onClick={()=>window.open("https://play.google.com/store/apps/details?id=com.metvy&hl=en_IN&gl=US")}
+                                style={{cursor:'pointer'}}
                             >
                                 <div style={{ lineHeight: '14px' }}>
                                     Download <br />{' '}
@@ -1159,6 +1248,8 @@ const _Landing = ({ setWidth, width }) => {
                                 rowORColumn="row"
                                 alignItem="center"
                                 justifyContent="between"
+                                style={{ marginRight: '17px',cursor: "pointer"}}
+                                onClick={()=>window.open("https://apps.apple.com/in/app/metvy-professional-networking/id1521043145")}
                             >
                                 <div style={{ lineHeight: '14px' }}>
                                     Download <br />{' '}
@@ -1186,24 +1277,15 @@ const _Landing = ({ setWidth, width }) => {
                 {
                     <FLexLayout rowORColumn="column">
                         <FLexLayout
-                            style={{
-                                position: 'relative',
-                                bottom: width > '1260' ? '120px' : '0px'
-                            }}
-                           
                             rowORColumn="column"
                             justifyContent="center"
                             alignItem="center"
                         >
-                            <div   className={Style['master-class-heading']} >{'Upcoming Metvy Learn Masterclasses'}</div>
+                            <div className={Style['master-class-heading']}>
+                                {'Upcoming Metvy Learn Masterclasses'}
+                            </div>
                         </FLexLayout>
-                        <FLexLayout
-                            style={{
-                                position: 'relative',
-                                bottom: width > '1260' ? '100px' : '0px'
-                            }}
-                            rowORColumn="row"
-                        >
+                        <FLexLayout rowORColumn="row">
                             <Container>
                                 <Row>
                                     {masterClasses.map((masterClass) => {
