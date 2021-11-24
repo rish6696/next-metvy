@@ -1114,7 +1114,7 @@ const _Landing = ({ setWidth, width }) => {
                                         rowORColumn="row"
                                         alignItem="center"
                                         justifyContent="between"
-                                        style={{ marginRight: '17px',cursor: "pointer"}}
+                                        style={{ cursor: "pointer"}}
                                         onClick={()=>window.open("https://apps.apple.com/in/app/metvy-professional-networking/id1521043145")}
 
                                     >
@@ -1248,7 +1248,7 @@ const _Landing = ({ setWidth, width }) => {
                                 rowORColumn="row"
                                 alignItem="center"
                                 justifyContent="between"
-                                style={{ marginRight: '17px',cursor: "pointer"}}
+                                style={{ cursor: "pointer"}}
                                 onClick={()=>window.open("https://apps.apple.com/in/app/metvy-professional-networking/id1521043145")}
                             >
                                 <div style={{ lineHeight: '14px' }}>
