@@ -1,0 +1,1076 @@
+.Test-Class {
+    color: red;
+}
+
+.page-body {
+}
+
+.content-container-landing {
+    padding-top: 80px;
+}
+
+/* less than 400  */
+@media only screen and (max-width: 400px) {
+    .sub-advertisement-text {
+        margin-top: 32px;
+        color: #000000;
+        font-family: poppinsMedium;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 21px;
+
+        text-align: center;
+    }
+
+    .Live-Text {
+        color: #ff5353;
+    }
+
+    .Changing-Text {
+        color: #5c4dff;
+    }
+
+    .Learning-Text {
+        font-family: poppinsSemiBold;
+        font-style: normal;
+        font-size: 22px;
+        line-height: 132.5%;
+        text-align: center;
+
+        color: #070707;
+    }
+
+    .get-started-button {
+        background: #3bb0a3;
+        border-radius: 16px;
+        width: 125px;
+        height: 46px;
+        color: white;
+        margin-top: 25px;
+
+        font-family: poppinsSemiBold;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 20px;
+        color: #ffffff;
+    }
+
+    .thirty-days-text {
+        font-family: poppinsSemiBold;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 120%;
+        /* identical to box height, or 22px */
+        color: #000000;
+        margin-top: 45px;
+        text-align: center;
+    }
+
+    .stats-box {
+        background: #ffffff;
+        box-shadow: 0px 8px 28px rgba(0, 0, 0, 0.08);
+        border-radius: 20px;
+        height: 74px;
+        width: 100px;
+        border-radius: 20px;
+    }
+
+    .stats-number {
+        font-family: poppinsBold;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 150.5%;
+        color: #000000;
+    }
+
+    .stats-title {
+        font-family: poppinsRegular;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 9px;
+        line-height: 150.5%;
+        color: #000000;
+    }
+
+    .statistics-box-container {
+        width: 100%;
+        margin-top: 25px;
+    }
+
+    .join-now-button {
+        color: white;
+        font-family: 'poppinsSemiBold';
+        font-size: 14px;
+        background: #000000;
+        border-radius: 64px;
+        aspect-ratio: 167.06/48.66;
+        width: 129.06px;
+    }
+
+    .benefits-card-outer {
+        width: 100.56px;
+        height: 138.68px;
+        box-shadow: 0px 17px 117px rgba(0, 0, 0, 0.05);
+        border-radius: 8px;
+    }
+
+    .benefits-cards-text {
+        height: 60px;
+        font-family: 'poppinsSemiBold';
+        font-size: 7px;
+        text-align: center;
+    }
+
+    .discover-explore-text {
+        font-family: 'poppinsRegular';
+        font-size: 13px;
+        color: #3bb0a3;
+    }
+
+    .discover-explore-text-two {
+        font-family: 'poppinsSemiBold';
+        font-size: 24px;
+    }
+
+    .store-button {
+        width: 157px;
+        height: 57px;
+        background: #000000;
+        border-radius: 10px;
+        color: white;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-family: 'poppinsBold';
+        font-size: 15px;
+    }
+
+    .download-button-subText {
+        font-family: 'poppinsRegular';
+        font-size: 9px;
+    }
+
+    .master-class-heading {
+        font-family: 'poppinsSemiBold';
+        text-align: center;
+        font-size: 24px;
+        background: -webkit-linear-gradient(
+            83.37deg,
+            #000000 -21.54%,
+            #0e3b70 67.68%,
+            #c1e1ff 118.29%,
+            #000000 152.95%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-top: 50px;
+    }
+
+    .trusted-testimonial-headline {
+        font-family: 'poppinsSemiBold';
+        font-size: 20px;
+        margin-top: 100px;
+        text-align: center;
+    }
+
+    .InC-Icon {
+        width: 62px;
+        height: 18px;
+    }
+
+    .daily-hunt-icon {
+        width: 104px;
+        height: 35px;
+    }
+
+    .your-story-icon {
+        width: 58px;
+        height: 20px;
+    }
+
+    .tedx-icon {
+        width: 58px;
+        height: 17px;
+    }
+
+    .yahoo-finance-icon {
+        width: 73px;
+        height: 27px;
+    }
+
+    .yahoo-news-icon {
+        width: 73px;
+        height: 26px;
+    }
+
+    .lower-icons-container {
+        width: 180px;
+    }
+
+    .banner-container {
+        width: 289px;
+        height: 73px;
+        font-family: 'poppinsSemiBold';
+        font-size: 20px;
+        background: linear-gradient(92.67deg, #b0d0ff -11.18%, #ff5f7c 111.77%);
+        border-radius: 20px;
+        color: white;
+        margin-top: 105px;
+        margin-bottom: 103px;
+    }
+}
+
+/* 400-600  */
+@media only screen and (min-width: 400px) {
+    .sub-advertisement-text {
+        margin-top: 32px;
+        color: #000000;
+        font-family: poppinsMedium;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 21px;
+
+        text-align: center;
+    }
+
+    .Live-Text {
+        color: #ff5353;
+    }
+
+    .Changing-Text {
+        color: #5c4dff;
+    }
+
+    .Learning-Text {
+        font-family: poppinsSemiBold;
+        font-style: normal;
+        font-size: 22px;
+        line-height: 130%;
+        text-align: center;
+
+        color: #070707;
+    }
+
+    .thirty-days-text {
+        font-family: poppinsSemiBold;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 149%;
+        /* identical to box height, or 22px */
+        color: #000000;
+        margin-top: 56px;
+        text-align: center;
+    }
+
+    .get-started-button {
+        background: #3bb0a3;
+        border-radius: 16px;
+        width: 129px;
+        height: 46px;
+        color: white;
+        margin-top: 25px;
+
+        font-family: poppinsSemiBold;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 21px;
+        color: #ffffff;
+    }
+
+    .stats-box {
+        background: #ffffff;
+        box-shadow: 0px 8px 28px rgba(0, 0, 0, 0.08);
+        border-radius: 20px;
+        height: 94px;
+        width: 113.2389678955078px;
+        border-radius: 20px;
+    }
+
+    .stats-number {
+        font-family: poppinsBold;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 150.5%;
+        color: #000000;
+    }
+
+    .stats-title {
+        font-family: poppinsRegular;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 150.5%;
+        color: #000000;
+    }
+
+    .statistics-box-container {
+        width: 100%;
+        margin-top: 25px;
+    }
+
+    .community-text {
+        font-family: 'poppinsRegular';
+        font-size: 14px;
+    }
+
+    .join-now-button {
+        color: white;
+        font-family: 'poppinsSemiBold';
+        font-size: 14px;
+        background: #000000;
+        border-radius: 64px;
+        aspect-ratio: 167.06/48.66;
+        width: 129.06px;
+    }
+
+    .benefits-card-outer {
+        width: 106.56px;
+        height: 158.68px;
+        box-shadow: 0px 17px 117px rgba(0, 0, 0, 0.05);
+        border-radius: 10px;
+    }
+
+    .benefits-cards-text {
+        height: 70px;
+        font-family: 'poppinsSemiBold';
+        font-size: 8px;
+        text-align: center;
+    }
+
+    .discover-explore-text {
+        font-family: 'poppinsRegular';
+        font-size: 14px;
+        color: #3bb0a3;
+    }
+
+    .discover-explore-text-two {
+        font-family: 'poppinsSemiBold';
+        font-size: 26px;
+    }
+
+    .store-button {
+        width: 157px;
+        height: 57px;
+        background: #000000;
+        border-radius: 10px;
+        color: white;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-family: 'poppinsBold';
+        font-size: 15px;
+    }
+
+    .download-button-subText {
+        font-family: 'poppinsRegular';
+        font-size: 9px;
+    }
+
+    .master-class-heading {
+        font-family: 'poppinsSemiBold';
+        text-align: center;
+        font-size: 26px;
+        background: -webkit-linear-gradient(
+            83.37deg,
+            #000000 -21.54%,
+            #0e3b70 67.68%,
+            #c1e1ff 118.29%,
+            #000000 152.95%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-top: 50px;
+    }
+    .trusted-testimonial-headline {
+        font-family: 'poppinsSemiBold';
+        font-size: 20px;
+        margin-top: 100px;
+        text-align: center;
+    }
+
+    .InC-Icon {
+        width: 62px;
+        height: 18px;
+    }
+
+    .daily-hunt-icon {
+        width: 104px;
+        height: 35px;
+    }
+
+    .your-story-icon {
+        width: 58px;
+        height: 20px;
+    }
+
+    .tedx-icon {
+        width: 58px;
+        height: 17px;
+    }
+
+    .yahoo-finance-icon {
+        width: 73px;
+        height: 27px;
+    }
+
+    .yahoo-news-icon {
+        width: 73px;
+        height: 26px;
+    }
+
+    .lower-icons-container {
+        width: 180px;
+    }
+
+    .banner-container {
+        width: 289px;
+        height: 73px;
+        font-family: 'poppinsSemiBold';
+        font-size: 20px;
+        background: linear-gradient(92.67deg, #b0d0ff -11.18%, #ff5f7c 111.77%);
+        border-radius: 20px;
+        color: white;
+        margin-top: 105px;
+        margin-bottom: 103px;
+    }
+}
+
+/* 600-800  */
+@media only screen and (min-width: 600px) {
+    .sub-advertisement-text {
+        margin-top: 32px;
+        color: #000000;
+        font-family: poppinsMedium;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 21px;
+
+        text-align: center;
+    }
+
+    .Live-Text {
+        color: #ff5353;
+    }
+
+    .Changing-Text {
+        color: #5c4dff;
+    }
+
+    .Learning-Text {
+        font-family: poppinsSemiBold;
+        font-style: normal;
+        font-size: 22px;
+        line-height: 130%;
+        text-align: center;
+
+        color: #070707;
+    }
+
+    .get-started-button {
+        background: #3bb0a3;
+        border-radius: 16px;
+        width: 134px;
+        height: 46px;
+        color: white;
+        margin-top: 25px;
+
+        font-family: poppinsSemiBold;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 22px;
+        color: #ffffff;
+    }
+
+    .thirty-days-text {
+        font-family: poppinsSemiBold;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 149%;
+        /* identical to box height, or 22px */
+        color: #000000;
+        margin-top: 56px;
+        text-align: center;
+    }
+
+    .stats-box {
+        background: #ffffff;
+        box-shadow: 0px 8px 28px rgba(0, 0, 0, 0.08);
+        border-radius: 20px;
+        height: 94px;
+        width: 113.2389678955078px;
+        border-radius: 20px;
+    }
+
+    .stats-number {
+        font-family: poppinsBold;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 150.5%;
+        color: #000000;
+    }
+
+    .stats-title {
+        font-family: poppinsRegular;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 150.5%;
+        color: #000000;
+    }
+
+    .statistics-box-container {
+        width: 90%;
+        margin-top: 25px;
+    }
+
+    .community-text {
+        font-family: 'poppinsRegular';
+        font-size: 14px;
+    }
+
+    .join-now-button {
+        color: white;
+        font-family: 'poppinsSemiBold';
+        font-size: 14px;
+        background: #000000;
+        border-radius: 64px;
+        aspect-ratio: 167.06/48.66;
+        width: 129.06px;
+    }
+
+    .benefits-card-outer {
+        width: 100.56px;
+        height: 138.68px;
+        box-shadow: 0px 17px 117px rgba(0, 0, 0, 0.05);
+        border-radius: 8px;
+    }
+
+    .benefits-cards-text {
+        height: 60px;
+        font-family: 'poppinsSemiBold';
+        font-size: 7px;
+        text-align: center;
+    }
+}
+
+/* 800-1000  */
+@media only screen and (min-width: 800px) {
+    .sub-advertisement-text {
+        margin-top: 32px;
+        color: #000000;
+        font-family: poppinsMedium;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 21px;
+
+        text-align: center;
+    }
+
+    .Live-Text {
+        color: #ff5353;
+    }
+
+    .Changing-Text {
+        color: #5c4dff;
+    }
+
+    .Learning-Text {
+        font-family: poppinsSemiBold;
+        font-style: normal;
+        font-size: 22px;
+        line-height: 130.5%;
+        text-align: center;
+
+        color: #070707;
+    }
+
+    .get-started-button {
+        background: #3bb0a3;
+        border-radius: 16px;
+        width: 134px;
+        height: 46px;
+        color: white;
+        margin-top: 25px;
+
+        font-family: poppinsSemiBold;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 22px;
+        color: #ffffff;
+    }
+
+    .stats-box {
+        background: #ffffff;
+        box-shadow: 0px 8px 28px rgba(0, 0, 0, 0.08);
+        border-radius: 20px;
+        height: 94px;
+        width: 113.2389678955078px;
+        border-radius: 20px;
+    }
+
+    .stats-number {
+        font-family: poppinsBold;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 150.5%;
+        color: #000000;
+    }
+
+    .stats-title {
+        font-family: poppinsRegular;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 150.5%;
+        color: #000000;
+    }
+
+    .statistics-box-container {
+        width: 90%;
+        margin-top: 25px;
+    }
+
+    .community-text {
+        font-family: 'poppinsRegular';
+        font-size: 15px;
+    }
+
+    .join-now-button {
+        color: white;
+        font-family: 'poppinsSemiBold';
+        font-size: 14px;
+        background: #000000;
+        border-radius: 64px;
+        aspect-ratio: 167.06/48.66;
+        width: 129.06px;
+    }
+
+    .benefits-card-outer {
+        width: 100.56px;
+        height: 138.68px;
+        box-shadow: 0px 17px 117px rgba(0, 0, 0, 0.05);
+        border-radius: 8px;
+    }
+
+    .benefits-cards-text {
+        height: 60px;
+        font-family: 'poppinsSemiBold';
+        font-size: 7px;
+        text-align: center;
+    }
+}
+
+/*  > 1000  */
+@media only screen and (min-width: 1000px) {
+    .sub-advertisement-text {
+        margin-top: 16px;
+        color: #000000;
+        font-family: poppinsRegular;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .Live-Text {
+        color: #ff5353;
+    }
+
+    .Changing-Text {
+        color: #5c4dff;
+    }
+
+    .Learning-Text {
+        font-family: poppinsSemiBold;
+        font-style: normal;
+        font-size: 36px;
+        line-height: 116.5%;
+
+        color: #070707;
+    }
+
+    .get-started-button {
+        background: #3bb0a3;
+        border-radius: 16px;
+        width: 159px;
+        height: 46px;
+        color: white;
+        margin-top: 25px;
+
+        font-family: poppinsSemiBold;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        color: #ffffff;
+    }
+
+    .thirty-days-text {
+        font-family: poppinsSemiBold;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 112.5%;
+        /* identical to box height, or 22px */
+        color: #000000;
+        margin-top: 97px;
+    }
+
+    /* stats-designs */
+
+    .stats-box {
+        background: #ffffff;
+        box-shadow: 0px 8px 28px rgba(0, 0, 0, 0.08);
+        border-radius: 20px;
+        height: 94px;
+        width: 132.2389678955078px;
+        border-radius: 20px;
+    }
+
+    .stats-number {
+        font-family: poppinsBold;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 150.5%;
+        color: #000000;
+    }
+
+    .stats-title {
+        font-family: poppinsRegular;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 150.5%;
+        color: #000000;
+    }
+
+    .statistics-box-container {
+        width: 450px;
+        margin-top: 25px;
+    }
+
+    .community-text {
+        font-family: 'poppinsRegular';
+        font-size: 16px;
+    }
+
+    .join-now-button {
+        color: white;
+        font-family: 'poppinsSemiBold';
+        font-size: 16px;
+        background: #000000;
+        border-radius: 64px;
+        width: 167.06px;
+        height: 48.66px;
+    }
+
+    .benefits-card-outer {
+        width: 100.56px;
+        height: 138.68px;
+        box-shadow: 0px 17px 117px rgba(0, 0, 0, 0.05);
+        border-radius: 8px;
+    }
+
+    .benefits-cards-text {
+        height: 60px;
+        font-family: 'poppinsSemiBold';
+        font-size: 7px;
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 1260px) {
+    .discover-explore-text {
+        font-family: 'poppinsRegular';
+        font-size: 24px;
+        color: #3bb0a3;
+    }
+
+    .discover-explore-text-two {
+        font-family: 'poppinsSemiBold';
+        font-size: 45px;
+    }
+
+    .store-button {
+        width: 233.18px;
+        height: 85.73px;
+        background: #000000;
+        border-radius: 24px;
+        color: white;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-family: 'poppinsBold';
+        font-size: 18px;
+    }
+
+    .download-button-subText {
+        font-family: 'poppinsRegular';
+        font-size: 14px;
+    }
+
+    .benefits-card-outer {
+        width: 188.56px;
+        height: 280.68px;
+        box-shadow: 0px 17px 117px rgba(0, 0, 0, 0.05);
+        border-radius: 14px;
+    }
+
+    .benefits-cards-text {
+        height: 124px;
+        font-family: 'poppinsSemiBold';
+        font-size: 12px;
+    }
+
+    .master-class-heading {
+        font-family: 'poppinsSemiBold';
+        font-size: 45px;
+        background: -webkit-linear-gradient(
+            83.37deg,
+            #000000 -21.54%,
+            #0e3b70 67.68%,
+            #c1e1ff 118.29%,
+            #000000 152.95%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .trusted-testimonial-headline {
+        font-family: 'poppinsSemiBold';
+        font-size: 36px;
+        margin-top: 100px;
+        text-align: center;
+    }
+
+    .InC-Icon {
+        width: 160px;
+        height: 48px;
+    }
+
+    .daily-hunt-icon {
+        width: 270px;
+        height: 91px;
+    }
+
+    .your-story-icon {
+        width: 129px;
+        height: 44px;
+    }
+
+    .tedx-icon {
+        width: 151px;
+        height: 45px;
+    }
+
+    .yahoo-finance-icon {
+        width: 150px;
+        height: 55px;
+    }
+
+    .yahoo-news-icon {
+        width: 150px;
+        height: 53px;
+    }
+
+    .lower-icons-container {
+        width: 368px;
+    }
+
+    .banner-container {
+        width: 289px;
+        height: 73px;
+        font-family: 'poppinsSemiBold';
+        font-size: 32px;
+        background: linear-gradient(92.67deg, #b0d0ff -11.18%, #ff5f7c 111.77%);
+        border-radius: 20px;
+        color: white;
+        margin-top: 105px;
+        margin-bottom: 103px;
+    }
+}
+
+.mentors-from-title {
+    font-family: poppinsSemiBold;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 150.5%;
+    /* identical to box height, or 38px */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+}
+
+.companies-container-desktop {
+    height: 56.25px;
+    background: rgba(255, 255, 255, 0.75);
+    box-shadow: 0px 4px 121px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(70px);
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-top: 16px;
+}
+
+.brand-advertisement-container {
+    box-shadow: 0px 12px 92px 0px rgba(0, 0, 0, 0.21);
+    margin-top: 84px;
+    background-color: #ffffff;
+}
+
+.community-shaded-box-desktop {
+    width: 1184.06px;
+    aspect-ratio: 1184.06 / 505.9;
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 690px;
+    margin-top: 89px;
+}
+
+.community-heading-desktop {
+    font-family: 'poppinsSemiBold';
+    font-size: 36px;
+    background: -webkit-linear-gradient(
+        83.37deg,
+        #000000 -21.54%,
+        #0e3b70 67.68%,
+        #c1e1ff 118.29%,
+        #000000 152.95%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.community-heading-mobile {
+    font-family: 'poppinsSemiBold';
+    font-size: 26px;
+    background: -webkit-linear-gradient(
+        83.37deg,
+        #000000 -21.54%,
+        #0e3b70 67.68%,
+        #c1e1ff 118.29%,
+        #000000 152.95%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.community-container-mobile {
+    aspect-ratio: 368/472;
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 48px 48px 15px 15px;
+    margin-top: 240px;
+    text-align: center;
+}
+
+.master-class-card {
+    width: 294.75px;
+    height: 431.26px;
+
+    background: #ffffff;
+    box-shadow: 0px 17px 85px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    padding: 22px;
+}
+
+.master-class-apply-button {
+    width: 245px;
+    height: 51px;
+    font-family: 'poppinsMedium';
+    font-size: 18px;
+    color: white;
+
+    background: #1371ff;
+    border-radius: 16px;
+}
+
+.scroll-left {
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+    color: white;
+}
+.scroll-left .effect {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    line-height: 50px;
+    text-align: center;
+    /* Starting position */
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    /* Apply animation to this element */
+    -moz-animation: scroll-left 10s linear infinite;
+    -webkit-animation: scroll-left 10s linear infinite;
+    animation: scroll-left 20s linear infinite;
+}
+
+.scroll-left p:hover {
+    animation-play-state: paused;
+}
+
+/* Move it (define the animation) */
+/* @-moz-keyframes scroll-left {
+    0% {
+        -moz-transform: translateX(100%);
+    }
+    100% {
+        -moz-transform: translateX(-100%);
+    }
+}
+@-webkit-keyframes scroll-left {
+    0% {
+        -webkit-transform: translateX(100%);
+    }
+    100% {
+        -webkit-transform: translateX(-100%);
+    }
+} */
+@keyframes scroll-left {
+    0% {
+        -moz-transform: translateX(100%); /* Browser bug fix */
+        -webkit-transform: translateX(100%); /* Browser bug fix */
+        transform: translateX(100%);
+    }
+    100% {
+        -moz-transform: translateX(-100%); /* Browser bug fix */
+        -webkit-transform: translateX(-100%); /* Browser bug fix */
+        transform: translateX(-100%);
+    }
+}
+
+.effect {
+    position: relative;
+    animation-name: example;
+    animation-duration: 150s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes example {
+    0% {
+        left: 4000px;
+        top: 0px;
+    }
+    100% {
+        left: -1500px;
+        top: 0px;
+    }
+}

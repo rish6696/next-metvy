@@ -623,7 +623,7 @@ const _MetvyLearn = ({ width, setWidth }) => {
 
                 {/* our-mentors-carousel-mobile */}
                 {width <= 768 && (
-                    <Carousel interval={2000} fade={true} controls={false} indicators={false}>
+                    <Carousel  interval={2000} fade={true} controls={false} indicators={false}>
                         {mentorData.map((mentor) => {
                             return (
                                 <Carousel.Item>

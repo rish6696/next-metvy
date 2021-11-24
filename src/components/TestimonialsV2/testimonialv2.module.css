@@ -1,0 +1,138 @@
+/* less than 400  */
+@media only screen and (max-width: 400px) {
+    .outer-testimonial {
+        background: #ffffff;
+        box-shadow: 0px 16px 41px rgba(0, 0, 0, 0.1);
+        border-radius: 30px;
+        height: 350px;
+        width: 356px;
+        padding: 26px;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+
+    .inner-testimonial {
+        width: 304px;
+        height: 135px;
+
+        background: #f0f0f0;
+        border-radius: 16px;
+        padding: 10px;
+    }
+    .testimonial-inner-image {
+        height: 113px;
+        width: 112px;
+    }
+    .testimonial-user-name {
+        font-family: 'poppinsBold';
+        font-size: 12px;
+        margin-left: 29px;
+    }
+
+    .testimonial-user-designation {
+        font-family: 'poppinsMedium';
+        font-size: 12px;
+        margin-left: 29px;
+    }
+
+    .testimonial-text {
+        font-family: 'poppinsRegular';
+        font-size: 13px;
+        line-height: 19px;
+        margin-top: 14px;
+    }
+}
+
+/* 400-600  */
+@media only screen and (min-width: 400px) {
+    
+
+    .outer-testimonial {
+        background: #ffffff;
+        box-shadow: 0px 16px 41px rgba(0, 0, 0, 0.1);
+        border-radius: 30px;
+        height: 350px;
+        width: 356px;
+        padding: 26px;
+        margin-right: 25px;
+        margin-left: 25px;
+    }
+
+    .inner-testimonial {
+        width: 304px;
+        height: 135px;
+
+        background: #f0f0f0;
+        border-radius: 16px;
+        padding: 10px;
+    }
+    .testimonial-inner-image {
+        height: 113px;
+        width: 112px;
+    }
+    .testimonial-user-name {
+        font-family: 'poppinsBold';
+        font-size: 12px;
+        margin-left: 29px;
+    }
+
+    .testimonial-user-designation {
+        font-family: 'poppinsMedium';
+        font-size: 12px;
+        margin-left: 29px;
+    }
+
+    .testimonial-text {
+        font-family: 'poppinsRegular';
+        font-size: 13px;
+        line-height: 19px;
+        margin-top: 14px;
+    }
+
+    
+}
+
+@media only screen and (min-width: 1260px) {
+
+    .outer-testimonial {
+        background: #ffffff;
+        box-shadow: 0px 16px 41px rgba(0, 0, 0, 0.1);
+        border-radius: 32px;
+        height: 552px;
+        width: 554px;
+        padding: 40px;
+        margin-right: 35px;
+        margin-left: 35px;
+    }
+
+    .inner-testimonial {
+        width: 477px;
+        height: 213px;
+
+        background: #f0f0f0;
+        border-radius: 14px;
+        padding: 19px;
+    }
+    .testimonial-inner-image {
+        height: 181px;
+        width: 181px;
+    }
+    .testimonial-user-name {
+        font-family: 'poppinsBold';
+        font-size: 20px;
+        margin-left: 35px;
+    }
+
+    .testimonial-user-designation {
+        font-family: 'poppinsMedium';
+        font-size: 16px;
+        margin-left: 35px;
+    }
+
+    .testimonial-text {
+        font-family: 'poppinsRegular';
+        font-size: 20px;
+        line-height: 30px;
+        margin-top: 35px;
+    }
+}

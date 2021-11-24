@@ -13,6 +13,7 @@ interface Props {
     id?: string;
     keyVal?: any;
     ref?: React.LegacyRef<HTMLDivElement>;
+    order ?: string;
 }
 
 export default function FLexLayout(props: Props) {
@@ -27,7 +28,7 @@ export default function FLexLayout(props: Props) {
         className,
         onMouseEnter,
         onMouseLeave,
-        id
+        id,order
     } = props;
     return (
         <div
@@ -38,7 +39,7 @@ export default function FLexLayout(props: Props) {
             onMouseLeave={onMouseLeave}
             style={{ ...style }}
             id={id}
-            className={`d-flex flex-${rowORColumn} align-items-${alignItem}  justify-content-${justifyContent} ${className}`}
+            className={`d-flex flex-${rowORColumn} align-items-${alignItem}  justify-content-${justifyContent} ${className} order-${order}`}
         >
             {props.children}
         </div>

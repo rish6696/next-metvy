@@ -10,6 +10,8 @@
 .footer-items{
     margin-bottom: 19px;
     cursor: pointer;
+    font-family: 'poppinsRegular';
+    font-size: 14px;
 }
 
 .footer-social-media-items{
