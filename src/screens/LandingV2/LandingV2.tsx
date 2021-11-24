@@ -331,7 +331,7 @@ const _Landing = ({ setWidth, width }) => {
                         />
 
                         <img
-                            src="icons/Nike.png"
+                            src="/icons/Nike.png"
                             style={{ width: '48.38px', height: '25.31px' }}
                         />
                         <img
@@ -1116,7 +1116,7 @@ const _Landing = ({ setWidth, width }) => {
                                         justifyContent="between"
                                         style={{ marginRight: '17px',cursor: "pointer"}}
                                         onClick={()=>window.open("https://apps.apple.com/in/app/metvy-professional-networking/id1521043145")}
-                                        
+
                                     >
                                         <div style={{ lineHeight: '14px' }}>
                                             Download <br />{' '}
