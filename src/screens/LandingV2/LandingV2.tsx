@@ -331,7 +331,7 @@ const _Landing = ({ setWidth, width }) => {
                         />
 
                         <img
-                            src="/icons/Nike.png"
+                            src="/icons/nike.png"
                             style={{ width: '48.38px', height: '25.31px' }}
                         />
                         <img
