@@ -775,7 +775,7 @@ const _Landing = ({ setWidth, width }) => {
                             >
                                 <img
                                     style={{
-                                        aspectRatio: '456/607',
+                                        aspectRatio: '328px',
                                         width: '250px'
                                     }}
                                     src="/icons/community.png"
