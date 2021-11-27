@@ -707,13 +707,16 @@ const _Landing = ({ setWidth, width }) => {
                                 <FLexLayout
                                     style={{
                                         position: 'relative',
-                                        top: '55px'
+                                        top: '55px',
+                                        cursor:'pointer'
                                     }}
                                     order="3"
                                     className={Style['join-now-button']}
                                     rowORColumn="column"
                                     justifyContent="center"
                                     alignItem="center"
+                                    onClick={()=>window.open('https://t.me/joinchat/PRXD91iL538zNGM9')}
+
                                 >
                                     Join Now
                                 </FLexLayout>
@@ -823,12 +826,15 @@ const _Landing = ({ setWidth, width }) => {
                             <FLexLayout
                                 style={{
                                     position: 'relative',
-                                    bottom: '70px'
+                                    bottom: '70px',
+                                    cursor:'pointer'
+
                                 }}
                                 className={Style['join-now-button']}
                                 rowORColumn="column"
                                 justifyContent="center"
                                 alignItem="center"
+                                onClick={()=>window.open('https://t.me/joinchat/PRXD91iL538zNGM9')}
                             >
                                 Join Now
                             </FLexLayout>
