@@ -57,26 +57,29 @@ const _Landing = ({ setWidth, width }) => {
 
     const masterClasses = [
         {
-            imgName: 'Shawrya.png',
-            title: 'How to build a Startup ?',
-            name: 'Shawrya Mehrotra',
-            date: '29th October,2021',
-            time: '6-7 PM'
+            imgName: 'ankur_img.png',
+            title: 'Getting your First Customers',
+            name: 'Ankur Jain',
+            date: 'To be Announced',
+            time: 'Register today to reserve your spot.',
+            registerLink :  'https://fzuiq327sni.typeform.com/metvysessions'
+        },
+        {
+            imgName: 'anisha_img.png',
+            title: 'Marketing 101',
+            name: 'Anisha Tandon',
+            date: 'To be Announced',
+            time: 'Register today to reserve your spot.',
+            registerLink :  'https://fzuiq327sni.typeform.com/metvysessions'
         },
         {
             imgName: 'Shawrya.png',
-            title: 'How to build a Startup ?',
+            title: 'Public Speaking 101',
             name: 'Shawrya Mehrotra',
-            date: '29th October,2021',
-            time: '6-7 PM'
+            date: 'To be Announced',
+            time: 'Register today to reserve your spot.',
+            registerLink :  'https://fzuiq327sni.typeform.com/metvysessions'
         },
-        {
-            imgName: 'Shawrya.png',
-            title: 'How to build a Startup ?',
-            name: 'Shawrya Mehrotra',
-            date: '29th October,2021',
-            time: '6-7 PM'
-        }
     ];
 
     const getAdvertisementTextAndStatistics = () => {
@@ -1290,7 +1293,7 @@ const _Landing = ({ setWidth, width }) => {
                                 <Row>
                                     {masterClasses.map((masterClass) => {
                                         return (
-                                            <Col style={{ marginTop: '50px' }}>
+                                            <Col onClick={()=>window.open(masterClass.registerLink)} style={{ marginTop: '50px',cursor:'pointer' }}>
                                                 {/* master-class-card-box-wih apply button */}
                                                 <FLexLayout
                                                     alignItem="center"

@@ -190,10 +190,17 @@ const _EnrollScreen = (props: Props) => {
             console.log('Inside my if ');
             date = date.add('y', 1);
         }
+
+        const prefix = monthPrefix[monthNumber-1];
+
         return `${date.startOf('M').get('D')}st ${date.format(
             'MMMM YYYY'
-        )} - ${date.endOf('M').get('D')}th ${date.format('MMMM YYYY')}`;
+        )} - ${date.endOf('M').get('D')}${prefix} ${date.format('MMMM YYYY')}`;
     };
+
+    const monthPrefix = {
+        0 : 'st',1 :'th',2:'st',3:'th',4:'st',5:'th',6:'st',7:'st',8:'th',9:'st',10:'th',11:'st'
+    }
 
     const getTextForDiscountCodeButton = (): string => {
         if (selectedDiscountCouponPercent == -1) return 'Use Discount Coupon';
