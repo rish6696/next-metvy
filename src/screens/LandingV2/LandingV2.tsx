@@ -68,8 +68,8 @@ const _Landing = ({ setWidth, width }) => {
             imgName: 'anisha_img.png',
             title: 'Marketing 101',
             name: 'Anisha Tandon',
-            date: 'To be Announced',
-            time: 'Register today to reserve your spot.',
+            date: '12th Dec, 2021',
+            time: '4:00 PM',
             registerLink :  'https://fzuiq327sni.typeform.com/metvysessions'
         },
         {
@@ -1378,7 +1378,7 @@ const _Landing = ({ setWidth, width }) => {
                                                                         lineHeight:
                                                                             '15px',
                                                                         fontSize:
-                                                                            '10px',
+                                                                            '13px',
                                                                         marginTop:
                                                                             '8px'
                                                                     }}
