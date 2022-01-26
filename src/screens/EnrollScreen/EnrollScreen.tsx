@@ -3,7 +3,7 @@ import Style from './Enroll.module.css';
 import FLexLayout from '../../components/FlexLayout';
 import HeaderLearn from '../../components/HeaderLearn/HeaderLearn';
 import { Image } from 'react-bootstrap';
-import { enrollScreenCourseData, MONTHS,state } from '../../constants';
+import { enrollScreenCourseData, MONTHS, state } from '../../constants';
 import apiConfig from '../../api-services/apiConfig';
 import ServerDown from '../../components/ServerDown/ServerDown';
 import Loader from '../../components/LoaderComponent/LoaderComponent';
@@ -106,17 +106,14 @@ const _EnrollScreen = (props: Props) => {
     const [email, setEmail] = useState('');
     const [emailError, setEmailError] = useState('');
 
+    const [stateValue, setSateValue] = useState('');
+    const [stateError, setStateError] = useState('');
 
-    const [stateValue,setSateValue] = useState('')
-    const [stateError,setStateError] = useState('');
-
-
-    const onStateValueChange =(event)=>{
+    const onStateValueChange = (event) => {
         const state = event.target.value;
-        setStateError("")
+        setStateError('');
         setSateValue(state);
-    }
-
+    };
 
     const onEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         if (emailError.length != 0) setEmailError('');
@@ -191,7 +188,7 @@ const _EnrollScreen = (props: Props) => {
             date = date.add('y', 1);
         }
 
-        const prefix = monthPrefix[monthNumber-1];
+        const prefix = monthPrefix[monthNumber - 1];
 
         return `${date.startOf('M').get('D')}st ${date.format(
             'MMMM YYYY'
@@ -199,8 +196,19 @@ const _EnrollScreen = (props: Props) => {
     };
 
     const monthPrefix = {
-        0 : 'st',1 :'th',2:'st',3:'th',4:'st',5:'th',6:'st',7:'st',8:'th',9:'st',10:'th',11:'st'
-    }
+        0: 'st',
+        1: 'th',
+        2: 'st',
+        3: 'th',
+        4: 'st',
+        5: 'th',
+        6: 'st',
+        7: 'st',
+        8: 'th',
+        9: 'st',
+        10: 'th',
+        11: 'st'
+    };
 
     const getTextForDiscountCodeButton = (): string => {
         if (selectedDiscountCouponPercent == -1) return 'Use Discount Coupon';
@@ -254,8 +262,8 @@ const _EnrollScreen = (props: Props) => {
         }
 
         // check if state is not selected
-        if(stateValue.length==0){
-            setStateError('**Please select your state')
+        if (stateValue.length == 0) {
+            setStateError('**Please select your state');
             stateRef.current.focus();
             return;
         }
@@ -337,7 +345,8 @@ const _EnrollScreen = (props: Props) => {
             school,
             stream,
             courses: cartCourses,
-            editableDiscountCoupon: selectedDiscountCouponText,state:stateValue
+            editableDiscountCoupon: selectedDiscountCouponText,
+            state: stateValue
         });
     };
 
@@ -574,15 +583,13 @@ const _EnrollScreen = (props: Props) => {
                                 </FLexLayout>
                             </FLexLayout>
 
-
                             {/* drop-down-error */}
                             <FLexLayout
-                                    className={Style['studentFelidsError']}
-                                    rowORColumn="column"
-                                >
-                                    <div>{stateError}</div>
-                                </FLexLayout>
-
+                                className={Style['studentFelidsError']}
+                                rowORColumn="column"
+                            >
+                                <div>{stateError}</div>
+                            </FLexLayout>
 
                             {/* state-dropdown */}
                             <FLexLayout
@@ -591,11 +598,21 @@ const _EnrollScreen = (props: Props) => {
                                 alignItem="center"
                                 className={Style['select-a-batch-dropDown']}
                             >
-                                <select ref={stateRef} onChange={onStateValueChange} style={{fontFamily:'poppinsItalic',fontSize:'15px',width:'100%'}} >
+                                <select
+                                    ref={stateRef}
+                                    onChange={onStateValueChange}
+                                    style={{
+                                        fontFamily: 'poppinsItalic',
+                                        fontSize: '15px',
+                                        width: '100%'
+                                    }}
+                                >
                                     <option value="" selected disabled hidden>
                                         Where are you from ?
                                     </option>
-                                     {state.map(x=>(<option value={x} > {x} </option>))}
+                                    {state.map((x) => (
+                                        <option value={x}> {x} </option>
+                                    ))}
                                 </select>
                             </FLexLayout>
 
@@ -887,7 +904,7 @@ const _EnrollScreen = (props: Props) => {
 
 
                                      {/* gst-box  */}
-                                     <FLexLayout
+                                     {/* <FLexLayout
                                         style={{ width: '80%' }}
                                         rowORColumn="row"
                                         justifyContent="between"
@@ -902,7 +919,7 @@ const _EnrollScreen = (props: Props) => {
                                             {'GST Charged'}
                                         </div>
 
-                                        {/* price-box */}
+                                       
                                         <FLexLayout
                                             justifyContent="center"
                                             className={
@@ -915,7 +932,7 @@ const _EnrollScreen = (props: Props) => {
                                                 &#8377; {invoiceData.gstAmount}
                                             </div>
                                         </FLexLayout>
-                                    </FLexLayout>
+                                    </FLexLayout> */}
 
                                     {/* subtotal-box  */}
                                     <FLexLayout
