@@ -71,7 +71,7 @@ const _Landing = ({ setWidth, width }) => {
             title: 'Marketing 101',
             name: 'Anisha Tandon',
             date: 'To be Announced, Register today to reserve your spot',
-            time: '4:00 PM',
+            time: '',
             registerLink :  'https://docs.google.com/forms/d/e/1FAIpQLSfD94LMD_49yhfRjCfo9IZEymxltQWaSjncL91LZ_vjIntcEA/viewform'
         },
         {
@@ -79,7 +79,7 @@ const _Landing = ({ setWidth, width }) => {
             title: 'Public Speaking 101',
             name: 'Shawrya Mehrotra',
             date: 'To be Announced, Register today to reserve your spot',
-            time: 'Register today to reserve your spot.',
+            time: '',
             registerLink :  'https://docs.google.com/forms/d/e/1FAIpQLSfD94LMD_49yhfRjCfo9IZEymxltQWaSjncL91LZ_vjIntcEA/viewform'
         },
     ];
