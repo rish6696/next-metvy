@@ -275,7 +275,7 @@ export const programsCardsMetaData = [
         backed with Compendiums and Live
         Projects crafted and led by top mentors`,
         priceBeforeDiscount: '5,000',
-        princeAfterDiscount: '2,500',
+        princeAfterDiscount: '2,999',
         brands: [
             { name: '/icons/Amazon logo.png', width: '48px', height: '19px' },
             {
@@ -304,7 +304,7 @@ export const programsCardsMetaData = [
         backed with Compendiums and Live
         Projects crafted and led by top mentors`,
         priceBeforeDiscount: '5,000',
-        princeAfterDiscount: '2,500',
+        princeAfterDiscount: '2,999',
         brands: [
             { name: '/icons/Ashoka_Uni.png', width: '54px', height: '22px' },
             { name: '/icons/KREA LOGO.png', width: '37px', height: '19px' },
@@ -329,7 +329,7 @@ export const programsCardsMetaData = [
         backed with Compendiums and Live
         Projects crafted and led by top mentors.`,
         priceBeforeDiscount: '5,000',
-        princeAfterDiscount: '2,500',
+        princeAfterDiscount: '2,999',
         brands: [
             { name: '/icons/Ducati.png', width: '23px', height: '23px' },
             { name: '/icons/medanta.png', width: '53px', height: '16px' },
@@ -350,7 +350,7 @@ export const programsCardsMetaData = [
         backed with Compendiums and Live
         Projects crafted and led by top mentors.`,
         priceBeforeDiscount: '5,000',
-        princeAfterDiscount: '2,500',
+        princeAfterDiscount: '2,999',
         brands: [
             { name: '/icons/Swiggy.png', width: '55px', height: '15px' },
             { name: '/icons/Infosys.png', width: '28px', height: '17px' },
@@ -371,7 +371,7 @@ export const programsCardsMetaData = [
         backed with Compendiums and Live
         Projects crafted and led by top Consultants.`,
         priceBeforeDiscount: ' 6,999',
-        princeAfterDiscount: '3,500',
+        princeAfterDiscount: '3,999',
 
         brands: [
             { name: '/icons/bain-logo.png', width: '38px', height: '19px' },
@@ -538,8 +538,7 @@ With focus on design softwares like Photoshop, Indesign, Adobe Illustrator, Adob
         weeksData: [
             {
                 time: '4 Hours',
-                content: ` Peer group introduction giving a direction on how to think about ideas.
-Extensive peer group networking. Understanding Entrepreneurship and Market Research, How to pick the right problem? Understanding Marketing, and Branding.`
+                content: `Peer group introduction with the Mentor, Introducing people to the Fundamentals of Design, Understanding The Theory of Design, and Developing a new mindset towards Design`
             },
             {
                 time: '4 Hours',

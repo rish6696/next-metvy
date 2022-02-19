@@ -55,30 +55,32 @@ const _Landing = ({ setWidth, width }) => {
 
     const [animationState, setAnimationState] = useState('running');
 
+
+
     const masterClasses = [
         {
             imgName: 'ankur_img.png',
             title: 'Getting your First Customers',
             name: 'Ankur Jain',
-            date: 'To be Announced',
-            time: 'Register today to reserve your spot.',
-            registerLink :  'https://fzuiq327sni.typeform.com/metvysessions'
+            date: '',
+            time: 'To be Announced, Register today to reserve your spot',
+            registerLink :  'https://docs.google.com/forms/d/e/1FAIpQLSfD94LMD_49yhfRjCfo9IZEymxltQWaSjncL91LZ_vjIntcEA/viewform'
         },
         {
             imgName: 'anisha_img.png',
             title: 'Marketing 101',
             name: 'Anisha Tandon',
-            date: '12th Dec, 2021',
+            date: 'To be Announced, Register today to reserve your spot',
             time: '4:00 PM',
-            registerLink :  'https://fzuiq327sni.typeform.com/metvysessions'
+            registerLink :  'https://docs.google.com/forms/d/e/1FAIpQLSfD94LMD_49yhfRjCfo9IZEymxltQWaSjncL91LZ_vjIntcEA/viewform'
         },
         {
             imgName: 'Shawrya.png',
             title: 'Public Speaking 101',
             name: 'Shawrya Mehrotra',
-            date: 'To be Announced',
+            date: 'To be Announced, Register today to reserve your spot',
             time: 'Register today to reserve your spot.',
-            registerLink :  'https://fzuiq327sni.typeform.com/metvysessions'
+            registerLink :  'https://docs.google.com/forms/d/e/1FAIpQLSfD94LMD_49yhfRjCfo9IZEymxltQWaSjncL91LZ_vjIntcEA/viewform'
         },
     ];
 

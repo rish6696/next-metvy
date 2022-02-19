@@ -6,4 +6,4 @@ const  GET_URL={
 
 const env = 0;
 
-export const BASE_URL= GET_URL[env]
+export const BASE_URL= GET_URL[env] 
