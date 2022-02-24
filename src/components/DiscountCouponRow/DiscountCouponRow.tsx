@@ -56,12 +56,14 @@ const _DiscountCoupon = (props: Props) => {
                     rowORColumn="column"
                     justifyContent="center"
                     alignItem="center"
-                    onClick={() =>
+                    onClick={() => {
+                        window?.gtag('event', 'Apply_Now');
                         applyDiscountCode({
                             selectedDiscountCodeId: _id,
                             selectedDiscountCodePercent: percentDiscount,
                             selectedDiscountCodeText: code
                         })
+                    }
                     }
                 >
                     Apply Now
@@ -82,8 +84,8 @@ const _DiscountCoupon = (props: Props) => {
     };
 
     return (
-        <Col style={{padding:"0px"}} >
-            <FLexLayout  rowORColumn="row" justifyContent="center" alignItem="center">
+        <Col style={{ padding: "0px" }} >
+            <FLexLayout rowORColumn="row" justifyContent="center" alignItem="center">
                 {/* inner-container */}
                 <FLexLayout rowORColumn="column" className={Style['container']}>
                     {/* row-1 */}
