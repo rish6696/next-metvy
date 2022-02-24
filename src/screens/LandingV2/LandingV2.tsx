@@ -59,20 +59,28 @@ const _Landing = ({ setWidth, width }) => {
 
     const masterClasses = [
         {
-            imgName: 'ankur_img.png',
-            title: 'Getting your First Customers',
-            name: 'Ankur Jain',
-            date: '',
-            time: 'To be Announced, Register today to reserve your spot',
-            registerLink :  'https://docs.google.com/forms/d/e/1FAIpQLSfD94LMD_49yhfRjCfo9IZEymxltQWaSjncL91LZ_vjIntcEA/viewform'
+            imgName: 'Dhwani_Kachru.jpg',
+            title: 'Marketing Fundamentals for Startups',
+            name: 'Dhwani Kachru',
+            date: '25th Feb 2022',
+            time: '8 to 9 p.m',
+            registerLink: 'https://docs.google.com/forms/d/e/1FAIpQLSfD94LMD_49yhfRjCfo9IZEymxltQWaSjncL91LZ_vjIntcEA/viewform'
         },
+        // {
+        //     imgName: 'ankur_img.png',
+        //     title: 'Getting your First Customers',
+        //     name: 'Ankur Jain',
+        //     date: '',
+        //     time: 'To be Announced, Register today to reserve your spot',
+        //     registerLink :  'https://docs.google.com/forms/d/e/1FAIpQLSfD94LMD_49yhfRjCfo9IZEymxltQWaSjncL91LZ_vjIntcEA/viewform'
+        // },
         {
             imgName: 'anisha_img.png',
             title: 'Marketing 101',
             name: 'Anisha Tandon',
             date: 'To be Announced, Register today to reserve your spot',
             time: '',
-            registerLink :  'https://docs.google.com/forms/d/e/1FAIpQLSfD94LMD_49yhfRjCfo9IZEymxltQWaSjncL91LZ_vjIntcEA/viewform'
+            registerLink: 'https://docs.google.com/forms/d/e/1FAIpQLSfD94LMD_49yhfRjCfo9IZEymxltQWaSjncL91LZ_vjIntcEA/viewform'
         },
         {
             imgName: 'Shawrya.png',
@@ -80,7 +88,7 @@ const _Landing = ({ setWidth, width }) => {
             name: 'Shawrya Mehrotra',
             date: 'To be Announced, Register today to reserve your spot',
             time: '',
-            registerLink :  'https://docs.google.com/forms/d/e/1FAIpQLSfD94LMD_49yhfRjCfo9IZEymxltQWaSjncL91LZ_vjIntcEA/viewform'
+            registerLink: 'https://docs.google.com/forms/d/e/1FAIpQLSfD94LMD_49yhfRjCfo9IZEymxltQWaSjncL91LZ_vjIntcEA/viewform'
         },
     ];
 
@@ -710,14 +718,14 @@ const _Landing = ({ setWidth, width }) => {
                                     style={{
                                         position: 'relative',
                                         top: '55px',
-                                        cursor:'pointer'
+                                        cursor: 'pointer'
                                     }}
                                     order="3"
                                     className={Style['join-now-button']}
                                     rowORColumn="column"
                                     justifyContent="center"
                                     alignItem="center"
-                                    onClick={()=>window.open('https://t.me/joinchat/PRXD91iL538zNGM9')}
+                                    onClick={() => window.open('https://t.me/joinchat/PRXD91iL538zNGM9')}
 
                                 >
                                     Join Now
@@ -829,14 +837,14 @@ const _Landing = ({ setWidth, width }) => {
                                 style={{
                                     position: 'relative',
                                     bottom: '70px',
-                                    cursor:'pointer'
+                                    cursor: 'pointer'
 
                                 }}
                                 className={Style['join-now-button']}
                                 rowORColumn="column"
                                 justifyContent="center"
                                 alignItem="center"
-                                onClick={()=>window.open('https://t.me/joinchat/PRXD91iL538zNGM9')}
+                                onClick={() => window.open('https://t.me/joinchat/PRXD91iL538zNGM9')}
                             >
                                 Join Now
                             </FLexLayout>
@@ -1094,8 +1102,8 @@ const _Landing = ({ setWidth, width }) => {
                                         rowORColumn="row"
                                         alignItem="center"
                                         justifyContent="between"
-                                        onClick={()=>window.open("https://play.google.com/store/apps/details?id=com.metvy&hl=en_IN&gl=US")}
-                                        style={{cursor:'pointer'}}
+                                        onClick={() => window.open("https://play.google.com/store/apps/details?id=com.metvy&hl=en_IN&gl=US")}
+                                        style={{ cursor: 'pointer' }}
 
                                     >
                                         <div style={{ lineHeight: '14px' }}>
@@ -1103,7 +1111,7 @@ const _Landing = ({ setWidth, width }) => {
                                             <span
                                                 className={
                                                     Style[
-                                                        'download-button-subText'
+                                                    'download-button-subText'
                                                     ]
                                                 }
                                             >
@@ -1125,8 +1133,8 @@ const _Landing = ({ setWidth, width }) => {
                                         rowORColumn="row"
                                         alignItem="center"
                                         justifyContent="between"
-                                        style={{ cursor: "pointer"}}
-                                        onClick={()=>window.open("https://apps.apple.com/in/app/metvy-professional-networking/id1521043145")}
+                                        style={{ cursor: "pointer" }}
+                                        onClick={() => window.open("https://apps.apple.com/in/app/metvy-professional-networking/id1521043145")}
 
                                     >
                                         <div style={{ lineHeight: '14px' }}>
@@ -1134,7 +1142,7 @@ const _Landing = ({ setWidth, width }) => {
                                             <span
                                                 className={
                                                     Style[
-                                                        'download-button-subText'
+                                                    'download-button-subText'
                                                     ]
                                                 }
                                             >
@@ -1186,7 +1194,7 @@ const _Landing = ({ setWidth, width }) => {
                             alignItem="center"
                             rowORColumn="column"
                         >
-                        
+
                             <Carousel
                                 slide={false}
                                 interval={2000}
@@ -1231,8 +1239,8 @@ const _Landing = ({ setWidth, width }) => {
                                 rowORColumn="row"
                                 alignItem="center"
                                 justifyContent="between"
-                                onClick={()=>window.open("https://play.google.com/store/apps/details?id=com.metvy&hl=en_IN&gl=US")}
-                                style={{cursor:'pointer'}}
+                                onClick={() => window.open("https://play.google.com/store/apps/details?id=com.metvy&hl=en_IN&gl=US")}
+                                style={{ cursor: 'pointer' }}
                             >
                                 <div style={{ lineHeight: '14px' }}>
                                     Download <br />{' '}
@@ -1259,8 +1267,8 @@ const _Landing = ({ setWidth, width }) => {
                                 rowORColumn="row"
                                 alignItem="center"
                                 justifyContent="between"
-                                style={{ cursor: "pointer"}}
-                                onClick={()=>window.open("https://apps.apple.com/in/app/metvy-professional-networking/id1521043145")}
+                                style={{ cursor: "pointer" }}
+                                onClick={() => window.open("https://apps.apple.com/in/app/metvy-professional-networking/id1521043145")}
                             >
                                 <div style={{ lineHeight: '14px' }}>
                                     Download <br />{' '}
@@ -1301,7 +1309,7 @@ const _Landing = ({ setWidth, width }) => {
                                 <Row>
                                     {masterClasses.map((masterClass) => {
                                         return (
-                                            <Col onClick={()=>window.open(masterClass.registerLink)} style={{ marginTop: '50px',cursor:'pointer' }}>
+                                            <Col onClick={() => window.open(masterClass.registerLink)} style={{ marginTop: '50px', cursor: 'pointer' }}>
                                                 {/* master-class-card-box-wih apply button */}
                                                 <FLexLayout
                                                     alignItem="center"
@@ -1311,7 +1319,7 @@ const _Landing = ({ setWidth, width }) => {
                                                     <FLexLayout
                                                         className={
                                                             Style[
-                                                                'master-class-card'
+                                                            'master-class-card'
                                                             ]
                                                         }
                                                         rowORColumn="column"
@@ -1340,7 +1348,7 @@ const _Landing = ({ setWidth, width }) => {
                                                                     fontFamily:
                                                                         'poppinsSemiBold',
                                                                     fontSize:
-                                                                        '14px'
+                                                                        '12px'
                                                                 }}
                                                                 rowORColumn="column"
                                                                 justifyContent="center"
@@ -1411,7 +1419,7 @@ const _Landing = ({ setWidth, width }) => {
                                                         }}
                                                         className={
                                                             Style[
-                                                                'master-class-apply-button'
+                                                            'master-class-apply-button'
                                                             ]
                                                         }
                                                     >
