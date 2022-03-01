@@ -49,6 +49,7 @@ const _DiscountCoupon = (props: Props) => {
     };
 
     const getApplyNowButton = () => {
+        var window: any = window;
         if (totalCourseSelected() >= numberOfCourses) {
             return (
                 <FLexLayout
