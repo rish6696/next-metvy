@@ -59,12 +59,12 @@ const _Landing = ({ setWidth, width }) => {
 
     const masterClasses = [
         {
-            imgName: 'Dhwani_Kachru.jpg',
-            title: 'Marketing Fundamentals for Startups',
-            name: 'Dhwani Kachru',
-            date: '25th Feb 2022',
-            time: '8 to 9 p.m',
-            registerLink: 'https://docs.google.com/forms/d/e/1FAIpQLSfD94LMD_49yhfRjCfo9IZEymxltQWaSjncL91LZ_vjIntcEA/viewform'
+            imgName: 'Dhairya-Gangwani.jpeg',
+            title: 'Resume Revamp',
+            name: 'Dhairya Gangwani',
+            date: '12th March 2022',
+            time: ' 6 to 7 PM',
+            registerLink: 'http://bit.ly/3tK2WX9'
         },
         // {
         //     imgName: 'ankur_img.png',

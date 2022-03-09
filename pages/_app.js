@@ -9,6 +9,16 @@ function MyApp({ Component, pageProps }) {
     const router = useRouter();
     useEffect(() => {
         router.events.on('routeChangeComplete', url => console.log(url, 'test'));
+        import('react-facebook-pixel')
+            .then((x) => x.default)
+            .then((ReactPixel) => {
+                ReactPixel.init('314578354069344') // facebookPixelId
+                ReactPixel.pageView()
+
+                router.events.on('routeChangeComplete', () => {
+                    ReactPixel.pageView()
+                })
+            })
     },[router.events])
     return (
     <Provider store={Store} >
