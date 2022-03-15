@@ -2,11 +2,47 @@
     color: red;
 }
 
-.page-body {
+.page-body {}
+
+.mainFont {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 44px;
+    line-height: 135%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+}
+
+.mainFontMobile {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 135%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    align-content: center;
 }
 
 .content-container-landing {
     padding-top: 80px;
+}
+
+.apply-button {
+    background: linear-gradient(106.23deg, #9874FF 13.14%, #070058 105.98%);
+    box-shadow: 0px 17px 117px rgba(0, 0, 0, 0.05);
+    border-radius: 13px;
+    color: white;
+    border: none;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
 }
 
 /* less than 400  */
@@ -157,13 +193,11 @@
         font-family: 'poppinsSemiBold';
         text-align: center;
         font-size: 24px;
-        background: -webkit-linear-gradient(
-            83.37deg,
-            #000000 -21.54%,
-            #0e3b70 67.68%,
-            #c1e1ff 118.29%,
-            #000000 152.95%
-        );
+        background: -webkit-linear-gradient(83.37deg,
+                #000000 -21.54%,
+                #0e3b70 67.68%,
+                #c1e1ff 118.29%,
+                #000000 152.95%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         margin-top: 50px;
@@ -376,17 +410,16 @@
         font-family: 'poppinsSemiBold';
         text-align: center;
         font-size: 26px;
-        background: -webkit-linear-gradient(
-            83.37deg,
-            #000000 -21.54%,
-            #0e3b70 67.68%,
-            #c1e1ff 118.29%,
-            #000000 152.95%
-        );
+        background: -webkit-linear-gradient(83.37deg,
+                #000000 -21.54%,
+                #0e3b70 67.68%,
+                #c1e1ff 118.29%,
+                #000000 152.95%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         margin-top: 50px;
     }
+
     .trusted-testimonial-headline {
         font-family: 'poppinsSemiBold';
         font-size: 20px;
@@ -838,13 +871,11 @@
     .master-class-heading {
         font-family: 'poppinsSemiBold';
         font-size: 45px;
-        background: -webkit-linear-gradient(
-            83.37deg,
-            #000000 -21.54%,
-            #0e3b70 67.68%,
-            #c1e1ff 118.29%,
-            #000000 152.95%
-        );
+        background: -webkit-linear-gradient(83.37deg,
+                #000000 -21.54%,
+                #0e3b70 67.68%,
+                #c1e1ff 118.29%,
+                #000000 152.95%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
@@ -932,6 +963,7 @@
     box-shadow: 0px 12px 92px 0px rgba(0, 0, 0, 0.21);
     margin-top: 84px;
     background-color: #ffffff;
+    border-radius: 15px;
 }
 
 .community-shaded-box-desktop {
@@ -945,13 +977,11 @@
 .community-heading-desktop {
     font-family: 'poppinsSemiBold';
     font-size: 36px;
-    background: -webkit-linear-gradient(
-        83.37deg,
-        #000000 -21.54%,
-        #0e3b70 67.68%,
-        #c1e1ff 118.29%,
-        #000000 152.95%
-    );
+    background: -webkit-linear-gradient(83.37deg,
+            #000000 -21.54%,
+            #0e3b70 67.68%,
+            #c1e1ff 118.29%,
+            #000000 152.95%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -959,13 +989,11 @@
 .community-heading-mobile {
     font-family: 'poppinsSemiBold';
     font-size: 26px;
-    background: -webkit-linear-gradient(
-        83.37deg,
-        #000000 -21.54%,
-        #0e3b70 67.68%,
-        #c1e1ff 118.29%,
-        #000000 152.95%
-    );
+    background: -webkit-linear-gradient(83.37deg,
+            #000000 -21.54%,
+            #0e3b70 67.68%,
+            #c1e1ff 118.29%,
+            #000000 152.95%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -1005,6 +1033,7 @@
     position: relative;
     color: white;
 }
+
 .scroll-left .effect {
     position: absolute;
     width: 100%;
@@ -1017,9 +1046,9 @@
     -webkit-transform: translateX(100%);
     transform: translateX(100%);
     /* Apply animation to this element */
-    -moz-animation: scroll-left 10s linear infinite;
-    -webkit-animation: scroll-left 10s linear infinite;
-    animation: scroll-left 20s linear infinite;
+    -moz-animation: scroll-left 40s linear infinite;
+    -webkit-animation: scroll-left 40s linear infinite;
+    animation: scroll-left 60s linear infinite !important;
 }
 
 .scroll-left p:hover {
@@ -1045,13 +1074,18 @@
 } */
 @keyframes scroll-left {
     0% {
-        -moz-transform: translateX(100%); /* Browser bug fix */
-        -webkit-transform: translateX(100%); /* Browser bug fix */
+        -moz-transform: translateX(100%);
+        /* Browser bug fix */
+        -webkit-transform: translateX(100%);
+        /* Browser bug fix */
         transform: translateX(100%);
     }
+
     100% {
-        -moz-transform: translateX(-100%); /* Browser bug fix */
-        -webkit-transform: translateX(-100%); /* Browser bug fix */
+        -moz-transform: translateX(-100%);
+        /* Browser bug fix */
+        -webkit-transform: translateX(-100%);
+        /* Browser bug fix */
         transform: translateX(-100%);
     }
 }
@@ -1069,8 +1103,49 @@
         left: 4000px;
         top: 0px;
     }
+
     100% {
         left: -1500px;
         top: 0px;
     }
+}
+
+/* Slideshow */
+
+.slideshow {
+    margin: 0 auto;
+    overflow: hidden;
+    max-width: 500px;
+}
+
+.slideshowSlider {
+    white-space: nowrap;
+    transition: ease 1000ms;
+}
+
+.slide {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 40px;
+}
+
+/* Buttons */
+
+.slideshowDots {
+    text-align: center;
+}
+
+.slideshowDot {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 15px 7px 0px;
+    background-color: #c4c4c4;
+}
+
+.slideshowDot.active {
+    background-color: #6a0dad;
 }
