@@ -375,12 +375,12 @@ function _LandingScreen({ setWidth, width }) {
                             rowORColumn="row"
                             alignItem="center"
                             justifyContent="between"
-                            style={{ marginRight: '17px',cursor: "pointer"}}
-                            onClick={()=>window.open("https://play.google.com/store/apps/details?id=com.metvy&hl=en_IN&gl=US")}
+                            style={{ marginRight: '17px', cursor: "pointer" }}
+                            onClick={() => window.open("https://play.google.com/store/apps/details?id=com.metvy&hl=en_IN&gl=US")}
                         >
                             <FLexLayout
                                 rowORColumn="column"
-                                // style={{ marginRight: `${0.027 * width}px` }}
+                            // style={{ marginRight: `${0.027 * width}px` }}
                             >
                                 <div
                                     style={{
@@ -408,8 +408,8 @@ function _LandingScreen({ setWidth, width }) {
                             rowORColumn="row"
                             alignItem="center"
                             justifyContent="between"
-                            style={{ marginRight: '17px',cursor: "pointer"}}
-                            onClick={()=>window.open("https://apps.apple.com/in/app/metvy-professional-networking/id1521043145")}
+                            style={{ marginRight: '17px', cursor: "pointer" }}
+                            onClick={() => window.open("https://apps.apple.com/in/app/metvy-professional-networking/id1521043145")}
 
                         >
                             <FLexLayout rowORColumn="column">
@@ -434,7 +434,7 @@ function _LandingScreen({ setWidth, width }) {
                             />
                         </FLexLayout>
 
-                    
+
                     </FLexLayout>
                 </FLexLayout>
 
@@ -495,7 +495,7 @@ function _LandingScreen({ setWidth, width }) {
                         {' '}
                     </div>
                 </FLexLayout>
-               
+
                 {/* carousel-3d+ heading _screen */}
                 <div id={'explore-carousel'}>
                     {/* carousel-screen-name */}
@@ -597,7 +597,7 @@ function _LandingScreen({ setWidth, width }) {
                         }}
                         rowORColumn="row"
                     >
-                       {appTestimonialsData.map(testimonial=>( <TestimonialCard
+                        {appTestimonialsData.map(testimonial => (<TestimonialCard
                             testimonialText={testimonial.text}
                             avatarImage={testimonial.imageName}
                             designation={testimonial.title}

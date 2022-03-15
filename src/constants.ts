@@ -25,6 +25,34 @@ export const firstPartCardData = [
     }
 ];
 
+export const faqData = [
+    {
+        key:'question1',
+        question: 'What’s the Program Duration?',
+        answer:'We offer 30-day curated upskilling programs which require a commitment of 4 hours per week from the user’s end.'
+    },
+    {
+        key:'question2',
+        question: 'What if I miss a live session?',
+        answer:'In such cases, we provide session recordings for each session that has happened, and one can refer to them at any time (Recordings would be available for 1 week after the cohort ends).'
+    },
+    {
+        key:'question3',
+        question: 'Is there any deadline to register?',
+        answer:'For every cohort the registration are opened till the last day of the previous cohort ( Subject to seat availability).'
+    },
+    {
+        key:'question4',
+        question: 'What is the time commitment for any of these programs?',
+        answer:'All the programs require a commitment of 4 hours per week from the user’s end.'
+    },
+    {
+        key:'question5',
+        question: 'What do I get after successful completion of the program?',
+        answer:'After the successful completion of the cohort one would received a certificate and a letter of recommendation backed by NSRCEL, IIM Bangalore and ANDC InStart Foundation.'
+    },
+]
+
 export const courses = [
     { name: 'Research Program', routePath: '/research_program' },
     { name: 'Design program', routePath: '/design_program' },
@@ -989,7 +1017,151 @@ export const appTestimonialsData = [
          from diversebackgrounds. It is a massive professional aid that’s a must have for everyone,
           I would highly recommend it!`,
         title: 'PGP at IIM Kozhikode '
-    }
+    },
+    {
+        fullName: 'Manan Gupta',
+        imageName: '/icons/Manan.png',
+        text: `I have tried a lot of apps with similar purposes but this one
+         is way better than the rest. Love how easy the app makes networking and having
+          a conversation with like minded people! Also the meetup feature is fantastic.`,
+        title: 'Analyst at Bain & Co.'
+    },
+    {
+        fullName: 'Devyani Rana',
+        imageName: '/icons/Devyani.png',
+        text: `Metvy provides a more comprehensible picture of your professional relationships,
+         making it an ideal tool to kick-start your networking. But, apart from the exposure, 
+         what I like best about it is how it emphasises character development and networking.`,
+        title: 'Intern at Bain & Co.'
+    },
+    {
+        fullName: 'Pradyumna Chouhan',
+        imageName: '/icons/Pradyumna.png',
+        text: `I enjoyed the app since it allowed me to connect to the right mentors and industry experts.
+         I found a lot of internship possibilities because of this app. It provided networking opportunities
+          as well as meeting possibilities. It’s amazing!`,
+        title: 'Ex-Mex Enterprises'
+    },
+    {
+        fullName: 'Teesta Saha',
+        imageName: '/icons/Teesta.png',
+        text: `I was looking for an app for premium networking experiences, I think the search is over! 
+        Glad that I came across this app, this makes my professional networking experience flawless.
+         The business card feature and the meet up feature are my favourite!`,
+        title: 'Student at  DSE, Ex-KPMG'
+    },
+    {
+        fullName: 'Prisha Jain',
+        imageName: '/icons/Prisha.png',
+        text: `I was looking for an app for premium networking experiences, I think the search is over! 
+        Glad that I came across this app, this makes my professional networking experience flawless.
+         The business card feature and the meet up feature are my favourite!`,
+        title: 'Student at LSR'
+    },
+    {
+        fullName: 'Keshav Daga',
+        imageName: '/icons/Keshav.png',
+        text: `The perfect platform to have a seamless networking experience and connect with people
+         from diversebackgrounds. It is a massive professional aid that’s a must have for everyone,
+          I would highly recommend it!`,
+        title: 'PGP at IIM Kozhikode '
+    },
+    {
+        fullName: 'Manan Gupta',
+        imageName: '/icons/Manan.png',
+        text: `I have tried a lot of apps with similar purposes but this one
+         is way better than the rest. Love how easy the app makes networking and having
+          a conversation with like minded people! Also the meetup feature is fantastic.`,
+        title: 'Analyst at Bain & Co.'
+    },
+    {
+        fullName: 'Devyani Rana',
+        imageName: '/icons/Devyani.png',
+        text: `Metvy provides a more comprehensible picture of your professional relationships,
+         making it an ideal tool to kick-start your networking. But, apart from the exposure, 
+         what I like best about it is how it emphasises character development and networking.`,
+        title: 'Intern at Bain & Co.'
+    },
+    {
+        fullName: 'Pradyumna Chouhan',
+        imageName: '/icons/Pradyumna.png',
+        text: `I enjoyed the app since it allowed me to connect to the right mentors and industry experts.
+         I found a lot of internship possibilities because of this app. It provided networking opportunities
+          as well as meeting possibilities. It’s amazing!`,
+        title: 'Ex-Mex Enterprises'
+    },
+    {
+        fullName: 'Teesta Saha',
+        imageName: '/icons/Teesta.png',
+        text: `I was looking for an app for premium networking experiences, I think the search is over! 
+        Glad that I came across this app, this makes my professional networking experience flawless.
+         The business card feature and the meet up feature are my favourite!`,
+        title: 'Student at  DSE, Ex-KPMG'
+    },
+    {
+        fullName: 'Prisha Jain',
+        imageName: '/icons/Prisha.png',
+        text: `I was looking for an app for premium networking experiences, I think the search is over! 
+        Glad that I came across this app, this makes my professional networking experience flawless.
+         The business card feature and the meet up feature are my favourite!`,
+        title: 'Student at LSR'
+    },
+    {
+        fullName: 'Keshav Daga',
+        imageName: '/icons/Keshav.png',
+        text: `The perfect platform to have a seamless networking experience and connect with people
+         from diversebackgrounds. It is a massive professional aid that’s a must have for everyone,
+          I would highly recommend it!`,
+        title: 'PGP at IIM Kozhikode '
+    },
+    {
+        fullName: 'Manan Gupta',
+        imageName: '/icons/Manan.png',
+        text: `I have tried a lot of apps with similar purposes but this one
+         is way better than the rest. Love how easy the app makes networking and having
+          a conversation with like minded people! Also the meetup feature is fantastic.`,
+        title: 'Analyst at Bain & Co.'
+    },
+    {
+        fullName: 'Devyani Rana',
+        imageName: '/icons/Devyani.png',
+        text: `Metvy provides a more comprehensible picture of your professional relationships,
+         making it an ideal tool to kick-start your networking. But, apart from the exposure, 
+         what I like best about it is how it emphasises character development and networking.`,
+        title: 'Intern at Bain & Co.'
+    },
+    {
+        fullName: 'Pradyumna Chouhan',
+        imageName: '/icons/Pradyumna.png',
+        text: `I enjoyed the app since it allowed me to connect to the right mentors and industry experts.
+         I found a lot of internship possibilities because of this app. It provided networking opportunities
+          as well as meeting possibilities. It’s amazing!`,
+        title: 'Ex-Mex Enterprises'
+    },
+    {
+        fullName: 'Teesta Saha',
+        imageName: '/icons/Teesta.png',
+        text: `I was looking for an app for premium networking experiences, I think the search is over! 
+        Glad that I came across this app, this makes my professional networking experience flawless.
+         The business card feature and the meet up feature are my favourite!`,
+        title: 'Student at  DSE, Ex-KPMG'
+    },
+    {
+        fullName: 'Prisha Jain',
+        imageName: '/icons/Prisha.png',
+        text: `I was looking for an app for premium networking experiences, I think the search is over! 
+        Glad that I came across this app, this makes my professional networking experience flawless.
+         The business card feature and the meet up feature are my favourite!`,
+        title: 'Student at LSR'
+    },
+    {
+        fullName: 'Keshav Daga',
+        imageName: '/icons/Keshav.png',
+        text: `The perfect platform to have a seamless networking experience and connect with people
+         from diversebackgrounds. It is a massive professional aid that’s a must have for everyone,
+          I would highly recommend it!`,
+        title: 'PGP at IIM Kozhikode '
+    },
 ];
 
 export const learnTestimonialsData = [
