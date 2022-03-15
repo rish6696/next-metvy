@@ -417,13 +417,13 @@ const _Landing = ({ setWidth, width }) => {
                         rowORColumn="row"
                         alignItem="center"
                         className={Style['companies-container-desktop']}
-                        style={{ width: '60%', height: '100%' }}
+                        style={{ width: '75%', height: '100%' }}
                     >
                         <div style={{ display: 'flex', flexDirection: 'column' }}>
                             <div style={{ padding: '15px' }}><img
                                 src="/icons/Amazon-logo.png"
                                 style={{
-                                    width: '144.4px',
+                                    width: '138.4px',
                                     height: '38px',
                                     left: '95px',
                                     top: '1284.1px',
@@ -432,7 +432,7 @@ const _Landing = ({ setWidth, width }) => {
                                 <img
                                     src="/icons/pepsi-logo.png"
                                     style={{
-                                        width: '152px',
+                                        width: '140px',
                                         height: '43.7px',
                                         left: '321.1px',
                                         top: '1267px',
@@ -452,7 +452,7 @@ const _Landing = ({ setWidth, width }) => {
                                 <img
                                     src="/icons/Walmart-logo.png"
                                     style={{
-                                        width: '132.05px',
+                                        width: '128px',
                                         height: '32.3px',
                                         left: '721.05px',
                                         top: '1280.3px',
@@ -462,7 +462,7 @@ const _Landing = ({ setWidth, width }) => {
                                 <img
                                     src="/icons/Google_logo.png"
                                     style={{
-                                        width: '131.1px',
+                                        width: '110px',
                                         height: '37.05px',
                                         left: '916.75px',
                                         top: '1278.4px',
@@ -472,7 +472,7 @@ const _Landing = ({ setWidth, width }) => {
                                 <img
                                     src="/icons/Adobe-logo.png"
                                     style={{
-                                        width: '115.9px',
+                                        width: '110.9px',
                                         height: '29.45px',
                                         left: '1109.6px',
                                         top: '1284.1px',
@@ -483,7 +483,7 @@ const _Landing = ({ setWidth, width }) => {
                             <div style={{ padding: '15px' }}><img
                                 src="/icons/ig-logo.png"
                                 style={{
-                                    width: '142.5px',
+                                    width: '130.5px',
                                     height: '46.55px',
                                     left: '1091.55px',
                                     top: '1391.45px',
@@ -492,7 +492,7 @@ const _Landing = ({ setWidth, width }) => {
                                 <img
                                     src="/icons/Facebook-Logo.png"
                                     style={{
-                                        width: '111.15px',
+                                        width: '110.15px',
                                         height: '40.85px',
                                         left: '108.3px',
                                         top: '1388.6px',
@@ -503,7 +503,7 @@ const _Landing = ({ setWidth, width }) => {
                                 <img
                                     src="/icons/microsoft-logo.png"
                                     style={{
-                                        width: '121.6px',
+                                        width: '110.6px',
                                         height: '24.7px',
                                         left: '301.15px',
                                         top: '1396.2px',
@@ -514,7 +514,7 @@ const _Landing = ({ setWidth, width }) => {
                                 <img
                                     src="/icons/Nike-logo.png"
                                     style={{
-                                        width: '81.7px',
+                                        width: '75px',
                                         height: '42.75px',
                                         left: '504.45px',
                                         top: '1387.65px',
@@ -524,7 +524,7 @@ const _Landing = ({ setWidth, width }) => {
                                 <img
                                     src="icons/WB-logo.png"
                                     style={{
-                                        width: '137.75px',
+                                        width: '130.75px',
                                         height: '26.6px',
                                         left: '667.85px',
                                         top: '1400px',
@@ -535,7 +535,7 @@ const _Landing = ({ setWidth, width }) => {
                                 <img
                                     src="icons/Paytm-logo.png"
                                     style={{
-                                        width: '123.5px',
+                                        width: '110.5px',
                                         height: '36.1px',
                                         left: '887.3px',
                                         top: '1390.5px',
@@ -1464,7 +1464,7 @@ const _Landing = ({ setWidth, width }) => {
                                         display: 'flex',
                                     }} onClick={questionThree}><div style={{ width: '50%' }}>Is there any deadline to register?</div><div style={{ display: 'block', width: '40%', textAlign: 'end' }} id="blackPolygon3"><img src="/icons/Polygon-black.png" /></div><div style={{ display: 'none', width: '40%', textAlign: 'end' }} id="whitePolygon3"><img src="/icons/Polygon-white.png" /></div></button>
                                     <div id="myDIV3" style={{ fontSize: '15px', display: 'none', textAlign: 'start', padding: '15px' }}>
-                                        For every cohort the registration are opened till the last day of the previous cohort ( Subject to seat availability).
+                                        For every cohort the registration are opened till the last day of the previous cohort (Subject to seat availability).
                                     </div>
                                 </div>
                                 <div style={{
