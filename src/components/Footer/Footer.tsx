@@ -90,31 +90,31 @@ const _Footer = () => {
                             <Image
                                 className={Style['footer-social-media-items']}
                                 // style={{ width: '21px', height: '21px' }}
-                                src="/icons/Vector_fb.png"
+                                src="/icons/facebook-logo.png"
                                 onClick={() => window.open(socialMediaLinks.facebook)}
                             />
                             <Image
                                 className={Style['footer-social-media-items']}
                                 // style={{ width: '21px', height: '21px' }}
-                                src="/icons/010-linkedin.png"
+                                src="/icons/linkedin-logo.png"
                                 onClick={() => window.open(socialMediaLinks.linkedIn)}
                             />
                             <Image
                                 className={Style['footer-social-media-items']}
                                 // style={{ width: '21px', height: '21px' }}
-                                src="/icons/013-twitter.png"
+                                src="/icons/twitter-logo.png"
                                 onClick={() => window.open(socialMediaLinks.twitter)}
                             />
                             <Image
                                 className={Style['footer-social-media-items']}
                                 // style={{ width: '21px', height: '21px' }}
-                                src="/icons/011-instagram.png"
+                                src="/icons/instagram-logo.png"
                                 onClick={() => window.open(socialMediaLinks.instagram)}
                             />
                             <Image
                                 className={Style['footer-social-media-items']}
                                 // style={{ width: '21px', height: '21px' }}
-                                src="/icons/008-youtube.png"
+                                src="/icons/youtube-logo.png"
                                 onClick={() => window.open(socialMediaLinks.youtube)}
                             />
                         </FLexLayout>
