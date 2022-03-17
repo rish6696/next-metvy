@@ -4,13 +4,12 @@ import BackgroundBlur from '../../components/BackgroundEffectBlur/BackgroundEffe
 import FLexLayout from '../../components/FlexLayout';
 import { Image, Row, Container, Col, Carousel } from 'react-bootstrap';
 import { setWidth } from '../../redux/Actions/Screenconfig';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import TestimonialCard from '../../components/TestimonialsV2/testimonialV2';
-import { appTestimonialsData, faqData } from '../../constants';
+import { appTestimonialsData } from '../../constants';
 import Footer from '../../components/Footer/Footer';
 import { useRouter } from 'next/router';
-import SubmitForm from '../../components/SubmitForm/SubmitForm';
 
 const _Landing = ({ setWidth, width }) => {
     const router = useRouter();
@@ -56,41 +55,28 @@ const _Landing = ({ setWidth, width }) => {
 
     const [animationState, setAnimationState] = useState('running');
 
-
-
     const masterClasses = [
         {
-            imgName: 'Dhwani_Kachru.jpg',
-            title: 'Marketing Fundamentals for Startups',
-            name: 'Dhwani Kachru',
-            date: '25th Feb 2022',
-            time: '8 to 9 p.m',
-            registerLink: 'https://docs.google.com/forms/d/e/1FAIpQLSfD94LMD_49yhfRjCfo9IZEymxltQWaSjncL91LZ_vjIntcEA/viewform'
-        },
-        // {
-        //     imgName: 'ankur_img.png',
-        //     title: 'Getting your First Customers',
-        //     name: 'Ankur Jain',
-        //     date: '',
-        //     time: 'To be Announced, Register today to reserve your spot',
-        //     registerLink :  'https://docs.google.com/forms/d/e/1FAIpQLSfD94LMD_49yhfRjCfo9IZEymxltQWaSjncL91LZ_vjIntcEA/viewform'
-        // },
-        {
-            imgName: 'anisha_img.png',
-            title: 'Marketing 101',
-            name: 'Anisha Tandon',
-            date: 'To be Announced, Register today to reserve your spot',
-            time: '',
-            registerLink: 'https://docs.google.com/forms/d/e/1FAIpQLSfD94LMD_49yhfRjCfo9IZEymxltQWaSjncL91LZ_vjIntcEA/viewform'
+            imgName: 'Shawrya.png',
+            title: 'How to build a Startup ?',
+            name: 'Shawrya Mehrotra',
+            date: '29th October,2021',
+            time: '6-7 PM'
         },
         {
             imgName: 'Shawrya.png',
-            title: 'Public Speaking 101',
+            title: 'How to build a Startup ?',
             name: 'Shawrya Mehrotra',
-            date: 'To be Announced, Register today to reserve your spot',
-            time: '',
-            registerLink: 'https://docs.google.com/forms/d/e/1FAIpQLSfD94LMD_49yhfRjCfo9IZEymxltQWaSjncL91LZ_vjIntcEA/viewform'
+            date: '29th October,2021',
+            time: '6-7 PM'
         },
+        {
+            imgName: 'Shawrya.png',
+            title: 'How to build a Startup ?',
+            name: 'Shawrya Mehrotra',
+            date: '29th October,2021',
+            time: '6-7 PM'
+        }
     ];
 
     const getAdvertisementTextAndStatistics = () => {
@@ -205,208 +191,95 @@ const _Landing = ({ setWidth, width }) => {
         );
     };
 
-    const designCourse = () => {
-        console.log('testt');
-        window.location.href = "https://metvy.com/design_program";
-    }
-
-    const consultancyCourse = () => {
-        console.log('testt');
-        window.location.href = "https://metvy.com/consultancy_program";
-    }
-
-    const businessCourse = () => {
-        console.log('testt');
-        window.location.href = "https://metvy.com/business_program";
-    }
-
-    function questionOne() {
-        var x = document.getElementById("myDIV1");
-        var y = document.getElementById("questionDiv1");
-        var black = document.getElementById("blackPolygon1");
-        var white = document.getElementById("whitePolygon1");
-        if (x.style.display === "none") {
-            x.style.display = "block";
-            // x.style.marginTop = "20px";
-            y.style.height = width < 900 ? "180px" : "150px";
-            y.style.boxShadow = "0px 4px 4px rgba(0, 0, 0, 0.05), 0px 18px 166px rgba(0, 0, 0, 0.05)";
-            black.style.display = "none";
-            white.style.display = "block";
-            black.style.display = "none";
-        } else {
-            x.style.display = "none";
-            y.style.height = "80px";
-            white.style.display = "none";
-            black.style.display = "block";
-            y.style.boxShadow = "none";
-        }
-    }
-
-    function questionTwo() {
-        var x = document.getElementById("myDIV2");
-        var y = document.getElementById("questionDiv2");
-        var black = document.getElementById("blackPolygon2");
-        var white = document.getElementById("whitePolygon2");
-        if (x.style.display === "none") {
-            x.style.display = "block";
-            // x.style.marginTop = "20px";
-            y.style.height = width < 900 ? "180px" : "150px";
-            y.style.boxShadow = "0px 4px 4px rgba(0, 0, 0, 0.05), 0px 18px 166px rgba(0, 0, 0, 0.05)";
-            black.style.display = "none";
-            white.style.display = "block";
-            black.style.display = "none";
-        } else {
-            x.style.display = "none";
-            y.style.height = "80px";
-            white.style.display = "none";
-            black.style.display = "block";
-            y.style.boxShadow = "none";
-        }
-    }
-
-    function questionThree() {
-        var x = document.getElementById("myDIV3");
-        var y = document.getElementById("questionDiv3");
-        var black = document.getElementById("blackPolygon3");
-        var white = document.getElementById("whitePolygon3");
-        if (x.style.display === "none") {
-            x.style.display = "block";
-            // x.style.marginTop = "20px";
-            y.style.height = width < 900 ? "180px" : "150px";
-            y.style.boxShadow = "0px 4px 4px rgba(0, 0, 0, 0.05), 0px 18px 166px rgba(0, 0, 0, 0.05)";
-            black.style.display = "none";
-            white.style.display = "block";
-            black.style.display = "none";
-        } else {
-            x.style.display = "none";
-            y.style.height = "80px";
-            white.style.display = "none";
-            black.style.display = "block";
-            y.style.boxShadow = "none";
-        }
-    }
-
-    function questionFour() {
-        var x = document.getElementById("myDIV4");
-        var y = document.getElementById("questionDiv4");
-        var black = document.getElementById("blackPolygon4");
-        var white = document.getElementById("whitePolygon4");
-        if (x.style.display === "none") {
-            x.style.display = "block";
-            // x.style.marginTop = "20px";
-            y.style.height = width < 900 ? "180px" : "150px";
-            y.style.boxShadow = "0px 4px 4px rgba(0, 0, 0, 0.05), 0px 18px 166px rgba(0, 0, 0, 0.05)";
-            black.style.display = "none";
-            white.style.display = "block";
-            black.style.display = "none";
-        } else {
-            x.style.display = "none";
-            y.style.height = "80px";
-            white.style.display = "none";
-            black.style.display = "block";
-            y.style.boxShadow = "none";
-        }
-    }
-
-    function questionFive() {
-        var x = document.getElementById("myDIV5");
-        var y = document.getElementById("questionDiv5");
-        var black = document.getElementById("blackPolygon5");
-        var white = document.getElementById("whitePolygon5");
-        if (x.style.display === "none") {
-            x.style.display = "block";
-            // x.style.marginTop = "20px";
-            y.style.height = width < 900 ? "180px" : "150px";
-            y.style.boxShadow = "0px 4px 4px rgba(0, 0, 0, 0.05), 0px 18px 166px rgba(0, 0, 0, 0.05)";
-            black.style.display = "none";
-            white.style.display = "block";
-            black.style.display = "none";
-        } else {
-            x.style.display = "none";
-            y.style.height = "80px";
-            white.style.display = "none";
-            black.style.display = "block";
-            y.style.boxShadow = "none";
-        }
-    }
-
-
-    const colors = ["/icons/Mobile-P-P-L.png", "/icons/Mobile-L-F-I-E.png", "/icons/Mobile-P-L.png"];
-    const delay = 5000;
-    const [index, setIndex] = useState(0);
-    const timeoutRef = useRef(null);
-
-    function resetTimeout() {
-        if (timeoutRef.current) {
-            clearTimeout(timeoutRef.current);
-        }
-    }
-
-    useEffect(() => {
-        resetTimeout();
-        timeoutRef.current = setTimeout(
-            () =>
-                setIndex((prevIndex) =>
-                    prevIndex === colors.length - 1 ? 0 : prevIndex + 1
-                ),
-            delay
-        );
-
-        return () => {
-            resetTimeout();
-        };
-    }, [index]);
-
     return (
-        <div className={Style['page-body']} style={{ marginTop: width < 900 && '50px', backgroundImage: width >= 1221 ? `url("/icons/Header.png")` : width < 1221 && width > 900 ? `url("/icons/Header.png")` : `url("/icons/Mobile-Header.png")`, backgroundRepeat: 'no-repeat', backgroundSize: '100%', width: width < 900 && '150%' }}>
-            <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'></link>
+        <div className={Style['page-body']}>
             <BackgroundBlur />
             <HeaderV2 />
-            {width >= 1221 && (<FLexLayout
-                rowORColumn="column"
-                className={Style['content-container-landing']}
-                style={{
-                    marginLeft: '70%', paddingBottom: '10%', position: 'sticky', top: '-700px', width: '25%', zIndex: 10, backgroundColor: 'transparent', backgroundSize: '100%',
-                }}
-            ><SubmitForm /></FLexLayout>)}
-            {/* {width >= 1221 && <div style={{ height: '115vh' }}></div>} */}
-            {width < 1221 && width > 900 && <div style={{ height: '60vh' }}></div>}
-            {width < 900 && <div style={{ height: '70vh' }}></div>}
-            {width < 1260 && (<a href="#submitForm"><FLexLayout
-                rowORColumn="column"
-                className={Style['content-container-landing']}
-                style={{ alignItems: 'center' }}
-            ><button style={{ width: '25%', height: '45px' }} className={Style['apply-button']}>Apply Now</button>
-            </FLexLayout></a>)}
             <FLexLayout
                 rowORColumn="column"
                 className={Style['content-container-landing']}
-                style={{ paddingBottom: '15%', marginTop: width >= 1221 && '-30%', paddingLeft: width >= 1221 && '5%' }}
             >
+                <FLexLayout justifyContent="center" rowORColumn="row">
+                    {/* advertisement text + getstarted button + statistics (for Desktop) */}
+                    {width > 1000 && (
+                        <FLexLayout
+                            justifyContent="center"
+                            style={{
+                                paddingLeft: '50px',
+                                paddingRight: '50px',
+                                width: '100%'
+                            }}
+                            rowORColumn="column"
+                        >
+                            {/* Display Advertisement text and statistics if Viewport greater than 1000 */}
+                            {width > 1000 &&
+                                getAdvertisementTextAndStatistics()}
+                        </FLexLayout>
+                    )}
+
+                    <Carousel
+                        slide={false}
+                        interval={2000}
+                        fade={true}
+                        controls={false}
+                        indicators={false}
+                    >
+                        <Carousel.Item>
+                            <FLexLayout
+                                rowORColumn="row"
+                                justifyContent={'center'}
+                                alignItem="center"
+                            >
+                                <img
+                                    style={{
+                                        width: getImageWidth(),
+                                        aspectRatio: '511 : 607'
+                                    }}
+                                    src="/icons/Mentor - 1.png"
+                                />
+                            </FLexLayout>
+                        </Carousel.Item>
+
+                        <Carousel.Item>
+                            <FLexLayout
+                                rowORColumn="row"
+                                justifyContent={'center'}
+                                alignItem="center"
+                            >
+                                <img
+                                    style={{
+                                        width: getImageWidth(),
+                                        aspectRatio: '511 : 607'
+                                    }}
+                                    src="/icons/Mentor - 2.png"
+                                />
+                            </FLexLayout>
+                        </Carousel.Item>
+                    </Carousel>
+                </FLexLayout>
+
+                {width < 1000 && (
+                    <FLexLayout
+                        rowORColumn="row"
+                        style={{ paddingLeft: '20px', paddingRight: '20px' }}
+                        justifyContent="center"
+                        alignItem="center"
+                    >
+                        {getAdvertisementTextAndStatistics()}
+                    </FLexLayout>
+                )}
+
                 {/* mentors-from-title */}
+
                 {width >= 1221 && (
                     <FLexLayout
                         justifyContent="center"
                         alignItem="center"
-                        rowORColumn="row"
-                        style={{
-                            width: '60%',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            fontFamily: 'Poppins',
-                            fontStyle: 'normal',
-                            fontWeight: 600,
-                            fontSize: '44px',
-                            lineHeight: '135%',
-                            alignItems: 'center',
-                            textAlign: 'center',
-                            color: '#000000',
-                        }}
+                        rowORColumn="column"
                     >
-                        <div className={Style['mainFont']} style={{ color: '#F48C06' }}>
-                            {'Mentors'}
+                        <div className={Style['mentors-from-title']}>
+                            {'Mentors From'}
                         </div>
-                        <div className={Style['mainFont']} style={{ color: '#2F327D', marginLeft: '5px' }}>{'From'}</div>
                     </FLexLayout>
                 )}
 
@@ -417,132 +290,59 @@ const _Landing = ({ setWidth, width }) => {
                         rowORColumn="row"
                         alignItem="center"
                         className={Style['companies-container-desktop']}
-                        style={{ width: '60%', height: '100%' }}
                     >
-                        <div style={{ display: 'flex', flexDirection: 'column' }}>
-                            <div style={{ padding: '15px' }}><img
-                                src="/icons/Amazon-logo.png"
-                                style={{
-                                    width: '144.4px',
-                                    height: '38px',
-                                    left: '95px',
-                                    top: '1284.1px',
-                                }}
-                            />
-                                <img
-                                    src="/icons/pepsi-logo.png"
-                                    style={{
-                                        width: '152px',
-                                        height: '43.7px',
-                                        left: '321.1px',
-                                        top: '1267px',
-                                        marginLeft: '45px'
-                                    }}
-                                />
-                                <img
-                                    src="/icons/BharatPe-logo.png"
-                                    style={{
-                                        width: '96.9px',
-                                        height: '32.3px',
-                                        left: '553.85px',
-                                        top: '1284.1px',
-                                        marginLeft: '45px'
-                                    }}
-                                />
-                                <img
-                                    src="/icons/Walmart-logo.png"
-                                    style={{
-                                        width: '132.05px',
-                                        height: '32.3px',
-                                        left: '721.05px',
-                                        top: '1280.3px',
-                                        marginLeft: '45px'
-                                    }}
-                                />
-                                <img
-                                    src="/icons/Google_logo.png"
-                                    style={{
-                                        width: '131.1px',
-                                        height: '37.05px',
-                                        left: '916.75px',
-                                        top: '1278.4px',
-                                        marginLeft: '45px'
-                                    }}
-                                />
-                                <img
-                                    src="/icons/Adobe-logo.png"
-                                    style={{
-                                        width: '115.9px',
-                                        height: '29.45px',
-                                        left: '1109.6px',
-                                        top: '1284.1px',
-                                        marginLeft: '45px'
-                                    }}
-                                /></div>
+                        <img
+                            src="/icons/amazon.png"
+                            style={{ width: '85.5px', height: '22.5px' }}
+                        />
+                        <img
+                            src="/icons/purepng.png"
+                            style={{ width: '90px', height: '25.8px' }}
+                        />
+                        <img
+                            src="/icons/bharatpe.png"
+                            style={{ width: '77.63px', height: '21.94px' }}
+                        />
+                        <img
+                            src="/icons/Walmart_logo.png"
+                            style={{ width: '78.19px', height: '19.13px' }}
+                        />
+                        <img
+                            src="/icons/Ducati_red_logo 1.png"
+                            style={{ width: '27.56px', height: '29.25px' }}
+                        />
+                        <img
+                            src="/icons/Adobe_Corporate_Logo.png"
+                            style={{ width: '68.63px', height: '17.44px' }}
+                        />
 
-                            <div style={{ padding: '15px' }}><img
-                                src="/icons/ig-logo.png"
-                                style={{
-                                    width: '142.5px',
-                                    height: '46.55px',
-                                    left: '1091.55px',
-                                    top: '1391.45px',
-                                }}
-                            />
-                                <img
-                                    src="/icons/Facebook-Logo.png"
-                                    style={{
-                                        width: '111.15px',
-                                        height: '40.85px',
-                                        left: '108.3px',
-                                        top: '1388.6px',
-                                        marginLeft: '45px'
-                                    }}
-                                />
+                        <img
+                            src="/icons/ig-logo 1.png"
+                            style={{ width: '84.38px', height: '27.56px' }}
+                        />
+                        <img
+                            src="/icons/Facebook-New-Logo.png"
+                            style={{ width: '65.81px', height: '24.19px' }}
+                        />
 
-                                <img
-                                    src="/icons/microsoft-logo.png"
-                                    style={{
-                                        width: '121.6px',
-                                        height: '24.7px',
-                                        left: '301.15px',
-                                        top: '1396.2px',
-                                        marginLeft: '45px'
-                                    }}
-                                />
+                        <img
+                            src="/icons/microsoft-logo-images-png-33.png"
+                            style={{ width: '72px', height: '14.63px' }}
+                        />
 
-                                <img
-                                    src="/icons/Nike-logo.png"
-                                    style={{
-                                        width: '81.7px',
-                                        height: '42.75px',
-                                        left: '504.45px',
-                                        top: '1387.65px',
-                                        marginLeft: '45px'
-                                    }}
-                                />
-                                <img
-                                    src="icons/WB-logo.png"
-                                    style={{
-                                        width: '137.75px',
-                                        height: '26.6px',
-                                        left: '667.85px',
-                                        top: '1400px',
-                                        marginLeft: '45px'
-                                    }}
-                                />
+                        <img
+                            src="icons/Nike.png"
+                            style={{ width: '48.38px', height: '25.31px' }}
+                        />
+                        <img
+                            src="icons/1200px-The_World_Bank_logo 1.png"
+                            style={{ width: '81.56px', height: '15.75px' }}
+                        />
 
-                                <img
-                                    src="icons/Paytm-logo.png"
-                                    style={{
-                                        width: '123.5px',
-                                        height: '36.1px',
-                                        left: '887.3px',
-                                        top: '1390.5px',
-                                        marginLeft: '45px'
-                                    }}
-                                /></div>
-                        </div>
+                        <img
+                            src="icons/Paytm-Logo 1.png"
+                            style={{ width: '73.13px', height: '21.38px' }}
+                        />
                     </FLexLayout>
                 )}
 
@@ -552,13 +352,12 @@ const _Landing = ({ setWidth, width }) => {
                         rowORColumn="row"
                         justifyContent="center"
                         alignItem="center"
-                        style={{ width: '100%' }}
                     >
                         <FLexLayout
                             style={{
                                 padding: '32px',
                                 width: width > 380 ? '380px' : '90%',
-                                height: `${370}px`
+                                height: `${340}px`
                             }}
                             rowORColumn="column"
                             className={Style['brand-advertisement-container']}
@@ -569,22 +368,17 @@ const _Landing = ({ setWidth, width }) => {
                                 rowORColumn="row"
                                 justifyContent="center"
                                 alignItem="center"
-                                style={{
-                                    fontFamily: 'Poppins',
-                                    fontStyle: 'normal',
-                                    fontWeight: 600,
-                                    fontSize: '35px',
-                                    lineHeight: '135%',
-                                    alignItems: 'center',
-                                    textAlign: 'center',
-                                    color: '#000000',
-                                }}
                             >
                                 {/* heading */}
-                                <div className={Style['mainFontMobile']} style={{ color: '#F48C06' }}>
-                                    {'Mentors'}
+                                <div
+                                    style={{
+                                        textAlign: 'center',
+                                        fontFamily: 'poppinsSemiBold',
+                                        fontSize: '14px'
+                                    }}
+                                >
+                                    {'Mentors From'}
                                 </div>
-                                <div className={Style['mainFontMobile']} style={{ color: '#2F327D', marginLeft: '5px' }}>{'From'}</div>
                             </FLexLayout>
 
                             {/* underline-container */}
@@ -725,400 +519,36 @@ const _Landing = ({ setWidth, width }) => {
                 {width > 1260 && (
                     <FLexLayout
                         rowORColumn="column"
-                        style={{ marginTop: '100px', width: '60%', alignItems: 'center' }}
+                        style={{ marginTop: '10px' }}
                     >
-                        <FLexLayout
-                            justifyContent="center"
-                            alignItem="center"
-                            rowORColumn="column"
-                            style={{ width: '60%', textAlign: 'center', alignItems: 'center', display: 'flex', justifyContent: 'center', marginLeft: '50px' }}
-                        >
-                            <div style={{
-                                display: 'flex',
-                                flexDirection: 'row',
-                                fontFamily: 'Poppins',
-                                fontStyle: 'normal',
-                                fontWeight: 600,
-                                fontSize: '44px',
-                                lineHeight: '135%',
-                                alignItems: 'center',
-                                textAlign: 'center',
-                                color: '#000000',
-                            }}>
-                                <div className={Style['mainFont']} style={{ color: '#2F327D' }}>
-                                    {'Top'}
-                                </div>
-                                <div className={Style['mainFont']} style={{ color: '#F48C06', marginLeft: '5px' }}>{'Recommended'}</div>
-                                <div className={Style['mainFont']} style={{ color: '#2F327D', marginLeft: '5px' }}>{'Courses'}</div>
-                            </div>
-                            <div style={{ display: 'flex', flexDirection: 'row', padding: '100px', marginLeft: '100px' }} >
-                                <div style={{ padding: '20px', cursor: 'pointer' }} onClick={designCourse}>
-                                    <img src="/icons/Rectangle-5.png" />
-                                    <div style={{
-                                        background: '#EEEEEE',
-                                        borderBottomLeftRadius: '16px',
-                                        borderBottomRightRadius: '16px',
-                                        padding: '20px'
-                                    }}>
-                                        <div style={{
-                                            color: '#FF8139',
-                                            textAlign: 'start',
-                                            fontFamily: 'Inter',
-                                            fontStyle: 'normal',
-                                            fontWeight: 500,
-                                            fontSize: '12px',
-                                            lineHeight: '100%',
-                                            textTransform: 'uppercase',
-                                            marginBottom: '10px'
-                                        }}>Trending now</div>
-                                        <div style={{
-                                            fontFamily: 'Inter',
-                                            fontStyle: 'normal',
-                                            fontWeight: 500,
-                                            fontSize: '20px',
-                                            lineHeight: '100%',
-                                            textAlign: 'start',
-                                            marginBottom: '5px'
-                                        }}>Metvy Design Program</div>
-                                        <div style={{ display: 'flex', flexDirection: 'row' }}>
-                                            <div style={{ width: '50%', textAlign: 'start', color: '#777777' }}>₹3499</div>
-                                            <div style={{ width: '50%', textAlign: 'end', color: '#777777' }}>1 day left</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div style={{ padding: '20px', cursor: 'pointer' }} onClick={consultancyCourse}>
-                                    <img src="/icons/Rectangle-6.png" />
-                                    <div style={{
-                                        background: '#EEEEEE',
-                                        borderBottomLeftRadius: '16px',
-                                        borderBottomRightRadius: '16px',
-                                        padding: '20px'
-                                    }}>
-                                        <div style={{
-                                            color: '#FF8139',
-                                            textAlign: 'start',
-                                            fontFamily: 'Inter',
-                                            fontStyle: 'normal',
-                                            fontWeight: 500,
-                                            fontSize: '12px',
-                                            lineHeight: '100%',
-                                            textTransform: 'uppercase',
-                                            marginBottom: '10px'
-                                        }}>Trending now</div>
-                                        <div style={{
-                                            fontFamily: 'Inter',
-                                            fontStyle: 'normal',
-                                            fontWeight: 500,
-                                            fontSize: '20px',
-                                            lineHeight: '100%',
-                                            textAlign: 'start',
-                                            marginBottom: '5px'
-                                        }}>Metvy Consultancy Program</div>
-                                        <div style={{ display: 'flex', flexDirection: 'row' }}>
-                                            <div style={{ width: '50%', textAlign: 'start', color: '#777777' }}>₹3499</div>
-                                            <div style={{ width: '50%', textAlign: 'end', color: '#777777' }}>1 day left</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div style={{ padding: '20px', cursor: 'pointer' }} onClick={businessCourse}>
-                                    <img src="/icons/Rectangle-7.png" />
-                                    <div style={{
-                                        background: '#EEEEEE',
-                                        borderBottomLeftRadius: '16px',
-                                        borderBottomRightRadius: '16px',
-                                        padding: '20px'
-                                    }}>
-                                        <div style={{
-                                            color: '#FF8139',
-                                            textAlign: 'start',
-                                            fontFamily: 'Inter',
-                                            fontStyle: 'normal',
-                                            fontWeight: 500,
-                                            fontSize: '12px',
-                                            lineHeight: '100%',
-                                            textTransform: 'uppercase',
-                                            marginBottom: '10px'
-                                        }}>Trending now</div>
-                                        <div style={{
-                                            fontFamily: 'Inter',
-                                            fontStyle: 'normal',
-                                            fontWeight: 500,
-                                            fontSize: '20px',
-                                            lineHeight: '100%',
-                                            textAlign: 'start',
-                                            marginBottom: '5px'
-                                        }}>Metvy Business Program</div>
-                                        <div style={{ display: 'flex', flexDirection: 'row' }}>
-                                            <div style={{ width: '50%', textAlign: 'start', color: '#777777' }}>₹3499</div>
-                                            <div style={{ width: '50%', textAlign: 'end', color: '#777777' }}>1 day left</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <button style={{ backgroundColor: 'transparent', border: 'none', marginTop: '10px' }}><a href="https://metvy.com/MetvyLearn"><img src="/icons/button-2.png" /></a></button>
-                            {/* <button style={{ color: '#F48C06', borderRadius: '30px', padding: '20px', backgroundColor: 'transparent', border: '1px solid #F48C06', width: '50%', display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', alignContent: 'center' }}><h4>Explore All Courses</h4><div style={{ border: '1px solid #F48C06', borderRadius: '50%', padding: '25px' }}><img src="/icons/Arrow-logo.png" /></div></button> */}
-                        </FLexLayout>
-                        {/* benefits-cards-rows */}
-                        <FLexLayout
-                            style={{
-                                position: 'relative',
-                                top: '110px'
-                            }}
-                            justifyContent="between"
-                            order="4"
-                            rowORColumn="row"
-                        >
-                        </FLexLayout>
-                    </FLexLayout>
-                )}
+                        {/* outer-box-overlapping-content-box */}
 
-                {/* mobile view for Top Courses Recommended */}
-                {width < 1221 && (
-                    <div>
                         <FLexLayout
-                            rowORColumn="column"
-                            style={{ marginTop: '100px', alignItems: 'center' }}
+                            rowORColumn="row"
+                            style={{
+                                width: '100%',
+                                paddingLeft: '60px'
+                            }}
                         >
-                            <FLexLayout
-                                justifyContent="center"
-                                alignItem="center"
-                                rowORColumn="column"
-                                style={{ textAlign: 'center', alignItems: 'center', display: 'flex', justifyContent: 'center' }}
-                            >
-                                <div style={{
-                                    display: 'flex',
-                                    flexDirection: 'row',
-                                    fontFamily: 'Poppins',
-                                    fontStyle: 'normal',
-                                    fontWeight: 600,
-                                    fontSize: '35px',
-                                    lineHeight: '135%',
-                                    alignItems: 'center',
-                                    textAlign: 'center',
-                                    color: '#000000',
-                                }}>
-                                    <div className={Style['mainFontMobile']} style={{ color: '#2F327D' }}>
-                                        {'Top'}
-                                    </div>
-                                    <div className={Style['mainFontMobile']} style={{ color: '#F48C06', marginLeft: '5px' }}>{'Recommended'}</div>
-                                    <div className={Style['mainFontMobile']} style={{ color: '#2F327D', marginLeft: '5px' }}>{'Courses'}</div>
-                                </div>
-                                <div style={{ display: 'flex', flexDirection: 'column', padding: '100px' }}>
-                                    <div style={{ padding: '20px' }} onClick={designCourse}>
-                                        <img src="/icons/Rectangle-5.png" />
-                                        <div style={{
-                                            background: '#EEEEEE',
-                                            borderBottomLeftRadius: '16px',
-                                            borderBottomRightRadius: '16px',
-                                            padding: '20px'
-                                        }}>
-                                            <div style={{
-                                                color: '#FF8139',
-                                                textAlign: 'start',
-                                                fontFamily: 'Inter',
-                                                fontStyle: 'normal',
-                                                fontWeight: 500,
-                                                fontSize: '12px',
-                                                lineHeight: '100%',
-                                                textTransform: 'uppercase',
-                                                marginBottom: '10px'
-                                            }}>Trending now</div>
-                                            <div style={{
-                                                fontFamily: 'Inter',
-                                                fontStyle: 'normal',
-                                                fontWeight: 500,
-                                                fontSize: '20px',
-                                                lineHeight: '100%',
-                                                textAlign: 'start',
-                                                marginBottom: '5px'
-                                            }}>Metvy Design Program</div>
-                                            <div style={{ display: 'flex', flexDirection: 'row' }}>
-                                                <div style={{ width: '50%', textAlign: 'start', color: '#777777' }}>₹2999</div>
-                                                <div style={{ width: '50%', textAlign: 'end', color: '#777777' }}>1 day left</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div style={{ padding: '20px' }} onClick={consultancyCourse}>
-                                        <img src="/icons/Rectangle-6.png" />
-                                        <div style={{
-                                            background: '#EEEEEE',
-                                            borderBottomLeftRadius: '16px',
-                                            borderBottomRightRadius: '16px',
-                                            padding: '20px'
-                                        }}>
-                                            <div style={{
-                                                color: '#FF8139',
-                                                textAlign: 'start',
-                                                fontFamily: 'Inter',
-                                                fontStyle: 'normal',
-                                                fontWeight: 500,
-                                                fontSize: '12px',
-                                                lineHeight: '100%',
-                                                textTransform: 'uppercase',
-                                                marginBottom: '10px'
-                                            }}>Trending now</div>
-                                            <div style={{
-                                                fontFamily: 'Inter',
-                                                fontStyle: 'normal',
-                                                fontWeight: 500,
-                                                fontSize: '20px',
-                                                lineHeight: '100%',
-                                                textAlign: 'start',
-                                                marginBottom: '5px'
-                                            }}>Metvy Consultancy Program</div>
-                                            <div style={{ display: 'flex', flexDirection: 'row' }}>
-                                                <div style={{ width: '50%', textAlign: 'start', color: '#777777' }}>₹3999</div>
-                                                <div style={{ width: '50%', textAlign: 'end', color: '#777777' }}>1 day left</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div style={{ padding: '20px' }} onClick={businessCourse}>
-                                        <img src="/icons/Rectangle-7.png" />
-                                        <div style={{
-                                            background: '#EEEEEE',
-                                            borderBottomLeftRadius: '16px',
-                                            borderBottomRightRadius: '16px',
-                                            padding: '20px'
-                                        }}>
-                                            <div style={{
-                                                color: '#FF8139',
-                                                textAlign: 'start',
-                                                fontFamily: 'Inter',
-                                                fontStyle: 'normal',
-                                                fontWeight: 500,
-                                                fontSize: '12px',
-                                                lineHeight: '100%',
-                                                textTransform: 'uppercase',
-                                                marginBottom: '10px'
-                                            }}>Trending now</div>
-                                            <div style={{
-                                                fontFamily: 'Inter',
-                                                fontStyle: 'normal',
-                                                fontWeight: 500,
-                                                fontSize: '20px',
-                                                lineHeight: '100%',
-                                                textAlign: 'start',
-                                                marginBottom: '5px'
-                                            }}>Metvy Business Program</div>
-                                            <div style={{ display: 'flex', flexDirection: 'row' }}>
-                                                <div style={{ width: '50%', textAlign: 'start', color: '#777777' }}>₹2999</div>
-                                                <div style={{ width: '50%', textAlign: 'end', color: '#777777' }}>1 day left</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </FLexLayout>
-                            {/* benefits-cards-rows */}
                             <FLexLayout
                                 style={{
-                                    position: 'relative',
-                                    top: '110px'
+                                    width: '456px',
+                                    height: '607px',
+                                    filter: 'drop-shadow(0px 17px 117px rgba(0, 0, 0, 0.05))'
                                 }}
-                                justifyContent="between"
-                                order="4"
                                 rowORColumn="row"
                             >
+                                <img src="/icons/community.png" />
                             </FLexLayout>
-                        </FLexLayout>
-                        <a href="#submitForm"><FLexLayout
-                            rowORColumn="column"
-                            className={Style['content-container-landing']}
-                            style={{ alignItems: 'center', marginBottom: '15%', marginTop: '-15%' }}
-                        ><button style={{ width: '25%', height: '45px' }} className={Style['apply-button']}>Apply Now</button>
-                        </FLexLayout>
-                        </a>
-                    </div>
-                )
-                }
 
-                {/* desktop for What makes us cool */}
-                {
-                    width > 1260 && (
-                        <FLexLayout
-                            rowORColumn="column"
-                            style={{ marginTop: '100px', width: '60%', alignItems: 'center', }}
-                        >
-                            {/* outer-box-overlapping-content-box */}
+                            {/* Join -now button and bebefits */}
+
                             {/* right-side of vector icons -community  */}
                             <FLexLayout
-                                style={{
-                                    position: 'relative',
-                                    width: '60%',
-                                }}
-                                rowORColumn="row"
-                                order="1"
-                                justifyContent="center"
-                                alignItem="center"
-                            >
-                                <div style={{
-                                    display: 'flex',
-                                    flexDirection: 'row',
-                                    fontFamily: 'Poppins',
-                                    fontStyle: 'normal',
-                                    fontWeight: 600,
-                                    fontSize: '44px',
-                                    lineHeight: '135%',
-                                    alignItems: 'center',
-                                    textAlign: 'center',
-                                    color: '#000000',
-                                }}>
-                                    <div className={Style['mainFont']} style={{ color: '#2F327D' }}>
-                                        {'What makes us'}
-                                    </div>
-                                    <div className={Style['mainFont']} style={{ color: '#F48C06', marginLeft: '5px' }}>{'Cool?'}</div>
-                                </div>
-                            </FLexLayout>
-                            {/* benefits-cards-rows */}
-                            <FLexLayout
-                                style={{
-                                    position: 'relative',
-                                    top: '110px'
-                                }}
-                                justifyContent="between"
-                                order="4"
-                                rowORColumn="row"
-                            >
-                                <img src="/icons/Peer-to-Peer-Learning.png" style={{ width: '100%' }} />
-                            </FLexLayout>
-                        </FLexLayout>
-                    )
-                }
-
-                {/* mobile view What makes you cool ? */}
-                {
-                    width < 1221 && (
-                        <div style={{ backgroundColor: '#EBECF0' }}>
-                            <FLexLayout
+                                justifyContent="end"
                                 rowORColumn="column"
-                                style={{ marginTop: '100px', alignItems: 'center', }}
+                                style={{ width: '676px', marginLeft: '40px' }}
                             >
-                                <FLexLayout
-                                    style={{
-                                        position: 'relative',
-                                    }}
-                                    rowORColumn="row"
-                                    order="1"
-                                    justifyContent="center"
-                                    alignItem="center"
-                                >
-                                    <div style={{
-                                        display: 'flex',
-                                        flexDirection: 'row',
-                                        fontFamily: 'Poppins',
-                                        fontStyle: 'normal',
-                                        fontWeight: 600,
-                                        fontSize: '35px',
-                                        lineHeight: '135%',
-                                        alignItems: 'center',
-                                        textAlign: 'center',
-                                        color: '#000000',
-                                    }}>
-                                        <div className={Style['mainFontMobile']} style={{ color: '#2F327D' }}>
-                                            {'What makes us'}
-                                        </div>
-                                        <div className={Style['mainFontMobile']} style={{ color: '#F48C06', marginLeft: '5px' }}>{'Cool?'}</div>
-                                    </div>
-                                </FLexLayout>
                                 {/* benefits-cards-rows */}
                                 <FLexLayout
                                     style={{
@@ -1129,638 +559,988 @@ const _Landing = ({ setWidth, width }) => {
                                     order="4"
                                     rowORColumn="row"
                                 >
-                                    <div className={Style["slideshow"]} >
-                                        <div
-                                            className={Style["slideshowSlider"]}
-                                            style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
-                                        >
-                                            {colors.map((data, index) => (
-                                                <div
-                                                    className={Style["slide"]}
-                                                    key={index}
-                                                >
-                                                    <img src={data} style={{ width: '100%', height: '100%' }} />
-                                                </div>
+                                    {/* internship-card  */}
+                                    <FLexLayout
+                                        className={Style['benefits-card-outer']}
+                                        rowORColumn="column"
+                                        justifyContent="center"
+                                        alignItem="center"
+                                        style={{ background: '#FFDEC5' }}
+                                    >
+                                        <FLexLayout
+                                            style={{
+                                                background:
+                                                    'rgba(255, 255, 255, 0.59)',
 
-                                            ))}
-                                        </div>
+                                                width: '90%',
+                                                borderRadius: '18px'
+                                            }}
+                                            rowORColumn="column"
+                                        >
+                                            <img
+                                                src="/icons/internship-vector.png"
+                                                style={{
+                                                    width: '177px',
+                                                    height: '141px'
+                                                }}
+                                            />
+                                            <FLexLayout
+                                                rowORColumn="column"
+                                                justifyContent="center"
+                                                alignItem="center"
+                                                className={
+                                                    Style['benefits-cards-text']
+                                                }
+                                                style={{
+                                                    backgroundColor: 'white',
+                                                    textAlign: 'center',
+                                                    borderBottomRightRadius:
+                                                        '18px',
+                                                    borderBottomLeftRadius:
+                                                        '18px'
+                                                }}
+                                            >
+                                                {'Internship opportunities'}
+                                            </FLexLayout>
+                                        </FLexLayout>
+                                    </FLexLayout>
+
+                                    {/* free-access-card  */}
+                                    <FLexLayout
+                                        className={Style['benefits-card-outer']}
+                                        rowORColumn="column"
+                                        justifyContent="center"
+                                        alignItem="center"
+                                        style={{ background: '#FFCFC9' }}
+                                    >
+                                        <FLexLayout
+                                            style={{
+                                                background:
+                                                    'rgba(255, 255, 255, 0.59)',
+
+                                                width: '90%',
+                                                borderRadius: '18px'
+                                            }}
+                                            rowORColumn="column"
+                                        >
+                                            <img
+                                                src="/icons/free-access.png"
+                                                style={{
+                                                    width: '177px',
+                                                    height: '141px'
+                                                }}
+                                            />
+                                            <FLexLayout
+                                                rowORColumn="column"
+                                                justifyContent="center"
+                                                alignItem="center"
+                                                className={
+                                                    Style['benefits-cards-text']
+                                                }
+                                                style={{
+                                                    backgroundColor: 'white',
+                                                    textAlign: 'center',
+                                                    borderBottomRightRadius:
+                                                        '18px',
+                                                    borderBottomLeftRadius:
+                                                        '18px'
+                                                }}
+                                            >
+                                                {
+                                                    'Free Access to Metvy Learn Sessions'
+                                                }
+                                            </FLexLayout>
+                                        </FLexLayout>
+                                    </FLexLayout>
+
+                                    {/* hands-card  */}
+                                    <FLexLayout
+                                        className={Style['benefits-card-outer']}
+                                        rowORColumn="column"
+                                        justifyContent="center"
+                                        alignItem="center"
+                                        style={{ background: '#C9E2FF' }}
+                                    >
+                                        <FLexLayout
+                                            style={{
+                                                background:
+                                                    'rgba(255, 255, 255, 0.59)',
+
+                                                width: '90%',
+                                                borderRadius: '18px'
+                                            }}
+                                            rowORColumn="column"
+                                        >
+                                            <img
+                                                src="/icons/hands.png"
+                                                style={{
+                                                    width: '177px',
+                                                    height: '141px'
+                                                }}
+                                            />
+                                            <FLexLayout
+                                                rowORColumn="column"
+                                                justifyContent="center"
+                                                alignItem="center"
+                                                className={
+                                                    Style['benefits-cards-text']
+                                                }
+                                                style={{
+                                                    backgroundColor: 'white',
+                                                    textAlign: 'center',
+                                                    borderBottomRightRadius:
+                                                        '18px',
+                                                    borderBottomLeftRadius:
+                                                        '18px'
+                                                }}
+                                            >
+                                                {'Peer to Peer Learning'}
+                                            </FLexLayout>
+                                        </FLexLayout>
+                                    </FLexLayout>
+                                </FLexLayout>
+
+                                {/* join now- button  */}
+                                <FLexLayout
+                                    style={{
+                                        position: 'relative',
+                                        top: '55px'
+                                    }}
+                                    order="3"
+                                    className={Style['join-now-button']}
+                                    rowORColumn="column"
+                                    justifyContent="center"
+                                    alignItem="center"
+                                >
+                                    Join Now
+                                </FLexLayout>
+
+                                <FLexLayout
+                                    style={{
+                                        position: 'relative',
+                                        top: '15px'
+                                    }}
+                                    rowORColumn="row"
+                                    order="2"
+                                >
+                                    <div className={Style['community-text']}>
+                                        {
+                                            'Join a club of your choice for weekly meetups, exclusive events and mentorship from experts, all for FREE.'
+                                        }
+                                    </div>
+                                </FLexLayout>
+
+                                <FLexLayout
+                                    style={{
+                                        position: 'relative',
+                                        bottom: '20px'
+                                    }}
+                                    rowORColumn="row"
+                                    order="1"
+                                >
+                                    <div
+                                        className={
+                                            Style['community-heading-desktop']
+                                        }
+                                    >
+                                        {'Metvy Learn Community'}
                                     </div>
                                 </FLexLayout>
                             </FLexLayout>
-                            <a href="#submitForm"><FLexLayout
-                                rowORColumn="column"
-                                className={Style['content-container-landing']}
-                                style={{ alignItems: 'center', marginTop: '10%', marginBottom: '5%' }}
-                            ><button style={{ width: '25%', height: '45px' }} className={Style['apply-button']}>Apply Now</button>
-                            </FLexLayout>
-                            </a>
-                        </div>
-                    )
-                }
+                        </FLexLayout>
+                    </FLexLayout>
+                )}
 
-                {/* mobile view Testimonial Headline */}
-                {
-                    width < 1221 && (
+                {/* mobile-community-logo and icon and join now */}
+                {width <= 1260 && (
+                    <FLexLayout
+                        justifyContent="center"
+                        alignItem="center"
+                        rowORColumn="row"
+                    >
+                        <FLexLayout
+                            className={Style['community-container-mobile']}
+                            rowORColumn="column"
+                            style={{ width: width < 368 ? '90%' : '368px' }}
+                            alignItem="center"
+                        >
+                            {/* community-vector-icon */}
+                            <FLexLayout
+                                style={{
+                                    position: 'relative',
+                                    bottom: '190px',
+                                    filter: 'drop-shadow(0px 17px 117px rgba(0, 0, 0, 0.05))'
+                                }}
+                                rowORColumn="row"
+                            >
+                                <img
+                                    style={{
+                                        aspectRatio: '328px',
+                                        width: '250px'
+                                    }}
+                                    src="/icons/community.png"
+                                />
+                            </FLexLayout>
+
+                            <FLexLayout
+                                style={{
+                                    position: 'relative',
+                                    bottom: '170px'
+                                }}
+                                rowORColumn="row"
+                            >
+                                <div
+                                    className={
+                                        Style['community-heading-mobile']
+                                    }
+                                >
+                                    {'Metvy Learn Community'}
+                                </div>
+                            </FLexLayout>
+
+                            <FLexLayout
+                                style={{
+                                    width: '290px',
+                                    position: 'relative',
+                                    bottom: '120px'
+                                }}
+                                justifyContent="center"
+                                alignItem="center"
+                                className={Style['community-text']}
+                                rowORColumn="row"
+                            >
+                                <FLexLayout rowORColumn="row">
+                                    {
+                                        'Join a club of your choice for weekly meetups, exclusive events and mentorship from experts, all for FREE.'
+                                    }
+                                </FLexLayout>
+                            </FLexLayout>
+
+                            {/* join now- button  */}
+                            <FLexLayout
+                                style={{
+                                    position: 'relative',
+                                    bottom: '70px'
+                                }}
+                                className={Style['join-now-button']}
+                                rowORColumn="column"
+                                justifyContent="center"
+                                alignItem="center"
+                            >
+                                Join Now
+                            </FLexLayout>
+
+                            {/* benefits-cards-row-mobile */}
+
+                            <FLexLayout
+                                style={{ width: '100%' }}
+                                justifyContent="between"
+                                rowORColumn="row"
+                            >
+                                {/* internship-card */}
+                                <FLexLayout
+                                    rowORColumn="row"
+                                    justifyContent="between"
+                                    style={{ position: 'relative' }}
+                                >
+                                    <FLexLayout
+                                        className={Style['benefits-card-outer']}
+                                        rowORColumn="column"
+                                        justifyContent="center"
+                                        alignItem="center"
+                                        style={{ background: '#FFDEC5' }}
+                                    >
+                                        <FLexLayout
+                                            style={{
+                                                background:
+                                                    'rgba(255, 255, 255, 0.59)',
+
+                                                width: '90%',
+                                                height: '90%',
+                                                borderRadius: '10px'
+                                            }}
+                                            rowORColumn="column"
+                                        >
+                                            <img
+                                                src="/icons/internship-vector.png"
+                                                style={{
+                                                    width:
+                                                        width > 400
+                                                            ? '100px'
+                                                            : width * 0.23,
+                                                    aspectRatio: '100/80'
+                                                }}
+                                            />
+                                            <FLexLayout
+                                                rowORColumn="column"
+                                                justifyContent="center"
+                                                alignItem="center"
+                                                className={
+                                                    Style['benefits-cards-text']
+                                                }
+                                                style={{
+                                                    backgroundColor: 'white',
+                                                    textAlign: 'center',
+                                                    borderBottomRightRadius:
+                                                        '10px',
+                                                    borderBottomLeftRadius:
+                                                        '10px'
+                                                }}
+                                            >
+                                                {'Internship opportunities'}
+                                            </FLexLayout>
+                                        </FLexLayout>
+                                    </FLexLayout>
+                                </FLexLayout>
+
+                                {/* free-access-card  */}
+                                <FLexLayout
+                                    className={Style['benefits-card-outer']}
+                                    rowORColumn="column"
+                                    justifyContent="center"
+                                    alignItem="center"
+                                    style={{ background: '#FFCFC9' }}
+                                >
+                                    <FLexLayout
+                                        style={{
+                                            background:
+                                                'rgba(255, 255, 255, 0.59)',
+
+                                            width: '90%',
+                                            height: '90%',
+                                            borderRadius: '10px'
+                                        }}
+                                        rowORColumn="column"
+                                    >
+                                        <img
+                                            src="/icons/free-access.png"
+                                            style={{
+                                                width:
+                                                    width > 400
+                                                        ? '100px'
+                                                        : width * 0.23,
+                                                aspectRatio: '100/80'
+                                            }}
+                                        />
+                                        <FLexLayout
+                                            rowORColumn="column"
+                                            justifyContent="center"
+                                            alignItem="center"
+                                            className={
+                                                Style['benefits-cards-text']
+                                            }
+                                            style={{
+                                                backgroundColor: 'white',
+                                                textAlign: 'center',
+                                                borderBottomRightRadius: '10px',
+                                                borderBottomLeftRadius: '10px'
+                                            }}
+                                        >
+                                            {
+                                                'Free Access to Metvy Learn Sessions'
+                                            }
+                                        </FLexLayout>
+                                    </FLexLayout>
+                                </FLexLayout>
+
+                                {/* hands-card  */}
+                                <FLexLayout
+                                    className={Style['benefits-card-outer']}
+                                    rowORColumn="column"
+                                    justifyContent="center"
+                                    alignItem="center"
+                                    style={{ background: '#C9E2FF' }}
+                                >
+                                    <FLexLayout
+                                        style={{
+                                            background:
+                                                'rgba(255, 255, 255, 0.59)',
+
+                                            width: '90%',
+                                            height: '90%',
+                                            borderRadius: '10px'
+                                        }}
+                                        rowORColumn="column"
+                                    >
+                                        <img
+                                            src="/icons/hands.png"
+                                            style={{
+                                                width:
+                                                    width > 400
+                                                        ? '100px'
+                                                        : width * 0.23,
+                                                aspectRatio: '100/80'
+                                            }}
+                                        />
+                                        <FLexLayout
+                                            rowORColumn="column"
+                                            justifyContent="center"
+                                            alignItem="center"
+                                            className={
+                                                Style['benefits-cards-text']
+                                            }
+                                            style={{
+                                                backgroundColor: 'white',
+                                                textAlign: 'center',
+                                                borderBottomRightRadius: '10px',
+                                                borderBottomLeftRadius: '10px'
+                                            }}
+                                        >
+                                            {'Peer to Peer Learning'}
+                                        </FLexLayout>
+                                    </FLexLayout>
+                                </FLexLayout>
+                            </FLexLayout>
+                        </FLexLayout>
+                    </FLexLayout>
+                )}
+
+                {/* Discover & Explore-Desktop */}
+                {width >= 1260 && (
+                    <FLexLayout
+                        style={{ marginTop: '200px' }}
+                        rowORColumn="row"
+                    >
+                        {/* image-app */}
+                        <FLexLayout
+                            style={{ marginLeft: '80px' }}
+                            rowORColumn="row"
+                        >
+                            <Carousel
+                                slide={false}
+                                interval={2000}
+                                fade={true}
+                                controls={false}
+                                indicators={false}
+                            >
+                                {exploreAppImagesMobile.map((imgName) => {
+                                    return (
+                                        <Carousel.Item>
+                                            <FLexLayout
+                                                rowORColumn="row"
+                                                justifyContent={'center'}
+                                                alignItem="center"
+                                            >
+                                                <img
+                                                    style={{
+                                                        width: '421px',
+                                                        height: '516px'
+                                                    }}
+                                                    src={imgName}
+                                                />
+                                            </FLexLayout>
+                                        </Carousel.Item>
+                                    );
+                                })}
+                            </Carousel>
+                        </FLexLayout>
+
+                        {/* play-store app-store-buttons */}
+                        <FLexLayout
+                            rowORColumn="row"
+                            justifyContent="center"
+                            alignItem="center"
+                            style={{ marginLeft: '240px' }}
+                        >
+                            <FLexLayout rowORColumn="column">
+                                <div className={Style['discover-explore-text']}>
+                                    {'Discover & Explore'}
+                                </div>
+                                <FLexLayout
+                                    style={{ marginTop: '23px' }}
+                                    rowORColumn="column"
+                                >
+                                    <div
+                                        style={{
+                                            width: '114px',
+                                            height: '2.2px',
+                                            backgroundColor: 'black'
+                                        }}
+                                    ></div>
+                                </FLexLayout>
+
+                                <div
+                                    className={
+                                        Style['discover-explore-text-two']
+                                    }
+                                >
+                                    A New way to interact <br /> with your
+                                    Network!
+                                </div>
+
+                                {/* buttons-for-stores*/}
+                                <FLexLayout
+                                    style={{
+                                        width: '500px',
+                                        marginTop: '66px'
+                                    }}
+                                    justifyContent="between"
+                                    rowORColumn="row"
+                                >
+                                    {/* play-store-button */}
+                                    <FLexLayout
+                                        className={Style['store-button']}
+                                        rowORColumn="row"
+                                        alignItem="center"
+                                        justifyContent="between"
+                                        onClick={() => window.open("https://play.google.com/store/apps/details?id=com.metvy&hl=en_IN&gl=US")}
+                                        style={{ cursor: 'pointer' }}
+
+                                    >
+                                        <div style={{ lineHeight: '14px' }}>
+                                            Download <br />{' '}
+                                            <span
+                                                className={
+                                                    Style[
+                                                    'download-button-subText'
+                                                    ]
+                                                }
+                                            >
+                                                on PlayStore
+                                            </span>{' '}
+                                        </div>
+                                        <img
+                                            src="/icons/playStore-Vector.png"
+                                            style={{
+                                                width: '36px',
+                                                height: '41px'
+                                            }}
+                                        />
+                                    </FLexLayout>
+
+                                    {/* app-store-button */}
+                                    <FLexLayout
+                                        className={Style['store-button']}
+                                        rowORColumn="row"
+                                        alignItem="center"
+                                        justifyContent="between"
+                                        style={{ marginRight: '17px', cursor: "pointer" }}
+                                        onClick={() => window.open("https://apps.apple.com/in/app/metvy-professional-networking/id1521043145")}
+
+                                    >
+                                        <div style={{ lineHeight: '14px' }}>
+                                            Download <br />{' '}
+                                            <span
+                                                className={
+                                                    Style[
+                                                    'download-button-subText'
+                                                    ]
+                                                }
+                                            >
+                                                on App Store
+                                            </span>{' '}
+                                        </div>
+                                        <img
+                                            src="/icons/apple-vector.png"
+                                            style={{
+                                                width: '36px',
+                                                height: '41px'
+                                            }}
+                                        />
+                                    </FLexLayout>
+                                </FLexLayout>
+                            </FLexLayout>
+                        </FLexLayout>
+                    </FLexLayout>
+                )}
+
+                {/* Discover & Explore-Mobile */}
+                {width < 1260 && (
+                    <FLexLayout
+                        style={{ marginTop: '34px' }}
+                        alignItem="center"
+                        rowORColumn="column"
+                    >
+                        <div className={Style['discover-explore-text']}>
+                            {'BUSINESS CARDS'}
+                        </div>
+                        <div
+                            style={{
+                                width: '22px',
+                                height: '2.2px',
+                                backgroundColor: 'black',
+                                marginTop: '23px'
+                            }}
+                        ></div>
+
+                        <div
+                            style={{ textAlign: 'center', marginTop: '7px' }}
+                            className={Style['discover-explore-text-two']}
+                        >
+                            A New way to interact <br /> with your Network!
+                        </div>
+
                         <FLexLayout
                             justifyContent="center"
                             alignItem="center"
-                            className={Style['trusted-testimonial-headline']}
+                            rowORColumn="column"
+                        >
+
+                            <Carousel
+                                slide={false}
+                                interval={2000}
+                                fade={true}
+                                controls={false}
+                                indicators={false}
+                            >
+                                {exploreAppImagesMobile.map((imgName) => {
+                                    return (
+                                        <Carousel.Item>
+                                            <FLexLayout
+                                                rowORColumn="row"
+                                                justifyContent={'center'}
+                                                alignItem="center"
+                                            >
+                                                <img
+                                                    style={{
+                                                        width: '330px',
+                                                        height: '404px'
+                                                    }}
+                                                    src={imgName}
+                                                />
+                                            </FLexLayout>
+                                        </Carousel.Item>
+                                    );
+                                })}
+                            </Carousel>
+                        </FLexLayout>
+
+                        {/* buttons-for-stores*/}
+                        <FLexLayout
+                            style={{
+                                width: '331px',
+                                marginTop: '66px'
+                            }}
+                            justifyContent="between"
                             rowORColumn="row"
-                            style={{ width: '100%' }}
                         >
+                            {/* play-store-button */}
                             <FLexLayout
-                                rowORColumn="column"
-                                justifyContent="center"
+                                className={Style['store-button']}
+                                rowORColumn="row"
                                 alignItem="center"
-                                style={{
-                                    width: '80%',
-                                    fontFamily: 'Poppins',
-                                    fontStyle: 'normal',
-                                    fontWeight: 600,
-                                    fontSize: '35px',
-                                    lineHeight: '135%',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    textAlign: 'center',
-                                    color: '#000000',
-                                }}
+                                justifyContent="between"
+                                onClick={() => window.open("https://play.google.com/store/apps/details?id=com.metvy&hl=en_IN&gl=US")}
+                                style={{ cursor: 'pointer' }}
                             >
-                                <p>
-                                    <span style={{ color: '#2F327D' }}>Trusted by</span>
-                                    <span style={{ color: 'rgb(244, 140, 6)', marginLeft: '10px' }}>
-                                        2000+
-                                    </span>
-                                    <span style={{ color: '#2F327D', marginLeft: '10px' }}>Young Professionals & Students</span>
-                                </p>
+                                <div style={{ lineHeight: '14px' }}>
+                                    Download <br />{' '}
+                                    <span
+                                        className={
+                                            Style['download-button-subText']
+                                        }
+                                    >
+                                        on PlayStore
+                                    </span>{' '}
+                                </div>
+                                <img
+                                    src="/icons/playStore-Vector.png"
+                                    style={{
+                                        width: '24px',
+                                        height: '27px'
+                                    }}
+                                />
+                            </FLexLayout>
+
+                            {/* app-store-button */}
+                            <FLexLayout
+                                className={Style['store-button']}
+                                rowORColumn="row"
+                                alignItem="center"
+                                justifyContent="between"
+                                style={{ marginRight: '17px', cursor: "pointer" }}
+                                onClick={() => window.open("https://apps.apple.com/in/app/metvy-professional-networking/id1521043145")}
+                            >
+                                <div style={{ lineHeight: '14px' }}>
+                                    Download <br />{' '}
+                                    <span
+                                        className={
+                                            Style['download-button-subText']
+                                        }
+                                    >
+                                        on App Store
+                                    </span>{' '}
+                                </div>
+                                <img
+                                    src="/icons/apple-vector.png"
+                                    style={{
+                                        width: '22px',
+                                        height: '26px'
+                                    }}
+                                />
                             </FLexLayout>
                         </FLexLayout>
-                    )
-                }
-                {/* Mobile View for Testimonials */}
+                    </FLexLayout>
+                )}
+
+                {/* master-class-both desktop-and-mobile */}
                 {
-                    width < 1221 && (
-                        <div>
-                            <FLexLayout
-                                style={{ overflow: 'hidden', marginTop: '30px' }}
-                                rowORColumn="row"
-                                justifyContent="end"
-                            >
-                                <FLexLayout
-                                    onMouseEnter={() => {
-                                        setAnimationState('paused');
-                                    }}
-                                    onMouseLeave={() => {
-                                        setAnimationState('running');
-                                    }}
-                                    className={Style['effect']}
-                                    style={{
-                                        width: '10000%',
-                                        animationPlayState: animationState,
-                                        marginBottom: '100px'
-                                    }}
-                                    rowORColumn="row"
-                                >
-                                    {appTestimonialsData.map((testimonial) => (
-                                        <TestimonialCard
-                                            testimonialText={testimonial.text}
-                                            avatarImage={testimonial.imageName}
-                                            designation={testimonial.title}
-                                            avatarName={testimonial.fullName}
-                                        />
-                                    ))}
-                                </FLexLayout>
-                            </FLexLayout>
-                            <a href="#submitForm"><FLexLayout
-                                rowORColumn="column"
-                                className={Style['content-container-landing']}
-                                style={{ alignItems: 'center', marginTop: '-15%' }}
-                            ><button style={{ width: '25%', height: '45px' }} className={Style['apply-button']}>Apply Now</button>
-                            </FLexLayout>
-                            </a>
-                        </div>
-                    )
+                    <FLexLayout rowORColumn="column">
+                        <FLexLayout
+                            rowORColumn="column"
+                            justifyContent="center"
+                            alignItem="center"
+                        >
+                            <div className={Style['master-class-heading']}>
+                                {'Upcoming Metvy Learn Masterclasses'}
+                            </div>
+                        </FLexLayout>
+                        <FLexLayout rowORColumn="row">
+                            <Container>
+                                <Row>
+                                    {masterClasses.map((masterClass) => {
+                                        return (
+                                            <Col style={{ marginTop: '50px' }}>
+                                                {/* master-class-card-box-wih apply button */}
+                                                <FLexLayout
+                                                    alignItem="center"
+                                                    rowORColumn="column"
+                                                >
+                                                    {/* master-class-card */}
+                                                    <FLexLayout
+                                                        className={
+                                                            Style[
+                                                            'master-class-card'
+                                                            ]
+                                                        }
+                                                        rowORColumn="column"
+                                                        alignItem="center"
+                                                    >
+                                                        <FLexLayout rowORColumn="column">
+                                                            <img
+                                                                style={{
+                                                                    width: '250px',
+                                                                    height: '250px'
+                                                                }}
+                                                                src={`/icons/${masterClass.imgName}`}
+                                                            />
+
+                                                            {/* title-box */}
+                                                            <FLexLayout
+                                                                style={{
+                                                                    width: '259px',
+                                                                    height: '51px',
+                                                                    borderRadius:
+                                                                        '45px',
+                                                                    background:
+                                                                        '#FFEBE4',
+                                                                    marginTop:
+                                                                        '16px',
+                                                                    fontFamily:
+                                                                        'poppinsSemiBold',
+                                                                    fontSize:
+                                                                        '14px'
+                                                                }}
+                                                                rowORColumn="column"
+                                                                justifyContent="center"
+                                                                alignItem="center"
+                                                            >
+                                                                {
+                                                                    masterClass.title
+                                                                }
+                                                            </FLexLayout>
+
+                                                            {/* name, time ,date */}
+                                                            <FLexLayout
+                                                                style={{
+                                                                    textAlign:
+                                                                        'center',
+                                                                    marginTop:
+                                                                        '14px'
+                                                                }}
+                                                                rowORColumn="column"
+                                                            >
+                                                                <div
+                                                                    style={{
+                                                                        fontFamily:
+                                                                            'poppinsSemiBold',
+                                                                        fontSize:
+                                                                            '13px'
+                                                                    }}
+                                                                >
+                                                                    {
+                                                                        masterClass.name
+                                                                    }
+                                                                </div>
+                                                                <div
+                                                                    style={{
+                                                                        fontFamily:
+                                                                            'poppinsRegular',
+                                                                        lineHeight:
+                                                                            '15px',
+                                                                        fontSize:
+                                                                            '10px',
+                                                                        marginTop:
+                                                                            '8px'
+                                                                    }}
+                                                                >
+                                                                    <span>
+                                                                        {' '}
+                                                                        {
+                                                                            masterClass.date
+                                                                        }{' '}
+                                                                    </span>{' '}
+                                                                    <br />{' '}
+                                                                    <span>
+                                                                        {
+                                                                            masterClass.time
+                                                                        }
+                                                                    </span>
+                                                                </div>
+                                                            </FLexLayout>
+                                                        </FLexLayout>
+                                                    </FLexLayout>
+
+                                                    <FLexLayout
+                                                        rowORColumn="row"
+                                                        justifyContent="center"
+                                                        alignItem="center"
+                                                        style={{
+                                                            marginTop: '60px'
+                                                        }}
+                                                        className={
+                                                            Style[
+                                                            'master-class-apply-button'
+                                                            ]
+                                                        }
+                                                    >
+                                                        Click to Register
+                                                    </FLexLayout>
+                                                </FLexLayout>
+                                            </Col>
+                                        );
+                                    })}
+                                </Row>
+                            </Container>
+                        </FLexLayout>
+                    </FLexLayout>
                 }
 
-                {/* mobile view of Submit Form */}
-                {
-                    width < 900 && (<FLexLayout
+                {/* Trusted-text-testimonial-headline */}
+                <FLexLayout
+                    justifyContent="center"
+                    alignItem="center"
+                    className={Style['trusted-testimonial-headline']}
+                    rowORColumn="row"
+                    style={{ width: '100%' }}
+                >
+                    <FLexLayout
                         rowORColumn="column"
-                        className={Style['content-container-landing']}
-                        style={{ marginLeft: '10%', paddingBottom: '10%', width: '75%', zIndex: 10, backgroundColor: 'transparent', backgroundSize: '100%', marginTop: '-120%' }}
-                    ><SubmitForm /></FLexLayout>)
-                }
+                        justifyContent="center"
+                        alignItem="center"
+                        style={{ width: '80%' }}
+                    >
+                        <p>
+                            {' '}
+                            Trusted by{' '}
+                            <span style={{ color: '#1371FF' }}>
+                                {' '}
+                                2000+{' '}
+                            </span>{' '}
+                            Young Professionals & Students{' '}
+                        </p>
+                    </FLexLayout>
+                </FLexLayout>
 
-                {/* tablet view of Submit Form */}
-                {
-                    (width > 900 && width < 1221) && (<FLexLayout
-                        rowORColumn="column"
-                        className={Style['content-container-landing']}
-                        style={{ marginLeft: '10%', paddingBottom: '10%', width: '75%', zIndex: 10, backgroundColor: 'transparent', backgroundSize: '100%', marginTop: '-60%' }}
-                    ><SubmitForm /></FLexLayout>)
-                }
+                {/* Testimonials-Container-HorizontalScrool */}
 
-                {/* Industry Experts  */}
-                {
-                    width > 1260 && (
-                        <FLexLayout
-                            rowORColumn="column"
-                            style={{ marginTop: '10px', width: '60%' }}
-                        >
-                            {/* benefits-cards-rows */}
-                            <FLexLayout
-                                style={{
-                                    position: 'relative',
-                                    top: '110px'
-                                }}
-                                justifyContent="between"
-                                order="4"
-                                rowORColumn="row"
-                            >
-                                <img src="/icons/Industry-Experts.png" style={{ width: '100%' }} />
-                            </FLexLayout>
-                        </FLexLayout>
-                    )
-                }
+                <FLexLayout
+                    style={{ overflow: 'hidden', marginTop: '30px' }}
+                    rowORColumn="row"
+                    justifyContent="end"
+                >
+                    <FLexLayout
+                        onMouseEnter={() => {
+                            setAnimationState('paused');
+                        }}
+                        onMouseLeave={() => {
+                            setAnimationState('running');
+                        }}
+                        className={Style['effect']}
+                        style={{
+                            width: '10000%',
+                            animationPlayState: animationState,
+                            marginBottom: '100px'
+                        }}
+                        rowORColumn="row"
+                    >
+                        {appTestimonialsData.map((testimonial) => (
+                            <TestimonialCard
+                                testimonialText={testimonial.text}
+                                avatarImage={testimonial.imageName}
+                                designation={testimonial.title}
+                                avatarName={testimonial.fullName}
+                            />
+                        ))}
+                    </FLexLayout>
+                </FLexLayout>
 
-                {/*Personalised Care */}
-                {
-                    width > 1260 && (
-                        <FLexLayout
-                            rowORColumn="column"
-                            style={{ marginTop: '10px', width: '60%' }}
-                        >
-                            <FLexLayout
-                                style={{
-                                    position: 'relative',
-                                    top: '110px'
-                                }}
-                                justifyContent="between"
-                                order="4"
-                                rowORColumn="row"
-                            >
-                                <img src="/icons/Personalised-Care.png" style={{ width: '100%' }} />
-                            </FLexLayout>
-                        </FLexLayout>
-                    )
-                }
+                {/* featured On Banner */}
+                <FLexLayout
+                    rowORColumn="row"
+                    justifyContent="center"
+                    alignItem="center"
+                >
+                    <FLexLayout
+                        justifyContent="center"
+                        alignItem="center"
+                        className={Style['banner-container']}
+                        rowORColumn="row"
+                    >
+                        {'Featured On'}
+                    </FLexLayout>
+                </FLexLayout>
 
-                {/*Testemonial*/}
-                {
-                    width > 1260 && (
-                        <FLexLayout
-                            rowORColumn="column"
-                            style={{ marginTop: '10px', width: '60%' }}
-                        >
-                            <FLexLayout
-                                style={{
-                                    position: 'relative',
-                                    top: '110px'
-                                }}
-                                justifyContent="between"
-                                order="4"
-                                rowORColumn="row"
-                            >
-                                <img src="/icons/Testimonial.png" style={{ width: '100%' }} />
-                            </FLexLayout>
-                        </FLexLayout>
-                    )
-                }
+                {/* featured-on-icons */}
+                <FLexLayout
+                    alignItem="center"
+                    justifyContent="center"
+                    rowORColumn="column"
+                >
+                    <FLexLayout
+                        justifyContent="between"
+                        alignItem="center"
+                        style={{ width: '80%' }}
+                        rowORColumn="row"
+                    >
+                        <img
+                            className={Style['InC-Icon']}
+                            src="/icons/I42.png"
+                        />
+                        <img
+                            className={Style['daily-hunt-icon']}
+                            src="/icons/DH.png"
+                        />
+                        <img
+                            className={Style['your-story-icon']}
+                            src="/icons/your_story.png"
+                        />
+                        <img
+                            className={Style['tedx-icon']}
+                            src="/icons/tedx-logo 1.png"
+                        />
+                    </FLexLayout>
 
-                {/*FAQ*/}
-                {
-                    width > 1260 && (
-                        <FLexLayout
-                            rowORColumn="column"
-                            style={{ marginTop: '100px', width: '60%', alignItems: 'center', height: '100%' }}
-                        >
-                            <FLexLayout
-                                style={{
-                                    position: 'relative',
-                                    height: '100%'
-                                }}
-                                rowORColumn="row"
-                                order="1"
-                                justifyContent="center"
-                                alignItem="center"
-                            >
-                                <div
-                                    style={{
-                                        fontFamily: 'Poppins',
-                                        fontStyle: 'normal',
-                                        fontWeight: 600,
-                                        fontSize: '44px',
-                                        lineHeight: '135%',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        textAlign: 'center',
-                                        color: '#000000',
-                                    }}
-                                >
-                                    {'Frequesntly Asked Questions'}
-                                </div>
-                            </FLexLayout>
-                            {/* benefits-cards-rows */}
-                            <FLexLayout
-                                style={{
-                                    position: 'relative',
-                                    top: '110px',
-                                    width: '100%',
-                                    padding: '40px',
-                                    height: '100%',
-                                }}
-                                justifyContent="between"
-                                order="4"
-                                rowORColumn="column"
-                            >
-                                {/* {
-                                faqData.map((data, index) => (
-                                    <div style={{
-                                        background: '#FFFFFF',
-                                        borderRadius: '36px',
-                                        marginBottom: '15px',
-                                        textAlign: 'center',
-                                    }} id="questionDiv" key={index}>
-                                        <button style={{
-                                            background: '#FFFFFF',
-                                            boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.05), 0px 18px 166px rgba(0, 0, 0, 0.05)',
-                                            borderRadius: '36px',
-                                            width: '100%',
-                                            padding: '20px',
-                                            marginBottom: '10px',
-                                            textAlign: 'start',
-                                            border: 'none',
-                                            outline: 'none'
-                                        }} onClick={(e) => questionOne(index, e)} key={index}>{data.question} <img src="/icons/Polygon-black.png" id="blackPolygon" style={{ display: 'block' }} /> <img src="/icons/Polygon-white.png" id="whitePolygon" style={{ display: 'none' }} /></button>
-                                        <div id="myDIV" style={{ fontSize: '17px', display: 'none' }} key={index}>
-                                            {data.answer}
-                                        </div>
-                                    </div>
-                                ))
-                            } */}
-                                <div style={{
-                                    background: '#FFFFFF',
-                                    borderRadius: '36px',
-                                    marginBottom: '15px',
-                                    textAlign: 'center',
-                                    height: '80px',
-                                    boxShadow: 'none'
-                                }} id="questionDiv1">
-                                    <button style={{
-                                        background: '#FFFFFF',
-                                        boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.05), 0px 18px 166px rgba(0, 0, 0, 0.05)',
-                                        borderRadius: '36px',
-                                        width: '100%',
-                                        padding: '20px',
-                                        marginBottom: '10px',
-                                        textAlign: 'start',
-                                        border: 'none',
-                                        outline: 'none',
-                                        display: 'flex',
-                                    }} onClick={questionOne}><div style={{ width: '50%' }}>What’s the Program Duration?</div> <div style={{ display: 'block', width: '40%', textAlign: 'end' }} id="blackPolygon1"><img src="/icons/Polygon-black.png" /></div><div style={{ display: 'none', width: '40%', textAlign: 'end' }} id="whitePolygon1"><img src="/icons/Polygon-white.png" /></div></button>
-                                    <div id="myDIV1" style={{ fontSize: '15px', display: 'none', textAlign: 'start', padding: '15px' }} >
-                                        We offer 30-day curated upskilling programs which require a commitment of 4 hours per week from the user’s end.
-                                    </div>
-                                </div>
-                                <div style={{
-                                    background: '#FFFFFF',
-                                    borderRadius: '36px',
-                                    marginBottom: '15px',
-                                    textAlign: 'center',
-                                    boxShadow: 'none'
-                                }} id="questionDiv2" >
-                                    <button style={{
-                                        background: '#FFFFFF',
-                                        boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.05), 0px 18px 166px rgba(0, 0, 0, 0.05)',
-                                        borderRadius: '36px',
-                                        width: '100%',
-                                        padding: '20px',
-                                        marginBottom: '10px',
-                                        textAlign: 'start',
-                                        border: 'none',
-                                        outline: 'none',
-                                        display: 'flex',
-                                    }} onClick={questionTwo}><div style={{ width: '50%' }}>What if I miss a live session?</div><div style={{ display: 'block', width: '40%', textAlign: 'end' }} id="blackPolygon2"><img src="/icons/Polygon-black.png" /></div><div style={{ display: 'none', width: '40%', textAlign: 'end' }} id="whitePolygon2"><img src="/icons/Polygon-white.png" /></div></button>
-                                    <div id="myDIV2" style={{ fontSize: '15px', display: 'none', textAlign: 'start', padding: '15px' }}>
-                                        In such cases, we provide session recordings for each session that has happened, and one can refer to them at any time (Recordings would be available for 1 week after the cohort ends).
-                                    </div>
-                                </div>
-                                <div style={{
-                                    background: '#FFFFFF',
-                                    borderRadius: '36px',
-                                    marginBottom: '15px',
-                                    textAlign: 'center',
-                                    boxShadow: 'none'
-                                }} id="questionDiv3" >
-                                    <button style={{
-                                        background: '#FFFFFF',
-                                        boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.05), 0px 18px 166px rgba(0, 0, 0, 0.05)',
-                                        borderRadius: '36px',
-                                        width: '100%',
-                                        padding: '20px',
-                                        marginBottom: '10px',
-                                        textAlign: 'start',
-                                        border: 'none',
-                                        outline: 'none',
-                                        display: 'flex',
-                                    }} onClick={questionThree}><div style={{ width: '50%' }}>Is there any deadline to register?</div><div style={{ display: 'block', width: '40%', textAlign: 'end' }} id="blackPolygon3"><img src="/icons/Polygon-black.png" /></div><div style={{ display: 'none', width: '40%', textAlign: 'end' }} id="whitePolygon3"><img src="/icons/Polygon-white.png" /></div></button>
-                                    <div id="myDIV3" style={{ fontSize: '15px', display: 'none', textAlign: 'start', padding: '15px' }}>
-                                        For every cohort the registration are opened till the last day of the previous cohort ( Subject to seat availability).
-                                    </div>
-                                </div>
-                                <div style={{
-                                    background: '#FFFFFF',
-                                    borderRadius: '36px',
-                                    marginBottom: '15px',
-                                    textAlign: 'center',
-                                    boxShadow: 'none'
-                                }} id="questionDiv4" >
-                                    <button style={{
-                                        background: '#FFFFFF',
-                                        boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.05), 0px 18px 166px rgba(0, 0, 0, 0.05)',
-                                        borderRadius: '36px',
-                                        width: '100%',
-                                        padding: '20px',
-                                        marginBottom: '10px',
-                                        textAlign: 'start',
-                                        border: 'none',
-                                        outline: 'none',
-                                        display: 'flex',
-                                    }} onClick={questionFour}><div style={{ width: '50%' }}>What is the time commitment for any of these programs?</div><div style={{ display: 'block', width: '40%', textAlign: 'end' }} id="blackPolygon4"><img src="/icons/Polygon-black.png" /></div><div style={{ display: 'none', width: '40%', textAlign: 'end' }} id="whitePolygon4"><img src="/icons/Polygon-white.png" /></div></button>
-                                    <div id="myDIV4" style={{ fontSize: '15px', display: 'none', textAlign: 'start', padding: '15px' }}>
-                                        All the programs require a commitment of 4 hours per week from the user’s end.
-                                    </div>
-                                </div>
-                                <div style={{
-                                    background: '#FFFFFF',
-                                    borderRadius: '36px',
-                                    marginBottom: '15px',
-                                    textAlign: 'center',
-                                    boxShadow: 'none'
-                                }} id="questionDiv5" >
-                                    <button style={{
-                                        background: '#FFFFFF',
-                                        boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.05), 0px 18px 166px rgba(0, 0, 0, 0.05)',
-                                        borderRadius: '36px',
-                                        width: '100%',
-                                        padding: '20px',
-                                        marginBottom: '10px',
-                                        textAlign: 'start',
-                                        border: 'none',
-                                        outline: 'none',
-                                        display: 'flex',
-                                    }} onClick={questionFive}><div style={{ width: '50%' }}>What do I get after successful completion of the program?</div><div style={{ display: 'block', width: '40%', textAlign: 'end' }} id="blackPolygon5"><img src="/icons/Polygon-black.png" /></div><div style={{ display: 'none', width: '40%', textAlign: 'end' }} id="whitePolygon5"><img src="/icons/Polygon-white.png" /></div></button>
-                                    <div id="myDIV5" style={{ fontSize: '15px', display: 'none', textAlign: 'start', padding: '15px' }}>
-                                        After the successful completion of the cohort one would received a certificate and a letter of recommendation backed by NSRCEL, IIM Bangalore and ANDC InStart Foundation.
-                                    </div>
-                                </div>
-                            </FLexLayout>
-                        </FLexLayout>
-                    )
-                }
+                    <FLexLayout
+                        style={{ marginTop: '40px', marginBottom: '100px' }}
+                        className={Style['lower-icons-container']}
+                        justifyContent="between"
+                        rowORColumn="row"
+                    >
+                        <img
+                            className={Style['yahoo-finance-icon']}
+                            src="/icons/YF.png"
+                        />
+                        <img
+                            className={Style['yahoo-news-icon']}
+                            src="/icons/YN.png"
+                        />
+                    </FLexLayout>
+                </FLexLayout>
 
-                {/*Mobile view FAQ*/}
-                {
-                    width < 1221 && (
-                        <FLexLayout
-                            rowORColumn="column"
-                            style={{ marginTop: '100px', width: '100%', alignItems: 'center', height: '100%' }}
-                        >
-                            <FLexLayout
-                                style={{
-                                    position: 'relative',
-                                    height: '100%'
-                                }}
-                                rowORColumn="row"
-                                order="1"
-                                justifyContent="center"
-                                alignItem="center"
-                            >
-                                <div
-                                    style={{
-                                        fontFamily: 'Poppins',
-                                        fontStyle: 'normal',
-                                        fontWeight: 600,
-                                        fontSize: '35px',
-                                        lineHeight: '135%',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        textAlign: 'center',
-                                        color: '#000000',
-                                    }}
-                                >
-                                    {'Frequently Asked Questions'}
-                                </div>
-                            </FLexLayout>
-                            {/* benefits-cards-rows */}
-                            {/* <FLexLayout
-                                style={{
-                                    position: 'relative',
-                                    top: '110px',
-                                    width: '100%',
-                                    padding: '40px',
-                                    height: '100%'
-                                }}
-                                justifyContent="between"
-                                order="4"
-                                rowORColumn="column"
-                            >
-                                <div style={{
-                                    background: '#FFFFFF',
-                                    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.05), 0px 18px 166px rgba(0, 0, 0, 0.05)',
-                                    borderRadius: '36px',
-                                    width: '100%',
-                                    padding: '20px',
-                                    marginBottom: '10px'
-                                }}>What’s the Program Duration?</div>
-                                <div style={{
-                                    background: '#FFFFFF',
-                                    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.05), 0px 18px 166px rgba(0, 0, 0, 0.05)',
-                                    borderRadius: '36px',
-                                    padding: '20px',
-                                    marginBottom: '10px'
-                                }}>What if I miss a live session?</div>
-                                <div style={{
-                                    background: '#FFFFFF',
-                                    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.05), 0px 18px 166px rgba(0, 0, 0, 0.05)',
-                                    borderRadius: '36px',
-                                    padding: '20px',
-                                    marginBottom: '10px'
-                                }}>Is there any deadline to register?</div>
-                                <div style={{
-                                    background: '#FFFFFF',
-                                    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.05), 0px 18px 166px rgba(0, 0, 0, 0.05)',
-                                    borderRadius: '36px',
-                                    padding: '20px',
-                                    marginBottom: '10px'
-                                }}>What is the time commitment for any of these programs?</div>
-                                <div style={{
-                                    background: '#FFFFFF',
-                                    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.05), 0px 18px 166px rgba(0, 0, 0, 0.05)',
-                                    borderRadius: '36px',
-                                    padding: '20px',
-                                    marginBottom: '10px'
-                                }}>What do I get after successful completion of the program?</div>
-                            </FLexLayout> */}
-                            <FLexLayout
-                                style={{
-                                    position: 'relative',
-                                    top: '110px',
-                                    width: '100%',
-                                    padding: '40px',
-                                    height: '100%'
-                                }}
-                                justifyContent="between"
-                                order="4"
-                                rowORColumn="column"
-                            >
-                                {/* {
-                                faqData.map((data, index) => (
-                                    <div style={{
-                                        background: '#FFFFFF',
-                                        borderRadius: '36px',
-                                        marginBottom: '15px',
-                                        textAlign: 'center',
-                                    }} id="questionDiv" key={index}>
-                                        <button style={{
-                                            background: '#FFFFFF',
-                                            boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.05), 0px 18px 166px rgba(0, 0, 0, 0.05)',
-                                            borderRadius: '36px',
-                                            width: '100%',
-                                            padding: '20px',
-                                            marginBottom: '10px',
-                                            textAlign: 'start',
-                                            border: 'none',
-                                            outline: 'none'
-                                        }} onClick={(e) => questionOne(index, e)} key={index}>{data.question} <img src="/icons/Polygon-black.png" id="blackPolygon" style={{ display: 'block' }} /> <img src="/icons/Polygon-white.png" id="whitePolygon" style={{ display: 'none' }} /></button>
-                                        <div id="myDIV" style={{ fontSize: '17px', display: 'none' }} key={index}>
-                                            {data.answer}
-                                        </div>
-                                    </div>
-                                ))
-                            } */}
-                                <div style={{
-                                    background: '#FFFFFF',
-                                    borderRadius: '36px',
-                                    marginBottom: '15px',
-                                    textAlign: 'center',
-                                    // height: '80px',
-                                    boxShadow: 'none'
-                                }} id="questionDiv1">
-                                    <button style={{
-                                        background: '#FFFFFF',
-                                        boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.05), 0px 18px 166px rgba(0, 0, 0, 0.05)',
-                                        borderRadius: '36px',
-                                        width: '100%',
-                                        padding: '20px',
-                                        marginBottom: '10px',
-                                        textAlign: 'start',
-                                        border: 'none',
-                                        outline: 'none',
-                                        display: 'flex',
-                                    }} onClick={questionOne}><div style={{ width: '50%', fontSize: width < 900 && '15px' }}>What’s the Program Duration?</div> <div style={{ display: 'block', width: '40%', textAlign: 'end' }} id="blackPolygon1"><img src="/icons/Polygon-black.png" /></div><div style={{ display: 'none', width: '40%', textAlign: 'end' }} id="whitePolygon1"><img src="/icons/Polygon-white.png" /></div></button>
-                                    <div id="myDIV1" style={{ fontSize: width < 900 && '14px', display: 'none', textAlign: 'start', padding: '15px' }} >
-                                        We offer 30-day curated upskilling programs which require a commitment of 4 hours per week from the user’s end.
-                                    </div>
-                                </div>
-                                <div style={{
-                                    background: '#FFFFFF',
-                                    borderRadius: '36px',
-                                    marginBottom: '15px',
-                                    textAlign: 'center',
-                                    boxShadow: 'none'
-                                }} id="questionDiv2" >
-                                    <button style={{
-                                        background: '#FFFFFF',
-                                        boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.05), 0px 18px 166px rgba(0, 0, 0, 0.05)',
-                                        borderRadius: '36px',
-                                        width: '100%',
-                                        padding: '20px',
-                                        marginBottom: '10px',
-                                        textAlign: 'start',
-                                        border: 'none',
-                                        outline: 'none',
-                                        display: 'flex',
-                                    }} onClick={questionTwo}><div style={{ width: '50%', fontSize: width < 900 && '15px' }}>What if I miss a live session?</div><div style={{ display: 'block', width: '40%', textAlign: 'end' }} id="blackPolygon2"><img src="/icons/Polygon-black.png" /></div><div style={{ display: 'none', width: '40%', textAlign: 'end' }} id="whitePolygon2"><img src="/icons/Polygon-white.png" /></div></button>
-                                    <div id="myDIV2" style={{ fontSize: width < 900 && '14px', display: 'none', textAlign: 'start', padding: '15px' }}>
-                                        In such cases, we provide session recordings for each session that has happened, and one can refer to them at any time (Recordings would be available for 1 week after the cohort ends).
-                                    </div>
-                                </div>
-                                <div style={{
-                                    background: '#FFFFFF',
-                                    borderRadius: '36px',
-                                    marginBottom: '15px',
-                                    textAlign: 'center',
-                                    boxShadow: 'none'
-                                }} id="questionDiv3" >
-                                    <button style={{
-                                        background: '#FFFFFF',
-                                        boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.05), 0px 18px 166px rgba(0, 0, 0, 0.05)',
-                                        borderRadius: '36px',
-                                        width: '100%',
-                                        padding: '20px',
-                                        marginBottom: '10px',
-                                        textAlign: 'start',
-                                        border: 'none',
-                                        outline: 'none',
-                                        display: 'flex',
-                                    }} onClick={questionThree}><div style={{ width: '50%', fontSize: width < 900 && '15px' }}>Is there any deadline to register?</div><div style={{ display: 'block', width: '40%', textAlign: 'end' }} id="blackPolygon3"><img src="/icons/Polygon-black.png" /></div><div style={{ display: 'none', width: '40%', textAlign: 'end' }} id="whitePolygon3"><img src="/icons/Polygon-white.png" /></div></button>
-                                    <div id="myDIV3" style={{ fontSize: width < 900 && '14px', display: 'none', textAlign: 'start', padding: '15px' }}>
-                                        For every cohort the registration are opened till the last day of the previous cohort ( Subject to seat availability).
-                                    </div>
-                                </div>
-                                <div style={{
-                                    background: '#FFFFFF',
-                                    borderRadius: '36px',
-                                    marginBottom: '15px',
-                                    textAlign: 'center',
-                                    boxShadow: 'none'
-                                }} id="questionDiv4" >
-                                    <button style={{
-                                        background: '#FFFFFF',
-                                        boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.05), 0px 18px 166px rgba(0, 0, 0, 0.05)',
-                                        borderRadius: '36px',
-                                        width: '100%',
-                                        padding: '20px',
-                                        marginBottom: '10px',
-                                        textAlign: 'start',
-                                        border: 'none',
-                                        outline: 'none',
-                                        display: 'flex',
-                                    }} onClick={questionFour}><div style={{ width: '50%', fontSize: width < 900 && '15px' }}>What is the time commitment for any of these programs?</div><div style={{ display: 'block', width: '40%', textAlign: 'end' }} id="blackPolygon4"><img src="/icons/Polygon-black.png" /></div><div style={{ display: 'none', width: '40%', textAlign: 'end' }} id="whitePolygon4"><img src="/icons/Polygon-white.png" /></div></button>
-                                    <div id="myDIV4" style={{ fontSize: width < 900 && '14px', display: 'none', textAlign: 'start', padding: '15px' }}>
-                                        All the programs require a commitment of 4 hours per week from the user’s end.
-                                    </div>
-                                </div>
-                                <div style={{
-                                    background: '#FFFFFF',
-                                    borderRadius: '36px',
-                                    marginBottom: '15px',
-                                    textAlign: 'center',
-                                    boxShadow: 'none'
-                                }} id="questionDiv5" >
-                                    <button style={{
-                                        background: '#FFFFFF',
-                                        boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.05), 0px 18px 166px rgba(0, 0, 0, 0.05)',
-                                        borderRadius: '36px',
-                                        width: '100%',
-                                        padding: '20px',
-                                        marginBottom: '10px',
-                                        textAlign: 'start',
-                                        border: 'none',
-                                        outline: 'none',
-                                        display: 'flex',
-                                    }} onClick={questionFive}><div style={{ width: '50%', fontSize: width < 900 && '15px' }}>What do I get after successful completion of the program?</div><div style={{ display: 'block', width: '40%', textAlign: 'end' }} id="blackPolygon5"><img src="/icons/Polygon-black.png" /></div><div style={{ display: 'none', width: '40%', textAlign: 'end' }} id="whitePolygon5"><img src="/icons/Polygon-white.png" /></div></button>
-                                    <div id="myDIV5" style={{ fontSize: width < 900 && '12px', display: 'none', textAlign: 'start', padding: '15px' }}>
-                                        After the successful completion of the cohort one would received a certificate and a letter of recommendation backed by NSRCEL, IIM Bangalore and ANDC InStart Foundation.
-                                    </div>
-                                </div>
-                            </FLexLayout>
-                        </FLexLayout>
-                    )
-                }
-            </FLexLayout >
-            <Footer />
-        </div >
+                <Footer />
+            </FLexLayout>
+        </div>
     );
 };
 
