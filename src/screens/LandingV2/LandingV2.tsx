@@ -55,28 +55,41 @@ const _Landing = ({ setWidth, width }) => {
 
     const [animationState, setAnimationState] = useState('running');
 
+
+
     const masterClasses = [
         {
-            imgName: 'Shawrya.png',
-            title: 'How to build a Startup ?',
-            name: 'Shawrya Mehrotra',
-            date: '29th October,2021',
-            time: '6-7 PM'
+            imgName: 'Dhairya-Gangwani.jpeg',
+            title: 'Resume Revamp',
+            name: 'Dhairya Gangwani',
+            date: '12th March 2022',
+            time: ' 6 to 7 PM',
+            registerLink: 'http://bit.ly/3tK2WX9'
+        },
+        // {
+        //     imgName: 'ankur_img.png',
+        //     title: 'Getting your First Customers',
+        //     name: 'Ankur Jain',
+        //     date: '',
+        //     time: 'To be Announced, Register today to reserve your spot',
+        //     registerLink :  'https://docs.google.com/forms/d/e/1FAIpQLSfD94LMD_49yhfRjCfo9IZEymxltQWaSjncL91LZ_vjIntcEA/viewform'
+        // },
+        {
+            imgName: 'anisha_img.png',
+            title: 'Marketing 101',
+            name: 'Anisha Tandon',
+            date: 'To be Announced, Register today to reserve your spot',
+            time: '',
+            registerLink: 'https://docs.google.com/forms/d/e/1FAIpQLSfD94LMD_49yhfRjCfo9IZEymxltQWaSjncL91LZ_vjIntcEA/viewform'
         },
         {
             imgName: 'Shawrya.png',
-            title: 'How to build a Startup ?',
+            title: 'Public Speaking 101',
             name: 'Shawrya Mehrotra',
-            date: '29th October,2021',
-            time: '6-7 PM'
+            date: 'To be Announced, Register today to reserve your spot',
+            time: '',
+            registerLink: 'https://docs.google.com/forms/d/e/1FAIpQLSfD94LMD_49yhfRjCfo9IZEymxltQWaSjncL91LZ_vjIntcEA/viewform'
         },
-        {
-            imgName: 'Shawrya.png',
-            title: 'How to build a Startup ?',
-            name: 'Shawrya Mehrotra',
-            date: '29th October,2021',
-            time: '6-7 PM'
-        }
     ];
 
     const getAdvertisementTextAndStatistics = () => {
@@ -331,7 +344,7 @@ const _Landing = ({ setWidth, width }) => {
                         />
 
                         <img
-                            src="icons/Nike.png"
+                            src="/icons/nike.png"
                             style={{ width: '48.38px', height: '25.31px' }}
                         />
                         <img
@@ -704,13 +717,16 @@ const _Landing = ({ setWidth, width }) => {
                                 <FLexLayout
                                     style={{
                                         position: 'relative',
-                                        top: '55px'
+                                        top: '55px',
+                                        cursor: 'pointer'
                                     }}
                                     order="3"
                                     className={Style['join-now-button']}
                                     rowORColumn="column"
                                     justifyContent="center"
                                     alignItem="center"
+                                    onClick={() => window.open('https://t.me/joinchat/PRXD91iL538zNGM9')}
+
                                 >
                                     Join Now
                                 </FLexLayout>
@@ -820,12 +836,15 @@ const _Landing = ({ setWidth, width }) => {
                             <FLexLayout
                                 style={{
                                     position: 'relative',
-                                    bottom: '70px'
+                                    bottom: '70px',
+                                    cursor: 'pointer'
+
                                 }}
                                 className={Style['join-now-button']}
                                 rowORColumn="column"
                                 justifyContent="center"
                                 alignItem="center"
+                                onClick={() => window.open('https://t.me/joinchat/PRXD91iL538zNGM9')}
                             >
                                 Join Now
                             </FLexLayout>
@@ -1114,7 +1133,7 @@ const _Landing = ({ setWidth, width }) => {
                                         rowORColumn="row"
                                         alignItem="center"
                                         justifyContent="between"
-                                        style={{ marginRight: '17px', cursor: "pointer" }}
+                                        style={{ cursor: "pointer" }}
                                         onClick={() => window.open("https://apps.apple.com/in/app/metvy-professional-networking/id1521043145")}
 
                                     >
@@ -1248,7 +1267,7 @@ const _Landing = ({ setWidth, width }) => {
                                 rowORColumn="row"
                                 alignItem="center"
                                 justifyContent="between"
-                                style={{ marginRight: '17px', cursor: "pointer" }}
+                                style={{ cursor: "pointer" }}
                                 onClick={() => window.open("https://apps.apple.com/in/app/metvy-professional-networking/id1521043145")}
                             >
                                 <div style={{ lineHeight: '14px' }}>
@@ -1290,7 +1309,7 @@ const _Landing = ({ setWidth, width }) => {
                                 <Row>
                                     {masterClasses.map((masterClass) => {
                                         return (
-                                            <Col style={{ marginTop: '50px' }}>
+                                            <Col onClick={() => window.open(masterClass.registerLink)} style={{ marginTop: '50px', cursor: 'pointer' }}>
                                                 {/* master-class-card-box-wih apply button */}
                                                 <FLexLayout
                                                     alignItem="center"
@@ -1329,7 +1348,7 @@ const _Landing = ({ setWidth, width }) => {
                                                                     fontFamily:
                                                                         'poppinsSemiBold',
                                                                     fontSize:
-                                                                        '14px'
+                                                                        '12px'
                                                                 }}
                                                                 rowORColumn="column"
                                                                 justifyContent="center"
@@ -1369,7 +1388,7 @@ const _Landing = ({ setWidth, width }) => {
                                                                         lineHeight:
                                                                             '15px',
                                                                         fontSize:
-                                                                            '10px',
+                                                                            '13px',
                                                                         marginTop:
                                                                             '8px'
                                                                     }}

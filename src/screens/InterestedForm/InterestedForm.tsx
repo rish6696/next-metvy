@@ -1,5 +1,5 @@
 import Style from './InterestedForm.module.css';
-import HeaderV2 from '../../components/HeaderV2/HeaderV2';
+import HeaderNew from '../../components/HeaderNew/HeaderNew';
 import BackgroundBlur from '../../components/BackgroundEffectBlur/BackgroundEffectBlur';
 import FLexLayout from '../../components/FlexLayout';
 import { Image, Row, Container, Col, Carousel } from 'react-bootstrap';
@@ -8,7 +8,7 @@ import { useEffect, useRef, useState } from 'react';
 import { connect } from 'react-redux';
 import TestimonialCard from '../../components/TestimonialsV2/testimonialV2';
 import { appTestimonialsData, faqData } from '../../constants';
-import Footer from '../../components/Footer/Footer';
+import FooterNew from '../../components/FooterNew/FooterNew';
 import { useRouter } from 'next/router';
 import SubmitForm from '../../components/SubmitForm/SubmitForm';
 
@@ -199,7 +199,7 @@ const _InterestedForm = ({ setWidth, width }) => {
         <div className={Style['page-body']} style={{ marginTop: width < 900 && '50px', backgroundImage: width >= 1221 ? `url("/icons/Header.png")` : width < 1221 && width > 900 ? `url("/icons/Header.png")` : `url("/icons/Mobile-Header.png")`, backgroundRepeat: 'no-repeat', backgroundSize: '100%', width: width < 900 && '100vw' }}>
             <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'></link>
             <BackgroundBlur />
-            <HeaderV2 />
+            <HeaderNew />
             {width >= 1221 && (<FLexLayout
                 rowORColumn="column"
                 className={Style['content-container-landing']}
@@ -1598,7 +1598,7 @@ const _InterestedForm = ({ setWidth, width }) => {
                     )
                 }
             </FLexLayout >
-            <Footer />
+            <FooterNew />
         </div >
     );
 };
