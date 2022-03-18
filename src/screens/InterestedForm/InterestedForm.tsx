@@ -196,7 +196,7 @@ const _InterestedForm = ({ setWidth, width }) => {
     }, [index]);
 
     return (
-        <div className={Style['page-body']} style={{ marginTop: width < 900 && '50px', backgroundImage: width >= 1221 ? `url("/icons/Header.png")` : width < 1221 && width > 900 ? `url("/icons/Header.png")` : `url("/icons/Mobile-Header.png")`, backgroundRepeat: 'no-repeat', backgroundSize: '100%', width: width < 900 && '100vw' }}>
+        <div className={Style['page-body']} style={{ marginTop: width < 900 && '50px', backgroundImage: width >= 1221 ? `url("/icons/Header.png")` : width < 1221 && width > 900 ? `url("/icons/Header.png")` : `url("/icons/Mobile-Header.png")`, backgroundRepeat: 'no-repeat', backgroundSize: '100%', width: width > 1221 ? '100%' : width < 900 && width > 650 ? '100vw' : '150vw' }}>
             <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'></link>
             <BackgroundBlur />
             <HeaderNew />
@@ -209,7 +209,7 @@ const _InterestedForm = ({ setWidth, width }) => {
             ><SubmitForm /></FLexLayout>)}
             {/* {width >= 1221 && <div style={{ height: '115vh' }}></div>} */}
             {width < 1221 && width > 900 && <div style={{ height: '60vh' }}></div>}
-            {width < 900 && <div style={{ height: '70vh' }}></div>}
+            {width < 900 && (width < 500 ? <div style={{ height: '85vh' }}></div> : <div style={{ height: '70vh' }}></div>)}
             {width < 1260 && (<a href="#submitForm"><FLexLayout
                 rowORColumn="column"
                 className={Style['content-container-landing']}
