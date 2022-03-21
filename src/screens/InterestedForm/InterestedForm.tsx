@@ -620,7 +620,7 @@ const _InterestedForm = ({ setWidth, width }) => {
                                             marginBottom: '5px'
                                         }}>Metvy Design Program</div>
                                         <div style={{ display: 'flex', flexDirection: 'row' }}>
-                                            <div style={{ width: '50%', textAlign: 'start', color: '#777777' }}>₹3499</div>
+                                            <div style={{ width: '50%', textAlign: 'start', color: '#777777' }}>₹2999</div>
                                             <div style={{ width: '50%', textAlign: 'end', color: '#777777' }}>1 day left</div>
                                         </div>
                                     </div>
@@ -654,7 +654,7 @@ const _InterestedForm = ({ setWidth, width }) => {
                                             marginBottom: '5px'
                                         }}>Metvy Consultancy Program</div>
                                         <div style={{ display: 'flex', flexDirection: 'row' }}>
-                                            <div style={{ width: '50%', textAlign: 'start', color: '#777777' }}>₹3499</div>
+                                            <div style={{ width: '50%', textAlign: 'start', color: '#777777' }}>₹3999</div>
                                             <div style={{ width: '50%', textAlign: 'end', color: '#777777' }}>1 day left</div>
                                         </div>
                                     </div>
@@ -688,7 +688,7 @@ const _InterestedForm = ({ setWidth, width }) => {
                                             marginBottom: '5px'
                                         }}>Metvy Business Program</div>
                                         <div style={{ display: 'flex', flexDirection: 'row' }}>
-                                            <div style={{ width: '50%', textAlign: 'start', color: '#777777' }}>₹3499</div>
+                                            <div style={{ width: '50%', textAlign: 'start', color: '#777777' }}>₹2999</div>
                                             <div style={{ width: '50%', textAlign: 'end', color: '#777777' }}>1 day left</div>
                                         </div>
                                     </div>
