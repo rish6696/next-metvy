@@ -89,31 +89,31 @@ const _FooterNew = () => {
                         >
                             <Image
                                 className={Style['footer-social-media-items']}
-                                // style={{ width: '21px', height: '21px' }}
-                                src="/icons/facebook-logo.png"
+                                style={{ width: '21px', height: '21px' }}
+                                src="/icons/facebook-logo-new.png"
                                 onClick={() => window.open(socialMediaLinks.facebook)}
                             />
                             <Image
                                 className={Style['footer-social-media-items']}
-                                // style={{ width: '21px', height: '21px' }}
+                                style={{ width: '21px', height: '21px' }}
                                 src="/icons/linkedin-logo.png"
                                 onClick={() => window.open(socialMediaLinks.linkedIn)}
                             />
                             <Image
                                 className={Style['footer-social-media-items']}
-                                // style={{ width: '21px', height: '21px' }}
+                                style={{ width: '21px', height: '21px' }}
                                 src="/icons/twitter-logo.png"
                                 onClick={() => window.open(socialMediaLinks.twitter)}
                             />
                             <Image
                                 className={Style['footer-social-media-items']}
-                                // style={{ width: '21px', height: '21px' }}
+                                style={{ width: '21px', height: '21px' }}
                                 src="/icons/instagram-logo.png"
                                 onClick={() => window.open(socialMediaLinks.instagram)}
                             />
                             <Image
                                 className={Style['footer-social-media-items']}
-                                // style={{ width: '21px', height: '21px' }}
+                                style={{ width: '21px', height: '21px' }}
                                 src="/icons/youtube-logo.png"
                                 onClick={() => window.open(socialMediaLinks.youtube)}
                             />
