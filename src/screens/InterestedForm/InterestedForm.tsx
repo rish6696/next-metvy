@@ -1496,8 +1496,8 @@ const _InterestedForm = ({ setWidth, width }) => {
                                         border: 'none',
                                         outline: 'none',
                                         display: 'flex',
-                                    }} onClick={questionOne}><div style={{ width: '50%', fontSize: width < 900 && '15px' }}>What’s the Program Duration?</div> <div style={{ display: 'block', width: '40%', textAlign: 'end' }} id="blackPolygon1"><img src="/icons/Polygon-black.png" /></div><div style={{ display: 'none', width: '40%', textAlign: 'end' }} id="whitePolygon1"><img src="/icons/Polygon-white.png" /></div></button>
-                                    <div id="myDIV1" style={{ fontSize: width < 900 && '14px', display: 'none', textAlign: 'start', padding: '15px' }} >
+                                    }} onClick={questionOne}><div style={{ width: '50%', fontSize: width < 900 && '15px', color: 'black' }}>What’s the Program Duration?</div> <div style={{ display: 'block', width: '40%', textAlign: 'end' }} id="blackPolygon1"><img src="/icons/Polygon-black.png" /></div><div style={{ display: 'none', width: '40%', textAlign: 'end' }} id="whitePolygon1"><img src="/icons/Polygon-white.png" /></div></button>
+                                    <div id="myDIV1" style={{ fontSize: width < 900 && '14px', display: 'none', textAlign: 'start', padding: '15px', color: 'black' }} >
                                         We offer 30-day curated upskilling programs which require a commitment of 4 hours per week from the user’s end.
                                     </div>
                                 </div>
@@ -1519,8 +1519,8 @@ const _InterestedForm = ({ setWidth, width }) => {
                                         border: 'none',
                                         outline: 'none',
                                         display: 'flex',
-                                    }} onClick={questionTwo}><div style={{ width: '50%', fontSize: width < 900 && '15px' }}>What if I miss a live session?</div><div style={{ display: 'block', width: '40%', textAlign: 'end' }} id="blackPolygon2"><img src="/icons/Polygon-black.png" /></div><div style={{ display: 'none', width: '40%', textAlign: 'end' }} id="whitePolygon2"><img src="/icons/Polygon-white.png" /></div></button>
-                                    <div id="myDIV2" style={{ fontSize: width < 900 && '14px', display: 'none', textAlign: 'start', padding: '15px' }}>
+                                    }} onClick={questionTwo}><div style={{ width: '50%', fontSize: width < 900 && '15px', color: 'black' }}>What if I miss a live session?</div><div style={{ display: 'block', width: '40%', textAlign: 'end' }} id="blackPolygon2"><img src="/icons/Polygon-black.png" /></div><div style={{ display: 'none', width: '40%', textAlign: 'end' }} id="whitePolygon2"><img src="/icons/Polygon-white.png" /></div></button>
+                                    <div id="myDIV2" style={{ fontSize: width < 900 && '14px', display: 'none', textAlign: 'start', padding: '15px', color: 'black' }}>
                                         In such cases, we provide session recordings for each session that has happened, and one can refer to them at any time (Recordings would be available for 1 week after the cohort ends).
                                     </div>
                                 </div>
@@ -1542,8 +1542,8 @@ const _InterestedForm = ({ setWidth, width }) => {
                                         border: 'none',
                                         outline: 'none',
                                         display: 'flex',
-                                    }} onClick={questionThree}><div style={{ width: '50%', fontSize: width < 900 && '15px' }}>Is there any deadline to register?</div><div style={{ display: 'block', width: '40%', textAlign: 'end' }} id="blackPolygon3"><img src="/icons/Polygon-black.png" /></div><div style={{ display: 'none', width: '40%', textAlign: 'end' }} id="whitePolygon3"><img src="/icons/Polygon-white.png" /></div></button>
-                                    <div id="myDIV3" style={{ fontSize: width < 900 && '14px', display: 'none', textAlign: 'start', padding: '15px' }}>
+                                    }} onClick={questionThree}><div style={{ width: '50%', fontSize: width < 900 && '15px', color: 'black' }}>Is there any deadline to register?</div><div style={{ display: 'block', width: '40%', textAlign: 'end' }} id="blackPolygon3"><img src="/icons/Polygon-black.png" /></div><div style={{ display: 'none', width: '40%', textAlign: 'end' }} id="whitePolygon3"><img src="/icons/Polygon-white.png" /></div></button>
+                                    <div id="myDIV3" style={{ fontSize: width < 900 && '14px', display: 'none', textAlign: 'start', padding: '15px', color: 'black' }}>
                                         For every cohort the registration are opened till the last day of the previous cohort ( Subject to seat availability).
                                     </div>
                                 </div>
@@ -1565,8 +1565,8 @@ const _InterestedForm = ({ setWidth, width }) => {
                                         border: 'none',
                                         outline: 'none',
                                         display: 'flex',
-                                    }} onClick={questionFour}><div style={{ width: '50%', fontSize: width < 900 && '15px' }}>What is the time commitment for any of these programs?</div><div style={{ display: 'block', width: '40%', textAlign: 'end' }} id="blackPolygon4"><img src="/icons/Polygon-black.png" /></div><div style={{ display: 'none', width: '40%', textAlign: 'end' }} id="whitePolygon4"><img src="/icons/Polygon-white.png" /></div></button>
-                                    <div id="myDIV4" style={{ fontSize: width < 900 && '14px', display: 'none', textAlign: 'start', padding: '15px' }}>
+                                    }} onClick={questionFour}><div style={{ width: '50%', fontSize: width < 900 && '15px', color: 'black' }}>What is the time commitment for any of these programs?</div><div style={{ display: 'block', width: '40%', textAlign: 'end' }} id="blackPolygon4"><img src="/icons/Polygon-black.png" /></div><div style={{ display: 'none', width: '40%', textAlign: 'end' }} id="whitePolygon4"><img src="/icons/Polygon-white.png" /></div></button>
+                                    <div id="myDIV4" style={{ fontSize: width < 900 && '14px', display: 'none', textAlign: 'start', padding: '15px', color: 'black' }}>
                                         All the programs require a commitment of 4 hours per week from the user’s end.
                                     </div>
                                 </div>
@@ -1588,8 +1588,8 @@ const _InterestedForm = ({ setWidth, width }) => {
                                         border: 'none',
                                         outline: 'none',
                                         display: 'flex',
-                                    }} onClick={questionFive}><div style={{ width: '50%', fontSize: width < 900 && '15px' }}>What do I get after successful completion of the program?</div><div style={{ display: 'block', width: '40%', textAlign: 'end' }} id="blackPolygon5"><img src="/icons/Polygon-black.png" /></div><div style={{ display: 'none', width: '40%', textAlign: 'end' }} id="whitePolygon5"><img src="/icons/Polygon-white.png" /></div></button>
-                                    <div id="myDIV5" style={{ fontSize: width < 900 && '12px', display: 'none', textAlign: 'start', padding: '15px' }}>
+                                    }} onClick={questionFive}><div style={{ width: '50%', fontSize: width < 900 && '15px', color: 'black' }}>What do I get after successful completion of the program?</div><div style={{ display: 'block', width: '40%', textAlign: 'end' }} id="blackPolygon5"><img src="/icons/Polygon-black.png" /></div><div style={{ display: 'none', width: '40%', textAlign: 'end' }} id="whitePolygon5"><img src="/icons/Polygon-white.png" /></div></button>
+                                    <div id="myDIV5" style={{ fontSize: width < 900 && '12px', display: 'none', textAlign: 'start', padding: '15px', color: 'black' }}>
                                         After the successful completion of the cohort one would received a certificate and a letter of recommendation backed by NSRCEL, IIM Bangalore and ANDC InStart Foundation.
                                     </div>
                                 </div>
