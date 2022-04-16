@@ -846,9 +846,7 @@ const _Landing = ({ setWidth, width }) => {
                                 justifyContent="center"
                                 alignItem="center"
                                 onClick={() =>
-                                    window.open(
-                                        'https://t.me/joinchat/PRXD91iL538zNGM9'
-                                    )
+                                   router.push('/metvy-networking')
                                 }
                             >
                                 Join Now
