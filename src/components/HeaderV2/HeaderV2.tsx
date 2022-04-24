@@ -169,7 +169,7 @@ const _HeaderV2 = () => {
 
 
                     <div
-                        onClick={() => router.push('/team')}
+                        onClick={() => router.push('/metvy-networking')}
                         className={HeaderStyle['cursorPointer']}
                         style={{ marginLeft: '20px' }}
                     >
