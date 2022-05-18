@@ -58,7 +58,8 @@ export const courses = [
     { name: 'Design program', routePath: '/design_program' },
     { name: 'AI Bootcamp Program', routePath: '/AI_Bootcamp_program' },
     { name: 'Consultancy Program', routePath: '/consultancy_program' },
-    { name: 'Business Program', routePath: '/business_program' }
+    { name: 'Business Program', routePath: '/business_program' },
+    { name: 'Finance Program', routePath: '/finance_program' }
 ];
 
 export const EDITABLE_DISCOUNT_CODE_ID = '#EDIT_TABLE_DISCOUNT_CODE#';
@@ -161,8 +162,8 @@ export const coursesLearnScreenAdvertisementMetaData = [
         routePath: '/consultancy_program'
     },
     {
-        backgroundImage: '/icons/Golden_ 2.png',
-        text: 'Want to become an Entrepreneur?',
+        backgroundImage: '/icons/finance_orange.png',
+        text: 'Start your career in Finance.',
         brands: [
             { name: '/icons/Amazon logo.png', width: '48px', height: '19px' },
             {
@@ -181,7 +182,7 @@ export const coursesLearnScreenAdvertisementMetaData = [
         illustratorImg: '/icons/Business 2.png',
         illustratorImgHeight: '118px',
         illustratorImgWidth: '173px',
-        routePath: '/business_program'
+        routePath: '/finance_program'
     }
 ];
 
@@ -418,7 +419,36 @@ export const programsCardsMetaData = [
         ],
         'box-shadow': '0px 0px 92px 0px rgba(0, 148, 255, 0.72)',
         routePath: '/consultancy_program'
-    }
+    },
+    {
+        backgroundImage: '/icons/finance_orange.png', 
+        name: 'Metvy Finance Program',
+        weeks: 4,
+        peopleUpSkilled: '500+',
+        sessions: 20,
+        description: `Live Mentorship Program on Finance
+        backed with Compendiums and Live
+        Projects crafted and led by top mentors`,
+        priceBeforeDiscount: '6,000',
+        princeAfterDiscount: '4,999',
+        brands: [
+            { name: '/icons/Amazon logo.png', width: '48px', height: '19px' },
+            {
+                name: '/icons/Adobe_Corporate_Logo.png',
+                width: '54px',
+                height: '14px'
+            },
+            { name: '/icons/unnamed (1).png', width: '27px', height: '14px' },
+            { name: '/icons/bharatpe.png', width: '58px', height: '16px' },
+            {
+                name: '/icons/Facebook-New-Logo.png',
+                width: '37px',
+                height: '14px'
+            }
+        ],
+        'box-shadow': '0px 0px 92px 0px rgba(255, 199, 0, 0.72)',
+        routePath: '/finance_program'
+    },
 ];
 
 export const testimonialLearn =
@@ -686,6 +716,54 @@ The program requires no coding background or prior knowledge of the same and is 
             {
                 content: `
 One-on-one live classes and mentorship from top mentors from GSoC, EY, Tech Mahindra`,
+                imageName: '/icons/Connect.png'
+            },
+            {
+                content: `A chance to grab an Internship at Metvy`,
+                imageName: '/icons/Suitcase.png'
+            },
+            {
+                content: `Personalised Letter of Recommendation`,
+                imageName: '/icons/Certificate.png'
+            },
+            {
+                content: `Constant feedbacks and guidance and preparation material curated by experts`,
+                imageName: '/icons/Thumbs up.png',
+                style: { height: '25%', width: '70%' }
+            }
+        ]
+    },
+    finance_program: {
+        heading: `Metvy Finance Program`,
+        description: `Adulting is hard and so is finance. Looking to get the right insights as you start with your finance & investing journey? 
+Metvy Finance Program is THE place to be. Learn everything from Stocks, Mutual Funds, Fundamental & Technical Analysis to Crypto from Live experts - as they guide you and get you started with finance through curated content and practical experiences.`,
+        weeksData: [
+            {
+                time: '4 Hours',
+                content: `Are you ready to indulge in the financial markets with top mentors and gain insight into its basics? Learn about stocks, bonds, mutual funds, cryptocurrencies and Warren Buffet's theory of early investing. Catapult yourself with the power of compounding into the stratosphere of the stock market. `
+            },
+            {
+                time: '4 Hours',
+                content: `This is when our mentors take you through the fundamentals of stocks. Get your hands dirty on financial reports whilst analysing real companies and understanding the art of comparing stocks`
+            },
+            {
+                time: '4 Hours',
+                content: `Mutual fund investments are subject to market risk? 
+Gain an insight on mutual funds and an in depth understanding on how to invest in the right mutual funds to eliminate ‘’market risk’’. Furthermore, learn how to value various securities and assets by using concepts like discounted cash flow analysis to add finesse to your game.`
+            },
+            {
+                time: '4 Hours',
+                content: `Learn technical analysis from the best in the game and familiarize yourself with chart patterns, trading indicators and candlesticks.
+Dive into the talk of the town and get an overview and understanding of the new digital economy of Cryptocurrencies.`
+            }
+        ],
+        whoIsThisForText: `The Metvy Finance Program is a must for anyone who wants to get started with their finance & investing journey professionally. The learner gets to practically learn the art of investing in Stock Markets, Mutual Funds through Fundamental & Technical Analysis apart from getting an insight into the Crypto world.`,
+
+        themeColor: '#FF9B5F',
+        perks: [
+            {
+                content: `
+One-on-one live classes and mentorship from top mentors from Motilal Oswal, Willis Tower’s Watson, EY and PWC`,
                 imageName: '/icons/Connect.png'
             },
             {
