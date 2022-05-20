@@ -271,6 +271,8 @@ const _EnrollScreen = (props: Props) => {
         // checking if the courses select have valid month of enrollment or not
         // if not then setting the required error
 
+        let selectedMonthsMap = {};
+
         for (let i = 0; i < Object.keys(courseSelectStatus).length; i++) {
             if (
                 courseSelectStatus[Object.keys(courseSelectStatus)[i]]
@@ -279,6 +281,13 @@ const _EnrollScreen = (props: Props) => {
                 const selectMonth =
                     courseSelectStatus[Object.keys(courseSelectStatus)[i]]
                         .selectMonth;
+
+                if (selectedMonthsMap[selectMonth]){
+                    setMinimumOneCourseError("You can only avail one program per month")
+                    return;
+                } 
+
+                selectedMonthsMap[selectMonth]= 1
                 const availableMonths =
                     courseSelectStatus[Object.keys(courseSelectStatus)[i]]
                         .availableMonths;

@@ -76,10 +76,10 @@ export interface GET_DISCOUNT_COUPONS_ACTION {
     payload: DiscountCoupons[];
 }
 
-export const setMinimumOneCourseError = () => {
+export const setMinimumOneCourseError = (erMsg:string) => {
     return {
         type: ActionTypes.SET_MINIMUM_ONE_COURSE_ERROR,
-        payload: '** Please Select at least one course'
+        payload: erMsg
     };
 };
 
