@@ -278,7 +278,7 @@ export const teamData = [
         lastName: 'Chhabra',
         imageName: '/icons/Royina.png',
         title: 'Head of Revenue',
-        description: 'English Honours Major, Worked with Lexjury - A L aw Firm',
+        description: 'English Honours Major, Worked with Lexjury - A Law Firm',
         institute: 'Lady Shri Ram College, DU',
         linkedIn: 'http://linkedin.com/in/royinachhabra'
     },
@@ -304,7 +304,7 @@ export const programsCardsMetaData = [
         backed with Compendiums and Live
         Projects crafted and led by top mentors`,
         priceBeforeDiscount: '5,000',
-        princeAfterDiscount: '2,999',
+        princeAfterDiscount: '3,999',
         brands: [
             { name: '/icons/Amazon logo.png', width: '48px', height: '19px' },
             {
@@ -333,7 +333,7 @@ export const programsCardsMetaData = [
         backed with Compendiums and Live
         Projects crafted and led by top mentors`,
         priceBeforeDiscount: '5,000',
-        princeAfterDiscount: '2,999',
+        princeAfterDiscount: '3,999',
         brands: [
             { name: '/icons/Ashoka_Uni.png', width: '54px', height: '22px' },
             { name: '/icons/KREA LOGO.png', width: '37px', height: '19px' },
@@ -358,7 +358,7 @@ export const programsCardsMetaData = [
         backed with Compendiums and Live
         Projects crafted and led by top mentors.`,
         priceBeforeDiscount: '5,000',
-        princeAfterDiscount: '2,999',
+        princeAfterDiscount: '3,999',
         brands: [
             { name: '/icons/Ducati.png', width: '23px', height: '23px' },
             { name: '/icons/medanta.png', width: '53px', height: '16px' },
@@ -379,7 +379,7 @@ export const programsCardsMetaData = [
         backed with Compendiums and Live
         Projects crafted and led by top mentors.`,
         priceBeforeDiscount: '5,000',
-        princeAfterDiscount: '2,999',
+        princeAfterDiscount: '3,999',
         brands: [
             { name: '/icons/Swiggy.png', width: '55px', height: '15px' },
             { name: '/icons/Infosys.png', width: '28px', height: '17px' },

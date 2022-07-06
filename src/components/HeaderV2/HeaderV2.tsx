@@ -90,7 +90,8 @@ const _HeaderV2 = () => {
     const [expanded, setExpanded] = React.useState<string | false>('');
 
     const handleChange =
-        (panel: string) => (event: React.ChangeEvent<{}>, newExpanded: boolean) => {
+        (panel: string) =>
+        (event: React.ChangeEvent<{}>, newExpanded: boolean) => {
             setExpanded(newExpanded ? panel : false);
         };
 
@@ -122,12 +123,28 @@ const _HeaderV2 = () => {
                     }}
                     rowORColumn="row"
                 >
-                    <div onClick={() => router.push('/team')} style={{ marginLeft: '20px' }} className={HeaderStyle['cursorPointer']}> About Us </div>
+                    <div
+                        onClick={() => router.push('/team')}
+                        style={{ marginLeft: '20px' }}
+                        className={HeaderStyle['cursorPointer']}
+                    >
+                        {' '}
+                        About Us{' '}
+                    </div>
 
-                    <div style={{ marginLeft: '20px' }} className={HeaderStyle['cursorPointer']}>
-                        <FLexLayout onClick={handleMenu} alignItem="center" rowORColumn="row">
+                    <div
+                        style={{ marginLeft: '20px' }}
+                        className={HeaderStyle['cursorPointer']}
+                    >
+                        <FLexLayout
+                            onClick={handleMenu}
+                            alignItem="center"
+                            rowORColumn="row"
+                        >
                             <div> Metvy Learn </div>
-                            <div className={HeaderStyle['triangle-right']}></div>
+                            <div
+                                className={HeaderStyle['triangle-right']}
+                            ></div>
                         </FLexLayout>
 
                         <Menu
@@ -146,7 +163,9 @@ const _HeaderV2 = () => {
                             onClose={handleClose}
                         >
                             {courses.map((x) => (
-                                <div className={Style['menuItemsCoursesDesktop']}>
+                                <div
+                                    className={Style['menuItemsCoursesDesktop']}
+                                >
                                     <MenuItem
                                         classes={{ root: classesMaterial.root }}
                                         onClick={() => router.push(x.routePath)}
@@ -167,7 +186,6 @@ const _HeaderV2 = () => {
                         Team{' '}
                     </div>
 
-
                     <div
                         onClick={() => router.push('/metvy-networking')}
                         className={HeaderStyle['cursorPointer']}
@@ -176,7 +194,6 @@ const _HeaderV2 = () => {
                         {' '}
                         Community{' '}
                     </div>
-
                 </FLexLayout>
             );
         } else {
@@ -212,9 +229,19 @@ const _HeaderV2 = () => {
                     >
                         <FLexLayout
                             rowORColumn="column"
-                            style={{ padding: '32px', width: `${0.72 * width}px`, height: '60%' }}
+                            style={{
+                                padding: '32px',
+                                width: `${0.72 * width}px`,
+                                height: '60%'
+                            }}
                         >
-                            <div onClick={() => router.push('/team')} className={HeaderStyle.menuItemsText}> About Us </div>
+                            <div
+                                onClick={() => router.push('/team')}
+                                className={HeaderStyle.menuItemsText}
+                            >
+                                {' '}
+                                About Us{' '}
+                            </div>
 
                             <div className={HeaderStyle.menuItemsText}>
                                 <Accordion
@@ -247,14 +274,19 @@ const _HeaderV2 = () => {
                                     <AccordionDetails>
                                         <div
                                             style={{
-                                                backgroundColor: 'rgba(242, 242, 242, 1)',
+                                                backgroundColor:
+                                                    'rgba(242, 242, 242, 1)',
                                                 padding: '12px'
                                             }}
                                         >
                                             {courses.map((x) => (
                                                 <div
-                                                    onClick={() => router.push(x.routePath)}
-                                                    className={HeaderStyle.accordionItem}
+                                                    onClick={() =>
+                                                        router.push(x.routePath)
+                                                    }
+                                                    className={
+                                                        HeaderStyle.accordionItem
+                                                    }
                                                 >
                                                     {' '}
                                                     {x.name}{' '}
@@ -271,6 +303,13 @@ const _HeaderV2 = () => {
                             >
                                 {' '}
                                 Team{' '}
+                            </div>
+                            <div
+                                onClick={() => router.push('/metvy-networking')}
+                                className={HeaderStyle['cursorPointer']}
+                            >
+                                {' '}
+                                Community{' '}
                             </div>
                         </FLexLayout>
 
@@ -295,10 +334,42 @@ const _HeaderV2 = () => {
 
                             <FLexLayout rowORColumn="row">
                                 <FLexLayout rowORColumn="row">
-                                    <Image onClick={() => window.open(socialMediaLinks.twitter)} style={{ marginRight: '18px' }} src="icons/twitter.png" />
-                                    <Image onClick={() => window.open(socialMediaLinks.instagram)} style={{ marginRight: '18px' }} src="icons/instagram.png" />
-                                    <Image onClick={() => window.open(socialMediaLinks.facebook)} style={{ marginRight: '18px' }} src="icons/facebook.png" />
-                                    <Image onClick={() => window.open(socialMediaLinks.linkedIn)} style={{ marginRight: '18px' }} src="icons/linkedin.png" />
+                                    <Image
+                                        onClick={() =>
+                                            window.open(
+                                                socialMediaLinks.twitter
+                                            )
+                                        }
+                                        style={{ marginRight: '18px' }}
+                                        src="icons/twitter.png"
+                                    />
+                                    <Image
+                                        onClick={() =>
+                                            window.open(
+                                                socialMediaLinks.instagram
+                                            )
+                                        }
+                                        style={{ marginRight: '18px' }}
+                                        src="icons/instagram.png"
+                                    />
+                                    <Image
+                                        onClick={() =>
+                                            window.open(
+                                                socialMediaLinks.facebook
+                                            )
+                                        }
+                                        style={{ marginRight: '18px' }}
+                                        src="icons/facebook.png"
+                                    />
+                                    <Image
+                                        onClick={() =>
+                                            window.open(
+                                                socialMediaLinks.linkedIn
+                                            )
+                                        }
+                                        style={{ marginRight: '18px' }}
+                                        src="icons/linkedin.png"
+                                    />
                                 </FLexLayout>
                             </FLexLayout>
                         </FLexLayout>
@@ -306,8 +377,17 @@ const _HeaderV2 = () => {
                 </Drawer>
             )}
 
-            <FLexLayout onClick={() => router.push('/')} rowORColumn="row" alignItem="center" justifyContent='center' className={HeaderStyle.brandContainer}>
-                <Image className={HeaderStyle.headerIcon} src="/icons/ic_launcher.png" />
+            <FLexLayout
+                onClick={() => router.push('/')}
+                rowORColumn="row"
+                alignItem="center"
+                justifyContent="center"
+                className={HeaderStyle.brandContainer}
+            >
+                <Image
+                    className={HeaderStyle.headerIcon}
+                    src="/icons/ic_launcher.png"
+                />
                 <div> {brandName} </div>
             </FLexLayout>
 
