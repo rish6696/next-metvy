@@ -99,6 +99,12 @@ const _Landing = ({ setWidth, width }) => {
                     alignItem={width < 1000 ? 'center' : 'start'}
                     rowORColumn="column"
                 >
+                   <Image
+                      src="/icons/nsrcl_logo.png"
+                      className={Style['nsrcl-logo']}
+                    />
+
+
                     <div className={Style['Learning-Text']}>
                         Learning is Better with{' '}
                         <span
