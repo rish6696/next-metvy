@@ -159,8 +159,7 @@ const _Header = () => {
                     </div>
 
                     <div  onClick={() => router.push('/team')}  style={{marginLeft:'20px'}} className={HeaderStyle['cursorPointer']}> Team </div>
-
-                   
+                    <div  onClick={() => router.push('/metvy-networking')}  style={{marginLeft:'20px'}} className={HeaderStyle['cursorPointer']}> Community </div>   
                 </FLexLayout>
             );
         } else {
@@ -255,6 +254,7 @@ const _Header = () => {
                             </div>
 
                             <div  onClick={() => router.push('/team')}  className={HeaderStyle.menuItemsText}> Team </div>
+                            <div  onClick={() => router.push('/metvy-networking')}  className={HeaderStyle.menuItemsText}> Community </div>
 
 
                         </FLexLayout>

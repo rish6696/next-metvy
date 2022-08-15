@@ -574,7 +574,7 @@ const _MetvyLearn = ({ width, setWidth }) => {
                         justifyContent="center"
                         alignItem="center"
                     >
-                        <div className={Style['stats-value']}>{'200+'}</div>
+                        <div className={Style['stats-value']}>{'1000+'}</div>
                         <div className={Style['stats-label']}>{'Sessions'}</div>
                     </FLexLayout>
 
@@ -586,7 +586,7 @@ const _MetvyLearn = ({ width, setWidth }) => {
                         justifyContent="center"
                         alignItem="center"
                     >
-                        <div className={Style['stats-value']}>{'1000+'}</div>
+                        <div className={Style['stats-value']}>{'5000+'}</div>
                         <div className={Style['stats-label']}>{'Participants'}</div>
                     </FLexLayout>
 
@@ -598,7 +598,7 @@ const _MetvyLearn = ({ width, setWidth }) => {
                         justifyContent="center"
                         alignItem="center"
                     >
-                        <div className={Style['stats-value']}>{'100+'}</div>
+                        <div className={Style['stats-value']}>{'250+'}</div>
                         <div className={Style['stats-label']}>{'Mentors'}</div>
                     </FLexLayout>
                 </FLexLayout>

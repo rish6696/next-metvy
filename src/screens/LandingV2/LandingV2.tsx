@@ -183,7 +183,7 @@ const _Landing = ({ setWidth, width }) => {
                     justifyContent="center"
                     alignItem="center"
                 >
-                    <span className={Style['stats-number']}>200+</span>
+                    <span className={Style['stats-number']}>1000+</span>
                     <span className={Style['stats-title']}>Sessions</span>
                 </FLexLayout>
 
@@ -193,7 +193,7 @@ const _Landing = ({ setWidth, width }) => {
                     justifyContent="center"
                     alignItem="center"
                 >
-                    <span className={Style['stats-number']}>2000+</span>
+                    <span className={Style['stats-number']}>5000+</span>
                     <span className={Style['stats-title']}>Participants</span>
                 </FLexLayout>
 
@@ -203,7 +203,7 @@ const _Landing = ({ setWidth, width }) => {
                     justifyContent="center"
                     alignItem="center"
                 >
-                    <span className={Style['stats-number']}>100+</span>
+                    <span className={Style['stats-number']}>250+</span>
                     <span className={Style['stats-title']}>Mentors</span>
                 </FLexLayout>
             </FLexLayout>

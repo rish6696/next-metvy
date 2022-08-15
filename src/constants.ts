@@ -268,7 +268,7 @@ export const teamData = [
         firstName: 'Rajan',
         lastName: 'Luthra',
         imageName: '/icons/Rajan.png',
-        title: 'Co-Founder',
+        title: 'Co-Founder & COO',
         description: 'Worked with ASA,YC Startup School Alum',
         institute: 'Kirori Mal College, DU',
         linkedIn: 'http://linkedin.com/in/rajan-luthra'
@@ -513,7 +513,7 @@ Creating and Discovering one’s own Writing Style and progressing with the Firs
         themeColor: '#FF869E',
         perks: [
             {
-                content: `One-on-one networking and mentorship from Academicians and Industry Experts in Live Sessions.`,
+                content: `Live networking and mentorship from Academicians and Industry Experts in Live Sessions.`,
                 imageName: '/icons/Connect.png'
             },
             {
@@ -565,7 +565,7 @@ Extensive peer group networking. Understanding Entrepreneurship and Market Resea
         themeColor: '#FFBE01',
         perks: [
             {
-                content: `One-on-one networking and mentorship live sessions from C-Level Industry Executives`,
+                content: `Live networking and mentorship live sessions from C-Level Industry Executives`,
                 imageName: '/icons/Connect.png'
             },
             {
@@ -600,7 +600,7 @@ With focus on design softwares like Photoshop, Indesign, Adobe Illustrator, Adob
             },
             {
                 time: '4 Hours',
-                content: `Application of the Fundamentals and Narrative, Building for Meaningful designs. Introduction to Adobe XD, Introduction to Figma, Introduction to Photoshop, Basic Design Thinking Fundamentals.`
+                content: `Application of the Fundamentals and Narrative, Building for Meaningful designs. Introduction to Figma, Introduction to Photoshop, Basic Design Thinking Fundamentals.`
             },
             {
                 time: '4 Hours',
@@ -616,7 +616,7 @@ With focus on design softwares like Photoshop, Indesign, Adobe Illustrator, Adob
         themeColor: '#99DF0C',
         perks: [
             {
-                content: `One-on-one networking and mentorship with In-house Design Experts and Industry Experts`,
+                content: `Live networking and mentorship with In-house Design Experts and Industry Experts`,
                 imageName: '/icons/Connect.png'
             },
             {
@@ -664,7 +664,7 @@ With focus on design softwares like Photoshop, Indesign, Adobe Illustrator, Adob
         themeColor: '#79C4FC',
         perks: [
             {
-                content: `One-on-one networking and mentorship from Consultants working in the Big 3`,
+                content: `Live networking and mentorship from Consultants working in the Big 3`,
                 imageName: '/icons/Connect.png'
             },
             {
