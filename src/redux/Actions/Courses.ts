@@ -216,7 +216,7 @@ export interface PAY_COURSE_API_REQUEST_CONTRACT {
     discountCouponID: string;
     courses: { month: number; courseId: string }[];
     editableDiscountCoupon :string
-    state : string
+    location : {}
 }
 
 export interface PAY_COURSE_API_RESPONSE_CONTRACT {

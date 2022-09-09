@@ -3,12 +3,13 @@ import Style from './Enroll.module.css';
 import FLexLayout from '../../components/FlexLayout';
 import HeaderLearn from '../../components/HeaderLearn/HeaderLearn';
 import { Image } from 'react-bootstrap';
-import { enrollScreenCourseData, MONTHS, state } from '../../constants';
+import { enrollScreenCourseData, MONTHS } from '../../constants';
 import apiConfig from '../../api-services/apiConfig';
 import ServerDown from '../../components/ServerDown/ServerDown';
 import Loader from '../../components/LoaderComponent/LoaderComponent';
 import Scroll from 'react-scroll';
 import DiscountModal from '../../components/discountModal/DiscountModal';
+import { Country, State, City }  from 'country-state-city';
 
 import {
     getCourses,
@@ -100,19 +101,44 @@ const _EnrollScreen = (props: Props) => {
     const schoolRef: RefObject<HTMLInputElement> = createRef();
     const streamRef: RefObject<HTMLInputElement> = createRef();
     const stateRef: RefObject<HTMLSelectElement> = createRef();
+    const countryRef: RefObject<HTMLSelectElement> = createRef();
+    const cityRef: RefObject<HTMLSelectElement> = createRef();
 
     const invoiceDataContainerRef: Ref<HTMLDivElement> = createRef();
 
     const [email, setEmail] = useState('');
     const [emailError, setEmailError] = useState('');
 
-    const [stateValue, setSateValue] = useState('');
-    const [stateError, setStateError] = useState('');
+    const [countryValue, setCountryValue] = useState(null);
+   
+
+    const [cityValue, setCityValue] = useState(null);
+   
+
+    const [stateValue, setSateValue] = useState(null);
+
+
+    const [locationError, setLocationError] = useState('');
 
     const onStateValueChange = (event) => {
-        const state = event.target.value;
-        setStateError('');
-        setSateValue(state);
+        const state_name = event.target.value;
+        const state = State.getStatesOfCountry(countryValue['isoCode']).filter(x=>x.name == state_name)
+        setLocationError('');
+        setSateValue(state[0]);
+    };
+
+    const onCountryValueChange = (event) => {
+        const country_name = event.target.value;
+        setLocationError('');
+        const country = Country.getAllCountries().filter(x=> x.name == country_name)
+        setCountryValue(country[0]);
+    };
+
+    const onCityValueChange = (event) => {
+        const city_name = event.target.value;
+        setLocationError('');
+        const city = City.getCitiesOfState(countryValue['isoCode'],stateValue['isoCode']).filter(x=>x.name == city_name)
+        setCityValue(city[0]);
     };
 
     const onEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -179,16 +205,16 @@ const _EnrollScreen = (props: Props) => {
         selectMonth(parseInt(month), courseId);
     };
 
-    const getCourseMonthInfo = (monthNumber) => {
-        let date = Moment();
-        date.set('M', monthNumber - 1);
+    const getCourseMonthInfo = (unix) => {
+        let date = Moment.unix(unix);
+        // date.set('M', monthNumber - 1);
 
-        if (monthNumber < Moment().get('M') + 1) {
-            console.log('Inside my if ');
-            date = date.add('y', 1);
-        }
+        // if (monthNumber < Moment().get('M') + 1) {
+        //     console.log('Inside my if ');
+        //     date = date.add('y', 1);
+        // }
 
-        const prefix = monthPrefix[monthNumber - 1];
+        const prefix = monthPrefix[date.get('M')];
 
         return `${date.startOf('M').get('D')}st ${date.format(
             'MMMM YYYY'
@@ -261,11 +287,33 @@ const _EnrollScreen = (props: Props) => {
             return;
         }
 
-        // check if state is not selected
-        if (stateValue.length == 0) {
-            setStateError('**Please select your state');
-            stateRef.current.focus();
+        // check if country is not selected
+        if (!countryValue) {
+            setLocationError('**Please select your country');
+            countryRef.current.focus();
             return;
+        }
+        const states = State.getStatesOfCountry(countryValue['isoCode'])
+        // check if state is not selected
+        if (!stateValue) {
+            
+            if (states.length != 0) {
+                setLocationError('**Please select your state');
+                stateRef.current.focus();
+                return;
+            }
+        }
+
+        // check if city is not selected
+         if (!cityValue) {
+            if(states.length != 0){
+                const cities = City.getCitiesOfState(countryValue['isoCode'],stateValue['isoCode'])
+                if(cities.length != 0 ){
+                    setLocationError('**Please select your city');
+                    cityRef.current.focus();
+                    return;
+                }
+            }
         }
 
         // checking if the courses select have valid month of enrollment or not
@@ -355,7 +403,11 @@ const _EnrollScreen = (props: Props) => {
             stream,
             courses: cartCourses,
             editableDiscountCoupon: selectedDiscountCouponText,
-            state: stateValue
+            location : {
+                "country": countryValue,
+                "state": stateValue,
+                "city": cityValue
+            }
         });
     };
 
@@ -597,7 +649,32 @@ const _EnrollScreen = (props: Props) => {
                                 className={Style['studentFelidsError']}
                                 rowORColumn="column"
                             >
-                                <div>{stateError}</div>
+                                <div>{locationError}</div>
+                            </FLexLayout>
+
+                            {/* country-dropdown */}
+                            <FLexLayout
+                                rowORColumn="column"
+                                justifyContent="center"
+                                alignItem="center"
+                                className={Style['select-a-batch-dropDown']}
+                            >
+                                <select
+                                    ref={countryRef}
+                                    onChange={onCountryValueChange}
+                                    style={{
+                                        fontFamily: 'poppinsItalic',
+                                        fontSize: '15px',
+                                        width: '100%'
+                                    }}
+                                >
+                                    <option value="" selected disabled hidden>
+                                        Select Country ?
+                                    </option>
+                                    {Country.getAllCountries().map((country) => (
+                                        <option> {country.name} </option>
+                                    ))}
+                                </select>
                             </FLexLayout>
 
                             {/* state-dropdown */}
@@ -617,10 +694,36 @@ const _EnrollScreen = (props: Props) => {
                                     }}
                                 >
                                     <option value="" selected disabled hidden>
-                                        Where are you from ?
+                                        Select State ?
                                     </option>
-                                    {state.map((x) => (
-                                        <option value={x}> {x} </option>
+                                    { countryValue  &&  State.getStatesOfCountry(countryValue['isoCode']) .map((state) => (
+                                        <option > {state.name} </option>
+                                    ))}
+                                </select>
+                            </FLexLayout>
+
+
+                            {/* city-dropdown */}
+                            <FLexLayout
+                                rowORColumn="column"
+                                justifyContent="center"
+                                alignItem="center"
+                                className={Style['select-a-batch-dropDown']}
+                            >
+                                <select
+                                    ref={cityRef}
+                                    onChange={onCityValueChange}
+                                    style={{
+                                        fontFamily: 'poppinsItalic',
+                                        fontSize: '15px',
+                                        width: '100%'
+                                    }}
+                                >
+                                    <option value="" selected disabled hidden>
+                                        Select City ?
+                                    </option>
+                                    {  countryValue && stateValue  && City.getCitiesOfState(countryValue['isoCode'],stateValue['isoCode']) .map((city) => (
+                                        <option > {city.name} </option>
                                     ))}
                                 </select>
                             </FLexLayout>
