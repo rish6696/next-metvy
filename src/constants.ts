@@ -59,7 +59,8 @@ export const courses = [
     { name: 'AI Bootcamp Program', routePath: '/AI_Bootcamp_program' },
     { name: 'Consultancy Program', routePath: '/consultancy_program' },
     { name: 'Business Program', routePath: '/business_program' },
-    { name: 'Finance Program', routePath: '/finance_program' }
+    { name: 'Finance Program', routePath: '/finance_program' },
+    { name: 'Business Communication Program', routePath: '/business_communication_program' }
 ];
 
 export const EDITABLE_DISCOUNT_CODE_ID = '#EDIT_TABLE_DISCOUNT_CODE#';
@@ -449,6 +450,35 @@ export const programsCardsMetaData = [
         'box-shadow': '0px 0px 92px 0px rgba(255, 199, 0, 0.72)',
         routePath: '/finance_program'
     },
+    {
+        backgroundImage: '/icons/Golden_ 2.png',
+        name: 'Metvy Business Communication Program',
+        weeks: 4,
+        peopleUpSkilled: '500+',
+        sessions: 20,
+        description: `Live Business Communication Program on Entrepreneurship
+        backed with Compendiums and Live
+        Projects crafted and led by top mentors`,
+        priceBeforeDiscount: '5,000',
+        princeAfterDiscount: '3,999',
+        brands: [
+            { name: '/icons/Amazon logo.png', width: '48px', height: '19px' },
+            {
+                name: '/icons/Adobe_Corporate_Logo.png',
+                width: '54px',
+                height: '14px'
+            },
+            { name: '/icons/unnamed (1).png', width: '27px', height: '14px' },
+            { name: '/icons/bharatpe.png', width: '58px', height: '16px' },
+            {
+                name: '/icons/Facebook-New-Logo.png',
+                width: '37px',
+                height: '14px'
+            }
+        ],
+        'box-shadow': '0px 0px 92px 0px rgba(255, 199, 0, 0.72)',
+        routePath: '/business_communication_program'
+    },
 ];
 
 export const testimonialLearn =
@@ -780,7 +810,55 @@ One-on-one live classes and mentorship from top mentors from Motilal Oswal, Will
                 style: { height: '25%', width: '70%' }
             }
         ]
-    }
+    },
+    business_communication_program: {
+        heading: `Metvy Business Communication Program`,
+        description: `The Metvy Business Communication Program equips you with all the relevant communication skills needed to bag/switch jobs & internships. Our corporate mentors will teach you how to critically assess your position in professional relationships, along with relevant listening & presentation skills that advance dialogues at work and enable you to effectively present ideas. From building a bang-on CV to nailing it in your next Personal Interview, This programme is a 30-day upskilling journey that comes with 15+ live mentor sessions with real projects and tasks to improve your business communication knowledge & make you job ready.`,
+        weeksData: [
+            {
+                time: '4 Hours',
+                content: `Peer group introduction giving an overview of business communication, different forms of communication, learning about mental models of communication, and storytelling techniques.`
+            },
+            {
+                time: '4 Hours',
+                content: `Learn the art of negotiation, nonverbal communication, voice modulation, and the significance of body language to become a empathetic communicator`
+            },
+            {
+                time: '4 Hours',
+                content: `Developing your public speaking abilities, comprehending how to write a Resume/CV, and a cover letter, and knowing how to react in an interview.`
+            },
+            {
+                time: '4 Hours',
+                content: `Focusing on writing/preparing the correct material, putting together an impactful presentation, learning how to form brand alliances, and developing a strong sales pitch`
+            }
+        ],
+        whoIsThisForText: `For aspiring professionals looking forward to hone their communication skills in professional settings and put well structured thoughts across the table. We aren’t teaching you words but rather how to use them!.`,
+
+        themeColor: '#FFBE01',
+        perks: [
+            {
+                content: `Live networking and mentorship live sessions from C-Level Industry Executives`,
+                imageName: '/icons/Connect.png'
+            },
+            {
+                content: `A chance to grab an Internship at Metvy`,
+                imageName: '/icons/Suitcase.png'
+            },
+            {
+                content: `Personalised Letter of Recommendation`,
+                imageName: '/icons/Certificate.png'
+            },
+            {
+                content: `Constant feedbacks and guidance with curated learning modules`,
+                imageName: '/icons/Thumbs up.png'
+            },
+            {
+                content: `A bespoke experience with In-house Mentors as well as Practical Tasks`,
+                imageName: '/icons/Stars.png',
+                style: { height: '25%', width: '70%' }
+            }
+        ]
+    },
 };
 
 export const allowedRoutesPath = Object.keys(courseDetailsScreenData);
