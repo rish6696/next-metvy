@@ -626,19 +626,19 @@ With focus on design softwares like Photoshop, Indesign, Adobe Illustrator, Adob
         weeksData: [
             {
                 time: '4 Hours',
-                content: `Peer group introduction with the Mentor, Introducing people to the Fundamentals of Design, Understanding The Theory of Design, and Developing a new mindset towards Design`
+                content: `Peer group introduction with the Mentor, Introducing people to the Fundamentals of Design, Understanding The Theory of Design, and Developing a new mindset towards Design.`
             },
             {
                 time: '4 Hours',
-                content: `Application of the Fundamentals and Narrative, Building for Meaningful designs. Introduction to Figma, Introduction to Photoshop, Basic Design Thinking Fundamentals.`
+                content: `Manifestation of Design through different mediums, Introduction to Industry-Standard Design Softwares, and Photoshop. Deep diving into various tools of Adobe Photoshop.`
             },
             {
                 time: '4 Hours',
-                content: `Creating Compositions and Narratives, Using industry standard tools to create Dynamic Compositions, Introduction to Typography, Introduction to User Interface/ User Experience Principles, Fundamentals of User Interface/User Experience.`
+                content: `Introduction to Figma, Understanding Interfaces & Interactions, and Introduction to User Experience Designing.`,
             },
             {
                 time: '4 Hours',
-                content: `Stages of the User Interface/User Experience Development Process, Principles & Theories for User Interface, Studying User Journey, Behavioural Change, Current Best Practices and Conventions, Live Project on UI/UX.`
+                content: `Understanding the stages involved in UI Wireframing and UI Prototyping, and Building an Industry-Ready Product that is all set for being developed.`
             }
         ],
         whoIsThisForText: `The Metvy Design Program is for anyone who wants to understand Design Thinking Fundamentals, Graphic Design, UI/UX Principles. No prior experience in the field of Graphic Design or UI/UX is required. All you need is a creative bent of mind!`,
@@ -770,16 +770,15 @@ Metvy Finance Program is THE place to be. Learn everything from Stocks, Mutual F
         weeksData: [
             {
                 time: '4 Hours',
-                content: `Are you ready to indulge in the financial markets with top mentors and gain insight into its basics? Learn about stocks, bonds, mutual funds, cryptocurrencies and Warren Buffet's theory of early investing. Catapult yourself with the power of compounding into the stratosphere of the stock market. `
+                content: `Are you ready to indulge in the financial markets with top mentors and gain insight into its basics? Learn about the stock market and Warren Buffet's theory of early investing and learn about Derivative Market.`
             },
             {
                 time: '4 Hours',
-                content: `This is when our mentors take you through the fundamentals of stocks. Get your hands dirty on financial reports whilst analysing real companies and understanding the art of comparing stocks`
+                content: `Learn technical analysis from the best in the game and familiarize yourself with chart patterns, trading indicators, and candlesticks.`
             },
             {
                 time: '4 Hours',
-                content: `Mutual fund investments are subject to market risk? 
-Gain an insight on mutual funds and an in depth understanding on how to invest in the right mutual funds to eliminate ‘’market risk’’. Furthermore, learn how to value various securities and assets by using concepts like discounted cash flow analysis to add finesse to your game.`
+                content: `This is when our mentors will take you through the fundamentals of stocks. Get your hands dirty on financial reports whilst analyzing real companies and understanding the art of comparing stocks`
             },
             {
                 time: '4 Hours',
@@ -787,7 +786,7 @@ Gain an insight on mutual funds and an in depth understanding on how to invest i
 Dive into the talk of the town and get an overview and understanding of the new digital economy of Cryptocurrencies.`
             }
         ],
-        whoIsThisForText: `The Metvy Finance Program is a must for anyone who wants to get started with their finance & investing journey professionally. The learner gets to practically learn the art of investing in Stock Markets, Mutual Funds through Fundamental & Technical Analysis apart from getting an insight into the Crypto world.`,
+        whoIsThisForText: `Gain an insight on mutual funds and an in depth understanding on how to invest in the right mutual funds to eliminate ‘’market risk’ and dive into the talk of the town and get an overview and understanding of the new digital economy of Cryptocurrencies.`,
 
         themeColor: '#FF9B5F',
         perks: [
