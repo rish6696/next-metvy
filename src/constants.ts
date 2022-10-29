@@ -782,8 +782,7 @@ Metvy Finance Program is THE place to be. Learn everything from Stocks, Mutual F
             },
             {
                 time: '4 Hours',
-                content: `Learn technical analysis from the best in the game and familiarize yourself with chart patterns, trading indicators and candlesticks.
-Dive into the talk of the town and get an overview and understanding of the new digital economy of Cryptocurrencies.`
+                content: `Gain an insight on mutual funds and an in depth understanding on how to invest in the right mutual funds to eliminate ‘’market risk’ and dive into the talk of the town and get an overview and understanding of the new digital economy of Cryptocurrencies.`
             }
         ],
         whoIsThisForText: `Gain an insight on mutual funds and an in depth understanding on how to invest in the right mutual funds to eliminate ‘’market risk’ and dive into the talk of the town and get an overview and understanding of the new digital economy of Cryptocurrencies.`,
