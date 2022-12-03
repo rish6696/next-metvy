@@ -221,6 +221,10 @@ const _EnrollScreen = (props: Props) => {
         )} - ${date.endOf('M').get('D')}${prefix} ${date.format('MMMM YYYY')}`;
     };
 
+    const getMOnthNameFromUnix =(unix)=>{
+        return  Moment.unix(unix).format("MMMM");
+    }
+
     const monthPrefix = {
         0: 'st',
         1: 'th',
@@ -983,10 +987,7 @@ const _EnrollScreen = (props: Props) => {
                                                             }
                                                         >
                                                             {`${
-                                                                MONTHS[
-                                                                    invoiceCourse
-                                                                        .month
-                                                                ]
+                                                                getMOnthNameFromUnix(invoiceCourse.month)
                                                             } Cohort`}
                                                         </div>
                                                     </FLexLayout>

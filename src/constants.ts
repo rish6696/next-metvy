@@ -304,8 +304,8 @@ export const programsCardsMetaData = [
         description: `Live Mentorship Program on Entrepreneurship
         backed with Compendiums and Live
         Projects crafted and led by top mentors`,
-        priceBeforeDiscount: '5,000',
-        princeAfterDiscount: '3,999',
+        priceBeforeDiscount: '9,000',
+        princeAfterDiscount: '5,500',
         brands: [
             { name: '/icons/Amazon logo.png', width: '48px', height: '19px' },
             {
@@ -333,8 +333,8 @@ export const programsCardsMetaData = [
         description: `Live Mentorship Program on Research
         backed with Compendiums and Live
         Projects crafted and led by top mentors`,
-        priceBeforeDiscount: '5,000',
-        princeAfterDiscount: '3,999',
+        priceBeforeDiscount: '8,999',
+        princeAfterDiscount: '5,500',
         brands: [
             { name: '/icons/Ashoka_Uni.png', width: '54px', height: '22px' },
             { name: '/icons/KREA LOGO.png', width: '37px', height: '19px' },
@@ -400,8 +400,8 @@ export const programsCardsMetaData = [
         description: `Live Mentorship Program on Consultancy
         backed with Compendiums and Live
         Projects crafted and led by top Consultants.`,
-        priceBeforeDiscount: ' 6,999',
-        princeAfterDiscount: '3,999',
+        priceBeforeDiscount: '9,999',
+        princeAfterDiscount: '5,500',
 
         brands: [
             { name: '/icons/bain-logo.png', width: '38px', height: '19px' },
@@ -430,8 +430,8 @@ export const programsCardsMetaData = [
         description: `Live Mentorship Program on Finance
         backed with Compendiums and Live
         Projects crafted and led by top mentors`,
-        priceBeforeDiscount: '6,000',
-        princeAfterDiscount: '4,999',
+        priceBeforeDiscount: '7,000',
+        princeAfterDiscount: '5,500',
         brands: [
             { name: '/icons/Amazon logo.png', width: '48px', height: '19px' },
             {
