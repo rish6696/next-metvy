@@ -139,6 +139,14 @@ const _Landing = ({ setWidth, width }) => {
                         {'30-Day Cohort Based Mentorship Programs.'}
                     </div>
 
+
+                    <FLexLayout onClick={() => window.open('https://calendly.com/metvy-learn/fitment-call?month=2022-12') } rowORColumn='row' alignItem='center' justifyContent='center' className= {Style['book-calendar-box']}>
+                       <FLexLayout style={{width:'80%'}} rowORColumn='row' justifyContent='between' alignItem='center' >
+                           <Image style={{height:'26px',width:'26px'}} src='/icons/39172441.png' />
+                            { 'Book a Free Call With Our Experts'}
+                       </FLexLayout>
+                    </FLexLayout>
+
                     {getStatsContainer()}
                 </FLexLayout>
             </FLexLayout>
@@ -214,6 +222,22 @@ const _Landing = ({ setWidth, width }) => {
         <div className={Style['page-body']}>
             <BackgroundBlur />
             <HeaderV2 />
+            <FLexLayout justifyContent='end' alignItem='end' className={Style.whatsappCommunityHeader} rowORColumn='row' >
+                <FLexLayout justifyContent='center' alignItem='center' rowORColumn='row' style={{width:'100%',height:'50px',color:'white'}} >
+                    <FLexLayout className={Style.whatsappItems} rowORColumn='row' justifyContent='between' >
+                        <div  >Join Our Free </div>
+                        <Image  onClick={()=>window.open("https://chat.whatsapp.com/JxRE3qZecUkEz9xteLIel8")} style={{width:'102px',height:'26px',cursor:'pointer'}} src='/icons/WhatsApp-Emblem_1.png'  />
+                        <div> Community! </div>
+                    </FLexLayout>
+                </FLexLayout>
+
+                {width > 600 && (
+                    <FLexLayout className={Style.limitedSeatsContainer} rowORColumn='row' justifyContent='center' alignItem='center' >
+                    Limited seats
+                </FLexLayout>
+                )}
+
+            </FLexLayout>
             <FLexLayout
                 rowORColumn="column"
                 className={Style['content-container-landing']}
