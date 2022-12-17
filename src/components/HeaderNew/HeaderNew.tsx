@@ -78,7 +78,7 @@ const _HeaderNew = () => {
         }
     }))(MuiAccordionDetails);
 
-    const menuItems = ['Features', 'Team', 'About Us', 'Contact'];
+    const menuItems = ['Features', 'Team', 'Contact'];
 
     useEffect(() => {
         setWidth(window.innerWidth);

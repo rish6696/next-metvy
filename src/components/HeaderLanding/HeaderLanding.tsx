@@ -78,7 +78,7 @@ const _Header = () => {
         }
     }))(MuiAccordionDetails);
 
-    const menuItems = ['Features', 'Team', 'About Us', 'Contact'];
+    const menuItems = ['Features', 'Team','Contact'];
 
     useEffect(() => {
         setWidth(window.innerWidth);
@@ -122,7 +122,7 @@ const _Header = () => {
                     }}
                     rowORColumn="row"
                 >
-                    <div  onClick={() => router.push('/team')} style={{marginLeft:'20px'}} className={HeaderStyle['cursorPointer']}> About Us </div>
+                    
 
                     <div  style={{marginLeft:'20px'}} className={HeaderStyle['cursorPointer']}>
                         <FLexLayout onClick={handleMenu} alignItem="center" rowORColumn="row">
@@ -203,7 +203,7 @@ const _Header = () => {
                             rowORColumn="column"
                             style={{ padding: '32px', width: `${0.72 * width}px`, height: '60%' }}
                         >
-                            <div  onClick={() => router.push('/team')} className={HeaderStyle.menuItemsText}> About Us </div>
+                           
 
                             <div className={HeaderStyle.menuItemsText}>
                                 <Accordion

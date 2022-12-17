@@ -141,7 +141,7 @@ const _Landing = ({ setWidth, width }) => {
 
 
                     <FLexLayout onClick={() => window.open('https://calendly.com/metvy-learn/fitment-call?month=2022-12') } rowORColumn='row' alignItem='center' justifyContent='center' className= {Style['book-calendar-box']}>
-                       <FLexLayout style={{width:'80%'}} rowORColumn='row' justifyContent='between' alignItem='center' >
+                       <FLexLayout style={{width:'86%'}} rowORColumn='row' justifyContent='between' alignItem='center' >
                            <Image style={{height:'26px',width:'26px'}} src='/icons/39172441.png' />
                             { 'Book a Free Call With Our Experts'}
                        </FLexLayout>

@@ -274,24 +274,6 @@ export const teamData = [
         institute: 'Kirori Mal College, DU',
         linkedIn: 'http://linkedin.com/in/rajan-luthra'
     },
-    {
-        firstName: 'Royina',
-        lastName: 'Chhabra',
-        imageName: '/icons/Royina.png',
-        title: 'Head of Revenue',
-        description: 'English Honours Major, Worked with Lexjury - A Law Firm',
-        institute: 'Lady Shri Ram College, DU',
-        linkedIn: 'http://linkedin.com/in/royinachhabra'
-    },
-    {
-        firstName: 'Vipul',
-        lastName: 'Ghai',
-        imageName: '/icons/Vipul.png',
-        title: 'Head of Design',
-        description: 'Project Lead (Metvy Design Program)',
-        institute: 'The Design Village, Noida',
-        linkedIn: 'http://linkedin.com/in/vipul-ghai-70aa291a8'
-    }
 ];
 
 export const programsCardsMetaData = [

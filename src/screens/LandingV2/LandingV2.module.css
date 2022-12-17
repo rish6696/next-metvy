@@ -1238,9 +1238,7 @@
 
 
 .book-calendar-box {
-    font-family: poppins;
-    font-style: normal;
-    font-weight: 600;
+    font-family: poppinsSemiBold;
     font-size: 14px;
     line-height: 21px;
     /* identical to box height */

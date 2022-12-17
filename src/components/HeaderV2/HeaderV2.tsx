@@ -123,14 +123,7 @@ const _HeaderV2 = () => {
                     }}
                     rowORColumn="row"
                 >
-                    <div
-                        onClick={() => router.push('/team')}
-                        style={{ marginLeft: '20px' }}
-                        className={HeaderStyle['cursorPointer']}
-                    >
-                        {' '}
-                        About Us{' '}
-                    </div>
+                    
 
                     <div
                         style={{ marginLeft: '20px' }}
