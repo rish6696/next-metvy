@@ -287,7 +287,7 @@ export const programsCardsMetaData = [
         backed with Compendiums and Live
         Projects crafted and led by top mentors`,
         priceBeforeDiscount: '9,000',
-        princeAfterDiscount: '5,500',
+        princeAfterDiscount: '5,499',
         brands: [
             { name: '/icons/Amazon logo.png', width: '48px', height: '19px' },
             {
@@ -316,7 +316,7 @@ export const programsCardsMetaData = [
         backed with Compendiums and Live
         Projects crafted and led by top mentors`,
         priceBeforeDiscount: '8,999',
-        princeAfterDiscount: '5,500',
+        princeAfterDiscount: '5,499',
         brands: [
             { name: '/icons/Ashoka_Uni.png', width: '54px', height: '22px' },
             { name: '/icons/KREA LOGO.png', width: '37px', height: '19px' },
@@ -340,8 +340,8 @@ export const programsCardsMetaData = [
         description: `Live Mentorship Program on Design,
         backed with Compendiums and Live
         Projects crafted and led by top mentors.`,
-        priceBeforeDiscount: '5,000',
-        princeAfterDiscount: '3,999',
+        priceBeforeDiscount: '8,000',
+        princeAfterDiscount: '5,499',
         brands: [
             { name: '/icons/Ducati.png', width: '23px', height: '23px' },
             { name: '/icons/medanta.png', width: '53px', height: '16px' },
@@ -361,8 +361,8 @@ export const programsCardsMetaData = [
         description: `Live Mentorship Program on Artificial Intelligence
         backed with Compendiums and Live
         Projects crafted and led by top mentors.`,
-        priceBeforeDiscount: '5,000',
-        princeAfterDiscount: '3,999',
+        priceBeforeDiscount: '8,000',
+        princeAfterDiscount: '5,499',
         brands: [
             { name: '/icons/Swiggy.png', width: '55px', height: '15px' },
             { name: '/icons/Infosys.png', width: '28px', height: '17px' },
@@ -383,7 +383,7 @@ export const programsCardsMetaData = [
         backed with Compendiums and Live
         Projects crafted and led by top Consultants.`,
         priceBeforeDiscount: '9,999',
-        princeAfterDiscount: '5,500',
+        princeAfterDiscount: '5,499',
 
         brands: [
             { name: '/icons/bain-logo.png', width: '38px', height: '19px' },
@@ -412,8 +412,8 @@ export const programsCardsMetaData = [
         description: `Live Mentorship Program on Finance
         backed with Compendiums and Live
         Projects crafted and led by top mentors`,
-        priceBeforeDiscount: '7,000',
-        princeAfterDiscount: '5,500',
+        priceBeforeDiscount: '8,000',
+        princeAfterDiscount: '5,499',
         brands: [
             { name: '/icons/Amazon logo.png', width: '48px', height: '19px' },
             {
@@ -441,8 +441,8 @@ export const programsCardsMetaData = [
         description: `Live Business Communication Program on Entrepreneurship
         backed with Compendiums and Live
         Projects crafted and led by top mentors`,
-        priceBeforeDiscount: '5,000',
-        princeAfterDiscount: '3,999',
+        priceBeforeDiscount: '9,000',
+        princeAfterDiscount: '5,499',
         brands: [
             { name: '/icons/Amazon logo.png', width: '48px', height: '19px' },
             {
@@ -601,9 +601,7 @@ Extensive peer group networking. Understanding Entrepreneurship and Market Resea
     },
     design_program: {
         heading: `Metvy Design Program`,
-        description: `The Metvy Design Program aims to help budding creative professionals by providing them with in-depth understanding about different design-based ideologies like Graphic Design, Product Designing, UI/UX and inculcating a proper design ideology using industry-oriented tasks and activities.
-
-With focus on design softwares like Photoshop, Indesign, Adobe Illustrator, Adobe XD, the aim would be on understanding Design Thinking Fundamentals.`,
+        description: `The Metvy Design Program aims to help budding creative professionals by providing them with in-depth understanding about different design-based ideologies like Graphic Design, Product Designing, UI/UX and inculcating a proper design ideology using industry-oriented tasks and activities. With focus on design softwares like Photoshop and Figma, the aim would be on understanding Design Thinking Fundamentals.`,
 
         weeksData: [
             {
