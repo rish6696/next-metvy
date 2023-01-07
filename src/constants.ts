@@ -60,7 +60,7 @@ export const courses = [
     { name: 'Consultancy Program', routePath: '/consultancy_program' },
     { name: 'Business Program', routePath: '/business_program' },
     { name: 'Finance Program', routePath: '/finance_program' },
-    { name: 'Business Communication Program', routePath: '/business_communication_program' }
+    { name: 'Get Hired Fellowship', routePath: '/get_hired_fellowship' }
 ];
 
 export const EDITABLE_DISCOUNT_CODE_ID = '#EDIT_TABLE_DISCOUNT_CODE#';
@@ -434,11 +434,11 @@ export const programsCardsMetaData = [
     },
     {
         backgroundImage: '/icons/Golden_ 2.png',
-        name: 'Metvy Business Communication Program',
+        name: 'Metvy Get Hired Fellowship',
         weeks: 4,
         peopleUpSkilled: '500+',
         sessions: 20,
-        description: `Live Business Communication Program on Entrepreneurship
+        description: `Live Get Hired Fellowship on Entrepreneurship
         backed with Compendiums and Live
         Projects crafted and led by top mentors`,
         priceBeforeDiscount: '9,000',
@@ -459,7 +459,7 @@ export const programsCardsMetaData = [
             }
         ],
         'box-shadow': '0px 0px 92px 0px rgba(255, 199, 0, 0.72)',
-        routePath: '/business_communication_program'
+        routePath: '/get_hired_fellowship'
     },
 ];
 
@@ -789,25 +789,25 @@ One-on-one live classes and mentorship from top mentors from Motilal Oswal, Will
             }
         ]
     },
-    business_communication_program: {
-        heading: `Metvy Business Communication Program`,
-        description: `The Metvy Business Communication Program equips you with all the relevant communication skills needed to bag/switch jobs & internships. Our corporate mentors will teach you how to critically assess your position in professional relationships, along with relevant listening & presentation skills that advance dialogues at work and enable you to effectively present ideas. From building a bang-on CV to nailing it in your next Personal Interview, This programme is a 30-day upskilling journey that comes with 15+ live mentor sessions with real projects and tasks to improve your business communication knowledge & make you job ready.`,
+    get_hired_fellowship: {
+        heading: `Metvy Get Hired Fellowship`,
+        description: `Get Hired Fellowship provides you with a complete guide on learning the Art of bagging a job, personal branding, CV Building, Personal Interviews and understanding outreach and engagement. Our corporate mentors will teach you how to critically assess your position in professional relationships, along with relevant listening & presentation skills that advance dialogues at work and enable you to effectively present ideas. From building a bang-on CV to nailing it in your next Personal Interview, this program is a 30-day upskilling journey that comes with 15+ live mentor sessions with real projects and tasks to improve your communication & make you job-ready.`,
         weeksData: [
             {
                 time: '4 Hours',
-                content: `Peer group introduction giving an overview of business communication, different forms of communication, learning about mental models of communication, and storytelling techniques.`
+                content: `Peer group introduction giving an overview of business communication, different forms of communication, and storytelling techniques.`
             },
             {
                 time: '4 Hours',
-                content: `Learn the art of negotiation, nonverbal communication, voice modulation, and the significance of body language to become a empathetic communicator`
+                content: `Learn Non-Verbal communication, and voice modulation, master the skill of formal written communication and introduce yourself to case studies`
             },
             {
                 time: '4 Hours',
-                content: `Developing your public speaking abilities, comprehending how to write a Resume/CV, and a cover letter, and knowing how to react in an interview.`
+                content: `Gaining knowledge of how to succeed in a group discussion, create a strong LinkedIn profile, and develop the necessary abilities to land a job or internship while putting up a CV/Resume, and cover letter.`
             },
             {
                 time: '4 Hours',
-                content: `Focusing on writing/preparing the correct material, putting together an impactful presentation, learning how to form brand alliances, and developing a strong sales pitch`
+                content: `Knowing how to ace an interview and comprehending the thinking of recruiters Learning the art of negotiation, business communication, making impactful presentations, and participating in mock interviews`
             }
         ],
         whoIsThisForText: `For aspiring professionals looking forward to hone their communication skills in professional settings and put well structured thoughts across the table. We aren’t teaching you words but rather how to use them!.`,
