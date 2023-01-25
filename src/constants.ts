@@ -60,7 +60,8 @@ export const courses = [
     { name: 'Consultancy Program', routePath: '/consultancy_program' },
     { name: 'Business Program', routePath: '/business_program' },
     { name: 'Finance Program', routePath: '/finance_program' },
-    { name: 'Get Hired Fellowship', routePath: '/get_hired_fellowship' }
+    { name: 'Get Hired Fellowship', routePath: '/get_hired_fellowship' },
+    { name: 'Metvy Data Analytics Program', routePath: '/metvy_data_analytics_program' }
 ];
 
 export const EDITABLE_DISCOUNT_CODE_ID = '#EDIT_TABLE_DISCOUNT_CODE#';
@@ -461,6 +462,35 @@ export const programsCardsMetaData = [
         'box-shadow': '0px 0px 92px 0px rgba(255, 199, 0, 0.72)',
         routePath: '/get_hired_fellowship'
     },
+    {
+        backgroundImage: '/icons/BLEU 2.png',
+        name: 'Metvy Data Analytics Program',
+        weeks: 4,
+        peopleUpSkilled: '500+',
+        sessions: 20,
+        description: `Live Data Analytics program
+        backed with Compendiums and Live
+        Projects crafted and led by top mentors`,
+        priceBeforeDiscount: '9,000',
+        princeAfterDiscount: '5,499',
+        brands: [
+            { name: '/icons/Amazon logo.png', width: '48px', height: '19px' },
+            {
+                name: '/icons/Adobe_Corporate_Logo.png',
+                width: '54px',
+                height: '14px'
+            },
+            { name: '/icons/unnamed (1).png', width: '27px', height: '14px' },
+            { name: '/icons/bharatpe.png', width: '58px', height: '16px' },
+            {
+                name: '/icons/Facebook-New-Logo.png',
+                width: '37px',
+                height: '14px'
+            }
+        ],
+        'box-shadow': '0px 0px 92px 0px rgba(255, 199, 0, 0.72)',
+        routePath: '/metvy_data_analytics_program'
+    },
 ];
 
 export const testimonialLearn =
@@ -837,6 +867,55 @@ One-on-one live classes and mentorship from top mentors from Motilal Oswal, Will
             }
         ]
     },
+    metvy_data_analytics_program:{
+        heading: `Metvy Data Analytics Program`,
+        description: `This cohort covers a range of topics that provide a foundation in data analytics, including basics of data analytics, data analytics in Excel, SQL, Power BI, and Python. Industry experts will guide students through projects in each of these areas, providing them with the hands-on experience and knowledge they need to succeed in the field. Whether you are just starting out in data analytics or looking to expand your skills and knowledge, this program is a great resource for anyone interested in pursuing a career in this exciting and rapidly growing field.`,
+        weeksData: [
+            {
+                time: '4 Hours',
+                content: `Introduction to Data Analytics, Introduction to Excel, Data Cleaning in Excel, Data Visualization in Excel (charts, graphs, pivot tables), Data Analysis in Excel, Excel Capstone Project`
+            },
+            {
+                time: '4 Hours',
+                content: `SQL and data analytics, Writing basic SQL queries,  Sorting and Filtering data in SQL, Aggregate function in SQL, Joining Tables in SQL, Nested Queries in SQL, SQL Capstone Project, Introduction to PowerBI, Data visualization tools in PowerBI, Data Cleaning and analysis in PowerBI, Creating reports in PowerBI, PowerBI Capstone Project`
+            },
+            {
+                time: '4 Hours',
+                content: `Introduction to Python, Arrays and flow control in Python, Introduction to Numpy, Introduction to Pandas, Working with Numpy and Pandas for Data Analysis, Data Cleaning and Preparation`
+            },
+            {
+                time: '4 Hours',
+                content: `Introduction to Matplotlib and Seaborn, Data Visualization tools in Python: Line Plots, Bar Plots, Scatter Plots, Histograms, Pie Charts, etc., Python Capstone Project 1, Python Capstone Project 2`
+            }
+        ],
+        whoIsThisForText: `The Metvy Data Analytics Program is for anyone who wants to understand Data Analytics as a career option while learning tools like Python, Power BI, Excel as well as SQL. You'll be learning all these tools from the scratch as well as their practical implementation`,
+
+        themeColor: '#FFBE01',
+        perks: [
+            {
+                content: `Live networking and mentorship live sessions from C-Level Industry Executives`,
+                imageName: '/icons/Connect.png'
+            },
+            {
+                content: `A chance to grab an Internship at Metvy`,
+                imageName: '/icons/Suitcase.png'
+            },
+            {
+                content: `Personalised Letter of Recommendation`,
+                imageName: '/icons/Certificate.png'
+            },
+            {
+                content: `Constant feedbacks and guidance with curated learning modules`,
+                imageName: '/icons/Thumbs up.png'
+            },
+            {
+                content: `A bespoke experience with In-house Mentors as well as Practical Tasks`,
+                imageName: '/icons/Stars.png',
+                style: { height: '25%', width: '70%' }
+            }
+        ]
+
+    }
 };
 
 export const allowedRoutesPath = Object.keys(courseDetailsScreenData);
