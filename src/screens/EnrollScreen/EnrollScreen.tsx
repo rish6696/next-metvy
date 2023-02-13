@@ -421,7 +421,6 @@ const _EnrollScreen = (props: Props) => {
 
     return (
         <div>
-            <HeaderLearn />
             <div
                 // className={Style['container']}
                 style={{
