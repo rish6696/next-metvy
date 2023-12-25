@@ -1,11 +1,45 @@
 import * as React from "react";
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import { useRouter } from 'next/router'
+import { useState } from 'react';
 
 const MyComponent = (props) => {
     const router = useRouter()
     const { course,amount,discount } = router.query
     const payable = parseInt(amount as string,10) - parseInt(discount as string,10)
+
+    const [username, setUsername] = useState('');
+    const [usernameError, setUsernameError] = useState(false);
+
+
+    const [userEmail, setUserEmail] = useState('');
+    const [userEmailError, setUserEmailError] = useState(false);
+
+
+
+    const [mobile, setMobile] = useState('');
+    const [mobileError , setMobileError] = useState(false);
+
+    const [couponCode, setCouponCode] = useState('');
+    
+
+    const onProceedClicked = () => {
+        if (username === ''){
+            setUsernameError(true)
+        }
+        if (userEmail === ''){
+            setUserEmailError(true)
+        }
+        if (mobile === ''){
+            setMobileError(true)
+        }
+        if (username !== '' && userEmail !== '' && mobile !== ''){
+            // Proceed to checkout
+            // make an api call, get razorpay link and redirect user window to that link
+        }
+    }
+
+
     return (
         <Div>
             <Div2>
@@ -35,23 +69,102 @@ const MyComponent = (props) => {
                         <Div18>Your Details</Div18>
                         <Div19 />
                         <Div20>Name </Div20>
-                        <Div21>Enter username</Div21>
-                        <Div22>E-mail Id </Div22>
-                        <Div23>Enter password</Div23>
-                        <Div24>Mobile Number</Div24>
-                        <Div25>
+                        <Div25 error = {usernameError} >
                             <Div26>
-                                <Div27>Typing |</Div27>
-                                <Img2
+                                <Div27>
+                                    <input
+                                        type="text"
+                                        placeholder="Enter Name"
+                                        value={username}
+                                        onChange={(e) => {
+                                            if (usernameError){
+                                                setUsernameError(false)
+                                            }
+                                            setUsername(e.target.value)
+                                        }}
+                                        style={{ width: '100%' }}
+                                     />
+                                </Div27>
+                                {usernameError && (
+                                    <Img2
                                     loading="lazy"
                                     src="https://cdn.builder.io/api/v1/image/assets/TEMP/5ccc26304400869a3509df6d480bda813e2e3cff19daf767d13e5b5c60863a0b?"
-                                />
+                                 />
+                                )}
                             </Div26>
                         </Div25>
-                        <Div28>Please enter a valid phone no.</Div28>
+                        {usernameError && (
+                            <Div28>Please enter a valid name</Div28>
+                        )}
+                        <Div22>E-mail Id </Div22>
+                        <Div25 error = {userEmailError} >
+                            <Div26>
+                                <Div27>
+                                    <input
+                                        type="text"
+                                        placeholder="Enter Email"
+                                        value={userEmail}
+                                        onChange={(e) => {
+                                            if (userEmailError){
+                                                setUserEmailError(false)
+                                            }
+                                            setUserEmail(e.target.value)
+                                        }}
+                                        style={{ width: '100%' }}
+                                     />
+                                </Div27>
+                                {userEmailError && (
+                                    <Img2
+                                    loading="lazy"
+                                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/5ccc26304400869a3509df6d480bda813e2e3cff19daf767d13e5b5c60863a0b?"
+                                 />
+                                )}
+                            </Div26>
+                        </Div25>
+                        {userEmailError && (
+                            <Div28>Please enter a valid email</Div28>
+                        )}
+                        <Div24>Mobile Number</Div24>
+                        <Div25 error = {mobileError} >
+                            <Div26>
+                                <Div27>
+                                    <input
+                                        type="text"
+                                        placeholder="Enter Mobile Number"
+                                        value={mobile}
+                                        onChange={(e) => {
+                                            if (mobileError){
+                                                setMobileError(false)
+                                            }
+                                            setMobile(e.target.value)
+                                        }}
+                                        style={{ width: '100%' }}
+                                     />
+                                </Div27>
+                                {mobileError && (
+                                    <Img2
+                                    loading="lazy"
+                                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/5ccc26304400869a3509df6d480bda813e2e3cff19daf767d13e5b5c60863a0b?"
+                                 />
+                                )}
+                            </Div26>
+                        </Div25>
+                        {mobileError && (
+                            <Div28>Please enter a valid phone no.</Div28>
+                        )}
                         <Div29>Coupon Code</Div29>
-                        <Div30>Enter code provide by shop</Div30>
-                        <Div31>
+                        <Div30>
+                            <input
+                                type="text"
+                                placeholder="Enter Coupon Code"
+                                value={couponCode}
+                                onChange={(e) => {
+                                    setCouponCode(e.target.value)
+                                }}
+                                style={{ width: '100%' }}
+                            />
+                        </Div30>
+                        <Div31 onClick={onProceedClicked} >
                             <Div32>Proceed to checkout </Div32>
                         </Div31>
                     </Div17>
@@ -59,6 +172,11 @@ const MyComponent = (props) => {
             </Div2>
         </Div>
     );
+}
+
+
+interface DivProps {
+    error?: boolean;
 }
 
 const Div = styled.div`
@@ -111,6 +229,7 @@ const Div4 = styled.div`
   font: 800 48px/106% Manrope, sans-serif;
   @media (max-width: 991px) {
     font-size: 40px;
+    margin-top: 42px;
   }
 `;
 
@@ -271,7 +390,7 @@ const Div20 = styled.div`
   }
 `;
 
-const Div21 = styled.div`
+const Div21 = styled.div<DivProps>`
   color: #666;
   white-space: nowrap;
   align-items: start;
@@ -288,6 +407,13 @@ const Div21 = styled.div`
     max-width: 100%;
     padding-right: 20px;
   }
+  /* Add a conditional style based on the error flag */
+  ${(props) =>
+    props.error &&
+    css`
+        border: 2px solid #eb5757;
+        box-shadow: 3px 3px 0px 0px #fd6262;
+    `}
 `;
 
 const Div22 = styled.div`
@@ -329,10 +455,10 @@ const Div24 = styled.div`
   }
 `;
 
-const Div25 = styled.div`
+const Div25 = styled.div<DivProps>`
   align-self: stretch;
-  border: 2px solid #eb5757;
-  box-shadow: 3px 3px 0px 0px #fd6262;
+  border: 2px solid black;
+  box-shadow: 3px 3px 0px 0px black;
   background-color: var(--W-Background, #fff);
   display: flex;
   margin-top: 8px;
@@ -342,6 +468,14 @@ const Div25 = styled.div`
   @media (max-width: 991px) {
     max-width: 100%;
   }
+
+  /* Add a conditional style based on the error flag */
+  ${(props) =>
+    props.error &&
+    css`
+        border: 2px solid #eb5757;
+        box-shadow: 3px 3px 0px 0px #fd6262;
+    `}
 `;
 
 const Div26 = styled.div`
