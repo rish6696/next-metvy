@@ -90,8 +90,12 @@ const MyComponent = (props) => {
         window.location.href = payment_link
       } catch (error) {
         console.log(`Error While Enrolling user to course => error ${error}`)
-        setCourseFetched(true)
-        setServerDown(true)
+        setCourseFetched(true)      
+        if (error.response && error.response.status === 400) {
+          alert("Invalid Discount Code")
+        }else{
+          setServerDown(true)
+        }
       }
     }
   }
